@@ -1,7 +1,7 @@
 -------PUERTO PC--------
 
 
-En nuestro sitio vas a encontrar productos como hardware y perifericos para tener la mejor experiencia de gaming.
+En nuestro sitio vas a encontrar productos de hardware y perifericos para tener la mejor experiencia de gaming.
 
 Nuestro sitio va dirigido a la comunidad gamer y a cualquier persona que desee mejorar su experiencia de navegación.
 
