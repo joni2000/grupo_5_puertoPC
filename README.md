@@ -21,3 +21,6 @@
 - **Nahuel Farid Rosales**:
 
     Hola, mi nombre es Nahuel Rosales, tengo 26 años. Soy estudiante del curso de programación web full stack. Me apasiona viajar, conocer lugares y en mis tiempos libres hacer malabares. En un futuro cercano me gustaría trabajar de programador.
+- **Nahuel David Leiva**:
+
+    Hola, mi nombre es Nahuel, tengo 19 años. Entre en la beca de Digital House - FORMAR "Curso de Programación Web FullStack" de casualidad y me esta encantando. Me apasiona la tecnologia y la programacion fue algo que siempre quise aprender. Me gustaría trabajar de programador ;). 
