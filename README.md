@@ -17,7 +17,7 @@
 - [Mercado Libre](https://www.mercadolibre.com.ar/) -> (Distribución de categorias y buscador en el header)
 - [Claro](https://tienda.claro.com.ar/catalogo/celulares) -> (El carrito de compras es intuitivo y fácil de usar)
 
-### **Integrantes**
+### **Integrantes***
 - **Nahuel Farid Rosales**:
 
     Hola, mi nombre es Nahuel Rosales, tengo 26 años. Soy estudiante del curso de programación web full stack. Me apasiona viajar, conocer lugares y en mis tiempos libres hacer malabares. En un futuro cercano me gustaría trabajar de programador.
