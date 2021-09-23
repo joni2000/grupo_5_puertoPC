@@ -23,4 +23,7 @@
     Hola, mi nombre es Nahuel Rosales, tengo 26 años. Soy estudiante del curso de programación web full stack. Me apasiona viajar, conocer lugares y en mis tiempos libres hacer malabares. En un futuro cercano me gustaría trabajar de programador.
 - **Nahuel David Leiva**:
 
-    Hola, mi nombre es Nahuel, tengo 19 años. Entre en la beca de Digital House - FORMAR "Curso de Programación Web FullStack" de casualidad y me esta encantando. Me apasiona la tecnologia y la programacion fue algo que siempre quise aprender. Me gustaría trabajar de programador ;). 
+    Hola, mi nombre es Nahuel, tengo 19 años. Entre en la beca de Digital House - FORMAR "Curso de Programación Web FullStack" de casualidad y me esta encantando. Me apasiona la tecnologia y la programacion fue algo que siempre quise aprender. Me gustaría trabajar de programador ;).    
+- **Marilyn Vino Flores**:
+
+    Hola, mi nombre es Marilyn, tengo 23 años. Soy estudiante de programación web full stack, team YouTube (desde documentales hasta clases de inglés) además me gusta las caminatas.
