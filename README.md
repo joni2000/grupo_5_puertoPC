@@ -27,3 +27,6 @@
 - **Marilyn Vino Flores**:
 
     Hola, mi nombre es Marilyn, tengo 23 años. Soy estudiante de programación web full stack, team YouTube (desde documentales hasta clases de inglés) además me gusta las caminatas.
+- **Silvana Rocio del Valle Zalazar**:
+
+    Hola, mi nombre es Silvana Zalazar, tengo 33 años. Soy estudiante becada de programacion por Digital House - FORMAR, entré al programa para tener un mejor futuro y adoro acariciar a mis gatos. Soy amante de la lectura, la musica clasica y mi sueño es trabajar como programadora ❤️.
