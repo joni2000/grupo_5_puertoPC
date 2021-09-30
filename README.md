@@ -30,3 +30,6 @@
 - **Silvana Rocio del Valle Zalazar**:
 
     Hola, mi nombre es Silvana Zalazar, tengo 33 años. Soy estudiante becada de programacion por Digital House - FORMAR, entré al programa para tener un mejor futuro y adoro acariciar a mis gatos. Soy amante de la lectura, la musica clasica y mi sueño es trabajar como programadora ❤️.
+- **Jonathan Ezequiel Ibarrola**: 
+
+    Hola, mi nombre es Jonathan, tengo 21 años soy correntino actualmente en Pilar, me encanta todo lo relacionado a la tecnología, el futbol y los video juegos, sueño algun día poder dedicarme a lo que me gusta que es el mundo IT.
