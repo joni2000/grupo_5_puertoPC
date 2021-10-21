@@ -10,6 +10,11 @@
 @import url('login.css');
 @import url('register.css');
 
+/* Config para resetear rem a 10px */
+body { 
+    font-size: 10px;
+}
+
 :root {
     /* Colors */
     --blue: #0089D7;
