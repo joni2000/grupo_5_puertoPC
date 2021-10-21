@@ -1,9 +1,26 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');    /* Bebas */
+
+
+/* Files Css */
 @import url('home.css');
 @import url('productDetail.css');
 @import url('productCart.css');
 @import url('login.css');
 @import url('register.css');
 
+:root {
+    /* Colors */
+    --blue: #0089D7;
+    --darkBlue: #394867;
+    --green: #4F8E49;
+    --grey: #394867;
+
+    /* Fonts */
+    --FontText: 'Roboto', sans-serif;
+    --FontBebas: 'Bebas Neue', cursive;
+}
 
 
 
