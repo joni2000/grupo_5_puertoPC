@@ -1,7 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');    /* Bebas */
-
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); /* Righteous */
 
 /* Files Css */
 @import url('home.css');
@@ -23,8 +23,9 @@ body {
     --grey: #394867;
 
     /* Fonts */
-    --FontText: 'Roboto', sans-serif;
-    --FontBebas: 'Bebas Neue', cursive;
+    --fontText: 'Roboto', sans-serif;
+    --fontBebas: 'Bebas Neue', cursive;
+    --fontPrimary: 'Righteous', cursive;
 }
 
 
