@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); /* Righteous */
 
 /* Files Css */
+@import url('header.css');
 @import url('home.css');
 @import url('productDetail.css');
 @import url('productCart.css');
