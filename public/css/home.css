@@ -1,3 +1,37 @@
-body {
-    background-color: aqua;
+.home {
+    margin: 2rem auto;
+    width: 90%;
 }
+
+.home .products .product1{
+    width: 30rem;
+    height: 47.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    border-radius: .9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home .products .product1 .container-img {
+    border-bottom: .1rem solid var(--greyLight);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home .products .product1 img {
+    width: 90%;
+    object-fit: contain;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.home .products .product1 p {
+    font-family: var(--fontText);
+    width: 70%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
