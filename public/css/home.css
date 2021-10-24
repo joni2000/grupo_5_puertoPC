@@ -30,16 +30,16 @@
     margin-bottom: 1.5rem;
 }
 
-.home .products .slider .product1 p {
+.home .products .slider .product1 .description h3 {
     font-family: var(--fontText);
     width: 70%;
     text-align: center;
     margin-top: 1rem;
 }
 
-/* .home .products .slider .product1 .button-slider {
-    position: relative;
-} */
+.home .products .slider .product1 .description p:nth-child(1){
+    
+} 
 
 i.fa-chevron-down {
     font-size: 5rem;
