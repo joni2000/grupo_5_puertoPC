@@ -11,10 +11,23 @@
 @import url('login.css');
 @import url('register.css');
 
-/* Config para resetear rem a 10px */
-body { 
+/* General */
+* {
     margin: 0;
-    font-size: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
 }
 
 /* variables */
@@ -24,6 +37,7 @@ body {
     --darkBlue: #394867;
     --green: #4F8E49;
     --grey: #394867;
+    --greyLight: #C5C5C5;
 
     /* Fonts */
     --fontText: 'Roboto', sans-serif;
