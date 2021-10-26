@@ -1,8 +1,6 @@
 .home {
     margin: 2rem auto;
     width: 90%;
-    display: flex;
-    justify-content: center;
 }
 
 .home .products {
@@ -23,9 +21,10 @@
     align-items: center;
 }
 
+/* card */
 .card .card-description h3 {
     font-family: var(--fontText);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     width: 70%;
     margin-top: 1rem;
     margin: 0 auto ;
@@ -37,35 +36,39 @@
     flex-direction: column;
     margin: 1rem 1rem 0;
     position: relative;
+    line-height: 2.2rem;
 }
 
 .card .card-description-cond p:nth-child(1){
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-family: var(--fontText);
-    margin: 1rem 0;
 }
 
 .card  .card-description-cond p:nth-child(2),
 .card  .card-description-cond p:nth-child(3){
     font-size: 1.5rem;
     color: var(--green);
-    margin-bottom: 1rem;
     text-align: left;
 }
 
-.card .card-description-cond button{
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card button{
     border: none;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: var(--fontBebas);
     color: white;
     background-color: var(--darkBlue);
     border-radius: .2rem;
-    padding: .5rem;
+    padding: .3rem .5rem;
     box-shadow: .3rem .3rem .2rem rgba(0, 0, 0, 0.25);
     position: absolute;
-    bottom: -8rem;
+    margin: 0 auto;
+   /*  bottom: -5rem; */
 }
-
 
 .home .products .slider .card div img {
     width: 90%;
