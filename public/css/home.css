@@ -11,14 +11,21 @@
 }
 
 .home .products .slider .card {
-    width: 90%;
+    width: 100%;
 }
 
 .home .products .slider .card div:nth-child(1) {
-    border-bottom: .1rem solid var(--greyLight);
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: solid .1rem var(--greyLight);
+}
+
+.home .products .slider .card div img {
+    width: 90%;
+    object-fit: contain;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 /* card */
@@ -26,8 +33,7 @@
     font-family: var(--fontText);
     font-size: 1.4rem;
     width: 70%;
-    margin-top: 1rem;
-    margin: 0 auto ;
+    margin: .6rem auto ;
     text-align: center;
 }
 
@@ -64,18 +70,18 @@
     background-color: var(--darkBlue);
     border-radius: .2rem;
     padding: .3rem .5rem;
+    margin-top: .3rem;
     box-shadow: .3rem .3rem .2rem rgba(0, 0, 0, 0.25);
     position: absolute;
-    margin: 0 auto;
-   /*  bottom: -5rem; */
+    cursor: pointer;
+    transition: all 0.5s ease-out;
 }
 
-.home .products .slider .card div img {
-    width: 90%;
-    object-fit: contain;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+.card button:hover{
+    background-color: #486297;
+    color: rgb(199, 199, 199);
 }
+
 
 i.fa-chevron-down {
     font-size: 5rem;
