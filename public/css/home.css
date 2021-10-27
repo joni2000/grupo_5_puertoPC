@@ -9,9 +9,8 @@
 
 .home .products .slider {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     position: relative;
     margin-bottom: 2rem;
 }
@@ -23,15 +22,21 @@
     border-radius: .9rem;
 }
 
+.home .products .slider .card:nth-child(2) {
+    display: none;
+}
+
 .home .products .slider .card div:nth-child(1) {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-bottom: solid .1rem var(--greyLight);
+    height: 16.2rem;
 }
 
 .home .products .slider .card div img {
     width: 90%;
+    height: 90%;
     object-fit: contain;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -98,17 +103,23 @@ i.fa-chevron-down {
     color: var(--greyLight);
 }
 
-i.fa-chevron-down:nth-child(2) {
-    position: absolute;
-    transform: rotate(90deg);
-    left: -0.5rem;
-}
-
 i.fa-chevron-down:nth-child(3) {
     position: absolute;
-    transform: rotate(270deg);
-    right: -0.5rem;
+    transform: rotate(90deg);
+    left: -0.7rem;
 }
 
+i.fa-chevron-down:nth-child(4) {
+    position: absolute;
+    transform: rotate(270deg);
+    right: -0.7rem;
+}
 
+/* Media queries */
 
+/* primer quiebre */
+@media (min-width: 620px) {
+    .home .products .slider .card:nth-child(2) {
+        display: inline-block;
+    }
+}
