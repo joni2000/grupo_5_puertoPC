@@ -1,0 +1,113 @@
+footer{ 
+   width: 100%;
+   height: 28.37rem;
+   background-color: var(--blue);
+   color: white;
+ }
+/*CONTAINER*/ 
+ footer .container-footer-all {
+   width: 100%;
+   max-width: 768px;
+   margin: auto;
+   padding: 1rem;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   
+ } 
+/* Payment */
+footer .payment-footer h3 {
+  text-align: center;
+  font-family: var(--fontPrimary);
+  font-size: 1.56rem;
+  font-weight: 400;
+ }
+footer  .payment-footer i {
+  width: 2.8rem;
+  height: 2.5rem;
+  padding-left: 2.2rem;
+  padding-right: 2.2rem;
+  font-size: 1.87rem;
+  color: var(--darkBlue);
+  margin-top: 1rem;
+}
+ /* Info */
+footer .info-footer h3 {
+  text-align: center;
+  font-family: var(--fontPrimary);
+  font-size: 1.56rem;
+  font-weight: 400;
+ }
+footer .info-footer .text-footer1 {
+  display: flex;
+  flex-direction: column;
+}
+footer .info-footer .text-footer1 a {
+  width: 19rem;
+  height: 3rem;
+  font-family: var(--FontText);
+  font-size: 1.25rem;
+  color: var(--darkBlue); 
+}
+footer .info-footer .text-footer1 .subtext-footer{
+  width: 19rem;
+  height: 2rem;
+  padding-left: 7.8rem;
+  padding-bottom: 3.5rem;
+
+}
+footer .info-footer i {
+  width: 2.8rem;
+  height: 2.5rem;
+  padding-left: 8.2rem;
+  padding-right: 2rem;
+  color: var(--darkBlue);
+  font-size: 1.56rem;
+  margin-top: 1rem;
+}
+
+/* CONTACT */
+footer .contact-footer h3 {
+  text-align: center;
+  font-family: var(--fontPrimary);
+  font-size: 1.56rem;
+  font-weight: 400;
+ }
+footer .contact-footer i {
+  width: 2.8rem;
+  height: 2.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-right: 0.8rem;
+  margin-left: -1rem;
+  color: var(--darkBlue);
+  font-size: 1.87rem; 
+  margin-top: 1rem;
+  }
+/*email*/
+footer .icon-email .text-footer2 {
+    width: 5rem;
+    height: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left: 3.9rem; 
+    font-family: var(--FontText);
+    font-size: 1.25rem;
+    color: var(--darkBlue); 
+  }
+footer .icon-email i {
+  color: var(--darkBlue);
+  font-size: 1.87rem;
+  margin-top: 0.8rem;
+    } 
+/*END*/
+footer .container-footer-all .container-body .container-footer .copyright-footer{
+  width: 28rem;
+  height: 2rem;
+  padding-left: 5.8rem;
+  font-family: var(--FontText);
+  font-size: .93rem;
+  color: var(--darkBlue);
+  margin-top: 2.5rem;
+}
+/* MEDIA QUERIES */
