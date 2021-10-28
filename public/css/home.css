@@ -1,18 +1,27 @@
 .home {
-    margin: 2rem auto;
-    width: 90%;
+    width: 100%;
+    margin: 0 auto;
+}
+/* Banner */
+.home .banner{
+    display: none; 
 }
 
+/* Product Cards */
 .home .products {
     width: 100%;
 }
 
 .home .products .slider {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     position: relative;
+    margin-bottom: 2rem;
+}
+
+.home .products .slider:nth-child(1) {
+    margin-top: 2rem;
 }
 
 .home .products .slider .card {
@@ -22,15 +31,29 @@
     border-radius: .9rem;
 }
 
+.home .products .slider .card:nth-child(2) {
+    display: none;
+}
+
+.home .products .slider .card:nth-child(3) {
+    display: none;
+}
+
+.home .products .slider .card:nth-child(4) {
+    display: none;
+}
+
 .home .products .slider .card div:nth-child(1) {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-bottom: solid .1rem var(--greyLight);
+    height: 16.2rem;
 }
 
 .home .products .slider .card div img {
     width: 90%;
+    height: 90%;
     object-fit: contain;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -88,26 +111,83 @@
 
 .card button:hover{
     background-color: #486297;
-    color: rgb(199, 199, 199);
 }
 
 
 i.fa-chevron-down {
     font-size: 3rem;
     color: var(--greyLight);
+    border-radius: 50%;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.1s ease-in;
 }
 
-i.fa-chevron-down:nth-child(2) {
+i.fa-chevron-down:hover {
+    background-color: var(--grey);
+}
+
+i.fa-chevron-down:nth-child(5) {
     position: absolute;
     transform: rotate(90deg);
-    left: -0.5rem;
+    left: -0.2rem;
 }
 
-i.fa-chevron-down:nth-child(3) {
+i.fa-chevron-down:nth-child(6) {
     position: absolute;
     transform: rotate(270deg);
-    right: -0.5rem;
+    right: -0.2rem;
+}
+
+/* Media queries */
+/* Primer quiebre */
+@media (min-width: 550px) {
+    .home .products .slider .card:nth-child(2) {
+        display: inline-block;
+    }
+}
+
+/* segundo quiebre */
+@media (min-width: 810px) {
+    .home .products .slider .card:nth-child(3) {
+        display: inline-block;
+    }
 }
 
 
+/* Tercer quiebre */
+@media (min-width: 1070px) {
+    .home .products .slider .card:nth-child(4) {
+        display: inline-block;
+    }
+}
 
+/* Desktop */
+@media (min-width: 760px) {
+    .home .banner{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+    }
+
+    .home .banner img {
+        width: 100%;
+        height: 30rem;
+        object-fit: fill;
+    }
+
+    .home .banner i:nth-child(2){
+        position: absolute;
+        right: 0.7rem;
+        top: 12rem;
+        transform: rotate(270deg);
+    }
+    
+    .home .banner i:nth-child(3){
+        position: absolute;
+        left: 0.7rem;
+        bottom: 12rem;
+        transform: rotate(90deg);
+    }
+
+}
