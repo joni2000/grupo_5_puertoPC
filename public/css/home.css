@@ -1,6 +1,5 @@
 .home {
     width: 100%;
-    max-width: 1280px;
     margin: 0 auto;
 }
 /* Banner */
@@ -37,6 +36,10 @@
 }
 
 .home .products .slider .card:nth-child(3) {
+    display: none;
+}
+
+.home .products .slider .card:nth-child(4) {
     display: none;
 }
 
@@ -108,28 +111,41 @@
 
 .card button:hover{
     background-color: #486297;
-    color: rgb(199, 199, 199);
 }
 
 
 i.fa-chevron-down {
     font-size: 3rem;
     color: var(--greyLight);
+    border-radius: 50%;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.1s ease-in;
 }
 
-i.fa-chevron-down:nth-child(4) {
+i.fa-chevron-down:hover {
+    background-color: var(--grey);
+}
+
+i.fa-chevron-down:nth-child(5) {
     position: absolute;
     transform: rotate(90deg);
     left: -0.2rem;
 }
 
-i.fa-chevron-down:nth-child(5) {
+i.fa-chevron-down:nth-child(6) {
     position: absolute;
     transform: rotate(270deg);
     right: -0.2rem;
 }
 
 /* Media queries */
+/* Primer quiebre */
+@media (min-width: 550px) {
+    .home .products .slider .card:nth-child(2) {
+        display: inline-block;
+    }
+}
 
 /* segundo quiebre */
 @media (min-width: 810px) {
@@ -138,8 +154,10 @@ i.fa-chevron-down:nth-child(5) {
     }
 }
 
-@media (min-width: 550px) {
-    .home .products .slider .card:nth-child(2) {
+
+/* Tercer quiebre */
+@media (min-width: 1070px) {
+    .home .products .slider .card:nth-child(4) {
         display: inline-block;
     }
 }
@@ -161,12 +179,14 @@ i.fa-chevron-down:nth-child(5) {
     .home .banner i:nth-child(2){
         position: absolute;
         right: 0.7rem;
+        top: 12rem;
         transform: rotate(270deg);
     }
     
     .home .banner i:nth-child(3){
         position: absolute;
         left: 0.7rem;
+        bottom: 12rem;
         transform: rotate(90deg);
     }
 
