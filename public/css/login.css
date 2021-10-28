@@ -1,0 +1,42 @@
+ /* Header */
+.header-form {
+    height: 5.3rem;
+    display: flex;
+    justify-content: flex-start
+}
+
+.header-form .logo {
+    display: flex;
+    height: 3.6rem;
+    margin: 0 0.9rem;
+}
+
+.header-form h1 {
+    display: flex;
+    font-size: 2.8rem;
+    color: white;
+}
+
+/* Body */
+
+.main-form {
+    height: 57.7rem;
+    width: 100%;
+}
+
+/* Form */
+
+.form-container {
+    background-color: white;
+    width: 34rem;
+    height: 49.5rem;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.25);
+    border-radius: 4.6rem;
+    margin: 1.9rem  auto;
+
+}
+.form-container h2 {
+}

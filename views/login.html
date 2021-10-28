@@ -1,13 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
+    <header class="header-form">
+        <img src="/public/images/logo.png" alt="logo-puertopc" class="logo">
+        <h1>PuertoPC</h1>
+    </header>
+    <main class="main-form">
+        <div class="form-container">
+            <h2>Iniciar sesión</h2>
+            <form action="">
+                <div class="form">
+                    <div class="input-container">
+                        <input class="input-style" type="email" name="email" placeholder="Ingresa tu email">
+                        <span class="error-message">Debes ingresar tu email</span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-style" type="password" name="password" placeholder="Ingresá tu contraseña">
+                        <span class="error-message">Debes ingresar tu contraseña</span>
+                    </div>
+                    <div class="check">
+                        <label for="keep-session">Manterer sesión abierta</label>
+                        <input type="checkbox" name="keep-session" id="keep-session">
+                    </div>
+                    <div class="button-container">
+                        <span class="error-message">Credenciales inválidas</span>
+                        <button type="submit" class="btn btn-submit">Ingresar</button> <!-- type submit envía el form -->
+                    </div>
+                    <p>ó</p>
+                    <div class="button-container">
+                        <button><i class="fab fa-facebook-square"></i>ingresar con facebook</button>
+                    </div>
+                    <div class="button-container">
+                        <button><img src="/images/button-login/google.png" alt="icon-google">ingresar con google</button>
+                    </div>
+                    <span><a href="">¿Olvidaste tu contraseña?</a></span>
+                    <span>¿No tenés cuenta? <a href="register.html">Regístrate</a></span>
+                </div>
+            </form>
+    
+        </div>
+    </main>
+    <footer>
+
+    </footer>
     
 </body>
 </html>
