@@ -1,6 +1,8 @@
+
 .home {
     width: 100%;
     margin: 0 auto;
+    background: linear-gradient(to bottom, lightgrey, white)
 }
 /* Banner */
 .home .banner{
@@ -29,6 +31,7 @@
     height: 35.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     border-radius: .9rem;
+    background-color: white;
 }
 
 .home .products .slider .card:nth-child(2) {
