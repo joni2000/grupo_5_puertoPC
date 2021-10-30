@@ -9,6 +9,7 @@
     display: none; 
 }
 
+
 /* Product Cards */
 .home .products {
     width: 100%;
@@ -23,7 +24,12 @@
 }
 
 .home .products .slider:nth-child(1) {
-    margin-top: 2rem;
+    margin-top: 5rem;
+}
+
+.home a,
+.home a:visited {
+    color: black;
 }
 
 .home .products .slider .card {
@@ -32,6 +38,11 @@
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     border-radius: .9rem;
     background-color: white;
+    transition: all 0.3s ease;
+}
+
+.home .products .slider .card:hover {
+    transform: scale(1.02);
 }
 
 .home .products .slider .card:nth-child(2) {
