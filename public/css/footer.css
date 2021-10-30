@@ -3,10 +3,12 @@ footer{
   height: 2.37rem;
   background-color: var(--blue);
   color: white;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/*PAYMENT-MOBILE*/
+  /*PAYMENT-MOBILE*/
 footer .payment-footer{
  width: 32rem;
  height: 6rem;
@@ -29,31 +31,35 @@ footer  .payment-footer i {
  color: var(--darkBlue);
 }
 
-/* Info-MOBILE */
+ /* Info-MOBILE */
 footer .info-footer{
  width: 32rem;
  height: 7rem;
- margin-top: 2rem;
-
+ margin-top: 1rem;
 }
+
 footer .info-footer h3 {
  font-family: var(--fontPrimary);
  font-size: 1.56rem;
  font-weight: 400;
-text-align: center;
+ text-align: center;
 }
 
 footer .info-footer .text-footer1{
- width: 11rem;
- height: 4.5rem;
- font-family: var(--fontText);
- font-size: 1.25rem; 
- margin-left: 11rem;
- margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--fontText);
+  font-size: 1.25rem; 
+  margin-top: 0.7rem;
 }
 
 footer .info-footer .text-footer1 a{
  color: var(--darkBlue); 
+}
+footer .info-footer .text-footer1 .subtext-footer{
+  width: 11rem;
+  height: 2rem;
 }
 footer .info-footer i {
  width: 2.8rem;
@@ -61,11 +67,11 @@ footer .info-footer i {
  color: var(--darkBlue);
  font-size: 1.56rem;  
 }
-/* CONTACT-MOBILE */
+ /* CONTACT-MOBILE */
 footer .contact-footer{
  width: 32rem;
- height: 6rem;
-
+ height: 8rem;
+ margin-top: 1rem;
 } 
 
 footer .contact-footer h3 {
@@ -74,6 +80,7 @@ footer .contact-footer h3 {
  font-weight: 400;
  text-align: center;
 }  
+
 footer  .contact-footer .icon-footer2{
  display: flex;
  justify-content: space-evenly;
@@ -86,43 +93,13 @@ footer .contact-footer i {
  width: 2.5rem;
  height: 2.5rem;
 }
-
-/*email-MOBILE*/
-footer .icon-email{
-  width: 20rem;
-  height: 2.6rem;
-  margin-left: 10rem;
-}
-
-footer .icon-email .text-footer2 i{
- color: var(--darkBlue);
- font-size: 1.87rem;
- width: 2.5rem;
- height: 2.5rem;
- border: solid var(--blue);
-}
-footer .icon-email .text-footer2 .subtext-footer{ 
- width: 13rem;
- height: 2.5;
- font-family: var(--fontText);
- font-size: 1.25rem; 
- color: var(--darkBlue);
- margin-left: 2.7rem;
- margin-top: -2.3rem;
-}
-
-/*END-MOBILE*/
-footer .copyright-footer{
+footer .text-footer2{
+  color: var(--darkBlue); 
   font-family: var(--fontText);
-  color: var(--darkBlue);
-  font-size: .93rem;
-  width: 20rem;
-  height: 2rem;
-  position: relative;
-  bottom: -2.2rem;
-  left: 7rem;
+  font-size: 1.25rem; 
+  display: flex;
+  justify-content: center;
 }
-
  /* MEDIA QUERIES*/ 
  /*MOBILE*/
 @media (min-width: 320px){
@@ -134,56 +111,29 @@ footer {
 footer {
  height: 11.31rem;
  display: flex;
- align-items: flex-end;
+ flex-direction: row;
+ justify-content: space-between ;
 
 } 
 
  /* Payment-TABLET */
 footer .payment-footer {
-  
   height: 8rem;
-  position: relative;
-  top: -2rem;
   
 }
 
   /*CONTACT-TABLET*/
 footer .contact-footer{  
   height: 8rem;
-  position: relative;
-  top: -2rem; 
 
 }
 
- /*email-TABLET*/
-footer .icon-email  {
-  position: relative;
-  left: -20.5rem;
-  top: -2rem;
-}
-
-  /*Info-TABLET*/
-footer .info-footer {
-  height: 8rem;
-  position: relative;
-  top: -2rem;
-
-}
-
- /*END*/
-footer .copyright-footer{
-  display: none;
-}  
 }
  /*DESKTOP*/
 @media (min-width: 760px){
 footer {
      height: 11.12rem;
-     display: flex;
-     align-items: flex-end;
+     
 }
-/*
-footer  .payment-footer .icon-footer1{
 
-}*/
 }
