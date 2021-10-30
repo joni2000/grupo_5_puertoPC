@@ -92,7 +92,7 @@ span.error-message {
     margin: 0.5rem;
 }
 
-.form-login .button-container{
+.form-button-container{
     color: white;
     background-color: var(--blue);
     border-radius: 2rem;
@@ -102,7 +102,7 @@ span.error-message {
     display: flex;
 }
 
-.button-container button{
+.form-button-container button{
     background: none;
     font-size: 2rem;
     font-family: var(--fontBebas);
