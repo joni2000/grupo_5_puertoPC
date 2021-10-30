@@ -3,22 +3,7 @@ footer{
   height: 28.37rem;
   background-color: var(--blue);
   color: white;
-  display: flex;
-  justify-content: space-evenly;
-}
 
-
-/*CONTAINER*/
-footer .container-footer-all {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  
-   
-}
-footer .box-footer{
- 
- margin-top: 0.7rem;
 }
 
 /*PAYMENT-MOBILE*/
@@ -48,6 +33,7 @@ footer  .payment-footer i {
 footer .info-footer{
  width: 32rem;
  height: 7rem;
+ margin-top: 2rem;
 
 }
 footer .info-footer h3 {
@@ -76,9 +62,7 @@ footer .info-footer i {
  font-size: 1.56rem;  
 }
 /* CONTACT-MOBILE */
-
 footer .contact-footer{
- margin-top: 1rem;
  width: 32rem;
  height: 6rem;
 
@@ -104,33 +88,39 @@ footer .contact-footer i {
 }
 
 /*email-MOBILE*/
+footer .icon-email{
+  width: 20rem;
+  height: 2.6rem;
+  margin-left: 10rem;
+}
+
 footer .icon-email .text-footer2 i{
  color: var(--darkBlue);
  font-size: 1.87rem;
  width: 2.5rem;
  height: 2.5rem;
- margin-left: 10rem;
-border: solid var(--blue);
+ border: solid var(--blue);
 }
 footer .icon-email .text-footer2 .subtext-footer{ 
- margin-top: 1rem;
  width: 13rem;
  height: 2.5;
  font-family: var(--fontText);
  font-size: 1.25rem; 
  color: var(--darkBlue);
- margin-left: 12.7rem;
+ margin-left: 2.7rem;
  margin-top: -2.3rem;
 }
 
 /*END-MOBILE*/
-footer .container-footer-all .container-body .container-footer .copyright-footer{
- font-family: var(--fontText);
- font-size: .93rem;
- color: var(--darkBlue);
- margin-left: 7.5rem ;
- display: flex;
- margin-top: 4rem;
+footer .copyright-footer{
+  font-family: var(--fontText);
+  color: var(--darkBlue);
+  font-size: .93rem;
+  width: 20rem;
+  height: 2rem;
+  position: relative;
+  bottom: -2.2rem;
+  left: 7rem;
 }
 
  /* MEDIA QUERIES*/ 
@@ -143,90 +133,57 @@ footer {
 @media (min-width: 480px){
 footer {
  height: 11.31rem;
-  
-} 
+ display: flex;
+ align-items: flex-end;
 
-footer .box-footer{
- width: 76.2rem;
-}
+} 
 
  /* Payment-TABLET */
 footer .payment-footer {
- width: 13rem;
- height: 8rem;
- position: relative;
- left: 49rem;
-}
-
-footer .payment-footer .icon-footer1 {
- width: 10rem;
- height: 4.5rem;
-flex-wrap: wrap;
-justify-content: start;
-margin-left: 1.2rem;
-}
-
-footer  .payment-footer i {
- padding-left: .9rem;
- padding-right: 0.9;
+  
+  height: 8rem;
+  position: relative;
+  top: -2rem;
+  
 }
 
   /*CONTACT-TABLET*/
-footer .contact-footer{   
- width: 15rem;
- position: relative;
- left: 13.8rem;
- top: -17.5rem;
+footer .contact-footer{  
+  height: 8rem;
+  position: relative;
+  top: -2rem; 
+
 }
 
-footer .contact-footer .icon-footer2{
- justify-content: space-between;
- width: 13rem;
- height: 2.5rem;
- margin-left:1rem ;
-}
-
-/*email-TABLET*/
+ /*email-TABLET*/
 footer .icon-email  {
- width: 27rem;
- height: 3rem;
- position: relative;
- left: 4.7rem;
- top: -17.5rem;
+  position: relative;
+  left: -20.5rem;
+  top: -2rem;
 }
-/*Info-TABLET*/
+
+  /*Info-TABLET*/
 footer .info-footer {
- height: 8.5rem;
- width: 17rem;
- position: relative;
- left: 30rem;
- top: -8rem;
+  height: 8rem;
+  position: relative;
+  top: -2rem;
+
 }
 
-footer .info-footer .text-footer1{
-margin-left: 3rem;
-margin-top: 0.7rem;
-}
-
-/*END*/
-footer .container-footer-all .container-footer .copyright-footer{
- width: 18rem;
- height: 2rem;
- position: relative;
- left: 24rem;
- top: -22rem;
-}
+ /*END*/
+footer .copyright-footer{
+  display: none;
+}  
 }
  /*DESKTOP*/
 @media (min-width: 760px){
 footer {
      height: 11.12rem;
+     display: flex;
+     align-items: flex-end;
 }
-
+/*
 footer  .payment-footer .icon-footer1{
- width: 15rem;
- height: 3rem;
- margin-left: -1rem;
- justify-content: start;
-}
+
+}*/
 }
