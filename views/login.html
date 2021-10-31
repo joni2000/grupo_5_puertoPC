@@ -14,7 +14,7 @@
 <body>
     <header class="header-form">
         <img src="images/logo.png" alt="logo-puertopc" class="logo">
-        <h1>PuertoPC</h1>
+        <a class="logo-text" href="/">PuertoPc</a>
     </header>
     <main class="main-form">
         <div class="form-container">
@@ -22,12 +22,12 @@
             <form action="">
                 <h2>Iniciar sesión</h2>
                 <div class="form-login">
-                    <div class="input-container">
+                    <div class="input-container email">
                         <label for="email">Email:</label>
-                        <input class="input-style" type="email" name="email" id="email" placeholder="Ingresa tu email">
+                        <input class="input-style" type="email" name="email" id="email" placeholder="Ingresá tu email">
                         <span class="error-message">Debes ingresar tu email</span>
                     </div>
-                    <div class="input-container">
+                    <div class="input-container pass">
                         <label for="pass">Contraseña:</label>
                         <input class="input-style" type="password" name="password" id="pass" placeholder="Ingresá tu contraseña">
                         <span class="error-message">Debes ingresar tu contraseña</span>
@@ -40,13 +40,13 @@
                         <span class="error-message">Credenciales inválidas</span>
                         <button type="submit" class="enter">Ingresar</button> <!-- type submit envía el form -->
                     </div>
-                    <p>O ingresa con:</p>
+                    <p class="log-with">O ingresa con:</p>
                     
                     <hr>
                     <div class="form-button-container-google">
                         <button><img src="/images/button-login/google1.png" alt="icon-google"></button>
                     </div>
-                    <p>o</p>
+                    <p class="or">o</p>
                     <div class="form-button-container-fb">
                         <button><img src="/images/button-login/facebook.png" alt="icon-google"></button>
                     </div>
@@ -57,8 +57,8 @@
                         <button class="google"><img src="/images/button-login/google1.png" alt="icon-google">Ingresar
                             con google</button>
                     </div>
-                    <span><a href="">¿Olvidaste tu contraseña?</a></span>
-                    <span>¿No tenés cuenta? <a href="register.html"> Regístrate</a></span>
+                    <span class="forgot-pass"><a href="">¿Olvidaste tu contraseña?</a></span>
+                    <span class="register">¿No tenés cuenta? <a href="register.html"> Regístrate</a></span>
                 </div>
             </form>
 
