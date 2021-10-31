@@ -178,7 +178,7 @@ button {
 */
 
 .productDetails .details-3{
-    height: 2em;
+    height: 25rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -189,7 +189,7 @@ button {
 }
 
 .productDetails .details-3 .increment-btn{
-    font-size: .2rem;
+    font-size: 2rem;
     font-family: var(--fontBebas);
     font-weight: lighter;
     border-radius: 1rem;
@@ -210,8 +210,11 @@ button {
     border-radius: 1rem;
     padding: 1.5rem;
     letter-spacing: .3rem;
-    color: white;
     background-color: var(--darkBlue);
+}
+
+.productDetails .details-3 .buy-btn h1 {
+    color: white;
 }
 
 /*  -------------------------------
@@ -293,7 +296,7 @@ button {
     }
 }
 /* Segundo Quiebre */
-@media (min-width: 768px){ 
+@media (min-width: 769px){ 
     .productImages{
         height: 63rem;
         width: 60%;
