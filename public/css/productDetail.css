@@ -1,0 +1,376 @@
+main{
+    padding: 1rem;
+}
+
+main h1{
+    display: block;
+}
+
+button {
+    border-style: none;
+}
+
+/*  --------------
+    PRODUCT ADRESS 
+    --------------
+*/
+.productAdress{
+    /* border: 1px red solid; */
+    color: var(--greyLight);
+    /* padding: 1rem; */
+    margin-bottom: 1rem;
+}
+
+.productAdress h3 {
+    font-family: var(--fontPrimary);
+}
+
+/*  -------------------------------
+    PRODUCT IMAGE VIEW AND SELECTOR 
+    -------------------------------
+*/
+
+.productImages{
+    display: flex;
+    justify-content: center;
+    height: 28rem;
+    width: 100%;
+    /* border: 1px red solid */
+}
+
+.productImageSelector{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 10rem;
+    /* border: 1px blue solid; */
+}
+
+.imgSelector{
+    width: 100%;
+    height: 6rem;
+    border: 1px var(--greyLight) solid;
+    border-radius: 1rem;
+}
+
+.imgSelector img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.productImagePrincipal{
+    margin-left: .5rem;
+    height: 100%;
+    width: 80%;
+    border: 1px var(--greyLight) solid;
+    border-radius: 1rem;
+    /* background-color: var(--greyLight); */
+}
+
+.productImagePrincipal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*  -------------------------------------
+    PRODUCT DETAIL 1 NAME PRICE AND STOCK
+    -------------------------------------
+*/
+
+.productDetails {
+    height: 80em;
+    border: 1px var(--greyLight) solid;
+    border-radius: 1rem;
+    background-color: var(--greyLight);
+    margin-top: .5rem;
+    padding: .8rem;
+}
+
+.productDetails .details-1 {
+    height: 20em;
+    text-align: center;
+    border-bottom: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.productDetails .details-1 h1{
+    display: block;
+    color: black;
+    font-family: var(--fontText);
+    font-size: 2.7rem;
+    font-weight: lighter;
+}
+
+.productDetails .details-1-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 2rem;
+}
+
+.productDetails .details-1-row #price{
+    color: var(--blue);
+    font-size: 4rem;
+    font-family: var(--fontPrimary);
+    letter-spacing: .3rem; 
+    height: 3.2rem;
+    font-weight: lighter;
+}
+
+.productDetails .details-1-row h3{
+    color: white;
+    padding: .5rem;
+    height: 3rem;
+    font-family: var(--fontText);
+    font-size: 1.5rem;
+    background-color: var(--blue);
+    margin-top: .9rem;
+    border-radius: 1rem;
+}
+
+/*  ------------------------------------------
+    PRODUCT DETAIL 2 FEE SHIPPING AND WARRANTY
+    ------------------------------------------
+*/
+
+.productDetails .details-2{
+    margin-top: .8rem;
+    width: 100%;
+    height: 10em;
+    border-bottom: 1px black solid;
+    display: flex;
+    justify-content: center;
+    font-family: var(--fontText);
+}
+
+.productDetails .details-2 i{
+    font-size: 8rem;
+    color: var(--darkBlue);
+}
+
+.productDetails .details-2 h1{
+    width: 15rem;
+    margin-top: .5rem;
+    margin-left: .4rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--darkBlue);
+}
+
+.productDetails .details-2 h3{
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    background-color: var(--darkBlue);
+    color: white;
+    height: 25%;
+    border-radius: 1rem;
+    padding: .3rem;
+}
+
+/*  ----------------------------
+    PRODUCT DETAIL 3 BUY BUTTONS
+    ----------------------------
+*/
+
+.productDetails .details-3{
+    height: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px black solid;
+    margin-top: 1rem;
+}
+
+.productDetails .details-3 .increment-btn{
+    font-size: .2rem;
+    font-family: var(--fontBebas);
+    font-weight: lighter;
+    border-radius: 1rem;
+    padding: .7rem;
+    border: 1px solid black;
+    width: 10rem;
+    letter-spacing: .5rem;
+}
+
+.productDetails .details-3 .increment-btn:hover{
+    cursor: pointer;
+}
+
+.productDetails .details-3 .buy-btn{
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-family: var(--fontBebas);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    letter-spacing: .3rem;
+    color: white;
+    background-color: var(--darkBlue);
+}
+
+/*  -------------------------------
+    PRODUCT DETAIL 4 SPECIFICATIONS
+    -------------------------------
+*/
+.productDetails-2{
+    height: 80em;
+    border: 1px var(--greyLight) solid;
+    border-radius: 1rem;
+    background-color: var(--greyLight);
+    margin-top: .5rem;
+    padding: .8rem;
+}
+
+.details-4 {
+    height: 35rem;
+    width: 100%;
+    font-family: var(--fontPrimary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px black solid;
+}
+
+.details-4 h1 { 
+    text-align: center;
+    font-size: 2.7rem;
+    border-bottom: 1px black solid;
+}
+
+.details-4 .category{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+}
+
+.details-4 .category h2{
+    font-size: 2rem;
+    border-bottom: 1px black solid;
+}
+
+/*  ----------------------------
+    PRODUCT DETAIL 5 DESCRIPTION
+    ----------------------------
+*/
+
+.details-5{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40rem;
+}
+
+.details-5 h1{
+    text-align: center;
+    font-size: 2.7rem;
+    border-bottom: 1px black solid;
+    font-family: var(--fontPrimary);
+}
+
+.details-5 p{
+    /* padding: 1rem; */
+    font-family: var(--fontText);
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+}
+
+/* MEDIA QUERIES */
+/* Primer quiebre */
+@media (min-width: 400px){
+    h1{
+        color: black;
+        order: 0;
+    }
+}
+/* Segundo Quiebre */
+@media (min-width: 768px){ 
+    .productImages{
+        height: 63rem;
+        width: 60%;
+    }
+    .product {
+        display: flex;
+        flex-direction: row;
+    }
+    .productDetails{
+        height: 63rem;
+        width: 40%;
+    }
+    .productDetails-2{
+        height: 60rem;
+    }
+    .productDetails .details-1-row #price{
+        font-size: 3.5rem;
+    }
+    .productDetails .details-2{
+        height: 6rem;
+        justify-content: center;
+    }
+    .productDetails .details-2 h1{
+    font-size: 1.5rem;
+    }
+
+    .productDetails .details-2 h3{
+        font-size: 1.1rem;
+        height: 2rem;
+
+    }
+    .productDetails .details-2 i{
+        font-size: 5rem;;
+    }
+    .productDetails .details-3{
+        height: 20em;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px black solid;
+        margin-top: 1rem;
+    }
+    .productDetails .details-3{
+        height: 20rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px black solid;
+        margin-top: 1rem;
+    }
+    
+    .productDetails .details-3 .increment-btn{
+        font-family: var(--fontBebas);
+        font-weight: lighter;
+        border-radius: 1rem;
+        border: 1px solid black;
+        width: 10rem;
+        
+    }
+    
+    .productDetails .details-3 .increment-btn:hover{
+        cursor: pointer;
+    }
+    
+    .productDetails .details-3 .buy-btn{
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        font-family: var(--fontBebas);
+        border-radius: 1rem;
+        padding: .5rem;
+        letter-spacing: .3rem;
+        color: white;
+        background-color: var(--darkBlue);
+    }
+    
+}   
