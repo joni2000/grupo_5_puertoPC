@@ -100,7 +100,21 @@ footer .text-footer2{
   display: flex;
   justify-content: center;
 }
- /* MEDIA QUERIES*/ 
+
+footer #copyright-footer{
+  color: var(--darkBlue); 
+  font-family: var(--fontText);
+  font-size: 1.1rem;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: -2.1rem;
+  
+}
+
+ /* MEDIA QUERIES */ 
  /*MOBILE*/
 @media (min-width: 320px){
 footer {
@@ -109,24 +123,87 @@ footer {
 }
 @media (min-width: 480px){
 footer {
- height: 11.31rem;
- display: flex;
- flex-direction: row;
- justify-content: space-between ;
+  height: 11.31rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
 
 } 
 
  /* Payment-TABLET */
 footer .payment-footer {
-  height: 8rem;
-  
+  height: 9rem;
+  width: 15.8rem;
+  margin-top: 1rem;
 }
+footer  .payment-footer .icon-footer1{
+  height: 5rem;
+  width: 11rem;
+  margin-left: 4rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+footer  .payment-footer i {
+  width: 2.8rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+ }
 
   /*CONTACT-TABLET*/
 footer .contact-footer{  
+  width: 17.5rem;
   height: 8rem;
-
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
+
+footer  .contact-footer .icon-footer2{
+  height: 3rem;
+  width: 15rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+ }
+ footer .contact-footer i {
+  margin-left: 0.5rem;
+ }
+footer .contact-footer h3 {
+  text-align: left;
+   width: 11rem;
+   height: 2.7rem;
+   margin-left: 2.4rem;
+ }   
+ 
+ footer .text-footer2{
+  justify-content: flex-start;
+  margin-left: 1rem;
+}
+   /*INFO-PUERTOPC*/
+footer .info-footer{
+  width: 17rem;
+  height: 7rem;
+  margin-top: 1rem;
+ }
+ footer .info-footer h3{
+   width: 16rem;
+   height: 2.7rem;
+   text-align: none;
+
+ }
+ /*end tablet*/
+ footer #copyright-footer{
+   display: none;
+   /*
+  border:  solid var(--blue);
+  width: 75rem;
+  margin-top: -2.9rem;
+  display: flex;
+  justify-content: center;
+  padding-left: 3rem;
+  padding-right: 3rem;*/
+ }
 
 }
  /*DESKTOP*/
@@ -135,5 +212,23 @@ footer {
      height: 11.12rem;
      
 }
+
+footer  .payment-footer .icon-footer1{
+  height: 3rem;
+  width: 15.5rem;
+  margin-left: 0rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+footer  .payment-footer i {
+  width: 2.8rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+ }
+  /*end tablet
+footer #copyright-footer{
+  width: 120rem;
+ }*/
 
 }
