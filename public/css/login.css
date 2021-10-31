@@ -128,6 +128,7 @@ hr {
     width: 100%;
     background: linear-gradient(90deg, rgb(110, 110, 110), rgb(177, 177, 177));
     border: none;
+    margin-top: 2.2rem;
 }
 
 .fb i{
@@ -139,6 +140,18 @@ hr {
 .google img {
 
     margin: 0 0.5rem 0 -1.17rem;
+}
+
+.form-button-container-google button{
+    display: none;
+    
+}
+.form-button-container-fb button{
+    display: none;
+    
+}
+.form-login p {
+    display: none;
 }
 
 
