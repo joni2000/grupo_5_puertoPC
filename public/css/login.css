@@ -1,6 +1,4 @@
- .form-login a{
-     text-decoration: underline;
- }
+
  
  /* Header */
 .header-form {
@@ -72,6 +70,15 @@
     padding: 1.5rem;
 }
 
+.form-login span {
+    font-size: 1.3rem;
+    display: flex;
+    align-self:flex-start;
+    margin-left: 2.2rem;
+}
+.form-login a{
+    text-decoration: underline;
+}
 
 span.error-message {
     display: none;
@@ -116,8 +123,11 @@ span.error-message {
     margin-top: 0.18rem;
 }
 
-.form-login p {
-    font-size: 1.3rem;
+hr {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(110, 110, 110), rgb(177, 177, 177));
+    border: none;
 }
 
 .fb i{
@@ -132,18 +142,156 @@ span.error-message {
 }
 
 
-/* Footer */
-.footer-form{
-    height: 2.87rem;
-    display: flex;
-    align-items: center;
+/* Media Queries */
+
+/* Mobile */
+
+@media (min-width:320px) {
+    .form-login .input-container label {
+        display: none;
+    }
+    .form-login p {
+        display: none;
+    }
 }
-footer .copyright-footer {
-    height: .07rem;
-    font-family: var(--fontText);
-    font-size: 1.1rem;
-    color: var(--darkBlue);
-    display: flex;
-    align-items: center;
+
+
+/* Tablet */
+
+@media (min-width: 760px) {
+    /* Header */
+    .header-form {
+        height: 16.6rem;
+        position: relative;
+    }
+
+    .header-form .logo {
+        order: 2;
+        height: 17rem;
+        margin-top: 11rem;
+        position: absolute;
+        
+    }
+
+    .header-form h1 {
+        order: 1;
+        margin-top: 6rem;
+        font-size: 3.5rem;
+        
+    }
+
+    /* Body */
+
+    .main-form {
+        height: 54.4rem;
+        
+    }
+
+    /* Form */
+
+    .form-container {
+        height: 43.8rem;
+        width: 62.3rem;
+        margin-top: 15rem;
+
+    }
+
+
+    .form-login {
+        display: flex;
+
+        
+    }
+
+    .form-container h2 {
+        font-size: 4.2rem;
+        padding-top: 3.2rem;
+
+        
+    }
+
+    .form-login .input-container input{
+        height: 3.25rem;
+        
+    }
+
+    .form-login .input-container input::placeholder{
+        
+    }
+
+    .form-login .input-container label {
+        font-size: 2.1rem;
+        display: block;
+    }
+    .form-login p {
+        font-size: 1.7rem;
+        display: inline-block;
+    }
+
+    .main-form form .form-login .check-keep-session {
+        
+
+    }
+
+    .main-form form .form-login .check-keep-session input{
+        
+    }
+
+    .form-button-container{
+        
+    }
+    .form-button-container-google button{
+        background: none;
+        border: none;
+        
+    }
+
+    .form-button-container .fb {
+        display: none;
+    }
+    .form-button-container .google{
+        display: none;
+    }
+
+    hr {
+        display: none;
+        
+    }
+
+    .fb button i{
+        display: block;
+        
+
+    }
+
+    .google button img {
+        display: inline-block;
+
+    }
 
 }
+
+
+
+
+
+/* Footer */
+
+/* @media {
+    .footer-all .payment-footer {
+        display:none
+    }
+    .footer-all .info-footer {
+        display:none
+    }
+    .footer-all .contact-footer {
+        display:none
+    }
+    .footer-all .icon-email {
+        display:none
+    }
+    .footer-all .copyright-footer {
+        height: 2.87rem;
+        display: inline-block;
+    }
+} */
