@@ -7,6 +7,28 @@
 /* Banner */
 .home .banner{
     display: none; 
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+/* Ofertas */
+.container-ofertas {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.ofertas {
+    width: 25rem;
+    height: 35.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    border-radius: .9rem;
+    background-color: white;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
 }
 
 
