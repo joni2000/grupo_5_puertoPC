@@ -23,7 +23,7 @@
 
 .ofertas {
     width: 25rem;
-    height: 35.5rem;
+    height: 30.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     border-radius: .9rem;
     background-color: white;
@@ -31,7 +31,13 @@
     transition: all 0.3s ease;
 }
 
-.ofertas img {
+.ofertas div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    height: 16.5rem;
+}
+
+.ofertas div img {
     width: 90%;
     height: 90%;
     object-fit: contain;
@@ -75,6 +81,13 @@
     transform: scale(1.02);
 }
 
+.home .products .slider .card div img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 .home .products .slider .card:nth-child(2) {
     display: none;
 }
@@ -95,16 +108,9 @@
     height: 16.2rem;
 }
 
-.home .products .slider .card div img {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
 
 /* card */
-.card .card-description h3 {
+.card-description h3 {
     font-family: var(--fontText);
     font-size: 1.4rem;
     width: 90%;
@@ -112,7 +118,7 @@
     text-align: center;
 }
 
-.card .card-description-cond {
+.card-description-cond {
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem 0;
@@ -120,13 +126,13 @@
     line-height: 2.2rem;
 }
 
-.card .card-description-cond p:nth-child(1){
+.card-description-cond p:nth-child(1){
     font-size: 1.6rem;
     font-family: var(--fontText);
 }
 
-.card  .card-description-cond p:nth-child(2),
-.card  .card-description-cond p:nth-child(3){
+.card-description-cond p:nth-child(2),
+.card-description-cond p:nth-child(3){
     font-size: 1.5rem;
     color: var(--green);
     text-align: left;
