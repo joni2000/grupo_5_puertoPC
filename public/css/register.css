@@ -1,0 +1,313 @@
+ /*HEADER-REGISTER-MOVILE*/
+.header-register{
+    width: 100%;
+    height: 5.3rem;
+
+}
+
+.header-box-register{
+    width: 100%;
+    height: 5.2;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+ /*LOGO-MOBILE*/
+.logo-register{
+    display: flex;
+    flex-direction: row;
+
+}
+.logo-img-register img{
+    width: 3.5rem ;
+    height: 5rem;
+ 
+}
+
+.logo-text-register h2{
+    width: 17.3rem;
+    height: 4rem;
+    font-size: 2.8rem;
+    color: white;
+}
+.logo-text-register{
+    margin-top: 2rem;
+}
+
+ /*BODY-REGISTER-MOBILE*/
+.general-register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 68rem;
+
+} 
+.box-register{
+    background-color: white;
+    width: 31.5rem;
+    height: 50rem;
+    padding-left: 5rem;
+    padding-top: 1.5rem;
+    padding-right: 5rem;
+    padding-bottom: 1rem;
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.25);
+    border-radius: 4.6rem;
+    margin: 1.9rem  auto;
+    
+
+}
+
+.box-form-register h2{
+    font-family: var(--fontBebas);
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+.container-inputs-register{
+    height: 19rem;
+
+}
+.input-register{
+    height: 3.4rem;
+    width: 21.7rem;
+    border-radius: 2rem;
+    border: 0.5px solid #000000;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+    margin-top: 1rem;
+}
+.container-inputs-register p{
+    font-family: var(--fontText);
+}
+.terms-register label{
+    font-family: var(--fontText);
+    font-size: 1.3rem;
+
+}
+
+.terms-register{
+   width:23rem ; 
+}
+
+ /*button-general*/
+.submit-register{
+    color: white;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+    background-color: var(--blue);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    font-size: 2rem;
+    font-family: var(--fontBebas);
+    width: 23.8rem;
+    height: 3.5rem;
+    margin-top: 0.18rem;
+
+
+}
+.text-register{
+    font-family: var(--fontText);
+    font-size: 1.3rem;
+    margin-top: 0.8rem;
+}
+
+/*BUTTON-MOVILE*/
+.button-img-register{
+    display: flex;
+    flex-direction: column;
+    width: 24rem ;
+    height: 9.1rem;
+    justify-content: space-between;
+}
+
+  
+.button-img-fb{
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+    background-color: var(--blue);
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    font-size: 2rem;
+    font-family: var(--fontBebas);
+    width: 23.8rem;
+    height: 3.5rem;
+} /*button mobile-google*/
+.button-img-google-register{
+    
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+    background-color: var(--blue);
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    font-size: 2rem;
+    font-family: var(--fontBebas);
+    width: 23.8rem;
+    height: 3.5rem;
+
+}
+.button-img-google-register{
+    display: flex;
+   /* align-content: center;*/
+    
+}
+
+
+
+.end-register{
+    font-family: var(--fontText);
+    font-size: 1.3rem;
+    width:22rem ;
+    height: 2.2rem;
+    position: relative;
+    top: 5rem;
+}
+
+
+/* Media Queries */
+
+/* Mobile */
+
+@media (min-width:320px) {
+    .container-inputs-register p{
+        display: none;
+    }
+
+    .icon-register{
+        display: none;
+    }
+   
+}
+@media (min-width: 760px) {
+    /* Header -TABLET*/
+    .header-register{
+        height: 16.6rem; 
+    }
+    .logo-register{
+        display: flex;
+        flex-direction:column-reverse;
+        justify-content: center;
+         width: 24rem ;
+        height: 24.8rem;
+        position: relative;
+        top: 3rem
+
+    }
+    .header-box-register{
+        justify-content: center;
+        
+    }
+    .logo-img-register img{
+        width: 15.6rem ;
+        height: 17rem;
+        margin-left: 2rem;
+    
+    }
+    .logo-img-register{
+        width: 15.8rem ;
+        height: 17.1rem;
+     
+    }
+    .logo-text-register{
+        margin-top: 0rem;
+    }
+    .logo-text-register h2{
+        width: 25rem;
+        height: 4.8rem;
+        font-size: 4.2rem;
+        padding-top: 0rem;
+        margin-left: 1rem;
+    }
+    .logo-text-register{
+        margin-top: 0rem;
+        width: 23rem ;
+        height: 4.8rem;
+    }
+   /*REGISTER-BODY-TABLET*/
+   .box-register{
+        height: 38.8rem;
+        width: 62.3rem;
+        margin-top: 15rem;
+        padding: 0 3rem;
+        
+   }
+
+   .box-form-register h2{
+        font-size: 4.2rem;
+
+      
+   }
+    /*INPUTS-TABLET*/
+   .container-inputs-register p{
+    display: flex;
+    font-size: 1.3rem;
+    height: 2rem;
+    position: relative;
+    left: 9rem;
+
+    } /*COLUMNS-TABLET*/
+   .container-inputs-register{
+       display: grid;
+       grid-template-columns: auto auto auto auto ; 
+       width: 56.3rem;
+       height: 15rem;
+      
+   }
+        /*TERMS-TABLET*/
+    .terms-register{
+            width:23rem ; 
+            margin-left: 20rem;
+         }
+    .terms-register label{
+            font-family: var(--fontText);
+            font-size: 1.3rem;
+        
+        }
+   .input-register{
+       margin-bottom: 1rem;
+       margin-top: 2.5rem;
+
+   }
+   /*DISPLAY-NONE-BUTTTON*/
+       .button-img-fb{
+           display: none;
+       }
+       .button-img-google-register{
+           display: none;
+       }
+    /*BUTTON-TABLET*/
+    .submit-register{
+        font-size: 3.5rem;
+        width: 30.74rem;
+        height: 4.96rem;
+        margin-left: 4.5em;
+        cursor: pointer;
+        transition: all 0.5s ease-out;
+        box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+
+    }
+    .text-register{
+        font-family: var(--fontText);
+        font-size: 1.3rem;
+        margin-top: 0.8rem;
+       margin-left: 20rem;
+    }
+
+    .icon-register{
+        display: flex;
+        width: 12rem;
+        position: relative;
+        top: -10.5rem;
+        left: 29rem;
+        font-family: var(--fontText);
+        font-size: 1.3rem;
+        justify-content:space-evenly ;
+    }
+    .end-register{
+    
+    position: relative;
+    top: -8rem;
+    }
+
+    }
