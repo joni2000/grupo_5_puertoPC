@@ -24,9 +24,11 @@ header .top .icon-menu {
 
 }
 
+header .top .logo img{
+    height: 4rem;
+}
 header .top .logo{
     order: 2;
-    height: 4rem;
     padding: 0.1rem;
 
 }
@@ -128,10 +130,12 @@ header  .top .icon-user {
         display: none;
     
     }
+    header .top .logo img {
+        height: 6rem;
+    }
     header .top .logo{
         order: 1;
-        height: 6rem;
-        padding: 0.1rem;
+        padding: 0 0.1rem;
         margin-left: 1.8rem;
     }
     .header .top .logo-text{
