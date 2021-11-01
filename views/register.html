@@ -7,32 +7,135 @@
     <title>register</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<header class="header-register">
-    <h2>PuertoPC</h2>
 
-</header>
-<body>
-         <div>
-             <img src="/images/logo.png" alt="logo">
-         </div>
-         <div>
-             <h2>Registro de Usuario</h2>
-              <div class="container-inputs-register">
-                  <input type="text" name="nombre" placeholder="Ingresa tu nombre.." required>
-                  <input type="text" name="apellido" placeholder="Ingresa tu apellido.." required>
-                  <input type="email" name="email" placeholder="Ingresa tu correo.." required>
-                  <input type="password" name="pass" placeholder="Ingresa una contraseña.." required>
+<body class="general-register">
+    <header > 
+        <div class="header-register">
+        <div class="header-box-register">
+        <div class="logo-register">
+                <a class="logo-img-register" href="/">
+                <img src="/images/logo.png" alt="logo">
+                </a>
+                    <a class="logo-text-register" href="/">
+                       <h2 >PuertoPC</h2>
+                     </a>
+        </div>
+        </div>
+        </div>
+    </header>
+         
+         <div class="box-form-register">
+             <div class="box-register">
+                  <h2>Registro de Usuario</h2>
+                 <div class="container-inputs-register">
+                  <p>Nombre</p>
+                  <input class="input-register" type="text" name="nombre" placeholder="  Ingresa tu nombre.." required>
+                  <p>apellido</p>
+                  <input class="input-register" type="text" name="apellido" placeholder="  Ingresa tu apellido.." required>
+                  <p>Email</p>
+                  <input class="input-register" type="email" name="email" placeholder="  Ingresa tu correo.." required>
+                  <p>Contraseña</p>
+                  <input class="input-register" type="password" name="pass" placeholder="  Ingresa una contraseña.." required>
+                 </div>   
+                   <div class="terms-register">
                   <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
                   <input type="checkbox">
-                  <input type="submit" value="Ingresar" required>
-                  <p>¿Ya tienes una cuenta? <a href="">Ingresa aquí</a></p>
-                  <p>o registrarse con</p>
-                  <a href=""><img src="" alt="facebook"></a>
-                  <a href=""><img src="" alt="google"></a>   
-              </div>
-           </div>  
+                    </div>
+                  <input class="submit-register" type="submit" value="Ingresar" required>
+                  <p class="text-register" >o registrarse con</p>
+                   
+                   <div class="button-img-register" >
+                         <div>
+                        <button class="button-img-fb" ><img src="/images/button-login/facebook.png" alt="icon-facebook">registrarse con facebook</button>
+                       </div>
+                       <div>
+                        <button class="button-img-google-register" ><img src="/images/button-login/google1.png" alt="icon-google">registrarse con google</button>
+                       </div>
+                  
+                     </div>
+                      <div class="icon-register">
+                            <p>o</p>
+                            <span class=""> <form action="https://es-la.facebook.com/" method="post">
+                                   <input type=image src="/images/button-login/facebook.png" width="25" height="15"> </form> 
+                            </span>
+                             <p>o</p>
+                            <span class=""> <form action="https://www.google.com/intl/es/gmail/about/" method="post">
+                                  <input type=image src="/images/button-login/google1.png" width="25" height="15"> </form> 
+                           </span>
+                    </div>
+                    <div class="end-register">
+                    <p  >¿Ya tienes una cuenta? <a href="login">Ingresa aquí</a></p>
+                    </div>
+                </div>
+                </div> 
+        <footer  >
+            <div class="footer-all">
+                       <div class="payment-footer">
+                            <h3>Forma de Pago</h3>
+                            <div class="icon-footer1">
+                            <a href="#">
+                               <i class="fab fa-cc-visa"></i>
+                            </a>
+                            <a href="#">
+                               <i class="fab fa-cc-mastercard"></i>
+                            </a>
+                            <a href="#">
+                               <i class="fab fa-cc-amex"></i>
+                            </a>
+                            <a href="#">
+                               <i class="fab fa-bitcoin"></i>
+                            </a>
+                            <a href="#">
+                               <i class="fab fa-paypal"></i>
+                            </a>
+                            </div>
+                         </div>
+              
+                        <div class="info-footer">
+                                <h3>Acerca de PuertoPC</h3>
+                             <div class="text-footer1">
+                                 <a href="#">
+                                   <i class="fas fa-map-marked"></i>
+                                 Sucursales
+                                 </a>
+                                 <a class="subtext-footer" href="#">
+                                 ¿Quienes somos?
+                                 </a>
+                             </div>                  
+                         </div>
+              
+                         <div class="contact-footer">
+                              <h3>Contáctenos</h3>
+                              <div class="icon-footer2">
+                              <a href="#">
+                                <i class="fab fa-instagram"></i>
+                              </a>
+                              <a href="#">
+                                <i class="fab fa-facebook"></i>
+                              </a>
+                              <a href="#">
+                                <i class="fab fa-twitter"></i>
+                              </a>
+                              <a href="#">
+                                <i class="fab fa-whatsapp"></i>
+                              </a>
+                              </div> 
+                                <a class="text-footer2" href="#">
+                                      <i class="far fa-envelope" id="icon-email-footer"></i>
+                                           puertopc@gmail.com
+                                 </a>  
+                             
+                         </div>
+           </div>                 
+                    <div>    
+                             <p id="copyright-footer"> 
+                              2022 ©️ Todos los derechos reservados
+                             </p>
+                     </div>        
+                   
+      
+      </footer>
+      
 </body>
-<footer>
 
-</footer>
 </html>
