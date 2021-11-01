@@ -31,6 +31,14 @@
     transition: all 0.3s ease;
 }
 
+.ofertas img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 
 /* Product Cards */
 .home .products {
