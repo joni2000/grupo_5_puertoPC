@@ -210,7 +210,7 @@
     padding: 1.5rem;
     letter-spacing: .3rem;;
     border-style: none;
-    background-color: var(--blue);
+    background-color: var(--darkBlue);
 }
 .productDetails .details-3 .buy-btn:hover{
     transform: scale(1.1);
@@ -220,11 +220,6 @@
 .productDetails .details-3 .buy-btn h1 a {
     color: white;
 }
-
-/* .productDetails .details-3 .buy-btn h1 a:hover{
-    transform: scale(1.1);
-    transition: all 0.5s ease-in-out;
-} */
 
 /*  -------------------------------
     PRODUCT DETAIL 4 SPECIFICATIONS
@@ -355,7 +350,6 @@
         margin-top: 1rem;
         font-size: 1.6rem;
         font-family: var(--fontBebas);
-        border-radius: 1rem;
         padding: .5rem;
         letter-spacing: .3rem;
         color: white;
