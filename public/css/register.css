@@ -61,9 +61,8 @@
 
 .box-form-register h2{
     font-family: var(--fontBebas);
-    font-size: 3rem;
+    font-size: 2.7rem;
     text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 .container-inputs-register{
@@ -75,12 +74,9 @@
     width: 21.7rem;
     border-radius: 2rem;
     border: 0.5px solid #000000;
-    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
     margin-top: 1rem;
 }
-.input-register::placeholder{
-    color: rgb(153, 153, 153);
-}
+
 .container-inputs-register p{
     font-family: var(--fontText);
 }
@@ -106,7 +102,8 @@
     font-family: var(--fontBebas);
     width: 23.8rem;
     height: 3.5rem;
-    margin-top: 0.18rem;
+    margin-top: 0.4rem;
+    margin-left: -1.2rem;
 
 
 }
@@ -137,6 +134,7 @@
     font-family: var(--fontBebas);
     width: 23.8rem;
     height: 3.5rem;
+    margin-left: -1rem;
 } /*button mobile-google*/
 .button-img-google-register{
     
@@ -150,6 +148,7 @@
     font-family: var(--fontBebas);
     width: 23.8rem;
     height: 3.5rem;
+    margin-left: -1rem;
 
 }
 .button-img-google-register{
@@ -167,6 +166,7 @@
     height: 2.2rem;
     position: relative;
     top: 5rem;
+    margin-left: 0.3rem;
 }
 
 
@@ -222,7 +222,7 @@
         height: 4.8rem;
         font-size: 4.2rem;
         padding-top: 0rem;
-        margin-left: 1rem;
+        margin-left: 1.6rem;
     }
     .logo-text-register{
         margin-top: 0rem;
@@ -256,6 +256,14 @@
 
       
    }
+     /*TEXT-REGISTER-H2*/
+   .box-form-register h2{
+    font-family: var(--fontBebas);
+    font-size: 3.2rem;
+    text-align: center;
+    padding-top: 1rem;
+
+    }
     /*INPUTS-TABLET*/
    .container-inputs-register p{
     display: flex;
@@ -285,8 +293,16 @@
    .input-register{
        margin-bottom: 1rem;
        margin-top: 2.5rem;
+       height: 4.1rem;
 
    }
+   /*BUTTON-TABLET-REGISTER*/
+   .submit-register{
+    
+    border-radius: 2rem;
+    font-size: 3.3rem;}
+
+
    /*DISPLAY-NONE-BUTTTON*/
        .button-img-fb{
            display: none;
@@ -296,10 +312,10 @@
        }
     /*BUTTON-TABLET*/
     .submit-register{
-        font-size: 3.5rem;
+        font-size: 3.3rem;
         width: 30.74rem;
         height: 4.96rem;
-        margin-left: 4.5em;
+        margin-left: 4.7em;
         cursor: pointer;
         transition: all 0.5s ease-out;
         box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
@@ -308,7 +324,7 @@
     .text-register{
         font-family: var(--fontText);
         font-size: 1.3rem;
-        margin-top: 0.8rem;
+        margin-top: 1.3rem;
        margin-left: 20rem;
     }
 
@@ -330,6 +346,7 @@
     }
 
     }
+
     /*DESKTOP-FORM
 @media (min-width: 1020px){
 
