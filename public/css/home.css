@@ -35,6 +35,7 @@
     display: flex;
     justify-content: center;
     height: 16.5rem;
+    border-bottom: .1rem solid var(--greyLight);
 }
 
 .ofertas div img {
@@ -43,6 +44,31 @@
     object-fit: contain;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+}
+
+.card-description h3 {
+    font-family: var(--fontText);
+    font-size: 1.4rem;
+    width: 90%;
+    margin: .6rem auto ;
+    text-align: center;
+}
+
+.card-description-cond {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem 0;
+    position: relative;
+    line-height: 2.2rem;
+}
+
+.card-description-cond p:nth-child(1){
+    font-size: 1.6rem;
+    font-family: var(--fontText);
+}
+
+.card-description-cond p span {
+    text-decoration: line-through;
 }
 
 
@@ -88,14 +114,9 @@
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
-.home .products .slider .card:nth-child(2) {
-    display: none;
-}
 
-.home .products .slider .card:nth-child(3) {
-    display: none;
-}
-
+.home .products .slider .card:nth-child(2),
+.home .products .slider .card:nth-child(3),
 .home .products .slider .card:nth-child(4) {
     display: none;
 }
@@ -110,26 +131,6 @@
 
 
 /* card */
-.card-description h3 {
-    font-family: var(--fontText);
-    font-size: 1.4rem;
-    width: 90%;
-    margin: .6rem auto ;
-    text-align: center;
-}
-
-.card-description-cond {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 1rem 0;
-    position: relative;
-    line-height: 2.2rem;
-}
-
-.card-description-cond p:nth-child(1){
-    font-size: 1.6rem;
-    font-family: var(--fontText);
-}
 
 .card-description-cond p:nth-child(2),
 .card-description-cond p:nth-child(3){
