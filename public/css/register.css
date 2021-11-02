@@ -1,6 +1,10 @@
  /*HEADER-REGISTER-MOVILE*/
+ .header-register-top {
+    position: relative;
+ }
 .header-register{
     width: 100%;
+    
     height: 5.3rem;
 
 }

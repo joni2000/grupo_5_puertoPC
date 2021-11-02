@@ -1,8 +1,8 @@
-main{
+.main-product-detail{
     padding: 1rem;
 }
 
-main h1{
+.main-product-detail h1{
     display: block;
 }
 
@@ -377,3 +377,13 @@ button {
     }
     
 }   
+@media (max-device-width: 759px) {
+    .main-product-detail {
+        padding-top: 5.38rem;
+    }
+}
+@media (min-width: 760px) {
+    .main-product-detail {
+        padding-top: 10.6rem;
+    }
+}

@@ -7,7 +7,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: 10;
 }
 
 header .top {
@@ -22,6 +25,13 @@ header .top .icon-menu {
     padding-right: 0rem;
     padding-left: 0.5rem;
 
+}
+
+header .top .icon-menu {
+    
+}
+header .top .check-menu {
+    display: none;
 }
 
 header .top .logo img{
