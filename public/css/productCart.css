@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-/* variables */
-:root {
-    /* Colors */
-    --blue: #0089D7;
-    --darkBlue: #394867;
-    --green: #4F8E49;
-    --grey: #394867;
-    --greyLight: #C5C5C5;
-
-    /* Fonts */
-    --fontText: 'Roboto', sans-serif;
-    --fontBebas: 'Bebas Neue', cursive;
-    --fontPrimary: 'Righteous', cursive;
-}
-
-=======
->>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 .box-cart{
     background-color: white;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
