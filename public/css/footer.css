@@ -4,11 +4,7 @@ footer{
   background-color: var(--blue);
   color: white;
  
-<<<<<<< HEAD
-}
-=======
 } /*MOBILE-GENERAL*/
->>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 .footer-all{
    display: flex;
   flex-direction: column;
@@ -109,14 +105,9 @@ footer .text-footer2{
   display: flex;
   justify-content: center;
 }
-<<<<<<< HEAD
- /* COPYRIGHT-FOOTER-MOBILE
-  */
-=======
 
  /* COPYRIGHT-FOOTER-MOBILE */
  
->>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 footer #copyright-footer{
   color: var(--darkBlue); 
   font-family: var(--fontText);
@@ -142,11 +133,7 @@ footer {
 @media (min-width: 480px){
 footer {
   height: 13.1rem;
-<<<<<<< HEAD
-} 
-=======
 }   /*GENERAL-FOOTER-TABLET*/
->>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 footer .footer-all{
   display: flex;
   flex-direction: row-reverse;
@@ -195,6 +182,7 @@ footer  .contact-footer .icon-footer2{
 footer  .contact-footer .icon-footer2 i{
    margin-left:0.7rem;
  }
+    /*TEXT-CONTAC-TABLET*/
 footer .contact-footer h3 {
   text-align: left;
    width: 11rem;
@@ -221,11 +209,7 @@ footer .info-footer{
    text-align: none;
 
  }
-<<<<<<< HEAD
-
-=======
      /*TEXT+ICON+INFO-TABLET*/
->>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 footer .info-footer .text-footer1{
   display: flex;
   flex-direction: column;
@@ -250,10 +234,7 @@ footer {
 footer .footer-all{
   height: 9rem;
 }
-<<<<<<< HEAD
-=======
    /*ICON-PAYMET-DESKTOP*/
->>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 footer  .payment-footer .icon-footer1{
   height: 3rem;
   width: 15.5rem;
