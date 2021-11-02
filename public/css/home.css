@@ -47,7 +47,7 @@
     margin-bottom: 1.5rem;
 }
 
-.card-description h3 {
+.card-info h3 {
     font-family: var(--fontText);
     font-size: 1.4rem;
     width: 90%;
@@ -55,7 +55,7 @@
     text-align: center;
 }
 
-.card-description-cond {
+.card-description-text {
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem 0;
@@ -63,12 +63,12 @@
     line-height: 2.2rem;
 }
 
-.card-description-cond p:nth-child(1){
+.card-description-text p:nth-child(1){
     font-size: 1.6rem;
     font-family: var(--fontText);
 }
 
-.card-description-cond p span {
+.card-description-text p span {
     text-decoration: line-through;
 }
 
@@ -133,14 +133,14 @@
 
 /* card */
 
-.card-description-cond p:nth-child(2),
-.card-description-cond p:nth-child(3){
+.card-description-text p:nth-child(2),
+.card-description-text p:nth-child(3){
     font-size: 1.5rem;
     color: var(--green);
     text-align: left;
 }
 
-.button-container {
+.button-box {
     display: flex;
     justify-content: center;
 }

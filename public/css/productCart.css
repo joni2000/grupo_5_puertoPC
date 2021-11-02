@@ -126,7 +126,7 @@ header  .top .icon-user {
         display: none;
     }
 }
-.container1{
+.container-cart{
     background-color:skyblue ;
     width:fit-content;
     height: fit-content;
@@ -288,43 +288,32 @@ header  .top .icon-user {
 }
 
 
-.card-description {
+.cart-description {
     text-align: center;
     line-height: 30px;
 }
 
-.card-description-cond h3{
+.cart-description h3{
     font-size: 2rem;
     font-family: var(--fontText);
     padding-left: 80rem;
 }
-
-h4{
-    font-size: 15px;
-    font-family: var(--fontText);
-    padding-left: 80rem;
-}
-
-.card-description-cond p {
+.cart-description {
 font-size: 20px;
 text-align: right;
 font-family: var(--fontText);
 }
 
-.button-container button{
+.button-cart {
     margin-top: 0.7rem;
     font-size:large;
-font-family: var(--fontBebas);
+    font-family: var(--fontBebas);
     border-radius: 50%;
     padding: 0.7rem;
     letter-spacing: 1rem;
     color: white;
     background-color: #cd0800;
 }
-
-#icon-email-footer{ 
-    text-align: left;
- }
 
  #copyright-footer{
      text-align: center;
