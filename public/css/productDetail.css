@@ -8,7 +8,7 @@
 
 button {
     border-style: none;
-}
+} */
 
 /*  --------------
     PRODUCT ADRESS 
@@ -128,7 +128,7 @@ button {
     height: 3rem;
     font-family: var(--fontText);
     font-size: 1.5rem;
-    background-color: var(--blue);
+    background-color: var(--darkBlue);
     margin-top: .9rem;
     border-radius: 1rem;
 }
@@ -165,11 +165,17 @@ button {
 .productDetails .details-2 h3{
     font-size: 1.6rem;
     margin-top: 1.5rem;
-    background-color: var(--darkBlue);
+    background-color: var(--blue);
     color: white;
     height: 25%;
     border-radius: 1rem;
     padding: .3rem;
+}
+
+.productDetails .details-2 h3:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
 }
 
 /*  ----------------------------
@@ -209,13 +215,23 @@ button {
     font-family: var(--fontBebas);
     border-radius: 1rem;
     padding: 1.5rem;
-    letter-spacing: .3rem;
-    background-color: var(--darkBlue);
+    letter-spacing: .3rem;;
+    border-style: none;
+    background-color: var(--blue);
+}
+.productDetails .details-3 .buy-btn:hover{
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
 }
 
-.productDetails .details-3 .buy-btn h1 {
+.productDetails .details-3 .buy-btn h1 a {
     color: white;
 }
+
+/* .productDetails .details-3 .buy-btn h1 a:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+} */
 
 /*  -------------------------------
     PRODUCT DETAIL 4 SPECIFICATIONS
@@ -324,45 +340,22 @@ button {
     }
 
     .productDetails .details-2 h3{
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         height: 2rem;
-
     }
     .productDetails .details-2 i{
         font-size: 5rem;;
     }
     .productDetails .details-3{
         height: 20em;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-bottom: 1px black solid;
-        margin-top: 1rem;
-    }
-    .productDetails .details-3{
-        height: 20rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-bottom: 1px black solid;
+        width: 100%;;
         margin-top: 1rem;
     }
     
     .productDetails .details-3 .increment-btn{
         font-family: var(--fontBebas);
-        font-weight: lighter;
-        border-radius: 1rem;
-        border: 1px solid black;
         width: 10rem;
         
-    }
-    
-    .productDetails .details-3 .increment-btn:hover{
-        cursor: pointer;
     }
     
     .productDetails .details-3 .buy-btn{
@@ -373,7 +366,6 @@ button {
         padding: .5rem;
         letter-spacing: .3rem;
         color: white;
-        background-color: var(--darkBlue);
     }
     
 }   
