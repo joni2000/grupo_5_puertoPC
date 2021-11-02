@@ -12,6 +12,11 @@
     padding: 0px;
 }
 
+.home h2{
+    margin: 1rem, 0, 0.4rem;
+    font-family: var(--fontText);
+}
+
 /* Ofertas */
 .container-ofertas {
     display: flex;
