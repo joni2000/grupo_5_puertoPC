@@ -3,11 +3,13 @@ footer{
   height: 2.37rem;
   background-color: var(--blue);
   color: white;
-  display: flex;
+ 
+}
+.footer-all{
+   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
   /*PAYMENT-MOBILE*/
 footer .payment-footer{
  width: 32rem;
@@ -90,8 +92,8 @@ footer  .contact-footer .icon-footer2{
 footer .contact-footer i {
  color: var(--darkBlue);
  font-size: 1.87rem;
- width: 2.5rem;
- height: 2.5rem;
+ width: 2.3rem;
+ height: 2.3rem;
 }
 footer .text-footer2{
   color: var(--darkBlue); 
@@ -100,18 +102,20 @@ footer .text-footer2{
   display: flex;
   justify-content: center;
 }
-
+ /* COPYRIGHT-FOOTER-MOBILE
+  */
 footer #copyright-footer{
   color: var(--darkBlue); 
   font-family: var(--fontText);
   font-size: 1.1rem;
-  width: 100%;
   height: 2rem;
   display: flex;
   justify-content: center;
-  position: relative;
-  bottom: -2.1rem;
-  
+  margin-top: 3rem;
+}
+footer #copyright-footer p{
+  height: 2rem;
+  width: 21rem;
 }
 
  /* MEDIA QUERIES */ 
@@ -123,19 +127,21 @@ footer {
 }
 @media (min-width: 480px){
 footer {
-  height: 11.31rem;
+  height: 13.1rem;
+} 
+footer .footer-all{
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
   align-items: flex-start;
-
-} 
-
+  height: 11rem;
+  justify-content: space-between;
+}
  /* Payment-TABLET */
 footer .payment-footer {
-  height: 9rem;
+  height: 8rem;
   width: 15.8rem;
   margin-top: 1rem;
+ 
 }
 footer  .payment-footer .icon-footer1{
   height: 5rem;
@@ -154,7 +160,7 @@ footer  .payment-footer i {
   /*CONTACT-TABLET*/
 footer .contact-footer{  
   width: 17.5rem;
-  height: 8rem;
+  height: 7rem;
   margin-left: 1rem;
   margin-top: 1rem;
 }
@@ -163,12 +169,14 @@ footer  .contact-footer .icon-footer2{
   height: 3rem;
   width: 15rem;
   margin-left: 1rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
   justify-content: flex-start;
+  
  }
- footer .contact-footer i {
-  margin-left: 0.5rem;
+footer  .contact-footer .icon-footer2 i{
+   margin-left:0.7rem;
  }
+
 footer .contact-footer h3 {
   text-align: left;
    width: 11rem;
@@ -178,7 +186,10 @@ footer .contact-footer h3 {
  
  footer .text-footer2{
   justify-content: flex-start;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
+  height: 2.2rem;
+  margin-top: 0rem;
+
 }
    /*INFO-PUERTOPC*/
 footer .info-footer{
@@ -188,31 +199,35 @@ footer .info-footer{
  }
  footer .info-footer h3{
    width: 16rem;
-   height: 2.7rem;
+   height: 2.2rem;
    text-align: none;
 
  }
+
+footer .info-footer .text-footer1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--fontText);
+  font-size: 1.25rem; 
+  margin-top: 0.5rem;
+}
  /*end tablet*/
  footer #copyright-footer{
-   display: none;
-   /*
-  border:  solid var(--blue);
-  width: 75rem;
-  margin-top: -2.9rem;
-  display: flex;
-  justify-content: center;
-  padding-left: 3rem;
-  padding-right: 3rem;*/
- }
+  margin-top: 0rem;
 
+ }
+ 
 }
  /*DESKTOP*/
 @media (min-width: 760px){
 footer {
-     height: 11.12rem;
+     height: 11.1rem;
      
 }
-
+footer .footer-all{
+  height: 9rem;
+}
 footer  .payment-footer .icon-footer1{
   height: 3rem;
   width: 15.5rem;
@@ -220,15 +235,5 @@ footer  .payment-footer .icon-footer1{
   justify-content: center;
   flex-wrap: nowrap;
 }
-
-footer  .payment-footer i {
-  width: 2.8rem;
-  height: 2.5rem;
-  margin-left: 0.5rem;
- }
-  /*end tablet
-footer #copyright-footer{
-  width: 120rem;
- }*/
 
 }

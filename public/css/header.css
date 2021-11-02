@@ -24,9 +24,11 @@ header .top .icon-menu {
 
 }
 
+header .top .logo img{
+    height: 4rem;
+}
 header .top .logo{
     order: 2;
-    height: 4rem;
     padding: 0.1rem;
 
 }
@@ -81,7 +83,7 @@ header  .top .icon-user {
 
 /* Mobile */
 @media (min-width:320px) {
-    h1 {
+    .header .top .logo-text{
         display: none
     }
     header .menu {
@@ -103,7 +105,7 @@ header  .top .icon-user {
     header .menu {
         display: none;
     }
-    h1 {
+    .header .top .logo-text{
         display: none
     }
 
@@ -128,13 +130,15 @@ header  .top .icon-user {
         display: none;
     
     }
+    header .top .logo img {
+        height: 6rem;
+    }
     header .top .logo{
         order: 1;
-        height: 6rem;
-        padding: 0.1rem;
+        padding: 0 0.1rem;
         margin-left: 1.8rem;
     }
-    h1 {
+    .header .top .logo-text{
         order: 2;
         display: flex;
         color: white;
