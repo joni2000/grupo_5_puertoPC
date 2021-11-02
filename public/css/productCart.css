@@ -1,0 +1,44 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');    /* Bebas */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); /* Righteous */
+
+/* Files Css */
+@import url('header.css');
+@import url('home.css');
+@import url('productDetail.css');
+@import url('login.css');
+@import url('register.css');
+@import url('footer.css');
+
+
+/* variables */
+:root {
+    /* Colors */
+    --blue: #0089D7;
+    --darkBlue: #394867;
+    --green: #4F8E49;
+    --grey: #394867;
+    --greyLight: #C5C5C5;
+
+    /* Fonts */
+    --fontText: 'Roboto', sans-serif;
+    --fontBebas: 'Bebas Neue', cursive;
+    --fontPrimary: 'Righteous', cursive;
+}
+/* General */
+* {
+    background-color: #C5C5C5;
+}
+
+html { 
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
