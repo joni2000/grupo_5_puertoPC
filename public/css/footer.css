@@ -4,7 +4,7 @@ footer{
   background-color: var(--blue);
   color: white;
  
-}
+} /*MOBILE-GENERAL*/
 .footer-all{
    display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ footer .payment-footer{
  width: 32rem;
  height: 6rem;
 
-}
+} /*TEXT-TITLE-PAYMENT-H3*/
 footer .payment-footer h3 {
  font-family: var(--fontPrimary);
  font-size: 1.56rem;
@@ -23,6 +23,7 @@ footer .payment-footer h3 {
  text-align: center;
 
 }
+  /*PAYMENT-ICON*/
 footer  .payment-footer .icon-footer1{
  display: flex;
  justify-content: space-evenly;
@@ -33,20 +34,20 @@ footer  .payment-footer i {
  color: var(--darkBlue);
 }
 
- /* Info-MOBILE */
+ /* COMPANY-INFORMATION-MOBILE */
 footer .info-footer{
  width: 32rem;
  height: 7rem;
  margin-top: 1rem;
 }
-
+     /*TEXT-TITLE-H3*/
 footer .info-footer h3 {
  font-family: var(--fontPrimary);
  font-size: 1.56rem;
  font-weight: 400;
  text-align: center;
 }
-
+     /*COMPANY-INFORMATION-ICON+TEXT*/
 footer .info-footer .text-footer1{
   display: flex;
   flex-direction: column;
@@ -75,7 +76,7 @@ footer .contact-footer{
  height: 8rem;
  margin-top: 1rem;
 } 
-
+  /*CONTACT-TEXT-TITLE-H3*/
 footer .contact-footer h3 {
  font-family: var(--fontPrimary);
  font-size: 1.56rem;
@@ -83,6 +84,7 @@ footer .contact-footer h3 {
  text-align: center;
 }  
 
+  /*CONTACT-ICONS*/
 footer  .contact-footer .icon-footer2{
  display: flex;
  justify-content: space-evenly;
@@ -95,6 +97,7 @@ footer .contact-footer i {
  width: 2.3rem;
  height: 2.3rem;
 }
+  /*CONTACT-GMAIL-TEXT+ICON*/
 footer .text-footer2{
   color: var(--darkBlue); 
   font-family: var(--fontText);
@@ -102,8 +105,9 @@ footer .text-footer2{
   display: flex;
   justify-content: center;
 }
- /* COPYRIGHT-FOOTER-MOBILE
-  */
+
+ /* COPYRIGHT-FOOTER-MOBILE */
+ 
 footer #copyright-footer{
   color: var(--darkBlue); 
   font-family: var(--fontText);
@@ -123,12 +127,13 @@ footer #copyright-footer p{
 @media (min-width: 320px){
 footer {
      height: 28.37rem;
-} /*Tablet*/
+} 
+        /*Tablet*/
 }
 @media (min-width: 480px){
 footer {
   height: 13.1rem;
-} 
+}   /*GENERAL-FOOTER-TABLET*/
 footer .footer-all{
   display: flex;
   flex-direction: row-reverse;
@@ -143,6 +148,7 @@ footer .payment-footer {
   margin-top: 1rem;
  
 }
+   /*ICON-PAYMENT-FOOTER-TABLET*/
 footer  .payment-footer .icon-footer1{
   height: 5rem;
   width: 11rem;
@@ -164,7 +170,7 @@ footer .contact-footer{
   margin-left: 1rem;
   margin-top: 1rem;
 }
-
+    /*ICON-CONTAC-FOOTER-TABLET*/
 footer  .contact-footer .icon-footer2{
   height: 3rem;
   width: 15rem;
@@ -176,7 +182,7 @@ footer  .contact-footer .icon-footer2{
 footer  .contact-footer .icon-footer2 i{
    margin-left:0.7rem;
  }
-
+    /*TEXT-CONTAC-TABLET*/
 footer .contact-footer h3 {
   text-align: left;
    width: 11rem;
@@ -191,7 +197,7 @@ footer .contact-footer h3 {
   margin-top: 0rem;
 
 }
-   /*INFO-PUERTOPC*/
+   /*INFO-PUERTOPC-TABLET*/
 footer .info-footer{
   width: 17rem;
   height: 7rem;
@@ -203,7 +209,7 @@ footer .info-footer{
    text-align: none;
 
  }
-
+     /*TEXT+ICON+INFO-TABLET*/
 footer .info-footer .text-footer1{
   display: flex;
   flex-direction: column;
@@ -228,6 +234,7 @@ footer {
 footer .footer-all{
   height: 9rem;
 }
+   /*ICON-PAYMET-DESKTOP*/
 footer  .payment-footer .icon-footer1{
   height: 3rem;
   width: 15.5rem;
