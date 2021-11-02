@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* main{
     padding: 1rem;
 }
@@ -10,6 +11,13 @@ button {
     border-style: none;
 } */
 
+=======
+
+.product-detail-body {
+    overflow-x: hidden;
+}
+
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 /*  --------------
     PRODUCT ADRESS 
     --------------
@@ -217,7 +225,11 @@ button {
     padding: 1.5rem;
     letter-spacing: .3rem;;
     border-style: none;
+<<<<<<< HEAD
     background-color: var(--blue);
+=======
+    background-color: var(--darkBlue);
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 }
 .productDetails .details-3 .buy-btn:hover{
     transform: scale(1.1);
@@ -228,11 +240,14 @@ button {
     color: white;
 }
 
+<<<<<<< HEAD
 /* .productDetails .details-3 .buy-btn h1 a:hover{
     transform: scale(1.1);
     transition: all 0.5s ease-in-out;
 } */
 
+=======
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 /*  -------------------------------
     PRODUCT DETAIL 4 SPECIFICATIONS
     -------------------------------
@@ -362,7 +377,10 @@ button {
         margin-top: 1rem;
         font-size: 1.6rem;
         font-family: var(--fontBebas);
+<<<<<<< HEAD
         border-radius: 1rem;
+=======
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
         padding: .5rem;
         letter-spacing: .3rem;
         color: white;

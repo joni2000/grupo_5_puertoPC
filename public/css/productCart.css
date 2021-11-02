@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* variables */
 :root {
     /* Colors */
@@ -13,6 +14,8 @@
     --fontPrimary: 'Righteous', cursive;
 }
 
+=======
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 .box-cart{
     background-color: white;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
