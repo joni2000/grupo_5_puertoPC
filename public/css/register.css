@@ -1,8 +1,15 @@
+<<<<<<< HEAD
  /*HEADER-REGISTER-MOVILE*/
  .header-register-top {
     position: relative;
  }
+=======
+<<<<<<< HEAD
+  /*HEADER-REGISTER-MOVILE*/
+=======
+>>>>>>> d1097c666578e3634ed14f82772b95ffb018a6df
   /*HEADER-REGISTER-MOBILE*/
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 .header-register{
     width: 100%;
     
@@ -190,6 +197,8 @@
    
 }
 @media (min-width: 760px) {
+<<<<<<< HEAD
+=======
      /*BODY-TABLET-REGISTER*/
     .general-register{
         height: 102.4rem; 
@@ -198,6 +207,7 @@
         } 
     }
 
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
     /* Header -TABLET*/
     .header-register{
         height: 16.6rem; 
@@ -246,7 +256,11 @@
    .box-register{
         height: 38.8rem;
         width: 62.3rem;
+<<<<<<< HEAD
+        margin-top: 0rem;
+=======
         margin-top: -10rem;
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
         padding-left: 0rem;
         padding-top: 0rem;
         padding-right: 0rem;
@@ -264,6 +278,19 @@
 
      } 
 
+<<<<<<< HEAD
+   .box-form-register h2{
+        font-size: 4.2rem;
+
+      
+   }
+     /*TEXT-REGISTER-H2*/
+   .box-form-register h2{
+    font-family: var(--fontBebas);
+    font-size: 3.2rem;
+    text-align: center;
+    padding-top: 1rem;
+=======
    
      /*TEXT-REGISTER-H2*/
    .box-form-register h2{
@@ -272,11 +299,27 @@
     text-align: center;
     padding-top: 1rem;
     margin-left: -0.5rem;
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 
     }
     /*INPUTS-TABLET*/
    .container-inputs-register p{
     display: flex;
+<<<<<<< HEAD
+    font-size: 1.3rem;
+    height: 2rem;
+    position: relative;
+    left: 9rem;
+
+    } /*COLUMNS-TABLET*/
+   .container-inputs-register{
+       display: grid;
+       grid-template-columns: auto auto auto auto ; 
+       width: 56.3rem;
+       height: 15rem;
+      
+   }
+=======
     font-size: 2rem;
     height: 2rem;
     position: relative;
@@ -299,11 +342,15 @@
       
    }
     
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
         /*TERMS-TABLET*/
     .terms-register{
             width:23rem ; 
             margin-left: 20rem;
+<<<<<<< HEAD
+=======
             margin-top: 1rem;
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
          }
     .terms-register label{
             font-family: var(--fontText);
@@ -312,9 +359,15 @@
         }
    .input-register{
        margin-bottom: 1rem;
+<<<<<<< HEAD
+       margin-top: 2.5rem;
+       height: 4.1rem;
+
+=======
        margin-top:3rem;
        height: 4.1rem;
        font-size: 1.7rem;
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
    }
    /*BUTTON-TABLET-REGISTER*/
    .submit-register{
@@ -343,7 +396,11 @@
     }
     .text-register{
         font-family: var(--fontText);
+<<<<<<< HEAD
+        font-size: 1.3rem;
+=======
         font-size: 1.7rem;
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
         margin-top: 1.3rem;
        margin-left: 20rem;
     }
@@ -352,8 +409,13 @@
         display: flex;
         width: 12rem;
         position: relative;
+<<<<<<< HEAD
+        top: -10.5rem;
+        left: 29rem;
+=======
         top: -11rem;
         left: 31.6rem;
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
         font-family: var(--fontText);
         font-size: 1.3rem;
         justify-content:space-evenly ;
@@ -361,10 +423,18 @@
     .end-register{
     
     position: relative;
+<<<<<<< HEAD
+    top: -8rem;
+    left: 6rem;
+    }
+
+    }
+=======
     top: -10rem;
     left: 6rem;
     }
 
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
 
     /*DESKTOP-FORM
 @media (min-width: 1020px){

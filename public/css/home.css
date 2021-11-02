@@ -47,7 +47,11 @@
     margin-bottom: 1.5rem;
 }
 
+<<<<<<< HEAD
+.card-description h3 {
+=======
 .card-info h3 {
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
     font-family: var(--fontText);
     font-size: 1.4rem;
     width: 90%;
@@ -55,7 +59,11 @@
     text-align: center;
 }
 
+<<<<<<< HEAD
+.card-description-cond {
+=======
 .card-description-text {
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
     display: flex;
     flex-direction: column;
     margin: 1rem 1rem 0;
@@ -63,12 +71,20 @@
     line-height: 2.2rem;
 }
 
+<<<<<<< HEAD
+.card-description-cond p:nth-child(1){
+=======
 .card-description-text p:nth-child(1){
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
     font-size: 1.6rem;
     font-family: var(--fontText);
 }
 
+<<<<<<< HEAD
+.card-description-cond p span {
+=======
 .card-description-text p span {
+>>>>>>> d1bfba0f12c8d2354c490e5cbc415a05a34b2716
     text-decoration: line-through;
 }
 
@@ -133,8 +149,8 @@
 
 /* card */
 
-.card-description-text p:nth-child(2),
-.card-description-text p:nth-child(3){
+.card-description-cond p:nth-child(2),
+.card-description-cond p:nth-child(3){
     font-size: 1.5rem;
     color: var(--green);
     text-align: left;
