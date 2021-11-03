@@ -113,7 +113,7 @@
     margin-top: 0.8rem;
 }
 
-/*BUTTON-MOVILE*/
+/*BUTTON-MOBILE*/
 .button-img-register{
     display: flex;
     flex-direction: column;
@@ -185,13 +185,12 @@
    
 }
 @media (min-width: 760px) {
-     /*BODY-TABLET-REGISTER*/
+     /*BODY-TABLET-REGISTER
     .general-register{
         height: 102.4rem; 
         width: 100%;
         
         } 
-
 
     /* Header -TABLET*/
     .header-register{
