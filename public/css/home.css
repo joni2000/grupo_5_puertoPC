@@ -12,18 +12,24 @@
     padding: 0px;
 }
 
-.home .subtitle{
-    display: inline-block;
-    margin: 1rem, 0, 1rem 5rem;
+.subtitle{
+    margin: 1rem 0 1.5rem;
+    padding-left: 5rem;
     font-family: var(--fontText);
     font-size: 2rem;
     color: #808080;
+    border-bottom: .1rem solid var(--greyLight);
 }
 
 .home .subtitle .link-all{
     font-size: 1rem;
     font-weight: 200;
     color: var(--blue);
+    transition: color 2s ease-in;
+}
+
+.home .subtitle .link-all:hover{
+    color: #64c3fa;
 }
 
 /* Ofertas */
@@ -33,6 +39,7 @@
     justify-content: space-evenly;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .ofertas {
@@ -41,7 +48,6 @@
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     border-radius: .9rem;
     background-color: white;
-    margin-top: 2rem;
     transition: all 0.3s ease;
 }
 
