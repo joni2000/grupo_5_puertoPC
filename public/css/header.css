@@ -234,11 +234,13 @@ header  .top .icon-user {
         margin-left: 10rem;
     }
 
-    header .menu ul li {
-    }
+    /* header .menu ul li {
+    } */
     header .menu ul li a{
         list-style: none;
         color: white;
     }
-    
+    header .menu ul li a:hover {
+        text-shadow: 0.1rem 0.1rem 0.2rem rgb(51, 51, 51);
+    }
 }
