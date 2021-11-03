@@ -7,10 +7,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    position:fixed;
-    left:0;
-    top:0;
-    z-index: 10;
+
 }
 
 header .top {
@@ -25,13 +22,6 @@ header .top .icon-menu {
     padding-right: 0rem;
     padding-left: 0.5rem;
 
-}
-
-header .top .icon-menu {
-    
-}
-header .top .check-menu {
-    display: none;
 }
 
 header .top .logo img{
@@ -212,11 +202,12 @@ header  .top .icon-user {
         width: 100%;
         font-size: 1.5rem;
     }
-    
     header .menu .item .item1{
         order: 1;
         margin-left: 3rem;
         margin-right: 10rem;
+
+
     }
     header .menu .item .item2{
         order: 2;
@@ -225,6 +216,7 @@ header  .top .icon-user {
     header .menu .item .item3{
         order: 3;
         margin: 0 0.5rem;
+
     }
     header .menu .item .item4{
         order: 4;
@@ -234,21 +226,19 @@ header  .top .icon-user {
     header .menu .item .item5{
         order: 5;
         margin: 0 0.5rem;
-    }  
+
+    }
     header .menu .item .item6{
         order: 7;
         margin-right: 3rem;
         margin-left: 10rem;
-    }  
+    }
 
     header .menu ul li {
     }
     header .menu ul li a{
         list-style: none;
         color: white;
-    }
-    header .menu ul li a:hover {
-        text-shadow: 0.1rem 0.1rem 0.2rem rgb(51, 51, 51);
     }
     
 }

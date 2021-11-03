@@ -1,27 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-.main-product-detail{
-=======
-/* main{
->>>>>>> aa5cfea48a8e0affc01886c5010f17231f052e38
-    padding: 1rem;
-}
-
-.main-product-detail h1{
-    display: block;
-}
-
-button {
-    border-style: none;
-} */
-
-=======
 
 .product-detail-body {
     overflow-x: hidden;
 }
 
->>>>>>> 268da7ee6719f905475a5c2608549e9011c04d90
 /*  --------------
     PRODUCT ADRESS 
     --------------
@@ -229,11 +210,7 @@ button {
     padding: 1.5rem;
     letter-spacing: .3rem;;
     border-style: none;
-<<<<<<< HEAD
-    background-color: var(--blue);
-=======
     background-color: var(--darkBlue);
->>>>>>> 268da7ee6719f905475a5c2608549e9011c04d90
 }
 .productDetails .details-3 .buy-btn:hover{
     transform: scale(1.1);
@@ -244,14 +221,6 @@ button {
     color: white;
 }
 
-<<<<<<< HEAD
-/* .productDetails .details-3 .buy-btn h1 a:hover{
-    transform: scale(1.1);
-    transition: all 0.5s ease-in-out;
-} */
-
-=======
->>>>>>> 268da7ee6719f905475a5c2608549e9011c04d90
 /*  -------------------------------
     PRODUCT DETAIL 4 SPECIFICATIONS
     -------------------------------
@@ -381,23 +350,9 @@ button {
         margin-top: 1rem;
         font-size: 1.6rem;
         font-family: var(--fontBebas);
-<<<<<<< HEAD
-        border-radius: 1rem;
-=======
->>>>>>> 268da7ee6719f905475a5c2608549e9011c04d90
         padding: .5rem;
         letter-spacing: .3rem;
         color: white;
     }
     
 }   
-@media (max-device-width: 759px) {
-    .main-product-detail {
-        padding-top: 5.38rem;
-    }
-}
-@media (min-width: 760px) {
-    .main-product-detail {
-        padding-top: 10.6rem;
-    }
-}

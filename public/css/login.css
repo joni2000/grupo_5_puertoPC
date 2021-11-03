@@ -4,8 +4,7 @@
 .header-form {
     height: 5.3rem;
     display: flex;
-    justify-content: flex-start;
-    position: relative;
+    justify-content: flex-start
 }
 
 .header-form .logo {
@@ -56,14 +55,16 @@
 .form-container h2 {
     order:1;
     font-family: var(--fontBebas);
-    font-size: 2.7rem;
+    font-size: 3rem;
     text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .form-login .input-container input{
     height: 3.6rem;
     width: 29.7rem;
     border-radius: 2rem;
     border: 0.5px solid #000000;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
 }
 .form-login .input-container input::placeholder{
     padding: 1.5rem;
@@ -119,10 +120,6 @@ span.error-message {
     align-items: center;
     justify-content: center;
     margin-top: 0.18rem;
-    text-shadow: 2px 2px 3px rgb(78, 78, 78);
-}
-.form-button-container:hover {
-    background-color: #1577af;
 }
 
 hr {
@@ -169,11 +166,6 @@ hr {
         display: none;
     }
 }
-@media (max-device-width: 639px) {
-    .header-form {
-        position: relative;
-    }
-}
 
 
 /* Tablet */
@@ -199,7 +191,7 @@ hr {
     .header-form .logo-text {
         display: flex;
         align-items: center;
-        font-size: 4rem;
+        font-size: 6rem;
         
     }
 
@@ -230,13 +222,13 @@ hr {
     }
 
     .form-container h2 {
-        font-size: 3.3rem;
+        font-size: 4.2rem;
         padding-top: 4.5rem;
         
     }
 
     .form-login .input-container input{
-        height: 4.1rem;
+        height: 3.25rem;
         width: 34.6rem;
     }
 
@@ -246,7 +238,7 @@ hr {
     }
 
     .form-login .input-container label {
-        font-size: 1.7rem;
+        font-size: 2.1rem;
         display: block;
         text-align: center;
         padding-bottom: 0.5rem;

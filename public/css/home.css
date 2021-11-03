@@ -3,7 +3,6 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding-top: 5.3rem
 }
 /* Banner */
 .home .banner{
@@ -133,8 +132,8 @@
 
 /* card */
 
-.card-description-cond p:nth-child(2),
-.card-description-cond p:nth-child(3){
+.card-description-text p:nth-child(2),
+.card-description-text p:nth-child(3){
     font-size: 1.5rem;
     color: var(--green);
     text-align: left;
@@ -216,9 +215,6 @@ i.fa-chevron-down:nth-child(6) {
 
 /* Desktop */
 @media (min-width: 760px) {
-    .home {
-        padding-top: 10.6rem
-    }
     .home .banner{
         display: inline-block;
         width: 100%;
