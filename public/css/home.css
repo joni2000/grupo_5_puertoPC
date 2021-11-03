@@ -12,6 +12,20 @@
     padding: 0px;
 }
 
+.home .subtitle{
+    display: inline-block;
+    margin: 1rem, 0, 1rem 5rem;
+    font-family: var(--fontText);
+    font-size: 2rem;
+    color: #808080;
+}
+
+.home .subtitle .link-all{
+    font-size: 1rem;
+    font-weight: 200;
+    color: var(--blue);
+}
+
 /* Ofertas */
 .container-ofertas {
     display: flex;
@@ -62,13 +76,27 @@
     line-height: 2.2rem;
 }
 
+.card-description-text p {
+    font-family: var(--fontText);
+}
+
 .card-description-text p:nth-child(1){
     font-size: 1.6rem;
     font-family: var(--fontText);
 }
 
+.ofertas .card-description-text p:nth-child(1){
+    order: 3;
+    margin-top: 0.6rem;
+}
+
+.ofertas .card-description-text p:nth-child(2){
+    font-size: 1.6rem;  
+}
+
 .card-description-text p span {
     text-decoration: line-through;
+    padding-right: 1.20rem;
 }
 
 
