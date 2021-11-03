@@ -191,7 +191,7 @@
         width: 100%;
         
         } 
-    }
+
 
     /* Header -TABLET*/
     .header-register{
@@ -359,7 +359,7 @@
     top: -10rem;
     left: 6rem;
     }
-
+}
 
     /*DESKTOP-FORM
 @media (min-width: 1020px){
