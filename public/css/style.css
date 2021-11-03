@@ -46,5 +46,20 @@ li {
     --fontPrimary: 'Righteous', cursive;
 }
 
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+.main-product-detail, .home {
+    padding-top: 5.3rem;
+}
+@media (min-width: 760px){
+    .main-product-detail, .home {
+        padding-top: 10.6rem;
+    }
+}
+
 
 
