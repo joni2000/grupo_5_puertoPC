@@ -192,10 +192,10 @@ header  .top .icon-user {
         margin: 0 2rem 0 0.45rem;
         font-size: 1.2rem;
     }
-    header .top .login:hover{
+    header .top .register:hover{
         text-shadow: 0.1rem 0.1rem 0.2rem rgb(51, 51, 51);
     }
-    
+
     header .menu {
         display: flex;
         justify-content: space-evenly;
