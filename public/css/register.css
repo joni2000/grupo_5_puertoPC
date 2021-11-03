@@ -195,6 +195,7 @@
     /* Header -TABLET*/
     .header-register{
         height: 16.6rem; 
+        background-color: var(--blue);
     }
     .logo-register{
         display: flex;
