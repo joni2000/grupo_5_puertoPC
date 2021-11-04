@@ -8,29 +8,33 @@
     padding-bottom: 1rem;    
 }
 
-.price{
-    text-align: right;
-    font-family: var(--fontText);
-    font-size: 2rem;
-    
-}
 .section-title{
     font-family: var(--fontText);
     text-align: left;
     font-size: 2rem;
+    padding: 2rem;
 }
+
+.price{
+    text-align: right;
+    font-family: var(--fontText);
+    font-size: 2rem;  
+    margin-top: 0rem;  
+}
+
 
 .cart-description-text{
     text-align: left;
     font-size: 2rem;
     font-family: var(--fontText);
     line-height: 30px;
+    padding: 2rem;
 }
 
 .cart-description-num{
 font-size: 20px;
 text-align: right;
-padding-top: -1rem;
+padding-top: -1.2rem;
 font-family: var(--fontText);
 color: var(--green);
 }
