@@ -12,47 +12,44 @@
     padding: 0px;
 }
 
-.home .subtitle{
-    display: inline-block;
-    margin: 1rem, 0, 1rem 5rem;
+.subtitle{
+    margin: 1rem 0 1.5rem;
+    padding-left: 5rem;
     font-family: var(--fontText);
     font-size: 2rem;
     color: #808080;
+    border-bottom: .1rem solid var(--greyLight);
 }
 
 .home .subtitle .link-all{
     font-size: 1rem;
     font-weight: 200;
     color: var(--blue);
+    transition: color 2s ease-in;
+}
+
+.home .subtitle .link-all:hover{
+    color: #64c3fa;
 }
 
 /* Ofertas */
-.container-ofertas {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.ofertas {
+.card {
     width: 25rem;
     height: 30.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     border-radius: .9rem;
     background-color: white;
-    margin-top: 2rem;
     transition: all 0.3s ease;
 }
 
-.ofertas div:nth-child(1){
+.card div:nth-child(1){
     display: flex;
     justify-content: center;
     height: 16.5rem;
     border-bottom: .1rem solid var(--greyLight);
 }
 
-.ofertas div img {
+.card div img {
     width: 90%;
     height: 90%;
     object-fit: contain;
@@ -85,12 +82,17 @@
     font-family: var(--fontText);
 }
 
-.ofertas .card-description-text p:nth-child(1){
-    order: 3;
-    margin-top: 0.6rem;
+.slider-offer .card-description-text{
+    padding-top: 2;
 }
 
-.ofertas .card-description-text p:nth-child(2){
+.slider-offer .card-description-text p:nth-child(1){
+    order: 3;
+    margin-top: 0.6rem;
+    font-size: 2rem;
+}
+
+.slider-offer .card-description-text p:nth-child(2){
     font-size: 1.6rem;  
 }
 
@@ -110,11 +112,7 @@
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    margin-bottom: 2rem;
-}
-
-.home .products .slider:nth-child(1) {
-    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 .home a,
@@ -133,6 +131,10 @@
 
 .home .products .slider .card:hover {
     transform: scale(1.02);
+}
+
+.home .products .slider-offer .card {
+    height: 30rem;
 }
 
 .home .products .slider .card div img {
@@ -252,7 +254,7 @@ i.fa-chevron-down:nth-child(6) {
     .home .banner img {
         width: 100%;
         height: 30rem;
-        object-fit: fill;
+        object-fit: unset;
     }
 
     .home .banner i:nth-child(2){
