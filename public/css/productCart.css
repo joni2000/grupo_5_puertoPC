@@ -8,13 +8,56 @@
     padding: 2rem;    
 }
 
-.price{
-    text-align: right;
-    font-family: var(--fontText);
-    font-size: 2rem;
-    
+.card-cart {
+    display: flex;
+    flex-wrap: wrap;
 }
-.section-title{
+
+.image-container {
+    width: 25rem;
+    height: 16.5rem;
+}
+
+.image-container img {
+    width: 22.5rem;
+    height: 90%;
+}
+
+.section-title,
+.cart-description-text{
+    font-family: var(--fontText);
+    font-size: 1.4rem;
+    margin: .6rem auto ;
+    text-align: center;
+    width: 30rem;
+}
+
+
+
+
+.button-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.button-box .button-buy {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .section-title{
     font-family: var(--fontText);
     text-align: left;
     font-size: 2rem;
@@ -44,8 +87,8 @@ font-family: var(--fontText);
     padding: 0.7rem;
     letter-spacing: 1rem;
     color: white;
-    background-color: #cd0800;
-}
+    padding: 1rem;
+} */
 
  #copyright-footer{
      text-align: center;
