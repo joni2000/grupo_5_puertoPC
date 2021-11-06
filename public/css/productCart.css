@@ -6,6 +6,7 @@
     color: black;
 }
 
+/* Container cart */
 .container-cart{
     background-color: white;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
@@ -96,18 +97,6 @@
     align-items: center;
 }
 
-/* seccion info */
-.container-info {
-    width: 90%;
-}
-
-/* increment */
-.card-cart .increment-btn {
-    display: flex;
-    justify-content: space-between;
-}
-
-
 .container-increment label {
     font-size: 1.8rem;
     font-family: var(--fontText);
@@ -128,6 +117,18 @@
     padding-left: 1rem;
 }
 
+.container-increment input:focus {
+    outline: none;
+}
+
+
+/* seccion info */
+.container-info {
+    width: 90%;
+}
+
+
+/* Precio Total */
 .total-price {
     border: .1rem solid var(--greyLight);
     border-radius: .3rem;
@@ -179,6 +180,7 @@
      border-bottom: 1px solid var(--greyLight);
 }
 
+/* arrows for delete products of cart */
 .fa-times {
     position: absolute;
     top: .5rem;
@@ -194,7 +196,9 @@
     color: rgb(255, 149, 149);
 }
 
-/* Tablet */
+    /* MEDIA QUERIES */
+
+    /* Tablet */
 /* buttons-finals */
 @media (min-width: 480px) {
     .container-cart .button-box {
@@ -224,12 +228,20 @@
         justify-content: flex-start;
         flex-wrap: nowrap;
     }
-
+    
     .image-container-ext{
         width: 18%;
         border: none;
         flex-grow: 1;
         border-right: .1rem solid var(--greyLight);
+    }
+    
+    .cart-description-text{
+        display: inline-block;
+        width: 20%;
+        margin: 0 !important;
+        flex-grow: 1;
+        padding-left: 1rem;
     }
 
     .container-info {
@@ -247,13 +259,6 @@
         justify-content: space-around;
     }
 
-    .cart-description-text{
-        display: inline-block;
-        width: 20%;
-        margin: 0 !important;
-        flex-grow: 1;
-        padding-left: 1rem;
-    }
 
     .container-increment {
         flex-grow: 1.5;

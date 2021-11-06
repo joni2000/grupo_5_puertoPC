@@ -1,8 +1,16 @@
-
 .home {
     width: 100%;
     height: 100%;
     margin: 0 auto;
+}
+
+.home a,
+.home a:visited {
+    color: black;
+}
+
+.home .products {
+    width: 100%;
 }
 
 /* Banner */
@@ -34,19 +42,39 @@
     color: #64c3fa;
 }
 
-/* Ofertas */
-.card {
+/* slider of products */
+.home .products .slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+/* Product Cards */
+.home .products .slider .card {
     width: 25rem;
-    height: 30.5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    height: 35.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
     border-radius: .9rem;
     background-color: white;
     transition: all 0.3s ease;
 }
 
+.home .products .slider .card:hover {
+    transform: scale(1.02);
+}
+
+.home .products .slider-offer .card {
+    height: 30rem;
+}
+
+/* images of cards*/
 .card div:nth-child(1){
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 16.5rem;
     border-bottom: .1rem solid var(--greyLight);
 }
@@ -59,6 +87,8 @@
     margin-bottom: 1.5rem;
 }
 
+
+/* Texts of cards */
 .card-info h3 {
     font-family: var(--fontText);
     font-size: 1.4rem;
@@ -73,6 +103,7 @@
     margin: 1rem 1rem 0;
     position: relative;
     line-height: 2.2rem;
+    padding-top: 2;
 }
 
 .card-description-text p {
@@ -81,13 +112,16 @@
 
 .card-description-text p:nth-child(1){
     font-size: 1.6rem;
-    font-family: var(--fontText);
 }
 
-.slider-offer .card-description-text{
-    padding-top: 2;
+.card-description-text p:nth-child(2),
+.card-description-text p:nth-child(3){
+    font-size: 1.5rem;
+    color: var(--green);
+    text-align: left;
 }
 
+/* offers */
 .slider-offer .card-description-text p:nth-child(1){
     order: 3;
     margin-top: 0.6rem;
@@ -103,73 +137,7 @@
     padding-right: 1.20rem;
 }
 
-
-/* Product Cards */
-.home .products {
-    width: 100%;
-}
-
-.home .products .slider {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-    margin-bottom: 5rem;
-}
-
-.home a,
-.home a:visited {
-    color: black;
-}
-
-.home .products .slider .card {
-    width: 25rem;
-    height: 35.5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
-    border-radius: .9rem;
-    background-color: white;
-    transition: all 0.3s ease;
-}
-
-.home .products .slider .card:hover {
-    transform: scale(1.02);
-}
-
-.home .products .slider-offer .card {
-    height: 30rem;
-}
-
-.image-card {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.home .products .slider .card:nth-child(2),
-.home .products .slider .card:nth-child(3),
-.home .products .slider .card:nth-child(4) {
-    display: none;
-}
-
-.home .products .slider .card div:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: solid .1rem var(--greyLight);
-    height: 16.2rem;
-}
-
-
-/* card */
-
-.card-description-text p:nth-child(2),
-.card-description-text p:nth-child(3){
-    font-size: 1.5rem;
-    color: var(--green);
-    text-align: left;
-}
+/* Buttons */
 
 .button-box {
     display: flex;
@@ -199,7 +167,7 @@
     background-color: #486297;
 }
 
-
+/* arrows of the sliders */
 i.fa-chevron-down {
     font-size: 3rem;
     color: var(--greyLight);
@@ -223,6 +191,14 @@ i.fa-chevron-down:nth-child(6) {
     position: absolute;
     transform: rotate(270deg);
     right: -0.2rem;
+}
+
+
+/* display none to the cards */
+.home .products .slider .card:nth-child(2),
+.home .products .slider .card:nth-child(3),
+.home .products .slider .card:nth-child(4) {
+    display: none;
 }
 
 /* Media queries */
