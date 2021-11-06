@@ -4,6 +4,7 @@
     height: 100%;
     margin: 0 auto;
 }
+
 /* Banner */
 .home .banner{
     display: none; 
@@ -12,6 +13,7 @@
     padding: 0px;
 }
 
+/* Subtitles */
 .subtitle{
     margin: 1rem 0 1.5rem;
     padding-left: 5rem;
@@ -137,7 +139,7 @@
     height: 30rem;
 }
 
-.home .products .slider .card div img {
+.image-card {
     width: 90%;
     height: 90%;
     object-fit: contain;
@@ -174,7 +176,7 @@
     justify-content: center;
 }
 
-.card button{
+.button-buy {
     border: none;
     font-size: 2rem;
     font-family: var(--fontBebas);
@@ -184,10 +186,13 @@
     padding: .3rem .5rem;
     margin-top: .3rem;
     box-shadow: .3rem .3rem .2rem rgba(0, 0, 0, 0.25);
-    position: absolute;
-    bottom: 0.8rem;
     cursor: pointer;
     transition: all 0.5s ease-out;
+}
+
+.card .button-buy {
+    position: absolute;
+    bottom: 0.8rem;
 }
 
 .card button:hover{

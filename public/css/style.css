@@ -52,11 +52,11 @@ li {
     top: 0;
     z-index: 10;
 }
-.main-product-detail, .home, .container-cart  {
+.main-product-detail, .home, .body-product-cart {
     padding-top: 5.3rem;
 }
 @media (min-width: 760px){
-    .main-product-detail, .home , .container-cart {
+    .main-product-detail, .home, .body-product-cart {
         padding-top: 10.6rem;
     }
 }
