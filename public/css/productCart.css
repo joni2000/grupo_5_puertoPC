@@ -1,26 +1,35 @@
+.body-product-cart {
+    padding-top: 5.3rem;
+}
+
 .container-cart{
     background-color: white;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-    margin-left: 2rem;
-    padding: 2rem;    
+    margin-top: 10rem;
+    margin-top: 7rem;
+    display: flex;  
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.container-cart .section-title {
+    position: absolute;
+    top: .5rem;
+    left: 1rem;
 }
 
 .card-cart {
     display: flex;
     flex-wrap: wrap;
-}
-
-.image-container {
-    width: 25rem;
-    height: 16.5rem;
-}
-
-.image-container img {
-    width: 22.5rem;
-    height: 90%;
+    justify-content: center;
+    border: .1rem solid var(--greyLight);
+    width: 90%;
+    border-radius: .8rem;
+    margin-top: 3.5rem;
 }
 
 .section-title,
@@ -29,22 +38,99 @@
     font-size: 1.4rem;
     margin: .6rem auto ;
     text-align: center;
-    width: 30rem;
+    width: 19rem;
 }
 
+.section-title {
 
+}
 
+/* price */
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
 
-.button-box {
+.total-price span:nth-child(1),
+.container-increment p,
+.price p:nth-child(1) {
+    font-family: var(--fontText);
+    font-size: 1.6rem;
+}
+
+.price p:nth-child(2),
+.price-bruto {
+    font-size: 2rem;
+    color: var(--green);
+}
+
+.total-price {
+    margin-top: 2rem;
+}
+
+/* increment */
+.container-increment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* seccion info */
+.container-info {
+    width: 90%;
+}
+
+/* increment */
+.card-cart .increment-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.card-cart .increment-btn span {
+    font-size: 1.8rem;
+    font-family: var(--fontText);
+    font-weight: bold;
+}
+
+/* button */
+.container-cart .button-box {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
+    margin-bottom: 1.5rem;
 }
 
-.button-box .button-buy {
-    width: 100%;
+/* seccion image  */
+.image-container {
+    width: 25rem;
+    height: 16.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.image-cart {
+    width: 80%;
+    height: 90%;
+}
+
+.image-container-ext {
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+     border-bottom: 1px solid var(--greyLight);
+}
+
+.borde {
+    margin: 0;
+    height: .1rem;
+    width: 100%;
+}
 
 
 
@@ -90,6 +176,3 @@ font-family: var(--fontText);
     padding: 1rem;
 } */
 
- #copyright-footer{
-     text-align: center;
- }
