@@ -29,10 +29,21 @@
     border: .1rem solid var(--greyLight);
     width: 90%;
     border-radius: .8rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.section-title + div{
     margin-top: 3.5rem;
 }
 
-.section-title,
+.section-title{
+    font-size: 2rem;
+    font-family: var(--fontText);
+    margin-left: 2rem;
+    color: var(--grey);
+}
+
 .cart-description-text{
     font-family: var(--fontText);
     font-size: 1.4rem;
@@ -50,6 +61,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .total-price span:nth-child(1),
@@ -65,9 +77,12 @@
     color: var(--green);
 }
 
-.total-price {
-    margin-top: 2rem;
+.container-total {
+    display: flex;
+    width: 85%;
+    justify-content: flex-end;
 }
+
 
 /* increment */
 .container-increment {
@@ -95,6 +110,22 @@
     font-size: 1.8rem;
     font-family: var(--fontText);
     font-weight: bold;
+    cursor: pointer;
+}
+
+.total-price {
+    border: .1rem solid var(--greyLight);
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    gap: .5rem;
+}
+
+.total-price span:nth-child(1){
+    font-size: 2rem;
 }
 
 /* button */
@@ -103,6 +134,12 @@
     flex-direction: column;
     width: 90%;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+
+.button-box button:hover {
+    background-color: #486297;
 }
 
 /* seccion image  */
@@ -117,6 +154,7 @@
 .image-cart {
     width: 80%;
     height: 90%;
+    object-fit: contain;
 }
 
 .image-container-ext {
@@ -126,53 +164,105 @@
      border-bottom: 1px solid var(--greyLight);
 }
 
-.borde {
-    margin: 0;
-    height: .1rem;
-    width: 100%;
+.fa-times-circle {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    font-size: 2.5rem;
+    color: rgb(255, 12, 12);
+    font-weight: lighter;
+    cursor: pointer;
+    transition: color 0.2s ease-in;
+}
+
+.fa-times-circle:hover {
+    color: rgb(255, 149, 149);
+}
+
+/* Tablet */
+/* buttons-finals */
+@media (min-width: 480px) {
+    .container-cart .button-box {
+        flex-direction: row;
+        width: 90%;
+        margin-bottom: 1.5rem;
+        justify-content: space-around;
+    }
+
+    .container-cart .button-box button:nth-child(1) {
+        order: 2;
+    }
+
+    .container-increment,
+    .price {
+        justify-content: space-around;
+    }
 }
 
 
+/* Desktop */
+@media (min-width: 780px) {
+    .card-cart{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
 
+    .image-container-ext{
+        width: 18%;
+        border: none;
+        flex-grow: 1;
+        border-right: .1rem solid var(--greyLight);
+    }
 
+    .container-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: flex-start;
+        flex-grow: 4;
+    }
 
+    .container-cart .button-box {
+        flex-direction: row;
+        width: 90%;
+        margin-bottom: 1.5rem;
+        justify-content: space-around;
+    }
 
+    .cart-description-text{
+        display: inline-block;
+        width: 20%;
+        margin: 0 !important;
+        flex-grow: 1;
+        padding-left: 1rem;
+    }
 
+    .container-increment {
+        flex-grow: 1.5;
+    }
 
+    .container-increment p {
+        font-size: 1.8rem;
+    }
 
+    .price {
+        flex-grow: 0.5;
+        align-items: center;
+    }
 
+    .price p:nth-child(1) {
+        display: none;
+    }
 
+    .container-increment,
+    .price {
+        justify-content: space-evenly;
+    }
 
-/* .section-title{
-    font-family: var(--fontText);
-    text-align: left;
-    font-size: 2rem;
+    .container-cart .button-box {
+        justify-content: flex-end;
+        gap: 4rem;
+    }
 }
-
-.cart-description {
-    text-align: center;
-    line-height: 30px;
-}
-
-.cart-description h3{
-    font-size: 2rem;
-    font-family: var(--fontText);
-    padding-left: 80rem;
-}
-.cart-description {
-font-size: 20px;
-text-align: right;
-font-family: var(--fontText);
-}
-
-.button-cart {
-    margin-top: 0.7rem;
-    font-size:large;
-    font-family: var(--fontBebas);
-    border-radius: 50%;
-    padding: 0.7rem;
-    letter-spacing: 1rem;
-    color: white;
-    padding: 1rem;
-} */
-
