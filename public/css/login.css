@@ -64,9 +64,11 @@
     border-radius: 2rem;
     border: 0.5px solid #000000;
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
-}
-.form-login .input-container input::placeholder{
     padding: 1.5rem;
+}
+.form-login .input-container input:focus{
+    outline: none;
+    border-color: var(--blue);
 }
 
 .form-login span {
@@ -364,28 +366,3 @@ hr {
     }
 
 }
-
-
-
-
-
-/* Footer */
-
-/* @media {
-    .footer-all .payment-footer {
-        display:none
-    }
-    .footer-all .info-footer {
-        display:none
-    }
-    .footer-all .contact-footer {
-        display:none
-    }
-    .footer-all .icon-email {
-        display:none
-    }
-    .footer-all .copyright-footer {
-        height: 2.87rem;
-        display: inline-block;
-    }
-} */

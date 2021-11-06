@@ -53,6 +53,9 @@ header .top .search-bar input{
     border: 1px;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 }
+header .top .search-bar input:focus{
+    outline: none;
+}
 
 header .top .search-bar .icon-search {
     position: absolute;
