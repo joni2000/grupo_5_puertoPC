@@ -2,6 +2,10 @@
     padding-top: 5.3rem;
 }
 
+.body-product-cart a {
+    color: black;
+}
+
 .container-cart{
     background-color: white;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
@@ -52,10 +56,6 @@
     width: 19rem;
 }
 
-.section-title {
-
-}
-
 /* price */
 .price {
     display: flex;
@@ -68,13 +68,18 @@
 .container-increment p,
 .price p:nth-child(1) {
     font-family: var(--fontText);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+}
+
+.price p:nth-child(1){
+    color: #444444;
 }
 
 .price p:nth-child(2),
 .price-bruto {
     font-size: 2rem;
     color: var(--green);
+    font-family: var(--fontText);
 }
 
 .container-total {
@@ -100,17 +105,27 @@
 .card-cart .increment-btn {
     display: flex;
     justify-content: space-between;
-    width: 10rem;
-    border: none;
-    border-radius: 1rem;
-    padding: 0.5rem;
 }
 
-.card-cart .increment-btn span {
+
+.container-increment label {
     font-size: 1.8rem;
     font-family: var(--fontText);
+    color: #444444;
+}
+
+.container-increment input{
+    border: none;
+    border-radius: .7rem;
+    height: 3rem;
+    width: 6rem;
+    background-color: #e4e4e4;
+    text-align: center;
+    font-family: var(--fontText);
     font-weight: bold;
-    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--blue);
+    padding-left: 1rem;
 }
 
 .total-price {
@@ -164,18 +179,18 @@
      border-bottom: 1px solid var(--greyLight);
 }
 
-.fa-times-circle {
+.fa-times {
     position: absolute;
     top: .5rem;
-    right: .5rem;
+    right: 1rem;
     font-size: 2.5rem;
-    color: rgb(255, 12, 12);
+    color: rgb(255, 51, 51);
     font-weight: lighter;
     cursor: pointer;
     transition: color 0.2s ease-in;
 }
 
-.fa-times-circle:hover {
+.fa-times:hover {
     color: rgb(255, 149, 149);
 }
 
@@ -197,11 +212,12 @@
     .price {
         justify-content: space-around;
     }
+
 }
 
 
 /* Desktop */
-@media (min-width: 780px) {
+@media (min-width: 760px) {
     .card-cart{
         display: flex;
         flex-direction: row;
@@ -241,10 +257,6 @@
 
     .container-increment {
         flex-grow: 1.5;
-    }
-
-    .container-increment p {
-        font-size: 1.8rem;
     }
 
     .price {
