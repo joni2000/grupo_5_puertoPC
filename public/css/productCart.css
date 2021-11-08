@@ -190,6 +190,7 @@
     font-weight: lighter;
     cursor: pointer;
     transition: color 0.2s ease-in;
+    font-weight: 500;
 }
 
 .fa-times:hover {
