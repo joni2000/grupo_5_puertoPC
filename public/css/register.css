@@ -48,14 +48,18 @@
     background-color: white;
     width: 31.5rem;
     height: 50rem;
-    padding-left: 5rem;
-    padding-top: 1.5rem;
-    padding-right: 5rem;
-    padding-bottom: 1rem;
+    padding:4rem 4rem 1rem 4rem;
     box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.25);
     border-radius: 4.6rem;
     margin: 1.9rem  auto;
-    
+    font-family: var(--fontText);
+
+}
+.container-inputs-register{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 
 }
 
@@ -65,110 +69,149 @@
     text-align: center;
 
 }
-.container-inputs-register{
-    height: 19rem;
+.container-inputs-register input{
+     height: 3.6rem;
+     width: 27rem;
+     border-radius: 2rem;
+     border: 0.5px solid #000000;
+     padding: 1.5rem;
+     margin-top: 1rem;
 
 }
-.input-register{
-    height: 3.4rem;
-    width: 21.7rem;
-    border-radius: 2rem;
-    border: 0.5px solid #000000;
-    margin-top: 1rem;
+.container-inputs-register input:focus{
+    outline: none;
+    border-color: var(--blue);
 }
 
-.container-inputs-register p{
-    font-family: var(--fontText);
-}
-.terms-register label{
-    font-family: var(--fontText);
+.container-inputs-register span{
     font-size: 1.3rem;
+     display: flex;
+     align-self: flex-start;
+     margin-left: 2.2rem;
+}
+
+.container-inputs-register span a{
+    text-decoration: underline;
 
 }
 
-.terms-register{
-   width:23rem ; 
+span.error-message-register{
+    display: none;
+
+} 
+
+.box-form-register  .box-register .terms-register{
+    margin-top: 1rem;
+    font-size: 1.3rem;
 }
 
- /*button-general*/
 .submit-register{
     color: white;
-    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
     background-color: var(--blue);
     border-radius: 2rem;
-    cursor: pointer;
-    transition: all 0.5s ease-out;
-    font-size: 2rem;
-    font-family: var(--fontBebas);
-    width: 23.8rem;
-    height: 3.5rem;
-    margin-top: 0.4rem;
-    margin-left: -1.2rem;
-
-
-}
-.text-register{
-    font-family: var(--fontText);
-    font-size: 1.3rem;
-    margin-top: 0.8rem;
-}
-
-/*BUTTON-MOBILE*/
-.button-img-register{
+    transition: all 0.2s ease-out;
     display: flex;
-    flex-direction: column;
-    width: 24rem ;
-    height: 9.1rem;
-    justify-content: space-between;
+    margin-top: 0.25rem;
+
 }
 
-  
-.button-img-fb{
-    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
-    background-color: var(--blue);
-    color: white;
-    border-radius: 2rem;
-    cursor: pointer;
-    transition: all 0.5s ease-out;
+.submit-register:hover{
+    background-color: #2baefa;
+
+}
+
+.submit-register button{
+    background: none;
     font-size: 2rem;
-    font-family: var(--fontBebas);
     width: 23.8rem;
     height: 3.5rem;
-    margin-left: -1rem;
-} /*button mobile-google*/
-.button-img-google-register{
-    
-    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
-    background-color: var(--blue);
-    color: white;
-    border-radius: 2rem;
-    cursor: pointer;
-    transition: all 0.5s ease-out;
-    font-size: 2rem;
+    color: inherit;
+    border: none;
     font-family: var(--fontBebas);
-    width: 23.8rem;
-    height: 3.5rem;
-    margin-left: -1rem;
 
 }
-.button-img-google-register{
-    display: flex;
-   /* align-content: center;*/
-    
+
+.hr-register {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(110, 110, 110), rgb(177, 177, 177));
+    border: none;
+    margin-top: 1rem;
+}
+.button-img-fb button{
+     border: none;
+     color: white;
+     background-color: var(--blue);
+     width: 23.8rem;
+     height: 3.5rem;
+     background: none;
+     font-size: 2rem;
+     font-family: var(--fontBebas);
+     display: flex;
+     align-items: center;
+     justify-content: center;
 }
 
+.button-img-fb{  
+        background-color: var(--blue);
+        border-radius: 2rem;
+        transition: all 0.2s ease-out;
+        margin-top: 1rem;
 
+}
+.button-img-fb i{
+    border: solid var(--blue);
+    font-size: 2.8rem;
+}
+
+.button-img-google-register {
+        background-color: var(--blue);
+        border-radius: 2rem;
+        transition: all 0.2s ease-out;
+        margin-top: 1rem;
+        width: 23.8rem;
+        height: 3.5rem;
+        
+}
+
+.button-img-google-register button{
+     color: white;
+     width: 23.8rem;
+     height: 3.5rem;
+     background: none;
+     font-size: 2rem;
+     font-family: var(--fontBebas);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 0.18rem;
+     border: none;
+
+}
+
+.button-img-google-register img{
+    margin: 0 0rem 0 -2.5rem;
+    margin-top: -0.7rem;
+}
+
+.icon-register{
+    display: none;
+
+}
+
+.icon-register-gl-box{
+    display: none;
+
+}
 
 .end-register{
-    font-family: var(--fontText);
     font-size: 1.3rem;
     width:22rem ;
     height: 2.2rem;
     position: relative;
-    top: 5rem;
-    margin-left: 0.3rem;
+    top: 2.5rem;
+    
 }
-
 
 /* Media Queries */
 
@@ -178,19 +221,50 @@
     .container-inputs-register p{
         display: none;
     }
+    .container-inputs-register label{
+        display: none;
+    }
 
     .icon-register{
+        display: none;
+    }
+    .icon-register-fb-box{
         display: none;
     }
    
 }
 @media (min-width: 760px) {
-     /*BODY-TABLET-REGISTER
-    .general-register{
-        height: 102.4rem; 
-        width: 100%;
-        
-        } 
+        /*INPUTS-TABLET*/
+    .container-inputs-register label{
+        display: flex;
+        font-size: 2rem;
+        height: 2rem;
+        position: relative;
+        left: 10rem;
+        top: -3.2rem;
+    }
+
+    .icon-register{
+        display: none;
+    }
+    .button-img-fb{
+        display: none;
+    }
+    .icon-register{
+        display: flex;
+    
+    }
+    .container-inputs-register p{
+        display: flex;
+    }
+    
+    .button-img-google-register{
+         display: none;
+    }
+    .icon-register-gl-box{
+        display: flex;
+    
+    }
 
     /* Header -TABLET*/
     .header-register{
@@ -239,7 +313,7 @@
     }
    /*REGISTER-BODY-TABLET*/
    .box-register{
-        height: 38.8rem;
+        height: 42rem;
         width: 62.3rem;
         margin-top: -10rem;
         padding-left: 0rem;
@@ -247,7 +321,7 @@
         padding-right: 0rem;
         padding-bottom: 0rem;
         
-   }
+    }
      
    .general-register{
     display: flex;
@@ -255,13 +329,11 @@
     justify-content: space-between;
     width: 100%;
     height: 102.4rem;
-    
 
-     } 
+    }
 
-   
      /*TEXT-REGISTER-H2*/
-   .box-form-register h2{
+    .box-form-register h2{
     font-family: var(--fontBebas);
     font-size: 3.2rem;
     text-align: center;
@@ -269,19 +341,8 @@
     margin-left: -0.5rem;
 
     }
-    /*INPUTS-TABLET*/
-   .container-inputs-register p{
-    display: flex;
-    font-size: 2rem;
-    height: 2rem;
-    position: relative;
-    left: 10rem;
-
-    } 
-    .input-register{
-        width: 26.7rem;
-        height: 3.2rem;
-    }
+    
+    
     
 
       /*COLUMNS-TABLET*/
@@ -291,73 +352,91 @@
        width: 56.3rem;
        height: 15rem;
        margin-left: 0rem;
+       justify-content: space-between;
+       align-items: center;
       
    }
     
         /*TERMS-TABLET*/
     .terms-register{
             width:23rem ; 
-            margin-left: 20rem;
-            margin-top: 1rem;
-         }
-    .terms-register label{
-            font-family: var(--fontText);
-            font-size: 1.3rem;
-        
-        }
-   .input-register{
-       margin-bottom: 1rem;
-       margin-top:3rem;
-       height: 4.1rem;
-       font-size: 1.7rem;
-   }
-   /*BUTTON-TABLET-REGISTER*/
-   .submit-register{
-    
-    border-radius: 2rem;
-    font-size: 3.3rem;}
-
-
-   /*DISPLAY-NONE-BUTTTON*/
-       .button-img-fb{
-           display: none;
-       }
-       .button-img-google-register{
-           display: none;
-       }
-    /*BUTTON-TABLET*/
-    .submit-register{
-        font-size: 3.3rem;
-        width: 30.74rem;
-        height: 4.96rem;
-        margin-left: 4.7em;
-        cursor: pointer;
-        transition: all 0.5s ease-out;
-        box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+            margin-left: 4rem;
 
     }
-    .text-register{
+    .container-inputs-register input{
+            font-size: 1.7rem;
+            color: #C5C5C5;
+    }
+    
+      /*BUTTON-TABLET-REGISTER*/
+    .submit-register button{
+             border-radius: 2rem;
+             font-size: 3.3rem;
+             width: 30.74rem;
+             height: 4.96rem;
+             
+    }
+    .submit-register{
+             width: 30.74rem;
+             margin-left: 15.2rem;
+             margin-top: 1rem;
+             font-size: 3.3rem;
+             height: 4.96rem;
+             cursor: pointer;
+             
+    }
+
+    .icon-register-fb-box{
+        display: flex;
+        margin-top: 3rem;
+        margin-left: 4rem;
+
+    }
+    .icon-register-fb-box button{
+        border: none;
+    }
+
+
+    .icon-register-text{
+             font-family: var(--fontText);
+             font-size: 1.7rem;
+
+    }
+
+    .icon-register-fb i{
+        color: blue;
+        font-size: 3rem;
+        padding-left: 1rem;
+        background-color: white;
+    }
+
+    .icon-register-text2{
         font-family: var(--fontText);
         font-size: 1.7rem;
-        margin-top: 1.3rem;
-       margin-left: 20rem;
+
     }
 
-    .icon-register{
-        display: flex;
-        width: 12rem;
+    .icon-register-gl-box{
         position: relative;
-        top: -11rem;
-        left: 31.6rem;
-        font-family: var(--fontText);
-        font-size: 1.3rem;
-        justify-content:space-evenly ;
+        left: 21.5rem;
+        top: -3.2rem;
     }
+    .icon-register-gl img{ 
+        width: 4rem;
+        height: 3.5rem;
+        background-color: white;
+
+    }
+
+    .icon-register-gl-box button{
+        border: none;
+    }
+
     .end-register{
+        position: relative;
+        top: -1rem;
+        left: 4rem;
     
-    position: relative;
-    top: -10rem;
-    left: 6rem;
     }
 }
 

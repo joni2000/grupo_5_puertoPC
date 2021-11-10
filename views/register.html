@@ -9,125 +9,80 @@
     <title>register</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+   <body class="general-register">
+       <header class="header-register">
+            <div class="header-box-register">
+                 <div class="logo-register">
+                      <a class="logo-img-register" href="/">
+                          <img src="/images/logo.png" alt="logo" />
+                       </a>
+                       <a class="logo-text-register" href="/">
+                         <h2>PuertoPC</h2>
+                       </a>
+                </div>
+            </div>
+         </header>
 
-  <body class="general-register">
-    <header>
-      <div class="header-register">
-        <div class="header-box-register">
-          <div class="logo-register">
-            <a class="logo-img-register" href="/">
-              <img src="/images/logo.png" alt="logo" />
-            </a>
-            <a class="logo-text-register" href="/">
-              <h2>PuertoPC</h2>
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="box-form-register">
-      <div class="box-register">
-        <h2>Registro de Usuario</h2>
-        <div class="container-inputs-register">
-          <p>Nombre:</p>
-          <input
-            class="input-register"
-            type="text"
-            name="nombre"
-            placeholder="  Ingresa tu nombre.."
-            required
-          />
-          <p>Apellido:</p>
-          <input
-            class="input-register"
-            type="text"
-            name="apellido"
-            placeholder="  Ingresa tu apellido.."
-            required
-          />
-          <p>Email:</p>
-          <input
-            class="input-register"
-            type="email"
-            name="email"
-            placeholder="  Ingresa tu correo.."
-            required
-          />
-          <p>Contraseña:</p>
-          <input
-            class="input-register"
-            type="password"
-            name="pass"
-            placeholder="  Ingresa una contraseña.."
-            required
-          />
-        </div>
-        <div class="terms-register">
-          <label for="terms"
-            >Acepto los <a href="">términos y condiciones</a></label
-          >
-          <input type="checkbox" />
-        </div>
-        <input
-          class="submit-register"
-          type="submit"
-          value="Ingresar"
-          required
-        />
-        <p class="text-register">o registrarse con:</p>
-
-        <div class="button-img-register">
-          <div>
-            <button class="button-img-fb">
-              <img
-                src="/images/button-login/facebook.png"
-                alt="icon-facebook"
-              />registrarse con facebook
-            </button>
-          </div>
-          <div>
-            <button class="button-img-google-register">
-              <img
-                src="/images/button-login/google1.png"
-                alt="icon-google"
-              />registrarse con google
-            </button>
-          </div>
-        </div>
-        <div class="icon-register">
-        
-          <span class="icon-register-fb">
+      <main class="box-form-register">
+        <form action="">
+          <div class="box-register">
             
-            <form action="" method="post">
-              <input
-                type="image"
-                src="/images/button-login/facebook.png"
-                width="35"
-                height="25"
-              />
-            </form>
-          </span>
+               <h2>Registro de Usuario</h2>
+                   <div class="container-inputs-register">
+
+                      <label for="name">Nombre:</label>
+                      <input class="input-register" type="text" name="nombre" id="name" placeholder="Ingresa tu nombre.." required >
+                      <span class="error-message-register">Debes ingresar tu nombre</span>
           
-          <span class="icon-register-gl">
-            <form
-              action=""
-              method="post"
-            >
-              <input
-                type="image"
-                src="/images/button-login/google1.png"
-                width="35"
-                height="25"
-              />
-            </form>
-          </span>
-        </div>
-        <div class="end-register">
-          <p>¿Ya tienes una cuenta? <a href="login">Ingresa aquí</a></p>
-        </div>
-      </div>
-    </div>
+                      <label for="name">Apellido:</label>
+                      <input class="input-register" type="text" name="apellido" id="name" placeholder="Ingresa tu apellido.." required >
+                      <span class="error-message-register">Debes ingresar tu apellido</span>
+                     
+                      <label for="email">Email:</label>
+                      <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo.."  required >
+                      <span class="error-message-register">Debes ingresar tu email</span>
+                      
+                      
+                      <label for="pass">Contraseña:</label>
+                      <input class="input-register" type="password"  name="pass" id="pass" placeholder="Ingresa una contraseña.." required >
+                      <span class="error-message-register">Debes ingresar tu contraseña</span>
+                
+                    </div>
+                <div class="terms-register">
+                   <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
+                   <input type="checkbox" name="terms-register" id="terms">
+                 </div>
+
+                 <div class="submit-register">
+                      <span class="error-message">Completa todos los campos</span>
+                       <button type="submit" class="registrarse">Registrarse</button> 
+                 </div>
+            <hr class="hr-register">
+
+           <div class="button-img-fb">
+               
+               <button><i class="fab fa-facebook-square"></i>registrarse con facebook</button>
+            </div>
+      
+           <div class="button-img-google-register">
+             <button><img src="/images/button-login/google1.png" alt="icon-google">Registrarse con google</button>
+           </div>
+      
+      
+            <div class="icon-register-fb-box">
+              <span class="icon-register-text">o registrarse con: </span>
+             <button class="icon-register-fb"><i class="fab fa-facebook-square"></i></button>
+           </div>
+           <div class="icon-register-gl-box">
+               <span  class="icon-register-text2">o</span>
+              <button class="icon-register-gl"><img src="/images/button-login/google1.png" alt="icon-google"></button>
+           </div>
+      
+              <span class="end-register">¿Ya tienes una cuenta? <a href="login">Ingresa aquí</a></span>
+         </div>
+       </form>
+      </main>   
+   
     <footer>
      
       <div class="footer-all">
