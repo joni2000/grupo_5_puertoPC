@@ -48,7 +48,7 @@
     background-color: white;
     width: 31.5rem;
     height: 50rem;
-    padding:4rem 4rem 1rem 4rem;
+    padding:1.5rem 4rem 1rem 4rem;
     box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.25);
     border-radius: 4.6rem;
     margin: 1.9rem  auto;
@@ -94,11 +94,12 @@
     text-decoration: underline;
 
 }
+/*inputs- error- red*/
 
-span.error-message-register{
-    display: none;
+.container-inputs-register span {
+    color: rgba(246, 86, 11, 0.924);
 
-} 
+ }
 
 .box-form-register  .box-register .terms-register{
     margin-top: 1rem;
@@ -209,7 +210,7 @@ span.error-message-register{
     width:22rem ;
     height: 2.2rem;
     position: relative;
-    top: 2.5rem;
+    top: 1.5rem;
     
 }
 
@@ -238,11 +239,24 @@ span.error-message-register{
     .container-inputs-register label{
         display: flex;
         font-size: 2rem;
-        height: 2rem;
-        position: relative;
-        left: 10rem;
-        top: -3.2rem;
+        height: 2.3rem;
+
     }
+
+    .box-input-register{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .box-input-register2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+     
+    }
+
 
     .icon-register{
         display: none;
@@ -315,11 +329,14 @@ span.error-message-register{
    .box-register{
         height: 42rem;
         width: 62.3rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;        
         margin-top: -10rem;
-        padding-left: 0rem;
-        padding-top: 0rem;
-        padding-right: 0rem;
-        padding-bottom: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         
     }
      
@@ -331,65 +348,61 @@ span.error-message-register{
     height: 102.4rem;
 
     }
+    /*box-form-register*/
+    .box-form-register{
+        display: flex;
+        justify-content: center;
+    }
 
      /*TEXT-REGISTER-H2*/
     .box-form-register h2{
-    font-family: var(--fontBebas);
-    font-size: 3.2rem;
-    text-align: center;
-    padding-top: 1rem;
-    margin-left: -0.5rem;
+      font-size: 3.2rem;  
 
     }
-    
-    
-    
 
       /*COLUMNS-TABLET*/
    .container-inputs-register{
-       display: grid;
-       grid-template-columns: 3rem auto 3rem auto;
        width: 56.3rem;
-       height: 15rem;
-       margin-left: 0rem;
+       height: 19rem;
+       display: flex;
+       flex-direction: row;
        justify-content: space-between;
-       align-items: center;
       
    }
     
         /*TERMS-TABLET*/
     .terms-register{
-            width:23rem ; 
-            margin-left: 4rem;
+        position: relative;
+        top: -1rem;
+        left: -17rem;
 
     }
     .container-inputs-register input{
             font-size: 1.7rem;
             color: #C5C5C5;
+
     }
-    
+
       /*BUTTON-TABLET-REGISTER*/
     .submit-register button{
-             border-radius: 2rem;
-             font-size: 3.3rem;
-             width: 30.74rem;
-             height: 4.96rem;
+        width: 30.74rem;
+        height: 4.96rem;  
+        border-radius: 2rem;
+        font-size: 3.3rem;     
              
     }
     .submit-register{
-             width: 30.74rem;
-             margin-left: 15.2rem;
-             margin-top: 1rem;
-             font-size: 3.3rem;
-             height: 4.96rem;
-             cursor: pointer;
+        width: 30.74rem;
+        font-size: 3.3rem;
+        height: 4.96rem;
+        cursor: pointer;    
              
     }
-
+    /*icon-box- register-facebook*/
     .icon-register-fb-box{
         display: flex;
-        margin-top: 3rem;
-        margin-left: 4rem;
+        position: relative;
+        top: 1rem;
 
     }
     .icon-register-fb-box button{
@@ -398,28 +411,28 @@ span.error-message-register{
 
 
     .icon-register-text{
-             font-family: var(--fontText);
-             font-size: 1.7rem;
+        font-family: var(--fontText);
+         font-size: 1.7rem;
 
     }
 
     .icon-register-fb i{
-        color: blue;
+        color: rgba(0, 0, 255, 0.698);
         font-size: 3rem;
         padding-left: 1rem;
         background-color: white;
     }
 
     .icon-register-text2{
-        font-family: var(--fontText);
+       font-family: var(--fontText);
         font-size: 1.7rem;
 
     }
 
     .icon-register-gl-box{
         position: relative;
-        left: 21.5rem;
-        top: -3.2rem;
+        left: 11.7rem;
+        top: -2rem;
     }
     .icon-register-gl img{ 
         width: 4rem;
@@ -435,7 +448,7 @@ span.error-message-register{
     .end-register{
         position: relative;
         top: -1rem;
-        left: 4rem;
+        left: -16rem;
     
     }
 }
