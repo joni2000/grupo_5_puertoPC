@@ -1,0 +1,368 @@
+
+ 
+ /* Header */
+.header-form {
+    height: 5.3rem;
+    display: flex;
+    justify-content: flex-start
+}
+
+.header-form .logo {
+    display: flex;
+    height: 3.6rem;
+    margin: 0 0.9rem;
+}
+
+.header-form .logo-text {
+    display: flex;
+    font-size: 2.8rem;
+    color: white;
+}
+
+/* Body */
+
+.main-form {
+    height: 57.7rem;
+    width: 100%;
+}
+
+/* Form */
+
+.form-container {
+    background-color: white;
+    width: 34rem;
+    height: 49.5rem;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.25);
+    border-radius: 4.6rem;
+    margin: 1.9rem  auto;
+    font-family: var(--fontText);
+
+}
+
+
+.form-login {
+
+    height: 40rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.form-container h2 {
+    order:1;
+    font-family: var(--fontBebas);
+    font-size: 2.7rem;
+    text-align: center;
+}
+.form-login .input-container input{
+    height: 3.6rem;
+    width: 29.7rem;
+    border-radius: 2rem;
+    border: 0.5px solid #000000;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+    padding: 1.5rem;
+}
+.form-login .input-container input:focus{
+    outline: none;
+    border-color: var(--blue);
+}
+
+.form-login span {
+    font-size: 1.3rem;
+    display: flex;
+    align-self: flex-start;
+    margin-left: 2.2rem;
+}
+.form-login span a{
+    text-decoration: underline;
+}
+
+span.error-message {
+    display: none;
+}
+
+.main-form form .form-login .check-keep-session {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    color: black;
+    padding: 0 0.7rem;
+    margin-top: -1rem;
+    font-size: 1.3rem;
+
+}
+
+.main-form form .form-login .check-keep-session input{
+    margin: 0.5rem;
+}
+
+.form-button-container{
+    color: white;
+    background-color: var(--blue);
+    border-radius: 2rem;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-out;
+    display: flex;
+}
+.form-button-container:hover {
+    background-color: #2baefa;
+}
+
+.form-button-container button{
+    background: none;
+    font-size: 2rem;
+    font-family: var(--fontBebas);
+    border: none;
+    color: inherit;
+    width: 23.8rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.18rem;
+}
+
+hr {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(110, 110, 110), rgb(177, 177, 177));
+    border: none;
+    margin-top: 2.2rem;
+}
+
+.fb i{
+    font-size: 2.8rem;
+    margin: 1rem;
+
+}
+
+.google img {
+
+    margin: 0 0.5rem 0 -1.17rem;
+}
+
+.form-button-container-google button{
+    display: none;
+    
+}
+.form-button-container-fb button{
+    display: none;
+    
+}
+.form-login p {
+    display: none;
+}
+
+
+/* Media Queries */
+
+/* Mobile */
+
+@media (min-width:320px) {
+    .form-login .input-container label {
+        display: none;
+    }
+    .form-login p {
+        display: none;
+    }
+}
+
+
+/* Tablet */
+
+@media (min-width: 640px) {
+    /* Header */
+    .header-form {
+        display: flex;
+        justify-content: center;
+        height: 16.6rem;
+        width: 100%;
+        position: relative;
+    }
+
+    .header-form .logo {
+        order: 2;
+        height: 17rem;
+        position: absolute;
+        top: 12rem;
+        
+    }
+
+    .header-form .logo-text {
+        display: flex;
+        align-items: center;
+        font-size: 4.1rem;
+        
+    }
+
+    /* Body */
+
+    .main-form {
+        height: 69.4rem;
+        
+    }
+
+    /* Form */
+
+    .form-container {
+        height: 43.8rem;
+        width: 62.3rem;
+        margin-top: 15rem;
+        padding: 0 3rem;
+
+    }
+
+
+    .form-login {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-container h2 {
+        font-size: 3.2rem;
+        padding-top: 4.5rem;
+        
+    }
+
+    .form-login .input-container input{
+        height: 4.1rem;
+        width: 34.6rem;
+    }
+
+    .form-login .input-container input::placeholder{
+        font-size: 1.6rem;
+        color: rgb(153, 153, 153);
+    }
+
+    .form-login .input-container label {
+        font-size: 1.7rem;
+        display: block;
+        text-align: center;
+        padding-bottom: 0.5rem;
+        
+    }
+    
+    .form-login p {
+        font-size: 1.7rem;
+        display: inline-block;
+    }
+
+    
+    .form-button-container-google button{
+        display: block;
+        background: none;
+        border: none;
+    }
+    .form-button-container-google img{
+        width: 3.3rem;
+    }
+
+    
+
+    .form-button-container-fb button{
+        display: block;
+        background: none;
+        border: none;
+        
+        
+    }
+
+    .form-button-container button{
+        width: 30.74rem;
+        height: 4.96rem;
+        font-size: 3.5rem;
+    }
+
+    
+
+    .form-button-container .fb {
+        
+        display: none;
+    }
+
+    .form-button-container .google{
+        display: none;
+    }
+
+    hr {
+        display: none;
+        
+    }
+
+    .fb button i{
+        display: block;
+        
+
+    }
+
+    .google button img {
+        display: block;
+
+    }
+    
+
+    
+    
+    .form-login .email{
+        order: 1;
+        position: relative;
+        top: -1.8rem;
+    }
+    .form-login .log-with {
+        order: 2;
+        position: relative;
+        top: -0.26rem;
+        margin-left: 1rem;
+        
+    }
+    .form-button-container-fb{
+        order: 3;
+    }
+    .form-login .or {
+        order: 4;
+        position: relative;
+        top: -0.27rem;
+    }
+    .form-button-container-google {
+        order: 5;
+        position: relative;
+        top: -0.4rem;
+        
+    }
+    .form-login .pass {
+        order: 6;
+        position: relative;
+        bottom: 4.2rem;
+    }
+    .form-login .forgot-pass {
+        order: 7;
+        position: relative;
+        right: 1.2rem;
+        top: 2rem;
+        font-size: 1.7rem;
+    }
+    .main-form form .form-login .check-keep-session {
+        order: 9;
+        position: relative;
+        bottom: 3rem;
+    }
+    .form-button-container{
+        order: 10;
+        position: relative;
+        left: -7.7rem;
+        bottom: 1rem;
+    }
+    .form-login .register {
+        order: 15;
+        position: relative;
+        bottom: 1.5rem;
+    }
+
+}
