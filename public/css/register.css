@@ -92,10 +92,11 @@
     text-decoration: underline;
 
 }
-/*inputs- error- red*/
+/*----The error message to be displayed------ */
 
 .container-inputs-register span {
     color: rgba(246, 86, 11, 0.924);
+    display: none;
 
  }
 
@@ -249,6 +250,7 @@
         display: flex;
         font-size: 2rem;
         height: 2.3rem;
+        margin-top: 0.5rem;
 
     }
 
