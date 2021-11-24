@@ -1,9 +1,8 @@
 let controller = { //object
-    //method
-    home: (req, res) =>{ //function
-        res.render('index')//page view
-
-    }
+   index:  function(req, res, next) {//function
+    res.render('index', { title: 'Express' });//method
+  } 
+  
 }
 
 module.exports = controller
