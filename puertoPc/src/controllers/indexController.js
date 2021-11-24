@@ -1,6 +1,6 @@
 let controller = { //object
     //method
-    index: (req, res) =>{
+    home: (req, res) =>{ //function
         res.render('index')//page view
 
     }

@@ -9,7 +9,7 @@
     <title>register</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-   <body class="general-register">
+   <body>
        <header class="header-register">
             <div class="header-box-register">
                  <div class="logo-register">
@@ -30,23 +30,26 @@
                <h2>Registro de Usuario</h2>
                    <div class="container-inputs-register">
 
+                    <div class="box-input-register">
                       <label for="name">Nombre:</label>
                       <input class="input-register" type="text" name="nombre" id="name" placeholder="Ingresa tu nombre.." required >
                       <span class="error-message-register">Debes ingresar tu nombre</span>
-          
+
                       <label for="name">Apellido:</label>
                       <input class="input-register" type="text" name="apellido" id="name" placeholder="Ingresa tu apellido.." required >
                       <span class="error-message-register">Debes ingresar tu apellido</span>
+                    </div>
                      
+                    <div class="box-input-register2">
                       <label for="email">Email:</label>
                       <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo.."  required >
                       <span class="error-message-register">Debes ingresar tu email</span>
-                      
-                      
+
                       <label for="pass">Contraseña:</label>
                       <input class="input-register" type="password"  name="pass" id="pass" placeholder="Ingresa una contraseña.." required >
                       <span class="error-message-register">Debes ingresar tu contraseña</span>
-                
+                    </div> 
+
                     </div>
                 <div class="terms-register">
                    <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
@@ -83,84 +86,74 @@
        </form>
       </main>   
    
-    <footer>
-     
-      <div class="footer-all">
-        
-        <div class="payment-footer">
-          <h3>Forma de Pago</h3>
+      <footer  >
+        <div class="footer-all">
+                   <div class="payment-footer">
+                        <h3>Forma de Pago</h3>
+                        <div class="icon-footer1">
+                        <a href="#">
+                           <i class="fab fa-cc-visa"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fab fa-cc-mastercard"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fab fa-cc-amex"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fab fa-bitcoin"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fab fa-paypal"></i>
+                        </a>
+                        </div>
+                     </div>
           
-          <div class="icon-footer1">
-            <a href="#">
-              <i class="fab fa-cc-visa"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-cc-mastercard"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-cc-amex"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-bitcoin"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-paypal"></i>
-            </a>
+                    <div class="info-footer">
+                            <h3>Acerca de PuertoPC</h3>
+                         <div class="text-footer1">
+                             <a href="#">
+                               <i class="fas fa-map-marked"></i>
+                             Sucursales
+                             </a>
+                             <a class="subtext-footer" href="#">
+                             ¿Quienes somos?
+                             </a>
+                         </div>                  
+                     </div>
           
-          </div>
-        
-        </div>
+                     <div class="contact-footer">
+                          <h3>Contáctenos</h3>
+                          <div class="icon-footer2">
+                          <a href="#">
+                            <i class="fab fa-instagram"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-facebook"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-twitter"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-whatsapp"></i>
+                          </a>
+                          </div> 
+                            <a class="text-footer2" href="#">
+                                  <i class="far fa-envelope" id="icon-email-footer"></i>
+                                       puertopc@gmail.com
+                             </a>  
+                         
+                     </div>
+       </div>                 
+                <div>    
+                         <p id="copyright-footer"> 
+                          2022 ©️ Todos los derechos reservados
+                         </p>
+                 </div>        
+               
+  
+  </footer>
 
-        <div class="info-footer">
-          <h3>Acerca de PuertoPC</h3>
-         
-          <div class="text-footer1">
-            <a href="#">
-              <i class="fas fa-map-marked"></i>
-              Sucursales
-            </a>
-            <a class="subtext-footer" href="#"> ¿Quienes somos? </a>
-         
-          </div>
-       
-        </div>
-
-        <div class="contact-footer">
-          <h3>Contáctenos</h3>
-          
-          <div class="icon-footer2">
-            <a href="#">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
-         
-          <a class="text-footer2" href="#">
-            <i class="far fa-envelope" id="icon-email-footer"></i>
-            puertopc@gmail.com
-          </a>
-       
-        </div>
-      
-      
-      </div>
-      
-      <div>
-        <p id="copyright-footer">2022 ©️ Todos los derechos reservados</p>
-     
-      </div>
-    
-    
-    </footer>
- 
  
   </body>
 </html>

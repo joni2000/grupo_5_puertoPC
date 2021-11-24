@@ -1,6 +1,6 @@
 let controller = { //object
     //method
-    function: (req, res) =>{
+    register: (req, res) =>{ //function
         res.render('register')//page view
 
     }

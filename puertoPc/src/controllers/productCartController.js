@@ -1,6 +1,6 @@
 let controller = { //object
     //method
-    function: (req, res) =>{
+    cart: (req, res) =>{ //function
         res.render('productCart')//page view
 
     }
