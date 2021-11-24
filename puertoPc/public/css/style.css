@@ -1,0 +1,66 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');    /* Bebas */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); /* Righteous */
+
+/* Files Css */
+@import url('header.css');
+@import url('home.css');
+@import url('productDetail.css');
+@import url('productCart.css');
+@import url('login.css');
+@import url('register.css');
+@import url('footer.css');
+
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+/* variables */
+:root {
+    /* Colors */
+    --blue: #0089D7;
+    --darkBlue: #394867;
+    --green: #00a650;
+    --grey: #394867;
+    --greyLight: #C5C5C5;
+
+    /* Fonts */
+    --fontText: 'Roboto', sans-serif;
+    --fontBebas: 'Bebas Neue', cursive;
+    --fontPrimary: 'Righteous', cursive;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+.main-product-detail, .home, .body-product-cart {
+    padding-top: 5.3rem;
+}
+@media (min-width: 760px){
+    .main-product-detail, .home, .body-product-cart {
+        padding-top: 10.6rem;
+    }
+}
+
+
+

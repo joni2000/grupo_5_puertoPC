@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header-form">
+        <a href="/"  class="logo" ><img src="images/logo.png" alt="logo-puertopc"></a>
+        <a class="logo-text" href="/">PuertoPc</a>
+    </header>
+    <main class="main-form">
+        <div class="form-container">
+
+            <form action="">
+                <h2>Iniciar sesión</h2>
+                <div class="form-login">
+                    <div class="input-container email">
+                        <label for="email">Email:</label>
+                        <input class="input-style" type="email" name="email" id="email" placeholder="Ingresá tu email">
+                        <span class="error-message">Debes ingresar tu email</span>
+                    </div>
+                    <div class="input-container pass">
+                        <label for="pass">Contraseña:</label>
+                        <input class="input-style" type="password" name="password" id="pass" placeholder="Ingresá tu contraseña">
+                        <span class="error-message">Debes ingresar tu contraseña</span>
+                    </div>
+                    <div class="check-keep-session">
+                        <input type="checkbox" name="keep-session" id="keep-session">
+                        <label for="keep-session">Mantener sesión abierta</label>
+                    </div>
+                    <div class="form-button-container">
+                        <span class="error-message">Credenciales inválidas</span>
+                        <button type="submit" class="enter">Ingresar</button> <!-- type submit envía el form -->
+                    </div>
+                    <p class="log-with">O ingresa con:</p>
+                    
+                    <hr>
+                    <div class="form-button-container-google">
+                        <button><img src="/images/button-login/google1.png" alt="icon-google"></button>
+                    </div>
+                    <p class="or">o</p>
+                    <div class="form-button-container-fb">
+                        <button><img src="/images/button-login/facebook.png" alt="icon-google"></button>
+                    </div>
+                    <div class="form-button-container">
+                        <button class="fb"><i class="fab fa-facebook-square"></i>ingresar con facebook</button>
+                    </div>
+                    <div class="form-button-container">
+                        <button class="google"><img src="/images/button-login/google1.png" alt="icon-google">Ingresar
+                            con google</button>
+                    </div>
+                    <span class="forgot-pass"><a href="">¿Olvidaste tu contraseña?</a></span>
+                    <span class="register">¿No tenés cuenta? <a href="/register"> Regístrate</a></span>
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <footer  >
+        <div class="footer-all">
+                   <div class="payment-footer">
+                        <h3>Forma de Pago</h3>
+                        <div class="icon-footer1">
+                        <a href="#">
+                           <i class="fab fa-cc-visa"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fab fa-cc-mastercard"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fab fa-cc-amex"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fab fa-bitcoin"></i>
+                        </a>
+                        <a href="#">
+                           <i class="fab fa-paypal"></i>
+                        </a>
+                        </div>
+                     </div>
+          
+                    <div class="info-footer">
+                            <h3>Acerca de PuertoPC</h3>
+                         <div class="text-footer1">
+                             <a href="#">
+                               <i class="fas fa-map-marked"></i>
+                             Sucursales
+                             </a>
+                             <a class="subtext-footer" href="#">
+                             ¿Quienes somos?
+                             </a>
+                         </div>                  
+                     </div>
+          
+                     <div class="contact-footer">
+                          <h3>Contáctenos</h3>
+                          <div class="icon-footer2">
+                          <a href="#">
+                            <i class="fab fa-instagram"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-facebook"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-twitter"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fab fa-whatsapp"></i>
+                          </a>
+                          </div> 
+                            <a class="text-footer2" href="#">
+                                  <i class="far fa-envelope" id="icon-email-footer"></i>
+                                       puertopc@gmail.com
+                             </a>  
+                         
+                     </div>
+       </div>                 
+                <div>    
+                         <p id="copyright-footer"> 
+                          2022 ©️ Todos los derechos reservados
+                         </p>
+                 </div>        
+               
+  
+  </footer>
+
+
+</body>
+
+</html>
