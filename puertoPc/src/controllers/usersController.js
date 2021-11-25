@@ -1,11 +1,11 @@
 var usersController = {
 
     login: (req, res )=> { 
-        res.send('login');
+        res.render('login');
     },
 
     register: (req, res )=> {
-        res.send('register');
+        res.render('register');
     },
 };
 
