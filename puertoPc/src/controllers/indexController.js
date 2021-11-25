@@ -1,8 +1,9 @@
-let controller = { //object
-   index:  function(req, res, next) {//function
-    res.send('index');//method
-  } 
-  
-}
+var controller = {
 
-module.exports = controller
+  index: (req, res )=> {
+    res.render('index');
+      },
+  
+};
+
+module.exports = controller 
