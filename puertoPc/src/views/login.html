@@ -1,21 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <%- include('./partials/head.ejs') %> 
 
 <body>
-    <header class="header-form">
-        <a href="/"  class="logo" ><img src="images/logo.png" alt="logo-puertopc"></a>
-        <a class="logo-text" href="/">PuertoPc</a>
-    </header>
+    <%- include('./partials/headerLogin.ejs') %> 
     <main class="main-form">
         <div class="form-container">
 
@@ -64,73 +53,7 @@
 
         </div>
     </main>
-    <footer  >
-        <div class="footer-all">
-                   <div class="payment-footer">
-                        <h3>Forma de Pago</h3>
-                        <div class="icon-footer1">
-                        <a href="#">
-                           <i class="fab fa-cc-visa"></i>
-                        </a>
-                        <a href="#">
-                           <i class="fab fa-cc-mastercard"></i>
-                        </a>
-                        <a href="#">
-                           <i class="fab fa-cc-amex"></i>
-                        </a>
-                        <a href="#">
-                           <i class="fab fa-bitcoin"></i>
-                        </a>
-                        <a href="#">
-                           <i class="fab fa-paypal"></i>
-                        </a>
-                        </div>
-                     </div>
-          
-                    <div class="info-footer">
-                            <h3>Acerca de PuertoPC</h3>
-                         <div class="text-footer1">
-                             <a href="#">
-                               <i class="fas fa-map-marked"></i>
-                             Sucursales
-                             </a>
-                             <a class="subtext-footer" href="#">
-                             ¿Quienes somos?
-                             </a>
-                         </div>                  
-                     </div>
-          
-                     <div class="contact-footer">
-                          <h3>Contáctenos</h3>
-                          <div class="icon-footer2">
-                          <a href="#">
-                            <i class="fab fa-instagram"></i>
-                          </a>
-                          <a href="#">
-                            <i class="fab fa-facebook"></i>
-                          </a>
-                          <a href="#">
-                            <i class="fab fa-twitter"></i>
-                          </a>
-                          <a href="#">
-                            <i class="fab fa-whatsapp"></i>
-                          </a>
-                          </div> 
-                            <a class="text-footer2" href="#">
-                                  <i class="far fa-envelope" id="icon-email-footer"></i>
-                                       puertopc@gmail.com
-                             </a>  
-                         
-                     </div>
-       </div>                 
-                <div>    
-                         <p id="copyright-footer"> 
-                          2022 ©️ Todos los derechos reservados
-                         </p>
-                 </div>        
-               
-  
-  </footer>
+    <%- include('./partials/footer.ejs') %> 
 
 
 </body>
