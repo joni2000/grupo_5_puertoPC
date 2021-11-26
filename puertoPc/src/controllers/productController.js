@@ -7,6 +7,14 @@ var productController = {
     productDetail: (req, res )=> {
         res.render('productDetail');
     },
+
+    productDetail: (req, res )=> {
+        res.render('createProducts');
+    },
+
+    productDetail: (req, res )=> {
+        res.render('editProducts');
+    },
 };
 
 module.exports = productController;
