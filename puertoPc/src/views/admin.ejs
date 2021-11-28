@@ -4,18 +4,23 @@
     <%- include('./partials/head.ejs') %>
 </head>
 <body>
-    <header class="header-form">
-        <a href="/"  class="logo" ><img src="images/logo.png" alt="logo-puertopc"></a>
+    <header class="header__form header__admin">
+        <a href="/" class="container__logo"><img class="logo__admin" src="images/logo.png" alt="logo-puertopc"></a>
         <a class="logo-text" href="/"></a>
     </header>
     <main>
-        <section class="btn-admin">
-            <a href="/admin/editar">
-                Editar productos
-            </a>
-            <a href="/admin/crear">
-                Crear productos
-            </a>
+        <section class="main__admin">
+            <h2 class="welcome">Bienvenido Admin: <%=name%> </h2>
+            <img class="foto__admin" src="images/naruto.jpeg" alt="">
+            <h2 class="welcome">¿Qué quieres hacer hoy?</h2>
+            <div class="button-box button__buy-cart">
+                <a href="/admin/editar" class="button-buy">
+                    Editar productos
+                </a>
+                <a href="/admin/crear" class="button-buy">
+                    Crear productos
+                </a>
+            </div>    
         </section>
     </main>
 </body>
