@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('./partials/head.ejs') %>
 </head>
+<header class="header__form header__admin">
+    <a href="/" class="container__logo"><img class="logo__admin" src="images/logo.png" alt="logo-puertopc"></a>
+    <a class="logo-text" href="/"></a>
+</header>
+    <main>
+        <form action="" method="post">
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="description">Descripción:</label>
+                <input type="text" name="description" id="description">
+            </div>
+            <div>
+                <label for="category">categoría:</label>
+                <input type="select" name="category" id="category">
+            </div>
+            <div>
+                <label for="colors">Colores:</label>
+                <input type="text" name="colors" id="colors">
+            </div>
+            <div>
+                <label for="price">Precio:</label>
+                <input type="text" name="price" id="price">
+            </div>
+            <div>
+                <label for="image">Seleccionar imagen:</label>
+                <input type="file" name="image" id="image">
+            </div>
+        </form>
+    </main>
 <body>
     
 </body>
