@@ -1,0 +1,55 @@
+.header__admin {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container__logo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.welcome {
+    font-family: var(--fontText);
+    font-size: 2.2rem;
+    margin: .6rem auto ;
+    text-align: center;
+    color: rgb(51, 51, 51);
+    margin-bottom: 0;
+}
+
+.main__admin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.foto__admin {
+    background-color: grey;
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+}
+
+.main__admin .button__buy-cart {
+    margin-top: 0;
+    gap: 1rem;
+    transition: all ease-in-out;
+}
+
+.button-buy {
+    text-align: center;
+}
+
+/* Media Queries */
+@media (min-width: 760px) {
+    .main__admin .button__buy-cart {
+        flex-direction: row;
+        width: 90%;
+        margin-bottom: 1.5rem;
+        justify-content: center;
+        gap: 15rem;
+    }
+}
+

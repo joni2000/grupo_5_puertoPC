@@ -4,7 +4,7 @@ var adminController = require("../controllers/adminController")
 
 /* GET home page. */
 router.get('/admin', adminController.admin);
-router.get('/admin/crear', adminController.admin);
-router.get('/admin/editar', adminController.admin);
+router.get('/admin/crear', adminController.createProducts);
+router.get('/admin/editar', adminController.editProducts);
 
 module.exports = router;

@@ -237,6 +237,13 @@
    
 }
 
+@media (min-width: 480px) {
+    
+   .box-form-register{
+      height: 71rem; 
+   } 
+
+}
 @media (min-width: 640px) {
 
     /*main*/
@@ -348,6 +355,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        top: 4rem;
         
     }
      
