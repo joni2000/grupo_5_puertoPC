@@ -129,8 +129,9 @@ footer #copyright-footer p{
 footer {
      height: 28.37rem;
 } 
-        /*Tablet*/
-}
+       
+} 
+    /*Tablet*/
 @media (min-width: 480px){
 footer {
   height: 13.1rem;
