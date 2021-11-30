@@ -1,11 +1,11 @@
 var productController = {
 
     productCart: (req, res )=> { 
-        res.render('productCart'); //change to "render"
+        res.render('products/productCart'); //change to "render"
     },
 
     productDetail: (req, res )=> {
-        res.render('productDetail');
+        res.render('products/productDetail');
     },
 
 
