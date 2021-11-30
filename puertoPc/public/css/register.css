@@ -128,6 +128,7 @@
     color: inherit;
     border: none;
     font-family: var(--fontBebas);
+    cursor: pointer;
 
 }
 
@@ -150,6 +151,7 @@
      display: flex;
      align-items: center;
      justify-content: center;
+     cursor: pointer;
 }
 
 .button-img-fb{  
@@ -186,6 +188,7 @@
      justify-content: center;
      margin-top: 0.18rem;
      border: none;
+     cursor: pointer;
 
 }
 
@@ -212,6 +215,11 @@
     position: relative;
     top: 1.5rem;
     
+}
+
+.end-register a:hover{
+    color: var(--darkBlue);
+
 }
 
 /* Media Queries */
@@ -401,7 +409,8 @@
         width: 30.74rem;
         height: 4.96rem;  
         border-radius: 2rem;
-        font-size: 3.3rem;     
+        font-size: 3.3rem; 
+        cursor: pointer;    
              
     }
     .submit-register{
@@ -420,6 +429,7 @@
     }
     .icon-register-fb-box button{
         border: none;
+        cursor: pointer;
     }
 
 
@@ -456,6 +466,7 @@
 
     .icon-register-gl-box button{
         border: none;
+        cursor: pointer;
     }
 
     .end-register{
