@@ -1,8 +1,10 @@
 var controller = {
 
-  index: (req, res )=> {
-    res.render('index');
-    },
+  index: (req, res )=> {    
+    res.render('index',{
+    title: "Index"
+    });
+  },
   
 };
 
