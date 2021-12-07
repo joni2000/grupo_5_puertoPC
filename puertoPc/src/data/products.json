@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "name": "Apple Macbook Air (13 pulgadas, 2020, Chip M1, 512 GB de SSD, 8 GB de RAM) - Plata",
+        "description": "Apple Macbook Air (13 pulgadas, 2020, Chip M1, 512 GB de SSD, 8 GB de RAM) - Plata",
+        "category": "Notebooks",
+        "colors": ["Gold"],
+        "price": 256700,
+        "stock": 5,
+        "discount": null,
+        "image": "img-default.jpg"
+    }
+]

@@ -1,13 +1,16 @@
 var productController = {
 
-    productCart: (req, res )=> { 
-        res.render('products/productCart'); //change to "render"
+    productCart: (req, res )=> {
+        res.render('products/productCart', {
+            title:"Carrito"
+        }); 
     },
 
     productDetail: (req, res )=> {
-        res.render('products/productDetail');
+        res.render('products/productDetail',{
+            title: "Detalle de Producto"
+        });
     },
-
 
 };
 

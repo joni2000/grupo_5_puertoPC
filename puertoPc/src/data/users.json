@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "firstName": "Nahuel",
+        "lastName": "Rosales",
+        "email": "nahuel@gmail.com",
+        "password": "hola123",
+        "category": "user",
+        "image": "img-default.jpg"
+    }
+]
