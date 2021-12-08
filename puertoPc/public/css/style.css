@@ -15,6 +15,10 @@
 @import url('editProducts.css');
 @import url('createProducts.css');
 
+body {
+    background-color: blue;
+}
+
 /* General */
 * {
     margin: 0;
