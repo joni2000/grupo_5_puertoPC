@@ -2,7 +2,7 @@ var controller = {
 
   index: (req, res )=> {    
     res.render('index',{
-    title: "Index"
+    title: "Puerto PC"
     });
   },
   
