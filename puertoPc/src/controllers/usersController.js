@@ -14,14 +14,25 @@ var usersController = {
         });
     },
          createUser: (req, res) => {
+        
+
+        let lastId = 1;
+
+        getUsers.forEach(user => {
+            
+            if(user.id > lastId){
+                lastId = user.id
+            }
+        });     
         let newUser = {
+            id: lastId + 1,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             password: req.body.password,
         };
         getUsers.push(newUser);
-        writeJson(getUsers)
+        writeJson(getUsers, "users");
         res.redirect("/")
     }, 
 
