@@ -1,20 +1,21 @@
 var adminController = {
 
         createProducts: (req, res )=> {
-            res.render('products/createProducts',{
+            res.render('admin/createProducts',{
             title: "Crear Producto"
             });
         },
     
         editProducts: (req, res )=> {
-            res.render('products/editProducts',{
-                title:"Editar Producto"
+            res.render('admin/editProducts',{
+                title: "Editar Producto"
             });
         },
         
         admin: (req, res )=> {
-            res.render('users/admin', {
-                name: "jonathan"
+            res.render('admin/admin', {
+                name: "jonathan",
+                title: "Crear Producto"
             });
         },
     

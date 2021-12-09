@@ -1,0 +1,30 @@
+.form-create {
+    margin: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
+    border-radius: .9rem;
+}
+
+.form-create {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-form {
+    color: var(--grey);
+    font-family: var(--fontText);
+    font-size: 1.6rem;
+}
+
+.text-camp {
+    border-radius: 0.4rem;
+    border-style: none;
+    border: 1px solid var(--grey);
+    padding: 0.5rem;
+}
