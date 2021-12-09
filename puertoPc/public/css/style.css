@@ -15,10 +15,6 @@
 @import url('editProducts.css');
 @import url('createProducts.css');
 
-body {
-    background-color: blue;
-}
-
 /* General */
 * {
     margin: 0;
@@ -60,11 +56,12 @@ li {
     top: 0;
     z-index: 10;
 }
-.main-product-detail, .home, .body-product-cart {
+.padding-top-fixed {
     padding-top: 5.3rem;
 }
+
 @media (min-width: 760px){
-    .main-product-detail, .home, .body-product-cart {
+    .padding-top-fixed {
         padding-top: 10.6rem;
     }
 }

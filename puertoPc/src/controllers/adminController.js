@@ -13,7 +13,7 @@ var adminController = {
         },
         
         admin: (req, res )=> {
-            res.render('/admin', {
+            res.render('admin/admin', {
                 name: "jonathan",
                 title: "Crear Producto"
             });

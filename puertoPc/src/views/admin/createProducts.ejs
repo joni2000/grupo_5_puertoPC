@@ -4,38 +4,46 @@
     <%- include('../partials/head.ejs') %>
     
 <body>
-    <main class="joni">
     <%- include('../partials/header.ejs') %>
-        <form action="" method="post" enctype="multipart/form-data">
-            <div>
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name">
-            </div>
-            <div>
-                <label for="description">Descripción:</label>
-                <input type="text" name="description" id="description">
-            </div>
-            <div>
-                <label for="category">Categoría:</label>
-                <select name="category" id="select">
-                    <option value="">Perifericos</option>
-                    <option value="">Escritorio</option>
-                    <option value="">Portatil</option>
-                </select>    
-            </div>
-            <div>
-                <label for="colors">Colores:</label>
-                <input type="color" name="colors" id="colors">
-            </div>
-            <div>
-                <label for="price">Precio:</label>
-                <input type="text" name="price" id="price">
-            </div>
-            <div>
-                <label for="image">Seleccionar imagen:</label>
-                <input type="file" name="image" id="image">
-            </div>
-        </form>
+    <main class="padding-top-fixed">
+        <form class="form-create action="admin/create" method="post" enctype="multipart/form-data">
+                <div class="container-input">
+                    <label class="text-form" for="name">Nombre:</label>
+                    <input class="text-camp" type="text" name="name" id="name">
+                </div>
+                <div class="container-input">
+                    <label class="text-form" for="description">Descripción:</label>
+                    <input class="text-camp" type="text" name="description" id="description">
+                </div>
+                <div class="container-input">
+                    <label class="text-form"  for="category">Categoría:</label>
+                    <select class="text-camp" name="category" id="select">
+                        <option value="">Perifericos</option>
+                        <option value="">Escritorio</option>
+                        <option value="">Portatil</option>
+                    </select>    
+                </div>
+                <div class="container-input">
+                    <label class="text-form" for="colors">Colores:</label>
+                    <input type="color" name="colors" id="colors">
+                </div>
+                <div class="container-input">
+                    <label class="text-form" for="stock">Stock:</label>
+                    <input class="text-camp" type="number" name="stock" id="stock">
+                </div>
+                <figure>
+                    <label class="text-form" for="image">Seleccionar imagen:</label>
+                    <input type="file" name="image" id="image">
+                </figure>
+                <div class="container-input">
+                    <label class="text-form" for="price">Precio:</label>
+                    <input class="text-camp" type="text" name="price" id="price">
+                </div>
+                <div class="container-input">
+                    <label class="text-form" for="price">Descuento:</label>
+                    <input class="text-camp" type="text" name="price" id="price">
+                </div>
+            </form>
     </main>
 </body>
 </html>
