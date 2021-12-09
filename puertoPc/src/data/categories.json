@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Escritorio"
+    },
+    {
+        "name": "Notebooks"
+    },
+    {
+        "name": "Motherboards"
+    },
+    {
+        "name": "Procesadores"
+    },
+    {
+        "name": "Memorias ram"
+    },
+    {
+        "name": "Almacenamiento"
+    },
+    {
+        "name": "Placas de video"
+    },
+    {
+        "name": "Fuentes"
+    },
+    {
+        "name": "Gabinetes"
+    },
+    {
+        "name": "Coollers"
+    },
+    {
+        "name": "Teclados y mouses"
+    },
+    {
+        "name": "Sonido"
+    },
+    {
+        "name": "Monitores"
+    },
+    {
+        "name": "Sillas"
+    },
+    {
+        "name": "Camaras web"
+    },
+    {
+        "name": "Cables"
+    }
+]
