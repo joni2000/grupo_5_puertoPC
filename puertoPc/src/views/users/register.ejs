@@ -5,7 +5,7 @@
        <%- include('../partials/headerLogin.ejs') %> 
 
       <main class="box-form-register">
-        <form action="">
+        <form action="/register" method="POST">
           <div class="box-register">
             
                <h2>Registro de Usuario</h2>
@@ -13,11 +13,11 @@
 
                     <div class="box-input-register">
                       <label for="name">Nombre:</label>
-                      <input class="input-register" type="text" name="nombre" id="name" placeholder="Ingresa tu nombre.." required >
+                      <input class="input-register" type="text" name="firstName" id="name" placeholder="Ingresa tu nombre.." required >
                       <span class="error-message-register">Debes ingresar tu nombre</span>
 
                       <label for="name">Apellido:</label>
-                      <input class="input-register" type="text" name="apellido" id="name" placeholder="Ingresa tu apellido.." required >
+                      <input class="input-register" type="text" name="lastName" id="name" placeholder="Ingresa tu apellido.." required >
                       <span class="error-message-register">Debes ingresar tu apellido</span>
                     </div>
                      
@@ -27,7 +27,7 @@
                       <span class="error-message-register">Debes ingresar tu email</span>
 
                       <label for="pass">Contraseña:</label>
-                      <input class="input-register" type="password"  name="pass" id="pass" placeholder="Ingresa una contraseña.." required >
+                      <input class="input-register" type="password"  name="password" id="pass" placeholder="Ingresa una contraseña.." required >
                       <span class="error-message-register">Debes ingresar tu contraseña</span>
                     </div> 
 
