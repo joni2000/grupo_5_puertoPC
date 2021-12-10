@@ -6,7 +6,7 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main class="padding-top-fixed">
-        <form class="form-create action="admin/create" method="post" enctype="multipart/form-data">
+        <form class="form-create action=" action="admin/create" method="post" enctype="multipart/form-data">
                 <div class="container-input">
                     <label class="text-form" for="name">Nombre:</label>
                     <input class="text-camp" type="text" name="name" id="name">
@@ -18,7 +18,9 @@
                 <div class="container-input">
                     <label class="text-form"  for="category">Categoría:</label>
                     <select class="text-camp" name="category" id="select">
-                        <option value="">Escritorio</option>
+                        <% category.forEach(categoria => { %>
+                            <option value=""><%=categoria%></option>
+                        <% }) %>
                     </select>    
                 </div>
                 <div class="container-input">
@@ -29,18 +31,21 @@
                     <label class="text-form" for="stock">Stock:</label>
                     <input class="text-camp" type="number" name="stock" id="stock">
                 </div>
-                <figure>
+                <!-- <figure>
                     <label class="text-form" for="image">Seleccionar imagen:</label>
                     <input type="file" name="image" id="image">
-                </figure>
+                </figure> -->
                 <div class="container-input">
                     <label class="text-form" for="price">Precio:</label>
                     <input class="text-camp" type="text" name="price" id="price">
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="price">Descuento:</label>
-                    <input class="text-camp" type="text" name="price" id="price">
+                    <input class="text-camp" type="text" name="discount" id="price">
                 </div>
+                <button type="submit">
+                    enviar
+                </button>
             </form>
     </main>
 </body>
