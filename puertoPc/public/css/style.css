@@ -14,6 +14,7 @@
 @import url('admin.css');
 @import url('editProducts.css');
 @import url('createProducts.css');
+@import url('products.css');
 
 /* General */
 * {

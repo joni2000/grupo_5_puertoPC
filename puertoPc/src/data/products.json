@@ -7,7 +7,7 @@
         "colors": ["Gold"],
         "price": 256700,
         "stock": 5,
-        "discount": null,
-        "image": "img-default.jpg"
+        "discount": 0,
+        "image": "img-macbook-pro-2019.jpg"
     }
 ]
