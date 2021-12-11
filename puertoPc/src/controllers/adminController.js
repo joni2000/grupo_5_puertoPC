@@ -44,6 +44,7 @@ var adminController = {
             });
         },
         
+        
         admin: (req, res )=> {
             res.render('admin/admin', {
                 name: "jonathan",
