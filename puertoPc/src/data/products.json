@@ -33,6 +33,179 @@
         "stock": 15,
         "discount": 15,
         "image": "Monitor.webp"
-    }
-   
+    },
+
+    {
+        "id": 4,
+        "name": "Mouse de juego Logitech  G Series Lightsync G203 lila",
+        "description": "",
+        "category": "",
+        "colors": [""],
+        "price": 11000,
+        "stock": 15,
+        "discount": 15,
+        "image": "Mouse.webp"
+    },
+
+    {
+        "id": 5,
+        "name": "Teclado gamer bluetooth Redragon Draconic K530 QWERTY Outemu Brown inglés US color blanco con luz RGB ",
+        "description": "",
+        "category": "",
+        "colors": [""],
+        "price": 11000,
+        "stock": 15,
+        "discount": 15,
+        "image": "Teclado.webp"
+    },
+
+    {
+        "id": 6,
+        "name": "Apple Macbook Air ",
+        "description": "(13 pulgadas, 2020, Chip M1, 512 GB de SSD, 8 GB de RAM)",
+        "category": "",
+        "colors": ["Plata"],
+        "price": 2567000,
+        "stock": 15,
+        "discount": 0,
+        "image": "macBookAir.webp"
+    },
+
+    {
+        "id": 7,
+        "name": "  Notebook ASUS x509 15.6 Celeron N4020 4GB 500GB Win10 ",
+        "description": "",
+        "category": "",
+        "colors": [""],
+        "price": 96355,
+        "stock": 15,
+        "discount": 0,
+        "image": "Notebook_ASUS.jpg"
+    },
+
+    {
+        "id": 8,
+        "name": " Notebook HP 14-DK1022WM ",
+        "description": "AMD Ryzen 3 3250U  4GB de RAM 128GB SSD 10 Home",
+        "category": "",
+        "colors": [" natural silver 14"],
+        "price": 98355,
+        "stock": 15,
+        "discount": 0,
+        "image": "NotebookHP14.webp"
+    },
+
+    {
+        "id": 9,
+        "name": "Notebook Dell Inspiron 3505, 15.6",
+        "description": " AMD Athlon Silver 3050U  4GB de RAM 256GB",
+        "category": "",
+        "colors": ["gris "],
+        "price": 98355,
+        "stock": 15,
+        "discount": 0,
+        "image": "dell.webp"
+    },
+
+    {
+        "id": 10,
+        "name": "Computadora Completa Amd Intel Dual ",
+        "description": "Intel Dual Core 8gb Led 19 Lol ",
+        "category": "",
+        "colors": [""],
+        "price": 142999,
+        "stock": 15,
+        "discount": 0,
+        "image": "CompletaIntel.webp"
+    },
+
+    {
+        "id": 11,
+        "name": " Pc Armada amd 9700 16gb Ram Ssd Y Hdd",
+        "description": "",
+        "category": "",
+        "colors": [" "],
+        "price": 177780,
+        "stock": 15,
+        "discount": 0,
+        "image": "GamerAmd.webp"
+    },
+    {
+        "id": 12,
+        "name": " Pc Armada Edicion Intel Core I7 9700 16gb Ram Ssd Y Hdd",
+        "description": "",
+        "category": "",
+        "colors": [" "],
+        "price": 155780,
+        "stock": 15,
+        "discount": 0,
+        "image": "PC_Icore7.webp"
+
+    },
+
+    {
+        "id": 13,
+        "name": "Pc Lenovo Completa Intel I3 8gb 480gb Ssd Monitor 22 Win 10",
+        "description": "",
+        "category": "",
+        "colors": [" "],
+        "price": 155780,
+        "stock": 15,
+        "discount": 0,
+        "image": "intel.webp"
+
+    },
+
+    {
+        "id": 14,
+        "name": "Silla Sillón Gamer Playstation Xbox Pc Oficina - Good Game",
+        "description": "",
+        "category": "",
+        "colors": [" "],
+        "price": 55999,
+        "stock": 15,
+        "discount": 0,
+        "image": "SillonGamer.webp"
+
+    },
+
+    {
+        "id": 15,
+        "name": "Sillón Silla Gamer  Pro Playstation Xbox Pc Oficina",
+        "description": "",
+        "category": "",
+        "colors": [" "],
+        "price": 60399,
+        "stock": 15,
+        "discount": 0,
+        "image": "SillaPro.webp"
+
+    },
+
+    {
+        "id": 16,
+        "name": "Sillón Silla Premium Gamer Gaming Pro Reclinable Pc Oficina",
+        "description": "",
+        "category": "",
+        "colors": [" "],
+        "price": 60399,
+        "stock": 15,
+        "discount": 0,
+        "image": "SillaPremium.webp"
+
+    },
+
+    {
+        "id": 17,
+        "name": "Silla de escritorio Akracing Arctica gamer ergonómica  white & black ",
+        "description": "",
+        "category": "",
+        "colors": [" "],
+        "price": 60399,
+        "stock": 15,
+        "discount": 0,
+        "image": "silla.webp"
+
+    } 
+
 ]
