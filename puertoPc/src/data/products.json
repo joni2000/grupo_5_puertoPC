@@ -9,5 +9,30 @@
         "stock": 5,
         "discount": 0,
         "image": "img-macbook-pro-2019.jpg"
+    },
+
+    {
+        "id": 2,
+        "name": "Auriculares inalámbricos Sony WH-CH510 negro",
+        "description": "",
+        "category": "",
+        "colors": [""],
+        "price": 11000,
+        "stock": 5,
+        "discount": 15,
+        "image": "Auri.webp"
+    },
+
+    {
+        "id": 3,
+        "name": " Monitor gamer LG 24GL600F led 23.6 negro 100V/240V",
+        "description": "",
+        "category": "",
+        "colors": [""],
+        "price": 11000,
+        "stock": 15,
+        "discount": 15,
+        "image": "Monitor.webp"
     }
+   
 ]
