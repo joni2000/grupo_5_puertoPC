@@ -6,7 +6,7 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <main class="padding-top-fixed">
-        <form class="form-create action=" action="admin/create" method="post" enctype="multipart/form-data">
+        <form class="form-create action=" action="/admin/store" method="POST" enctype="multipart/form-data">
                 <div class="container-input">
                     <label class="text-form" for="name">Nombre:</label>
                     <input class="text-camp" type="text" name="name" id="name">
@@ -16,7 +16,7 @@
                     <input class="text-camp" type="text" name="description" id="description">
                 </div>
                 <div class="container-input">
-                    <label class="text-form"  for="category">Categoría:</label>
+                    <label class="text-form"  for="select">Categoría:</label>
                     <select class="text-camp" name="category" id="select">
                         <% category.forEach(categoria => { %>
                             <option value=""><%=categoria%></option>
@@ -25,24 +25,28 @@
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="colors">Colores:</label>
-                    <input type="color" name="colors" id="colors">
+                    <select class="text-camp" name="category" id="colors">
+                        <% colors.forEach(color => { %>
+                            <option value=""><%=color%></option>
+                        <% }) %>
+                    </select>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="stock">Stock:</label>
                     <input class="text-camp" type="number" name="stock" id="stock">
                 </div>
-                <!-- <figure>
-                    <label class="text-form" for="image">Seleccionar imagen:</label>
-                    <input type="file" name="image" id="image">
-                </figure> -->
                 <div class="container-input">
                     <label class="text-form" for="price">Precio:</label>
                     <input class="text-camp" type="text" name="price" id="price">
                 </div>
                 <div class="container-input">
-                    <label class="text-form" for="price">Descuento:</label>
-                    <input class="text-camp" type="text" name="discount" id="price">
+                    <label class="text-form" for="discount">Descuento:</label>
+                    <input class="text-camp" type="text" name="discount" id="discount">
                 </div>
+                <figure>
+                    <label class="text-form" for="image">Seleccionar imagen:</label>
+                    <input type="file" name="image" id="image">
+                </figure>    
                 <button type="submit">
                     enviar
                 </button>

@@ -1,43 +1,45 @@
-let {getCategories, getProducts, writeJson} = require('../data/dataBase')
+let {getCategories, getProducts, writeJson, getColors} = require('../data/dataBase')
 let orderedCategories = getCategories.map(category => category.name)
+let orderedColors = getColors.map(color => color.color)
 
 var adminController = {
 
         createProducts: (req, res )=> {
             res.render('admin/createProducts',{
-            title: "Crear Producto",
-            category: orderedCategories.sort()
-            });
-
-            let {name, description, category, colors, stock/* , image */, price, discount} = req.body
+                title: "Crear Producto",
+                category: orderedCategories.sort(),
+                colors: orderedColors.sort()
+            })
+        },
+        store: (req, res) => {
+            let {name, description, category, colors, stock, image, price, discount} = req.body
             
-            let maxId = 1;
-            let id = 0;
+            let lastId = 1;
+
             getProducts.forEach(product => {
-                if (product.id > max) {
-                    maxId = product.id
-                    id = maxId + 1 
-                }
-            });
+            if(product.id > lastId){
+                lastId = product.id
+            }
+        });
 
             let newProduct = {
-                id,
-                name,
-                description,
+                id: lastId + 1,
+                name: name.trim(),
+                description: description.trim(),
                 category,
-                colors,
-                price,
-                stock,
-                discount,
-                /* image  */
+                colors: [colors],
+                price: +price,
+                stock: +stock,
+                discount: +discount,
+                image: req.file ? [req.file.filename] : ["default-image.png"]
             }
             
-            products.push(newProduct)
+            getProducts.push(newProduct)
             writeJson(getProducts, "products")
 
             res.redirect('/admin')
         },
-    
+
         editProducts: (req, res )=> {
             res.render('admin/editProducts',{
                 title: "Editar Producto"
@@ -53,4 +55,4 @@ var adminController = {
         },
   };
 
-  module.exports = adminController ;
+  module.exports = adminController;
