@@ -16,7 +16,7 @@ var adminController = {
             let {name, description, category, colors, stock, image, price, discount} = req.body
 
             let lastId = 1;
-
+            res.send(req.body.file)
             getProducts.forEach(product => {
             if(product.id > lastId){
                 lastId = product.id
@@ -31,14 +31,14 @@ var adminController = {
                 colors: [colors],
                 price: +price,
                 stock: +stock,
-                discount: +discount,
+                discount: discount ? +discount : 0,
                 image: req.file ? [req.file.filename] : ["default-image.png"]
             }
             
             getProducts.push(newProduct)
-            writeJson(getProducts, "products")
+            writeJson(getProducts, "products") 
 
-            res.redirect('/admin')
+            res.redirect('/admin') 
         },
 
         editProducts: (req, res )=> {
