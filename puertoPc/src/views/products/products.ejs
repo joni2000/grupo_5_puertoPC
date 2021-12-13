@@ -6,8 +6,8 @@
 	<!-- Header -->
 	<%- include('../partials/header') %>
 
-    <main class="home padding-top-fixed">
-        <div class="productAdress">
+    <main class="box-products-general">
+        <div class="title-products-general">
             <h3>PuertoPc > Todo los productos</h3>
         </div>
         
@@ -28,6 +28,8 @@
                                     <h3>Descripción:</h3>
                                     <h3><%- product.description %></h3>
                                  </div>   
+
+                                 <div class="categories-products-1">
                                  <div class="stock-products-all">
                                     <h3>Cantidad:</h3>
                                     <h3><%- product.stock %></h3>
@@ -35,15 +37,20 @@
                                  <div class="category-products-all">
                                     <h3>Categoria:</h3>
                                     <h3><%- product.category %></h3>
-                                 </div>  
+                                 </div> 
+                                 
+                                 </div>
+                                 <div class="categories-products-2">
                                  <div class="price-products-all">
                                     <h3>Precio:</h3>
                                     <h3><%- toThousand(product.price - product.price * product.discount / 100) %></h3>
                                  </div> 
                                  <div class="discount-products-all">
                                     <h3>Descuento:</h3>
-                                    <h3><%- product.discount !== 0 ? `${product.discount}% OFF` : "" %></h3>
+                                    <h4><%- product.discount !== 0 ? `${product.discount}% OFF` : "" %></h4>
                                  </div> 
+                                 </div>
+
                                  <div class="colors-products-all">
                                     <h3>Colores:</h3>
                                     <h3><%- product.colors %></h3>

@@ -1,77 +1,108 @@
- /*.box-products-all {
+.box-products-general{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5.6rem;
+}
+.title-products-general{
+  width: 100%;
+}
+
+ .box-products-all {
     background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: .5rem;
     margin: 2rem 2rem 2rem 2rem;
-    width: 25rem;
-    height: 38rem;
+    width: 90%;
+    height: 60%;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
     border-radius: .9rem;
-    transition: all 0.3s ease;
+    
   }
-  
-  .products-box a {
-    display: block;
+
+  .products-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .products-box_image {
-    border-bottom: 1px solid var(--light-gray);
     width: 90%;
-    height: 90%;
-    object-fit: contain;
-    margin-top: 1.5rem;
-    margin-bottom: .5rem;
-  }
+    height: 50%;
+    border-bottom: 1px solid var(--light-gray);
 
+    } 
+ 
   .products-box_image img{
       width: 85%;
   }
-  
-  .products-box_data {
-    padding: .5rem .5rem .5rem .5rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
+
   .products-box_data h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 300;
-    margin: 0;
     font-family: var(--fontText);
     padding: .5rem;
   }
- 
-  .products-box_data span {
+
+    /*Section name-description-*/
+  .name-products-all{
+    width: 100%;
+    padding: .5rem;
+
+
+  }
+  .description-products-all{
+    width: 100%;
+    padding: .5rem;
+  }
+
+    /*stock-category*/
+
+  .categories-products-1{
+    display: flex;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+   /*price-discount */
+   .categories-products-2{
+    display: flex;
+    justify-content: space-around;
+    padding: .5rem;
+  }
+  
+   /*DISCOUNT*/
+  .discount-products-all h4 {
     font-size: 1.5rem;
     font-weight: 300;
     color: var(--green);
-    margin: 0 0 0 10px;
+    margin: 0 0 0 1rem;
     font-family: var(--fontText);
  
   }
-  
-  .products-box_data p {
-    font-size: 1.7rem;
-    width: 100%;
-    color: var(--gray);
-    margin: 0;
-    height: 0;
-    font-family: var(--fontText);
+       /*colors*/
+   
+  .colors-products-all{
     padding: .5rem;
- 
-  }*/
+    
+  }
 
    /* MEDIA QUERIES */
 
     /* Tablet */
-/* buttons-finals */
-@media (min-width: 480px) {
+    /* buttons-finals 
+     @media (min-width: 480px) {
 
-}
+    }*/
 
 
-/* Desktop */
-@media (min-width: 760px) {
+     /* Desktop */
+  @media (min-width: 760px) {
+  .box-products-general{
+    padding-top: 10.6rem;
+  }
  
 }
