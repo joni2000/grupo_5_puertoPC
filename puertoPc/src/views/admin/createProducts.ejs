@@ -18,18 +18,22 @@
                 <div class="container-input">
                     <label class="text-form"  for="select">Categoría:</label>
                     <select class="text-camp" name="category" id="select">
-                        <% category.forEach(categoria => { %>
-                            <option value=""><%=categoria%></option>
+                        <option value="">Elegir</option>
+                        <% listCategories.forEach(categoria => { %>
+                            <option value="<%-categoria%>"><%=categoria%></option>
                         <% }) %>
                     </select>    
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="colors">Colores:</label>
-                    <select class="text-camp" name="category" id="colors">
-                        <% colors.forEach(color => { %>
-                            <option value=""><%=color%></option>
-                        <% }) %>
-                    </select>
+                    <% for( let i = 0; i < 4; i++ ) { %>
+                        <select class="text-camp" name="colors" id="colors">
+                                <option value="">Elegir</option>
+                            <% colors.forEach(color => { %>
+                                <option value="<%-color%> "><%=color%></option>
+                            <% }) %>
+                        </select>
+                    <% } %>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="stock">Stock:</label>
@@ -43,12 +47,12 @@
                     <label class="text-form" for="discount">Descuento:</label>
                     <input class="text-camp" type="text" name="discount" id="discount">
                 </div>
-                <figure>
-                    <label class="text-form" for="image">Seleccionar imagen:</label>
-                    <input type="file" name="image" id="image">
-                </figure>    
+                    <figure>
+                        <label class="text-form" for="image">Seleccionar imagen:</label>
+                        <input type="file" name="[image]" id="image" multiple>
+                    </figure>    
                 <button type="submit">
-                    enviar
+                    Guardar producto
                 </button>
             </form>
     </main>

@@ -7,13 +7,14 @@ var adminController = {
         createProducts: (req, res )=> {
             res.render('admin/createProducts',{
                 title: "Crear Producto",
-                category: orderedCategories.sort(),
+                listCategories: orderedCategories.sort(),
+                category: getCategories,
                 colors: orderedColors.sort()
             })
         },
         store: (req, res) => {
             let {name, description, category, colors, stock, image, price, discount} = req.body
-            
+
             let lastId = 1;
 
             getProducts.forEach(product => {

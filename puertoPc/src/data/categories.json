@@ -1,50 +1,66 @@
 [
     {
+        "id": 1,
         "name": "Escritorio"
     },
     {
+        "id": 2,
         "name": "Notebooks"
     },
     {
+        "id": 3,
         "name": "Motherboards"
     },
     {
+        "id": 4,
         "name": "Procesadores"
     },
     {
+        "id": 5,
         "name": "Memorias ram"
     },
     {
+        "id": 6,
         "name": "Almacenamiento"
     },
     {
+        "id": 7,
         "name": "Placas de video"
     },
     {
+        "id": 8,
         "name": "Fuentes"
     },
     {
+        "id": 9,
         "name": "Gabinetes"
     },
     {
+        "id": 10,
         "name": "Coollers"
     },
     {
+        "id": 11,
         "name": "Teclados y mouses"
     },
     {
+        "id": 12,
         "name": "Sonido"
     },
     {
+        "id": 13,
         "name": "Monitores"
     },
     {
+        "id": 14,
         "name": "Sillas"
     },
     {
+        "id": 15,
         "name": "Camaras web"
     },
     {
+        "id": 16,
         "name": "Cables"
     }
 ]
