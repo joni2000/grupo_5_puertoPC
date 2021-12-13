@@ -30,6 +30,8 @@ var usersController = {
             lastName: req.body.lastName,
             email: req.body.email,
             password: req.body.password,
+            category: "user",
+            image: "img-default.jpg"
         };
         getUsers.push(newUser);
         writeJson(getUsers, "users");
