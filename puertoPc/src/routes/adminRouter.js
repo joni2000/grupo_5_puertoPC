@@ -11,6 +11,8 @@ router.get('/crear', adminController.createProducts);
 /* POST send form */
 router.post('/store', upload.single('image'), adminController.store);
 
-router.get('/editar', adminController.editProducts);
+router.get('/editar/:id', adminController.editProducts);
+router.put('/editar/:id', upload.single('image'),adminController.update);
+
 
 module.exports = router;

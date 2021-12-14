@@ -1,6 +1,8 @@
-let {getCategories, getProducts, writeJson, getColors} = require('../data/dataBase')
+let {getCategories, getProducts, writeJson, getColors} = require('../data/dataBase');
+const { get } = require('../routes/adminRouter');
 let orderedCategories = getCategories.map(category => category.name)
 let orderedColors = getColors.map(color => color.color)
+
 
 var adminController = {
 
@@ -40,9 +42,35 @@ var adminController = {
         },
 
         editProducts: (req, res )=> {
+            let productId = +req.params.id;
+            
+            let product = getProducts.find(product => product.id === productId)
             res.render('admin/editProducts',{
-                title: "Editar Producto"
+                title: "Editar Producto",
+                listCategories: orderedCategories.sort(),
+                category: getCategories,
+                colors: orderedColors.sort(),
+                product
             });
+        },
+        update: (req, res)=> {
+            let productId = +req.params.id;
+
+            let {name, description, category, colors, stock, image, price, discount} = req.body
+
+            getProducts.forEach(product => {
+                if(getProducts.id === productId){
+                    product.id = product.id,
+                    product.name = name.trim(),
+                    product.price = +price.trim(),
+                    product.category = +category,
+                    product.description = description.trim(),
+                    product.discount = +discount,
+                    product.stock = +stock,
+                    product.colors = colors,
+                    product.image = req.file ? [req.file.filename] : product.image
+                }
+            })
         },
         
         
