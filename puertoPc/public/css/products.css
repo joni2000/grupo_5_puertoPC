@@ -1,12 +1,17 @@
 .body-products-general{ 
     padding-top: 5.5rem;
-}
+} /*JSON DATABASE CHANGES*/
 .box-products-general-main{
     width: 100%;
-    height: 50rem;
+    height: 60rem;
     margin-bottom: 8rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
 }
+
+/*CARD GENERAL EJS
+.card-products-general{
+  border: red solid;
+}*/
 /*letters */
 .box-products-general-main h3{
   font-size: 1.4rem;
@@ -146,7 +151,7 @@
   }
     /*general main*/
     .box-products-general-main{
-      height: 50rem;
+      height: 82rem;
       margin-bottom: 12rem;
       margin-top: 1rem;
   }
@@ -262,7 +267,7 @@
     /*general main*/
     .box-products-general-main{
       padding-top: 6rem;
-      height: 60rem;
+      height: 110rem;
       margin-bottom: 5rem;
       display: flex;
       flex-direction: column;
@@ -337,6 +342,7 @@
       font-weight: 600;
       display: flex;
       align-self: center;
+      padding: .5rem;
 
     }
 

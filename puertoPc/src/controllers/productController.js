@@ -11,16 +11,16 @@ var productController = {
     	// Root - Show all products
 	products: (req, res) => {
 
-        let idProduct = +req.params.id;
-        let product = products.find(product => product.id === idProduct);
-        let products = products.filter(product => product.categories === products.categories)
+      //  let idProduct = +req.params.id;
+      //  let product = products.find(product => product.id === idProduct);
+       // let products = products.filter(product => product.categories === products.categories)
 
         
 		res.render('products/products', {
             title:"Productos",        
 			products,
-            sliderTitle: "Productos relacionados",
-            slideProducts: relatedProducts,
+           // sliderTitle: "Productos relacionados",
+          //  slideProducts: relatedProducts,
 			toThousand
 		});
 	},

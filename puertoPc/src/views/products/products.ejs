@@ -11,9 +11,10 @@
             <h3>Todo los productos</h3>
             </div>
         <% products.forEach(product => { %>
+            <a href="detalles<%- product.id %>" class="card-products-general">
             <div class="box-products-all">
+
                  <section class="products-box">
-                    <!-- <a href="detalles" class="card"> </a>-->
                     
                             <figure class="products-box_image">
                                    <img src="images/products/<%- product.image %>" alt="Producto">
@@ -33,8 +34,8 @@
                                           <h3><%- toThousand(product.price - product.price * product.discount / 100) %></h3>
                                       </div> 
                                      <div class="discount-products-all">
-                                          <h3>Descuento:</h3>
-                                          <h4><%- product.discount !== 0 ? `${product.discount}% OFF` : "" %></h4>
+                                        
+                                          <h4> <%- product.discount !== 0 ? `Descuento: ${product.discount}% OFF` : "" %></h4>
                                      </div>
                                  
                                  </div>
@@ -44,7 +45,10 @@
                              </article>
                    
                 </section>
+           
+
             </div> 
+             </a>
         <% }) %>
 
       
