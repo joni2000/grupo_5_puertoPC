@@ -9,7 +9,7 @@ router.get('/', adminController.admin);
 /* GET show creation form */
 router.get('/crear', adminController.createProducts);
 /* POST send form */
-router.post('/store', upload.array('image'), adminController.store);
+router.post('/store', upload.single('image'), adminController.store);
 
 router.get('/editar', adminController.editProducts);
 

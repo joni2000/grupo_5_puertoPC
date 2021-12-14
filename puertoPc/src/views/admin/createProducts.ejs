@@ -4,11 +4,19 @@
     <%- include('../partials/head.ejs') %>
     
 <body>
-    <%- include('../partials/header.ejs') %>
+    <header class="header">
+        <nav class="top-create top">
+            <a class="icon-menu">
+                <i class="fas fa-bars"></i>
+            </a>
+            <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
+            <a class="logo-text" href="/">PuertoPc</a>
+        </nav>
+    </header>    
     <main class="main-create padding-top-fixed">
         <form class="form-create action=" action="/admin/store" method="POST" enctype="multipart/form-data">
                 <div class="container-input">
-                    <label class="text-form" for="name">Nombre:</label>
+                    <label class="text-form" for="name" minlength="6" maxlength="80">Nombre:</label>
                     <input class="text-camp" type="text" name="name" id="name" required>
                     <span class="error-message">Coloca un nombre</span>
                 </div>
@@ -30,7 +38,7 @@
                 <div class="container-input colors">
                     <label class="text-form" for="colors">Colores:</label>
                     <% for( let i = 0; i < 4; i++ ) { %>
-                        <select class="text-camp" name="colors" id="colors" required>
+                        <select class="text-camp" name="colors" id="colors">
                                 <option value="">Elegir</option>
                             <% colors.forEach(color => { %>
                                 <option value="<%-color%> "><%=color%></option>
@@ -51,12 +59,12 @@
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="discount">Descuento:</label>
-                    <input class="text-camp" type="text" name="discount" id="discount" required>
+                    <input class="text-camp" type="text" name="discount" id="discount">
                     <span class="error-message"></span>
                 </div>
                     <figure class="select-image">
                         <label class="text-form" for="image">Seleccionar imagen</label>
-                        <input class="buttom-image" type="file" name="image" id="image" accept='image/*' multiple required>
+                        <input class="buttom-image" type="file" name="image" id="image">
                     </figure>    
                     <span class="error-message">Formato no valído</span>
                     <button  class="button-buy" type="submit">

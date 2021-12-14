@@ -14,9 +14,7 @@ var adminController = {
         },
         store: (req, res) => {
             let {name, description, category, colors, stock, image, price, discount} = req.body
-
-            let lastId = 1;
-            res.send(req.body.file)
+            let lastId = 0;
             getProducts.forEach(product => {
             if(product.id > lastId){
                 lastId = product.id
@@ -28,7 +26,7 @@ var adminController = {
                 name: name.trim(),
                 description: description.trim(),
                 category,
-                colors: [colors],
+                colors: colors.filter(Boolean),
                 price: +price,
                 stock: +stock,
                 discount: discount ? +discount : 0,
