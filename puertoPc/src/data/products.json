@@ -1,42 +1,77 @@
 [
     {
-        "id": 2,
-        "name": "Notebook Exo Xl4-s3542 Intel I3 4gb Ssd 256 Gb Windows 11",
-        "description": "Sistema Operativo Windows 11 Home Procesadores Intel® Core™ i3-5005U (2 núcleos y 4 hilos de 2 GHz.) Memoria 4 GB DDR3 Almacenamiento SSD 256 GB Pantalla LED - FULL HD 15,6” | Resolución 1920x1080 16:9 Video Intel® HD Graphics Webcam Frontal de 0.3 MP Conectividad Wifi 802.11b/g/n | Bluetooth 4.0 Puertos 1 x MiniHDMI | 1 x RJ45 Gigabit | 2 x USB 3.0 Sonido 1 x Conectores de audio de 3,5mm Parlantes incorporados y micrófono Lector de Tarjetas SD Batería 7.4V 5000 mAh con 6 hs. de autonomía.* Color Negro Dimensiones | Peso 341.2mm x 235mm x 21.5 mm | 2199 gramos Software Windows Defender | Tienda de aplicaciones de Windows Seguridad Kensington Lock",
+        "id": 1,
+        "name": "Notebook Lenovo IdeaPad 15IML05  abyss blue táctil 15.6\", Intel Core i3 10110U",
+        "description": "La notebook Lenovo IdeaPad 3 fue pensada para hacer tu vida más sencilla. Su diseño elegante e innovador y su comodidad para transportarla, la convertirá en tu PC favorita. Cualquier tarea que te propongas, ya sea en casa o en la oficina, la harás con facilidad gracias a su poderoso rendimiento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LCD de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i3 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. En base a esto, permite el desempeño necesario para la edición de fotografías o videos en programas básicos.",
         "category": "Notebooks",
         "colors": [
             [
-                "Blanco ",
-                "Gris ",
-                "Negro ",
-                "Rojo "
+                "Azul ",
+                "Dorado ",
+                "Amarillo ",
+                "Plateado "
             ]
         ],
-        "price": 76999,
+        "price": 82999,
         "stock": 10,
-        "discount": 7,
+        "discount": 0,
         "image": [
-            "default-image.png"
+            "1639438250116_img_.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Notebook HP 15-EF2127WM silver 15.6\", AMD Ryzen 5 5500U",
+        "description": "La notebook HP 15-EF2127WM es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 6 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.",
+        "category": "Notebooks",
+        "colors": [
+            [
+                "Dorado ",
+                "Negro ",
+                "Rosa ",
+                "Gris "
+            ]
+        ],
+        "price": 103464,
+        "stock": 10,
+        "discount": 0,
+        "image": [
+            "1639438564656_img_.jpg"
         ]
     },
     {
         "id": 3,
-        "name": "Notebook Exo Xl4-s3542 Intel I3 4gb Ssd 256 Gb Windows 11",
-        "description": "Sistema Operativo Windows 11 Home Procesadores Intel® Core™ i3-5005U (2 núcleos y 4 hilos de 2 GHz.) Memoria 4 GB DDR3 Almacenamiento SSD 256 GB Pantalla LED - FULL HD 15,6” | Resolución 1920x1080 16:9 Video Intel® HD Graphics Webcam Frontal de 0.3 MP Conectividad Wifi 802.11b/g/n | Bluetooth 4.0 Puertos 1 x MiniHDMI | 1 x RJ45 Gigabit | 2 x USB 3.0 Sonido 1 x Conectores de audio de 3,5mm Parlantes incorporados y micrófono Lector de Tarjetas SD Batería 7.4V 5000 mAh con 6 hs. de autonomía.* Color Negro Dimensiones | Peso 341.2mm x 235mm x 21.5 mm | 2199 gramos Software Windows Defender | Tienda de aplicaciones de Windows Seguridad Kensington Lock",
+        "name": "Notebook Dell Inspiron 3505 plata 15.6\", AMD Ryzen 5 3450U",
+        "description": "Los equipos Dell se destacan por ofrecer soluciones reales para cada una de las necesidades. Ya sea para conectarte, entretenerte, trabajar o colaborar de manera online, podrás hacerlo de forma segura desde cualquier lugar y en cualquier momento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 4 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.",
         "category": "Notebooks",
         "colors": [
             [
+                "Dorado ",
                 "Blanco ",
-                "Rosa ",
-                "Plateado ",
-                "Rojo "
+                "Negro ",
+                "Plateado "
             ]
         ],
-        "price": 76999,
+        "price": 93999,
         "stock": 10,
-        "discount": 7,
+        "discount": 5,
         "image": [
-            "default-image.png"
+            "1639439994516_img_.jpg"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Notebook Asus Vivobook 15 I5-1135g7 8gb 256gb",
+        "description": "Disfrutá de la perfecta combinación de rendimiento y diseño con esta notebook Asus VivoBook K513EA-BN796. Encontrarás en ella una excelente herramienta para tus trabajos de todos los días y para tus momentos de entretenimiento. Aprovechá la experiencia extraordinaria que la marca tiene para ofrecerte y optimizá la calidad de tus imágenes y videos.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla IPS de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.",
+        "category": "Notebooks",
+        "colors": [
+            "Dorado "
+        ],
+        "price": 110999,
+        "stock": 10,
+        "discount": 15,
+        "image": [
+            "1639440254032_img_.jpg"
         ]
     }
 
