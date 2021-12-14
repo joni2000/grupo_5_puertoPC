@@ -13,11 +13,14 @@ var productController = {
 
         let idProduct = +req.params.id;
         let product = products.find(product => product.id === idProduct);
+        let products = products.filter(product => product.categories === products.categories)
 
         
 		res.render('products/products', {
             title:"Productos",        
 			products,
+            sliderTitle: "Productos relacionados",
+            slideProducts: relatedProducts,
 			toThousand
 		});
 	},
@@ -41,6 +44,17 @@ var productController = {
         res.render('products/productDetail',{
             title: "Detalle de Producto"
         });
+    },
+    categories: (req, res) => {
+        let categoriesId = +req.params.id;
+
+        let productsCategories = products.filter(product => +product.categories === categoriesId)
+        let category = categories.find(category => category.id === categoriesId)
+
+        res.render('categories', {
+            products: productsCategories,
+            categories,
+        })
     },
 
 };
