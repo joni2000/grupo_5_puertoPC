@@ -1,7 +1,6 @@
-let {getCategories, getProducts, writeJson, getColors} = require('../data/dataBase');
+let {getCategories, getProducts, writeJson} = require('../data/dataBase');
 const { get } = require('../routes/adminRouter');
 let orderedCategories = getCategories.map(category => category.name)
-let orderedColors = getColors.map(color => color.color)
 
 
 var adminController = {
@@ -11,12 +10,12 @@ var adminController = {
                 title: "Crear Producto",
                 listCategories: orderedCategories.sort(),
                 category: getCategories,
-                colors: orderedColors.sort()
             })
         },
         store: (req, res) => {
-            let {name, description, category, colors, stock, image, price, discount} = req.body
+            let {name, description, category, /* colors, */ stock, image, price, discount} = req.body
             let lastId = 0;
+            
             getProducts.forEach(product => {
             if(product.id > lastId){
                 lastId = product.id
@@ -28,7 +27,6 @@ var adminController = {
                 name: name.trim(),
                 description: description.trim(),
                 category,
-                colors: colors.filter(Boolean),
                 price: +price,
                 stock: +stock,
                 discount: discount ? +discount : 0,
@@ -49,28 +47,31 @@ var adminController = {
                 title: "Editar Producto",
                 listCategories: orderedCategories.sort(),
                 category: getCategories,
-                colors: orderedColors.sort(),
-                product
+                product,
             });
         },
+        
         update: (req, res)=> {
             let productId = +req.params.id;
 
-            let {name, description, category, colors, stock, image, price, discount} = req.body
+            let {name, description, category,/*  colors , */ stock, image, price, discount} = req.body
 
             getProducts.forEach(product => {
-                if(getProducts.id === productId){
+                if(product.id === productId){
                     product.id = product.id,
                     product.name = name.trim(),
                     product.price = +price.trim(),
-                    product.category = +category,
+                    product.category = category,
                     product.description = description.trim(),
                     product.discount = +discount,
                     product.stock = +stock,
-                    product.colors = colors,
+                    /* product.colors = colors, */
                     product.image = req.file ? [req.file.filename] : product.image
                 }
             })
+                writeJson(getProducts, "products")
+            
+                res.redirect('/')
         },
         
         

@@ -35,18 +35,6 @@
                     </select>
                     <span class="error-message">Elige una categoría</span>    
                 </div>
-                <div class="container-input colors">
-                    <label class="text-form" for="colors">Colores:</label>
-                    <% for( let i = 0; i < 4; i++ ) { %>
-                        <select class="text-camp" name="colors" id="colors">
-                                <option value="">Elegir</option>
-                            <% colors.forEach(color => { %>
-                                <option value="<%-color%> "><%=color%></option>
-                            <% }) %>
-                        </select>
-                        <span class="error-message">Debes elegir un color</span>
-                    <% } %>
-                </div>
                 <div class="container-input">
                     <label class="text-form" for="stock">Stock:</label>
                     <input class="text-camp" type="number" name="stock" id="stock" value="<%-product.stock%>" required>

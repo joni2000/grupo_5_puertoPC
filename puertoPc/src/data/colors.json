@@ -1,29 +1,42 @@
 [
     {
+        "id": 1,
         "color": "Gris"
     },
     {
+        "id": 2,
         "color": "Negro"
     },
     {
+        "id": 3,
         "color": "Azul"
     },
     {
+        "id": 4,
         "color": "Blanco"
     },
     {
+        "id": 5,
         "color": "Dorado"
     },
     {
+        "id": 6,
         "color": "Amarillo"
     },
     {
+        "id": 7,
         "color": "Rosa"
     },
     {
+        "id": 8,
         "color": "Plateado"
     },
     {
+        "id": 9,
         "color": "Rojo"
+    },
+    {
+        "id" : 10,
+        "color": "Elegir"
     }
 ]
