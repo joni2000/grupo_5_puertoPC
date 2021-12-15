@@ -90,7 +90,7 @@ span.error-message {
     display: flex;
     align-self: flex-start;
     margin-left: 2.2rem;
-    color: red;
+    color: var(--errorMessage);
 }
 span.credenciales{
     position: absolute;

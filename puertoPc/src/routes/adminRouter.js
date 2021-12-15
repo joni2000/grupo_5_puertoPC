@@ -13,4 +13,7 @@ router.post('/store', upload.array('image', 5), adminController.store);
 
 router.get('/editar', adminController.editProducts);
 
+/* DELETE product */
+/* router.delete("/:id", adminController.destroy) */
+
 module.exports = router;

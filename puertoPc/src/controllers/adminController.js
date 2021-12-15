@@ -46,6 +46,19 @@ var adminController = {
                 title: "Editar Producto"
             });
         },
+        deleteProduct: (req, res) => {
+            let productId = +req.params.id;
+
+            getProducts.forEach(product => {
+                if(product.id === productId){
+                    let productToDestroyIndex = products.indexOf(product)
+                    productToDestroyIndex !== -1 ? product.splice(productToDestroyIndex, 1) : console.log("No encontré el producto")
+
+                }
+            })
+            writeJson(getProducts, "products")
+            res.send(`Has eliminado el producto ${productId}`)
+        },
         
         
         admin: (req, res )=> {

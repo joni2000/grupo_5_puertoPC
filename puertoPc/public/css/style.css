@@ -44,6 +44,7 @@ li {
     --green: #00a650;
     --grey: #394867;
     --greyLight: #C5C5C5;
+    --errorMessage: #ff0000;
 
     /* Fonts */
     --fontText: 'Roboto', sans-serif;
