@@ -46,7 +46,7 @@ var adminController = {
                 title: "Editar Producto"
             });
         },
-        deleteProduct: (req, res) => {
+        /* deleteProduct: (req, res) => {
             let productId = +req.params.id;
 
             getProducts.forEach(product => {
@@ -58,7 +58,7 @@ var adminController = {
             })
             writeJson(getProducts, "products")
             res.send(`Has eliminado el producto ${productId}`)
-        },
+        }, */
         
         
         admin: (req, res )=> {
