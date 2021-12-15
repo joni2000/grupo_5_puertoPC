@@ -10,83 +10,52 @@
             <i class="fas fa-chevron-down"></i> 
         </div>
         <h2 class="subtitle">Ofertas <a class="link-all" href="">Ver todas</a></h2>
+       
+        
         <section class="products">
+          <i class="fas fa-chevron-down"></i>
+          
+          <% productsInSale.forEach(product => { %>
+
             <section class="slider slider-offer"> 
+
                 <a href="detalles" class="card">
                     <div>
-                        <img src="images/Auriculares/Auri.webp" alt="Producto">
+                        <img src="/images/products/<%- product.image %>" alt="imagen de producto">							
                     </div>
                     <div class="card-info">
                         <h3>
-                            Auriculares inalámbricos Sony WH-CH510 negro
+                            <%- product.name %>
                         </h3>
                     </div>    
                     <div class="card-description-text">   
-                        <p>$9.350</p>
-                        <p><span>$11.000</span> 15% off</p>
+                        <p>$<%- toThousand(product.price - product.price * product.discount / 100) %> </p>
+                        <p><span>$<%- toThousand(product.price) %>  </span> <%- product.discount !== 0 ? `${product.discount}% OFF` : "" %> </p>
                     </div> 
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/Monitor/Monitor.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Monitor gamer LG 24GL600F led 23.6 " negro 100V/240V
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$9.350</p>
-                        <p><span>$11.000</span> 15% off</p>
-                    </div> 
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/mouse/Mouse.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Mouse de juego Logitech  G Series Lightsync G203 lila
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$9.350</p>
-                        <p><span>$11.000</span> 15% off</p>
-                    </div> 
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/teclado/Teclado.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Teclado gamer bluetooth Redragon Draconic K530 QWERTY Outemu Brown inglés US color blanco con luz RGB
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$9.350</p>
-                        <p><span>$11.000</span> 15% off</p>
-                    </div> 
-                </a>
-                <i class="fas fa-chevron-down"></i>
-                <i class="fas fa-chevron-down"></i> 
+                </a>    
             </section>
+            
+            <% }) %>
+            <i class="fas fa-chevron-down"></i> 
+         </section>
         <section class="products">
             <h2 class="subtitle">Te puede interesar</h2>
+            <i class="fas fa-chevron-down"></i>
+            <% productsAdvantages.forEach(product => { %>
+           
             <section class="slider"> 
+                
                 <a href="detalles" class="card">
                     <div>
-                        <img src="images/AppleMacbookAir/macBookAir.webp" alt="Producto">
+                        <img src="/images/products/<%- product.image %>" alt="imagen de producto">	
                     </div>
                     <div class="card-info">
                         <h3>
-                            Apple Macbook Air 
-                            (13 pulgadas, 2020, Chip M1, 512 GB de SSD, 8 GB de RAM)
-                            - Plata
+                            <%- product.name %>
                         </h3>
                     </div>    
                     <div class="card-description-text">   
-                        <p>$256.700</p>
+                        <p>$<%- toThousand(product.price - product.price * product.discount / 100) %></p>
                         <p>Envío gratis</p>
                         <p>18 cuotas sin interés</p>
                     </div> 
@@ -94,218 +63,12 @@
                         <button class="button-buy">agregar al carrito</button>
                     </div>
                 </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/NotebookASUS/Notebook_ASUS.jpg" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Notebook ASUS x509 15.6 Celeron N4020 4GB 500GB Win10
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$96.355</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/NotebookHP14/NotebookHP14.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Notebook HP 14-DK1022WM natural silver 14, AMD Ryzen 3 3250U  4GB de RAM 128GB SSD,
-                             10 Home
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$98.355</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/dell/dell.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Notebook Dell Inspiron 3505 gris 15.6", AMD Athlon Silver 3050U  4GB de RAM 256GB
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$98.355</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <i class="fas fa-chevron-down"></i>
-                <i class="fas fa-chevron-down"></i> 
-            </section>
+              </section>
 
-            <section class="slider"> 
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/ComputadoraCompletaAmd/CompletaIntel.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Computadora Completa Amd Intel Dual Core 8gb Led 19 Lol
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$142.999</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/PcArmadaGamerAmd/GamerAmd.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Pc Armada amd 9700 16gb Ram Ssd Y Hdd
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$177.780</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/PcArmadaIntelCore/PC_Icore7.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Pc Armada Edicion Intel Core I7 9700 16gb Ram Ssd Y Hdd
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$155.780</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/intel3/intel.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Pc Lenovo Completa Intel I3 8gb 480gb Ssd Monitor 22 Win 10
-                        </h3>
-                    </div>
-                    <div class="card-description-text">   
-                        <p>$155.780</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <i class="fas fa-chevron-down"></i>
-                <i class="fas fa-chevron-down"></i> 
-            </section>
+              <% }) %>
 
-            <section class="slider"> 
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/SillaSillónGamerPlay/SillonGamer.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Silla Sillón Gamer Playstation Xbox Pc Oficina - Good Game
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$55.999</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/SillónSillaGamerPro/SillaPro.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Sillón Silla Gamer  Pro Playstation Xbox Pc Oficina
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$60.399</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/SillónSillaPremium/SillaPremium.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Sillón Silla Premium Gamer Gaming Pro Reclinable Pc Oficina
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$60.399</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="images/akracing/silla.webp" alt="Producto">
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            Silla de escritorio Akracing Arctica gamer ergonómica  white & black 
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$60.399</p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-                <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-chevron-down"></i> 
-            </section>
+            
         </section>       
     </main>
 

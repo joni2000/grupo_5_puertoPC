@@ -1,37 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
+    
     <%- include('../partials/head.ejs') %>
-
+    
 <body>
-    <%-include('../partials/header.ejs')%>
-    <main>
-        <form action="" method="post">
-            <div>
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name">
-            </div>
-            <div>
-                <label for="description">Descripción:</label>
-                <input type="text" name="description" id="description">
-            </div>
-            <div>
-                <label for="category">categoría:</label>
-                <input type="select" name="category" id="category">
-            </div>
-            <div>
-                <label for="colors">Colores:</label>
-                <input type="text" name="colors" id="colors">
-            </div>
-            <div>
-                <label for="price">Precio:</label>
-                <input type="text" name="price" id="price">
-            </div>
-            <div>
-                <label for="image">Seleccionar imagen:</label>
-                <input type="file" name="image" id="image">
-            </div>
-        </form>
+    <header class="header">
+        <nav class="top-create top">
+            <a class="icon-menu">
+                <i class="fas fa-bars"></i>
+            </a>
+            <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
+            <a class="logo-text" href="/">PuertoPc</a>
+        </nav>
+    </header>    
+    <main class="main-create padding-top-fixed">
+        <form class="form-create action=" action="/admin/editar/<%-product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="container-input">
+                    <label class="text-form" for="name" minlength="6" maxlength="80">Nombre:</label>
+                    <input class="text-camp" type="text" name="name" id="name" value="<%-product.name%>" required>
+                    <span class="error-message">Coloca un nombre</span>
+                </div>
+                <div class="container-input">
+                    <label class="text-form" for="description">Descripción:</label>
+                    <textarea class="text-camp" name="description" id="description" required><%-product.description%></textarea>
+                    <span class="error-message">Debes agregar un descripción</span>
+                </div>
+                <div class="container-input">
+                    <label class="text-form"  for="select">Categoría:</label>
+                    <select class="text-camp" name="category" id="select" required>
+                        <option value="">Elegir</option>
+                        <% category.forEach(categoria => { %>
+                            <option value="<%-categoria.name%>" <%- categoria.name === product.category ? "selected" : "" %>><%=categoria.name%></option>
+                        <% }) %>
+                    </select>
+                    <span class="error-message">Elige una categoría</span>    
+                </div>
+                <div class="container-input">
+                    <label class="text-form" for="stock">Stock:</label>
+                    <input class="text-camp" type="number" name="stock" id="stock" value="<%-product.stock%>" required>
+                    <span class="error-message">Debes definir el stock</span>
+                </div>
+                <div class="container-input">
+                    <label class="text-form" for="price">Precio:</label>
+                    <input class="text-camp" type="text" name="price" id="price" value="<%-product.price%> " required>
+                    <span class="error-message">Debes definir un precio</span>
+                </div>
+                <div class="container-input">
+                    <label class="text-form" for="discount">Descuento:</label>
+                    <input class="text-camp" type="text" name="discount" id="discount" value="<%-product.discount%>">
+                    <span class="error-message"></span>
+                </div>
+                    <figure class="select-image">
+                        <label class="text-form" for="image">Seleccionar imagen</label>
+                        <input class="buttom-image" type="file" name="image" id="image">
+                    </figure>    
+                    <span class="error-message">Formato no valído</span>
+                    <div class="button-box button__buy-cart">
+                        <button  class="button-buy" type="submit">
+                            Editar producto
+                        </button>
+                        <form action="/admin/delete/<%-product.id%>?_method=DELETE" method="POST">
+                            <button class="button-buy" type="submit">
+                                eliminar Producto
+                            </button>
+                        </form>
+                    </div>
+            </form>
     </main>
 </body>
 </html>
