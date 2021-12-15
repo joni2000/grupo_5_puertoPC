@@ -55,9 +55,16 @@
                         <input class="buttom-image" type="file" name="image" id="image">
                     </figure>    
                     <span class="error-message">Formato no valído</span>
-                    <button  class="button-buy" type="submit">
-                        Editar producto
-                    </button>
+                    <div class="button-box button__buy-cart">
+                        <button  class="button-buy" type="submit">
+                            Editar producto
+                        </button>
+                        <form action="/admin/delete/<%-product.id%>?_method=DELETE" method="POST">
+                            <button class="button-buy" type="submit">
+                                eliminar Producto
+                            </button>
+                        </form>
+                    </div>
             </form>
     </main>
 </body>

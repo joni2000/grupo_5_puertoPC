@@ -78,9 +78,34 @@ var adminController = {
         admin: (req, res )=> {
             res.render('admin/admin', {
                 name: "jonathan",
-                title: "Crear Producto"
+                title: "Crear Producto",
+                products: getProducts
             });
         },
+
+        delete: (req, res) => {
+            let productId = +req.params.id;
+    
+            getProducts.forEach(product => {
+                if(product.id === productId){
+                    if(fs.existsSync("./public/images/products/", product.image[0])){
+                        fs.unlinkSync(`./public/images/products/${product.image[0]}`)
+                    }else{
+                        console.log('No encontré el archivo')
+                    }
+    
+                    let productToDestroyIndex = getProducts.indexOf(product) // si lo encuentra devuelve el indice si no -1
+                    if(productToDestroyIndex !== -1) {
+                        getProducts.splice(productToDestroyIndex, 1)
+                    }else{  // primer parámetro es el indice del elemento a borrar, el segundo, la cantidad a eliminar 
+                        console.log('No encontré el producto')
+                    }
+                }
+            })
+    
+            writeJson(getProducts, 'products')
+            res.redirect('/admin')
+        }
   };
 
   module.exports = adminController;
