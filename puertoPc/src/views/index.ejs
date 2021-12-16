@@ -16,26 +16,25 @@
           <i class="fas fa-chevron-down"></i>
 
             <section class="slider slider-offer"> 
-
-                <% for( var i = 0; i < 3; i++ ) { %>
-
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="/images/products/<%- productsInSale[1].image %>" alt="imagen de producto">							
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            <%- productsInSale[1].name %>
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$<%- toThousand(productsInSale[1].price - productsInSale[1].price * productsInSale[1].discount / 100) %> </p>
-                        <p><span>$<%- toThousand(productsInSale[1].price) %>  </span> <%- productsInSale[1].discount !== 0 ? `${productsInSale[1].discount}% OFF` : "" %> </p>
-                    </div> 
-                </a>    
+                <% for( let i = 0; i < 3; i++ ) { %>
+                    <a href="/productos/detalles/<%- productsInSale[i].id %>" class="card">
+                        <div>
+                            <img src="/images/products/<%- productsInSale[i].image %>" alt="imagen de producto">							
+                        </div>
+                        <div class="card-info">
+                            <h3>
+                                <%=productsInSale[i].name %>
+                            </h3>
+                        </div>    
+                        <div class="card-description-text">   
+                            <p>$<%= toThousand(productsInSale[i].price - productsInSale[i].price * productsInSale[i].discount / 100) %> </p>
+                            <p><span>$<%= toThousand(productsInSale[i].price) %>  </span> <%- productsInSale[i].discount !== 0 ? `${productsInSale[i].discount}% OFF` : "" %> </p>
+                        </div> 
+                    </a> 
+                
                 <% } %>
             </section>
-            
+
             <i class="fas fa-chevron-down"></i> 
          </section>
         <section class="products">
@@ -43,71 +42,38 @@
             <i class="fas fa-chevron-down"></i>
             
            
-            <section class="slider"> 
-             
-                <% for( var i = 0; i < 4; i++ ) { %>
-   
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="/images/products/<%- productsAdvantages[1].image %>" alt="imagen de productsAdvanges">	
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            <%- productsAdvantages[1].name %>
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$<%- toThousand(productsAdvantages[1].price - productsAdvantages[1].price * productsAdvantages[1].discount / 100) %></p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-               <% } %>
+            <section class="slider">
 
-              </section>
+                <% productsAdvantages.forEach(product => { %>
+                 
+                    <a href="/productos/detalles/<%- product.id %>" class="card">
+                        
+                        <div>
+                            <img src="/images/products/<%- product.image %>" alt="imagen de productsAdvanges">	
+                         </div>
+                         <div class="card-info">
+                            <h3>
+                                <%- product.name %>
+                            </h3>
+                         </div> 
+                     
+                         <div class="card-description-text">   
+                            <p>$<%- toThousand(product.price - product.price * product.discount / 100) %></p>
+                            <p>Envío gratis</p>
+                            <p>18 cuotas sin interés</p>
+                        </div> 
+                        <div class="button-box">
+                            <button class="button-buy">agregar al carrito</button>
+                        </div>
+                   </a> 
 
-                <i class="fas fa-chevron-down"></i>        
-            
-        </section>   
 
-        <section class="products">
-            
-            <i class="fas fa-chevron-down"></i>
-            
-           
-            <section class="slider"> 
-             
-                <% for( var i = 0; i < 4; i++ ) { %>
-   
-                <a href="detalles" class="card">
-                    <div>
-                        <img src="/images/products/<%- productsAdvantages[1].image %>" alt="imagen de productsAdvanges">	
-                    </div>
-                    <div class="card-info">
-                        <h3>
-                            <%- productsAdvantages[1].name %>
-                        </h3>
-                    </div>    
-                    <div class="card-description-text">   
-                        <p>$<%- toThousand(productsAdvantages[1].price - productsAdvantages[1].price * productsAdvantages[1].discount / 100) %></p>
-                        <p>Envío gratis</p>
-                        <p>18 cuotas sin interés</p>
-                    </div> 
-                    <div class="button-box">
-                        <button class="button-buy">agregar al carrito</button>
-                    </div>
-                </a>
-               <% } %>
-
-              </section>
-
-                <i class="fas fa-chevron-down"></i>        
-            
-        </section>  
-        
+                <% }) %>
+  
+            </section>
+                    <i class="fas fa-chevron-down"></i>        
+                
+            </section> 
         
     </main>
 

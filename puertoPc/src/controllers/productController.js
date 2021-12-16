@@ -9,42 +9,34 @@ var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 var productController = {
     	// Root - Show all products
-	products: (req, res) => {
+	index: (req, res) => {
+     // let products = products.filter(product => product.categories === products.categories)
 
-      //  let idProduct = +req.params.id;
-      //  let product = products.find(product => product.id === idProduct);
-       // let products = products.filter(product => product.categories === products.categories)
-
-        
-		res.render('products/products', {
+        	res.render('products/products', {
             title:"Productos",        
 			products,
            // sliderTitle: "Productos relacionados",
           //  slideProducts: relatedProducts,
 			toThousand
-		});
+		})
 	},
 
     productCart: (req, res )=> {
         res.render('products/productCart', {
             title:"Carrito"
-        }); 
+        })
     },
 
-    productDetail: (req, res )=> {
-        let products =require('../data/products.json')
+    productDetail: (req, res ) => {
+       // let idProducts = +req.params.id;
+      //  let product = products.find(product => product.id === idProducts);
 
-        let controller ={
-            product : (req, res) => {
-
-                let   productDetailId = +req.params.id;
-                
-            }
-        }
-        res.render('products/productDetail',{
-            title: "Detalle de Producto"
-        });
+        res.render('products/productDetail')//,{
+          //  product,
+		//	toThousand
+      //  })
     },
+
     categories: (req, res) => {
         let categoriesId = +req.params.id;
 
@@ -55,7 +47,7 @@ var productController = {
             products: productsCategories,
             categories,
         })
-    },
+    }
 
 };
 

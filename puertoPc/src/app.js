@@ -27,7 +27,7 @@ app.use(methodOverride('_method'));
 /* Middlewares de routes */
 app.use('/', indexRouter);
 app.use('/', usersRouter);
-app.use('/', productRouter);
+app.use('/productos', productRouter);
 app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler

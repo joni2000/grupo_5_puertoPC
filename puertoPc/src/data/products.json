@@ -1,1 +1,67 @@
-[{"id":1,"name":"Notebook Lenovo IdeaPad 15IML05  abyss blue táctil 15.6","description":"La notebook Lenovo IdeaPad 3 fue pensada para hacer tu vida más sencilla. Su diseño elegante e innovador y su comodidad para transportarla, la convertirá en tu PC favorita. Cualquier tarea que te propongas, ya sea en casa o en la oficina, la harás con facilidad gracias a su poderoso rendimiento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LCD de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i3 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. En base a esto, permite el desempeño necesario para la edición de fotografías o videos en programas básicos.","category":"Notebooks","categoryindex":"in-sale","price":82999,"stock":10,"discount":15,"image":["1639438250116_img_.jpg"]},{"id":2,"name":"Notebook HP 15-EF2127WM silver 15.6","description":"La notebook HP 15-EF2127WM es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 6 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.","category":"Notebooks","categoryindex":"advantages","price":103464,"stock":10,"discount":5,"image":["1639438564656_img_.jpg"]},{"id":3,"name":"Notebook Dell Inspiron 3505 plata 15.6\", AMD Ryzen 5 3450U","description":"Los equipos Dell se destacan por ofrecer soluciones reales para cada una de las necesidades. Ya sea para conectarte, entretenerte, trabajar o colaborar de manera online, podrás hacerlo de forma segura desde cualquier lugar y en cualquier momento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 4 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.","category":"Notebooks","categoryindex":"in-sale","price":93999,"stock":10,"discount":5,"image":["1639439994516_img_.jpg"]},{"id":4,"name":"Notebook Asus Vivobook 15 I5-1135g7 8gb 256gb","description":"Disfrutá de la perfecta combinación de rendimiento y diseño con esta notebook Asus VivoBook K513EA-BN796. Encontrarás en ella una excelente herramienta para tus trabajos de todos los días y para tus momentos de entretenimiento. Aprovechá la experiencia extraordinaria que la marca tiene para ofrecerte y optimizá la calidad de tus imágenes y videos.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla IPS de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.","category":"Notebooks","categoryindex":"in-sale","price":110999,"stock":10,"discount":15,"image":["1639440254032_img_.jpg"]},{"id":5,"name":"Notebook HP 240 G7 plateado ceniza oscuro 14\", Intel Celeron N4000  4GB de RAM 500GB HDD,","description":"La notebook HP 240 G7 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 14\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nCon su procesador Intel Celeron de 2 núcleos, lograrás el desempeño que necesitás para navegar y trabajar. Podrás usar los programas más esenciales, llevar a cabo tus tareas y organizar tu vida diaria.","category":"Notebooks","price":49675,"stock":10,"discount":0,"image":["1639617644672_img_.jpg"]}]
+[
+    {
+        "id": 1,
+        "name": "Notebook Lenovo IdeaPad 15IML05  abyss blue táctil 15.6",
+        "description": "La notebook Lenovo IdeaPad 3 fue pensada para hacer tu vida más sencilla. Su diseño elegante e innovador y su comodidad para transportarla, la convertirá en tu PC favorita. Cualquier tarea que te propongas, ya sea en casa o en la oficina, la harás con facilidad gracias a su poderoso rendimiento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LCD de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i3 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. En base a esto, permite el desempeño necesario para la edición de fotografías o videos en programas básicos.",
+        "category": "Notebooks",
+        "categoryindex": "in-sale",
+        "price": 82999,
+        "stock": 10,
+        "discount": 15,
+        "image": [
+            "1639438250116_img_.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Notebook HP 15-EF2127WM silver 15.6",
+        "description": "La notebook HP 15-EF2127WM es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 6 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.",
+        "category": "Notebooks",
+        "categoryindex": "advantages",
+        "price": 103464,
+        "stock": 10,
+        "discount": 5,
+        "image": [
+            "1639438564656_img_.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Notebook Dell Inspiron 3505 plata 15.6\", AMD Ryzen 5 3450U",
+        "description": "Los equipos Dell se destacan por ofrecer soluciones reales para cada una de las necesidades. Ya sea para conectarte, entretenerte, trabajar o colaborar de manera online, podrás hacerlo de forma segura desde cualquier lugar y en cualquier momento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 4 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.",
+        "category": "Notebooks",
+        "categoryindex": "in-sale",
+        "price": 93999,
+        "stock": 10,
+        "discount": 5,
+        "image": [
+            "1639439994516_img_.jpg"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Notebook Asus Vivobook 15 I5-1135g7 8gb 256gb",
+        "description": "Disfrutá de la perfecta combinación de rendimiento y diseño con esta notebook Asus VivoBook K513EA-BN796. Encontrarás en ella una excelente herramienta para tus trabajos de todos los días y para tus momentos de entretenimiento. Aprovechá la experiencia extraordinaria que la marca tiene para ofrecerte y optimizá la calidad de tus imágenes y videos.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla IPS de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.",
+        "category": "Notebooks",
+        "categoryindex": "in-sale",
+        "price": 110999,
+        "stock": 10,
+        "discount": 15,
+        "image": [
+            "1639440254032_img_.jpg"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Notebook HP 240 G7 plateado ceniza oscuro 14\", Intel Celeron N4000  4GB de RAM 500GB HDD,",
+        "description": "La notebook HP 240 G7 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 14\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nCon su procesador Intel Celeron de 2 núcleos, lograrás el desempeño que necesitás para navegar y trabajar. Podrás usar los programas más esenciales, llevar a cabo tus tareas y organizar tu vida diaria.",
+        "category": "Notebooks",
+        "categoryindex": "advantages",
+        "price": 49675,
+        "stock": 10,
+        "discount": 0,
+        "image": [
+            "1639617644672_img_.jpg"
+        ]
+    }
+]
