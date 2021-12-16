@@ -32,19 +32,13 @@ var productController = {
     },
 
     productDetail: (req, res )=> {
-        let products =require('../data/products.json')
-
-        let controller ={
-            product : (req, res) => {
-
-                let   productDetailId = +req.params.id;
-                
-            }
-        }
-        res.render('products/productDetail',{
-            title: "Detalle de Producto"
-        });
-    },
+            let productId = +req.params.id;
+            let product = products.find(product => product.id === productId)
+            res.render('detail', {
+                product,
+                toThousand
+            })
+        },
     categories: (req, res) => {
         let categoriesId = +req.params.id;
 
