@@ -10,19 +10,24 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">Dashboard</a>
           </div>
-        </nav>
+    </nav>
     <main>
-        <div class="search-bar col-6 container">
-            <input type="text" placeholder="Buscar productos">
-            <form class="icon-search search-admin" action="">
-                <button type="submit">
-                    <i class="fas fa-search"></i>
-                 </button>
-            </form>
+        <div class="container container-search">
+            <div class="search-bar col-6 search-bar-admin">
+                <input type="text" placeholder="Buscar productos">
+                <form class="icon-search search-admin" action="">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <a href="/admin/crear" class="btn btn-up btn-success">Cargar uno</a>
+            </div>
         </div>
         <div class="container container-table">
             <table class="table">

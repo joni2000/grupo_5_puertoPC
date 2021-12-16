@@ -1,11 +1,20 @@
+/* Header */
+.navbar-dark {
+    background-color: var(--blue);
+    height: 5rem;
+}
+
 .container {
     padding: 0;
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
 
-.container-table{
-    border: 0.1rem solid grey;
+
+/* container search */
+.container-search {
+    display: flex;
+    align-items: center;
 }
 
 .search-admin button{
@@ -13,12 +22,27 @@
     border: none;
 }
 
-.navbar-dark {
-    background-color: var(--blue);
-    height: 5rem;
+.search-bar-admin {
+    order: -1;
 }
 
-.btn {
+.btn-up {
+    background-color: var(--darkBlue);
+    color: white;
+    font-size: 1.4rem;
+}
+
+.btn-up:hover {
+    color: whitesmoke;
+}
+
+/* table */
+.container-table{
+    border: 0.1rem solid grey;
+}
+
+
+.table-products .btn {
     width: 5rem;
 }
 
