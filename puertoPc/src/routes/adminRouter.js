@@ -16,7 +16,7 @@ router.get('/editar/:id', adminController.editProducts);
 /* PUT send edit form */
 router.put('/editar/:id', upload.single('image'),adminController.update);
 
-router.delete('/delete/:id', adminController.delete)
+router.delete('/eliminar/:id', adminController.delete)
 
 
 module.exports = router;

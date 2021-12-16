@@ -7,7 +7,7 @@
         "categoryindex": "in-sale",
         "price": 82999,
         "stock": 10,
-        "discount": 10,
+        "discount": 15,
         "image": [
             "1639438250116_img_.jpg"
         ]
@@ -63,96 +63,5 @@
         "image": [
             "1639522604501_img_.jpg"
         ]
-    },
-    {
-        "id": 6,
-        "name": "MacBook Air A1466 plata 13.3\", Intel Core i5 5350U  8GB de RAM",
-        "description": "La notebook Apple MacBook Air A1466 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 13.3\" y 1440x900 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.",
-        "category": "Notebooks",
-        "categoryindex": "advantages",
-        "price": 146999,
-        "stock": 10,
-        "discount": 0,
-        "image": [
-            "1639522604501_img_.jpg"
-        ]
-    },
-    {
-        "id": 7,
-        "name": "MacBook Air A1466 plata 13.3\", Intel Core i5 5350U  8GB de RAM",
-        "description": "La notebook Apple MacBook Air A1466 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 13.3\" y 1440x900 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.",
-        "category": "Notebooks",
-        "categoryindex": "advantages",
-        "price": 146999,
-        "stock": 10,
-        "discount": 0,
-        "image": [
-            "1639522604501_img_.jpg"
-        ]
-    },
-    {
-        "id": 8,
-        "name": "MacBook Air A1466 plata 13.3\", Intel Core i5 5350U  8GB de RAM",
-        "description": "La notebook Apple MacBook Air A1466 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 13.3\" y 1440x900 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.",
-        "category": "Notebooks",
-        "categoryindex": "advantages",
-        "price": 146999,
-        "stock": 10,
-        "discount": 0,
-        "image": [
-            "1639522604501_img_.jpg"
-        ]
-    },
-    {
-        "id": 9,
-        "name": "MacBook Air A1466 plata 13.3\", Intel Core i5 5350U  8GB de RAM",
-        "description": "La notebook Apple MacBook Air A1466 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 13.3\" y 1440x900 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.",
-        "category": "Notebooks",
-        "categoryindex": "advantages",
-        "price": 146999,
-        "stock": 10,
-        "discount": 0,
-        "image": [
-            "1639522604501_img_.jpg"
-        ]
-    },
-    {
-        "id": 10,
-        "name": "MacBook Air A1466 plata 13.3\", Intel Core i5 5350U  8GB de RAM",
-        "description": "La notebook Apple MacBook Air A1466 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 13.3\" y 1440x900 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.",
-        "category": "Notebooks",
-        "categoryindex": "advantages",
-        "price": 146999,
-        "stock": 10,
-        "discount": 0,
-        "image": [
-            "1639522604501_img_.jpg"
-        ]
-    },
-    {
-        "id": 11,
-        "name": "MacBook Air A1466 plata 13.3\", Intel Core i5 5350U  8GB de RAM",
-        "description": "La notebook Apple MacBook Air A1466 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 13.3\" y 1440x900 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.",
-        "category": "Notebooks",
-        "categoryindex": "advantages",
-        "price": 146999,
-        "stock": 10,
-        "discount": 0,
-        "image": [
-            "1639522604501_img_.jpg"
-        ]
-    },    {
-        "id": 12,
-        "name": "MacBook Air A1466 plata 13.3\", Intel Core i5 5350U  8GB de RAM",
-        "description": "La notebook Apple MacBook Air A1466 es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 13.3\" y 1440x900 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.",
-        "category": "Notebooks",
-        "categoryindex": "advantages",
-        "price": 146999,
-        "stock": 10,
-        "discount": 0,
-        "image": [
-            "1639522604501_img_.jpg"
-        ]
     }
-
 ]

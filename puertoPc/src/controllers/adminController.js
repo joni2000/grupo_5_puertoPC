@@ -1,5 +1,6 @@
 let {getCategories, getProducts, writeJson} = require('../data/dataBase');
-const { get } = require('../routes/adminRouter');
+let fs = require('fs')
+
 let orderedCategories = getCategories.map(category => category.name)
 
 
@@ -88,7 +89,7 @@ var adminController = {
     
             getProducts.forEach(product => {
                 if(product.id === productId){
-                    if(fs.existsSync("./public/images/products/", product.image[0])){
+                    if(fs.existsSync("./public/images/products", product.image[0])){
                         fs.unlinkSync(`./public/images/products/${product.image[0]}`)
                     }else{
                         console.log('No encontré el archivo')
@@ -103,8 +104,8 @@ var adminController = {
                 }
             })
     
-            writeJson(getProducts, 'products')
-            res.redirect('/admin')
+            writeJson(getProducts, "products")
+            res.redirect('/admin/')
         }
   };
 

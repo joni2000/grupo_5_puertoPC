@@ -14,7 +14,7 @@
         </nav>
     </header>    
     <main class="main-create padding-top-fixed">
-        <form class="form-create action=" action="/admin/editar/<%-product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form class="form-create action=" action="/admin/editar/<%-product.id%>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="none">
                 <div class="container-input">
                     <label class="text-form" for="name" minlength="6" maxlength="80">Nombre:</label>
                     <input class="text-camp" type="text" name="name" id="name" value="<%-product.name%>" required>
@@ -59,7 +59,7 @@
                         <button  class="button-buy" type="submit">
                             Editar producto
                         </button>
-                        <form action="/admin/delete/<%-product.id%>?_method=DELETE" method="POST">
+                        <form action="/admin/eliminar/<%-product.id%>?_method=DELETE" method="POST">
                             <button class="button-buy" type="submit">
                                 eliminar Producto
                             </button>

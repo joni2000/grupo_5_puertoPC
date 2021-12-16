@@ -10,31 +10,50 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">Dashboard</a>
           </div>
         </nav>
     <main>
-        <div class="col-12">
+        <div class="search-bar col-6 container">
+            <input type="text" placeholder="Buscar productos">
+            <form class="icon-search search-admin" action="">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                 </button>
+            </form>
+        </div>
+        <div class="container container-table">
             <table class="table">
-            <thead class="table-dark">
+            <thead class="table-dark col-12">
               <tr>
-                  <th>Id</th>
+                  <th class="id">Id</th>
                   <th class="col-4">Nombre</th>
                   <th class="col-2">Categoría</th>
                   <th>Stock</th>
                   <th>Precio</th>
+                  <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="table-products">
                 <% products.forEach(product => { %>
                     <tr>
-                        <th><%=product.id%></th>
+                        <th class="number-id"><%=product.id%></th>
                         <th><%=product.name%></th>
                         <th><%=product.category%></th>
                         <th><%=product.stock%></th>
                         <th><%=product.price%></th>
+                        <th>
+                            <a class="btn btn-success" href="/admin/editar/<%= product.id %>">
+                              editar  
+                            </a>
+                            <form action="/admin/eliminar/<%- product.id %>?_method=DELETE" method="POST">
+                              <button type="submit" class="btn btn-danger" >
+                                eliminar
+                              </button>
+                            </form>
+                        </th>
                     </tr>
                 <% }) %>
             </tbody>
