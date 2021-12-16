@@ -27,7 +27,6 @@ var productController = {
         })
     },
 
-<<<<<<< HEAD
     productDetail: (req, res ) => {
        // let idProducts = +req.params.id;
       //  let product = products.find(product => product.id === idProducts);
@@ -38,16 +37,6 @@ var productController = {
       //  })
     },
 
-=======
-    productDetail: (req, res )=> {
-            let productId = +req.params.id;
-            let product = products.find(product => product.id === productId)
-            res.render('detail', {
-                product,
-                toThousand
-            })
-        },
->>>>>>> 4c8faa11ebee08e40a2b1aab4aeedeee3be7bfa0
     categories: (req, res) => {
         let categoriesId = +req.params.id;
 
