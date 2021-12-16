@@ -19,4 +19,7 @@ router.put('/editar/:id', upload.single('image'),adminController.update);
 router.delete('/eliminar/:id', adminController.delete)
 
 
+/* DELETE product */
+/* router.delete("/:id", adminController.destroy) */
+
 module.exports = router;
