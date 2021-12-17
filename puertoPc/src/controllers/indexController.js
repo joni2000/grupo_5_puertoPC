@@ -1,23 +1,18 @@
-var fs = require('fs');
-var path = require('path');
+let {getProducts} = require('../data/dataBase')
+let products = getProducts;
 
-var productsFilePath = path.join(__dirname, '../data/products.json');
-var products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-var controller = {
-
+let controller = {
   index: (req, res )=> {  
-    let productsInSale = products.filter(product => product.categoryindex === "in-sale")  
-    let productsAdvantages = products.filter(product => product.categoryindex === "advantages")  
-    
+    let productsInSale = products.filter(product => product.discount > 0)  
+    let productsAdvantages = products.filter(product => product)  
     
     res.render('index',{
-    title: "Puerto PC",
-    productsInSale,
-    productsAdvantages,
-    toThousand
+      title: "Puerto PC",
+      productsInSale,
+      productsAdvantages,
+      toThousand
     })
   },
   

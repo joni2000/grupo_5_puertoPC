@@ -9,14 +9,11 @@
             <i class="fas fa-chevron-down"></i>
             <i class="fas fa-chevron-down"></i> 
         </div>
-        <h2 class="subtitle">Ofertas <a class="link-all" href="">Ver todas</a></h2>
-       
-        
-        <section class="products">
-          <i class="fas fa-chevron-down"></i>
 
+        <h2 class="subtitle">Ofertas <a class="link-all" href="">Ver todas</a></h2>
+        <section class="products">    
             <section class="slider slider-offer"> 
-                <% for( let i = 0; i < 3; i++ ) { %>
+                <% for( let i = 0; i < 4; i++ ) { %>
                     <a href="/productos/detalles/<%- productsInSale[i].id %>" class="card">
                         <div>
                             <img src="/images/products/<%- productsInSale[i].image %>" alt="imagen de producto">							
@@ -31,47 +28,41 @@
                             <p><span>$<%= toThousand(productsInSale[i].price) %>  </span> <%- productsInSale[i].discount !== 0 ? `${productsInSale[i].discount}% OFF` : "" %> </p>
                         </div> 
                     </a> 
-                
                 <% } %>
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down"></i> 
             </section>
 
-            <i class="fas fa-chevron-down"></i> 
          </section>
         <section class="products">
             <h2 class="subtitle">Te puede interesar</h2>
-            <i class="fas fa-chevron-down"></i>
             
-           
             <section class="slider">
-
-                <% productsAdvantages.forEach(product => { %>
-                 
-                    <a href="/productos/detalles/<%- product.id %>" class="card">
-                        
-                        <div>
-                            <img src="/images/products/<%- product.image %>" alt="imagen de productsAdvanges">	
-                         </div>
-                         <div class="card-info">
-                            <h3>
-                                <%- product.name %>
-                            </h3>
-                         </div> 
-                     
-                         <div class="card-description-text">   
-                            <p>$<%- toThousand(product.price - product.price * product.discount / 100) %></p>
-                            <p>Envío gratis</p>
-                            <p>18 cuotas sin interés</p>
-                        </div> 
-                        <div class="button-box">
-                            <button class="button-buy">agregar al carrito</button>
-                        </div>
-                   </a> 
-
-
-                <% }) %>
-  
+                    <% for( let j = 0; j < 4; j++ ) { %>
+                        <a href="/productos/detalles/<%- productsAdvantages[j].id %>" class="card">
+                            
+                            <div>
+                                <img src="/images/products/<%- productsAdvantages[j].image %>" alt="imagen de productsAdvantagesAdvanges">	
+                             </div>
+                             <div class="card-info">
+                                <h3>
+                                    <%- productsAdvantages[j].name %>
+                                </h3>
+                             </div> 
+                         
+                             <div class="card-description-text">   
+                                <p>$<%- toThousand(productsAdvantages[j].price - productsAdvantages[j].price * productsAdvantages[j].discount / 100) %></p>
+                                <p>Envío gratis</p>
+                                <p>18 cuotas sin interés</p>
+                            </div> 
+                            <div class="button-box">
+                                <button class="button-buy">agregar al carrito</button>
+                            </div>
+                       </a> 
+                    <% } %>
+                    <i class="fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down"></i>         
             </section>
-                    <i class="fas fa-chevron-down"></i>        
                 
             </section> 
         
