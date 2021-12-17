@@ -235,7 +235,9 @@ footer {
 }
 footer .footer-all{
   height: 9rem;
+  justify-content: space-evenly;
 }
+
    /*ICON-PAYMET-DESKTOP*/
 footer  .payment-footer .icon-footer1{
   height: 3rem;
