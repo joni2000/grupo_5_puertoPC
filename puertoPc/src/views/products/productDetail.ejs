@@ -6,10 +6,10 @@
 <body class="product-detail-body">
     <%- include('../partials/header.ejs') %>
     <main class="main-product-detail padding-top-fixed">
-        <div class="productAdress">
+          <div class="productAdress">
             <h3 class="enrutador"> Puerto Pc > <%- product.category %> > <%- product.trademarks %></h3>
-        </div>
-        <div class="product">
+          </div>
+           <!--<div class="product">
             <div class="productImages">
                 <div class="productImageSelector">
                     <div class="imgSelector">
@@ -21,34 +21,34 @@
                     <div class="imgSelector">
                         <img src="images/AppleMacbookAir/macBook_vista4.webp" alt="">
                     </div>
-                    <div class="imgSelector">
+                      <div class="imgSelector">
                         <img src="images/AppleMacbookAir/macBook_vista6webp.webp" alt="">
-                    </div>
+                      </div>
 
-                </div>
-                <div class="productImagePrincipal">
+                      </div>
+                      <div class="productImagePrincipal">
                     <img src="images/AppleMacbookAir/macBookAir.webp" alt="">
                 </div>
-            </div>
-            <div class="boxProductDetails">
-            <div class="productDetails">
+              </div>-->
+              <div class="boxProductDetails">
+              <div class="productDetails">
                 
                 <section class="details-1">
                     <h1><% product.name %> </h1>
                     <div class="details-1-row">
-                        <h2 id="price">product.price</h2>
-                        <h3>product.stock</h3>
+                        <h2 id="price"> <%- product.price %></h2>
+                        <h3> <%-product.stock %></h3>
                     </div>
                 </section>
 
                 <section class="details-2-tablet">
-                    <h1><% product.dues %><% product.price %></h1>
+                    <h1><%- product.dues %><%- product.price %></h1>
                 </section>         
 
                 <section class="details-2">
                     <i class="fas fa-credit-card"></i>
-                    <h1><% product.dues %><% product.price %> </h1>
-                    <h3><% product.dues %> </h3>
+                    <h1><%- product.dues %><%- product.price %> </h1>
+                    <h3><%- product.dues %> </h3>
                 </section>
 
                 <section class="details-2">
@@ -57,7 +57,7 @@
                 </section>
                 <section class="details-2">
                     <i class="fas fa-user-shield"></i>
-                    <h1><% product.warranty %> </h1>
+                    <h1><%- product.warranty %> </h1>
                 </section>
                 <section class="details-3">
                     <button class="increment-btn">
@@ -81,10 +81,10 @@
                     </section>
                 </div>
             </div>
-        </div>
-        </div>
+          </div>
+           </div>
 
-        <div class="boxProductDetails" id="boxProductDetails">
+            <div class="boxProductDetails" id="boxProductDetails">
             <div class="productDetails-2">
                     <section class="details-4">
                         <h1>ESPECIFICACIONES</h1>
@@ -132,6 +132,33 @@
                 </div>
             </div>
             </div>
+        </thead>
+        </tbody>
+            <%products.forEach(product => { &>
+             <tr>
+                 <td data-label="ID"><%=product.id%>/td>
+                 <td data-label="CATEGORY"><%=productcategory%>/td>
+                 <td data-label="PRICE"><%=product.price%>/td>
+                 <td data-label="NAME"><%=product.name%>/td>
+                 <td data-label="WARRANTY"><%=product.warranty%>/td>
+                <td data-label="STOCK"><%= product.stock %></td>
+                <% if (product.stock == true) { %>
+                                Active
+                            <% } else { %>
+                                Inactive
+                            <% } %> 
+                        </td>
+                        <td data-label="ACTION">
+                            <!-- ENVIA VISTA PARA EDITAR UN PRODUCTO POR ID-->
+                            <a href="/admin/<%- product.id %>/edit"><i class="fas fa-edit"></i></a>
+                            <!-- ELIMINA PRODUCTO POR ID DETERMINADO-->
+                            <form action="/admin/<%= product.id %>?_method=DELETE" method="POST">
+                                <button type="submit"><i class="fas fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                </tr>
+           <% });%>
     </main>
 
     <%- include('../partials/footer.ejs') %>
