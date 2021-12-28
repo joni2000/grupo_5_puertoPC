@@ -1,8 +1,5 @@
-var fs = require('fs');
-var path = require('path');
-
-var productsFilePath = path.join(__dirname, '../data/products.json');
-var products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let {getProducts} = require('../data/dataBase')
+let products = getProducts;
 
 var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -28,10 +25,13 @@ var productController = {
     },
 
     productDetail: (req, res ) => {
-       // let idProducts = +req.params.id;
-      //  let product = products.find(product => product.id === idProducts);
+        let idProducts = +req.params.id;
+        let product = products.find(product => product.id === idProducts);
 
-        res.render('products/productDetail')//,{
+        res.render('products/productDetail', {
+            product
+        }
+        )//,{
           //  product,
 		//	toThousand
       //  })
