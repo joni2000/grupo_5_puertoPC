@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override')
+var session = require('express-session')
 
 /* Routes */
 var indexRouter = require('./routes/indexRouter');
@@ -23,6 +24,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
+app.use(session({
+  secret: 'puertopc',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+
+}))
 
 /* Middlewares de routes */
 app.use('/', indexRouter);

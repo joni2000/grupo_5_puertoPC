@@ -1,4 +1,5 @@
 let {getUsers, writeJson} = require("../data/dataBase")
+let { validationResult } = require('express-validator')
 
 var usersController = {
 
@@ -6,7 +7,23 @@ var usersController = {
         res.render('users/login',{
             title: "Iniciar Sesión"
         });
+
     },
+         processLogin: (req, res) => {
+            let errors = validationResult(req);
+            if (errors.isEmpty()){
+                res.send('')
+
+            }else{
+                res.render('users/login', {
+                    title: "Iniciar Sesión",
+                    errors: errors.mapped()
+                });
+
+            }
+            res.send(errors)
+
+        },
 
     register: (req, res ) => {
         res.render('users/register',{
