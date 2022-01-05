@@ -14,19 +14,23 @@
                     <div class="input-container email">
                         <label for="email">Email:</label>
                         <input class="input-style" type="email" name="email" id="email" placeholder="Ingresá tu email">
-                        <span class="error-message">Debes ingresar tu email</span>
-                    </div>
+                       <% if (locals.errors && errors.email) { %>
+                         <span class="error-message"> <%= errors.email.msg %></span>
+                       <% } %>
+                        </div>
                     <div class="input-container pass">
                         <label for="pass">Contraseña:</label>
                         <input class="input-style" type="password" name="password" id="pass" placeholder="Ingresá tu contraseña">
-                        <span class="error-message">Debes ingresar tu contraseña</span>
+                        <% if (locals.errors && errors.email) { %>
+                            <span class="error-message"> <%= errors.password.msg %> </span>
+                          <% } %> 
                     </div>
                     <div class="check-keep-session">
                         <input type="checkbox" name="keep-session" id="keep-session">
                         <label for="keep-session">Mantener sesión abierta</label>
                     </div>
                     <div class="form-button-container">
-                        <span class="error-message credenciales">Credenciales inválidas</span>
+                      <!-- <span class="error-message credenciales">Credenciales inválidas</span>--> 
                         <button type="submit" class="enter">Ingresar</button> <!-- type submit envía el form -->
                     </div>
                     <p class="log-with">O ingresa con:</p>
