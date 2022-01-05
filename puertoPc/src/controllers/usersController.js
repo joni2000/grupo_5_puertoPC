@@ -11,17 +11,27 @@ var usersController = {
     },
          processLogin: (req, res) => {
             let errors = validationResult(req);
-            if (errors.isEmpty()){
-                res.send('')
+            if (errors.isEmpty()) {
+                let user = users.find(user => user.email == req.body.email);
+
+               req.session.user ={
+                     id: user.id,
+                     firstName: user.firstName,
+                     lastName: user.lastName,
+                     email: user.email,
+                     rol: user.rol
+               }
+
+               res.locals.user = req.session.user;
+               res.redirect('/')
 
             }else{
                 res.render('users/login', {
                     title: "Iniciar Sesión",
                     errors: errors.mapped()
+                    
                 });
-
             }
-            res.send(errors)
 
         },
 
