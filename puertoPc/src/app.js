@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override')
-var session = require('express-session')
+var session = require('express-session');
 
 /* Routes */
 var indexRouter = require('./routes/indexRouter');
@@ -30,7 +30,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: true }
 
-}))
+}));
 
 /* Middlewares de routes */
 app.use('/', indexRouter);
