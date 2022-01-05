@@ -37,7 +37,11 @@ var usersController = {
         writeJson(getUsers, "users");
         res.redirect("/")
     }, 
-
+    profileUser: (req, res )=> {
+        res.render("users/profileUser",{
+            title: "Perfil de Usuario"
+        })
+    }
 }
 
 module.exports = usersController;
