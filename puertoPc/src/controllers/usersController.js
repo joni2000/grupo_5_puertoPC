@@ -5,14 +5,15 @@ var usersController = {
 
     login: (req, res )=> { 
         res.render('users/login',{
-            title: "Iniciar Sesión"
+            title: "Iniciar Sesión",
+            session: req.session
         });
 
     },
          processLogin: (req, res) => {
             let errors = validationResult(req);
             if (errors.isEmpty()) {
-                let user = users.find(user => user.email == req.body.email);
+                let user = getUsers.find(user => user.email === req.body.email);
 
                req.session.user ={
                      id: user.id,
@@ -28,7 +29,8 @@ var usersController = {
             }else{
                 res.render('users/login', {
                     title: "Iniciar Sesión",
-                    errors: errors.mapped()
+                    errors: errors.mapped(),
+                    session: req.session
                     
                 });
             }

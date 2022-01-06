@@ -82,6 +82,10 @@ header  .top .icon-user {
 
 }
 
+header .session i{
+    border: solid green;
+}
+
 
 /*Media Queries */
 
