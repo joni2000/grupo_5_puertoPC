@@ -14,11 +14,11 @@
         <a class="icon-cart" href="/carrito">
             <i class="fas fa-shopping-cart"></i>
         </a>
-            <% if (typeof user != "undefined") { %>
+            <% if (typeof locals.user != "undefined") { %>
                 <span class="session"> 
                     <i class="far fa-user"></i> 
                 </span>
-                <a class="login-session" href="">Mis datos</a>
+                <a class="login-session" href="/src/pro">Mis datos</a>
                 <a class="register-session" href="">| Cerrar sessión</a>
 
               <% } else { %>
