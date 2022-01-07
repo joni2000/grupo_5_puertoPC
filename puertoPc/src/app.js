@@ -27,8 +27,7 @@ app.use(methodOverride('_method'));
 app.use(session({
   secret: 'puertopc',
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
+  saveUninitialized: true
 
 }));
 

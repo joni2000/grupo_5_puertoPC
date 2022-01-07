@@ -244,6 +244,9 @@
     .box-form-register span.credenciales{
         display: none;
     }
+    .hr-register-desktop {
+        display: none;
+    }
 
    
 }
@@ -478,7 +481,15 @@
         left: -16rem;
     
     }
+    .hr-register-desktop{
+        display: block;
+        height: 27rem;
+        width: 2px;
+        background: linear-gradient(180deg, rgb(110, 110, 110), rgb(194, 194, 194));
+        opacity: 50%;
+    }
 }
+
 
     /*DESKTOP-FORM
 @media (min-width: 1440px){
