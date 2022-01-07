@@ -1,5 +1,6 @@
 let {getUsers, writeJson} = require("../data/dataBase")
-let { validationResult } = require('express-validator')
+let { validationResult } = require('express-validator');
+//const session = require("express-session");
 
 var usersController = {
 
@@ -7,24 +8,33 @@ var usersController = {
         res.render('users/login',{
             title: "Iniciar Sesión",
             session: req.session
-        });
+        })
 
     },
          processLogin: (req, res) => {
             let errors = validationResult(req);
+
             if (errors.isEmpty()) {
                 let user = getUsers.find(user => user.email === req.body.email);
 
-               req.session.user ={
+               req.session.user = {
                      id: user.id,
                      firstName: user.firstName,
                      lastName: user.lastName,
                      email: user.email,
                      rol: user.rol
                }
+               if (req.body.keepsession) {
+                   const TIME_IN_MILISECONS = 60000
+                   res.cookie("userPuertoPc", req.session.user, {
+                       expires: new Date(Date.now() + TIME_IN_MILISECONS),
+                       httpOnly: true,
+                       secure: true
+                   })
+                }
 
-               res.locals.user = req.session.user;
-               res.redirect('/')
+                  res.locals.user = req.session.user;
+                  res.redirect('/')
 
             }else{
                 res.render('users/login', {
@@ -32,7 +42,7 @@ var usersController = {
                     errors: errors.mapped(),
                     session: req.session
                     
-                });
+                })
             }
 
         },
@@ -66,6 +76,14 @@ var usersController = {
         writeJson(getUsers, "users");
         res.redirect("/")
     }, 
+
+    logout: (req, res) => {
+          req.session.destroy();
+          if(req.cookies.userPuertoPc){
+              res.cookie('userPuertoPc', "", { maxAge: -1 })
+          }  
+        res.redirect('/')
+    },
 
 }
 

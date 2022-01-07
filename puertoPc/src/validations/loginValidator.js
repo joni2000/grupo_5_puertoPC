@@ -1,5 +1,6 @@
 var { check, body } = require('express-validator');
-var {getUsers, writeJson} = require("../data/dataBase");
+var { getUsers } = require("../data/dataBase");
+const res = require('express/lib/response');
 
 module.exports = [
     check('email')
