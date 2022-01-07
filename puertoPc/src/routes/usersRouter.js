@@ -12,4 +12,7 @@ router.get('/logout', usersController.logout)
 router.post('/login', loginValidator ,usersController.processLogin);
 router.post('/register', usersController.createUser);
 
+/* Profile User */
+router.get("/profileUser", usersController.profileUser);
+
 module.exports = router;

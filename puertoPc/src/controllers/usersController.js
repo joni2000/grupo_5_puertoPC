@@ -46,24 +46,25 @@ var usersController = {
                 })
             }
 
-        },
+            res.locals.user = req.session.user;
+            res.redirect('/')
 
-    register: (req, res ) => {
-        res.render('users/register',{
+    },
+
+    register: (req, res) => {
+        res.render('users/register', {
             title: "Registro"
         });
     },
-         createUser: (req, res) => {
-        
-
+    createUser: (req, res) => {
         let lastId = 1;
 
         getUsers.forEach(user => {
-            
-            if(user.id > lastId){
+
+            if (user.id > lastId) {
                 lastId = user.id
             }
-        });     
+        });
         let newUser = {
             id: lastId + 1,
             firstName: req.body.firstName,
@@ -76,14 +77,18 @@ var usersController = {
         getUsers.push(newUser);
         writeJson(getUsers, "users");
         res.redirect("/")
-    }, 
-
+    },
     logout: (req, res) => {
           req.session.destroy();
           if(req.cookies.userPuertoPc){
               res.cookie('userPuertoPc', "", { maxAge: -1 })
           }  
         res.redirect('/')
+    },
+    profileUser: (req, res )=> { 
+        res.render('users/profileUser',{
+            title: "Perfil de usuario"
+        })
     },
 
 }
