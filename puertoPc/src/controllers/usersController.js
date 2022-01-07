@@ -1,37 +1,52 @@
-let { getUsers, writeJson } = require("../data/dataBase")
-let { validationResult } = require('express-validator')
+let {getUsers, writeJson} = require("../data/dataBase")
+let { validationResult } = require('express-validator');
+//const session = require("express-session");
 
 var usersController = {
 
-    login: (req, res) => {
-        res.render('users/login', {
-            title: "Iniciar Sesión"
-        });
+    login: (req, res )=> { 
+        res.render('users/login',{
+            title: "Iniciar Sesión",
+            session: req.session
+        })
 
     },
-    processLogin: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            let user = users.find(user => user.email == req.body.email);
+         processLogin: (req, res) => {
+            let errors = validationResult(req);
 
-            req.session.user = {
-                id: user.id,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                email: user.email,
-                rol: user.rol
+            if (errors.isEmpty()) {
+                let user = getUsers.find(user => user.email === req.body.email);
+
+               req.session.user = {
+                     id: user.id,
+                     firstName: user.firstName,
+                     lastName: user.lastName,
+                     email: user.email,
+                     rol: user.rol
+               }
+               if (req.body.keepsession) {
+                   const TIME_IN_MILISECONS = 60000
+                   res.cookie("userPuertoPc", req.session.user, {
+                       expires: new Date(Date.now() + TIME_IN_MILISECONS),
+                       httpOnly: true,
+                       secure: true
+                   })
+                }
+
+                  res.locals.user = req.session.user;
+                  res.redirect('/')
+
+            }else{
+                res.render('users/login', {
+                    title: "Iniciar Sesión",
+                    errors: errors.mapped(),
+                    session: req.session
+                    
+                })
             }
 
             res.locals.user = req.session.user;
             res.redirect('/')
-
-        } else {
-            res.render('users/login', {
-                title: "Iniciar Sesión",
-                errors: errors.mapped()
-
-            });
-        }
 
     },
 
@@ -41,8 +56,6 @@ var usersController = {
         });
     },
     createUser: (req, res) => {
-
-
         let lastId = 1;
 
         getUsers.forEach(user => {
@@ -64,36 +77,14 @@ var usersController = {
         writeJson(getUsers, "users");
         res.redirect("/")
     },
-    processRegister: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-/*             let user = users.find(user => user.email == req.body.email);
-
-            req.session.user = {
-                id: user.id,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                email: user.email,
-                rol: user.rol
-            }
-
-            res.locals.user = req.session.user;
-            res.redirect('/') */
-
-        } else {
-            res.render('users/register', {
-                title: "Registrarse",
-                errors: errors.mapped()
-
-            });
-        }
-
+    logout: (req, res) => {
+          req.session.destroy();
+          if(req.cookies.userPuertoPc){
+              res.cookie('userPuertoPc', "", { maxAge: -1 })
+          }  
+        res.redirect('/')
     },
-    profileUser: (req, res) => {
-        res.render("users/profileUser", {
-            title: "Perfil de Usuario"
-        })
-    }
+
 }
 
 module.exports = usersController;

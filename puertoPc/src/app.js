@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override')
 var session = require('express-session');
+var cookieSession = require('./middlewares/cookieSessionM');
 
 /* Routes */
 var indexRouter = require('./routes/indexRouter');
@@ -30,6 +31,8 @@ app.use(session({
   saveUninitialized: true
 
 }));
+
+app.use(cookieSession);
 
 /* Middlewares de routes */
 app.use('/', indexRouter);
