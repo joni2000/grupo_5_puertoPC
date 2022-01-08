@@ -14,13 +14,15 @@ var productController = {
 			products,
            // sliderTitle: "Productos relacionados",
           //  slideProducts: relatedProducts,
-			toThousand
+			toThousand,
+            session: req.session
 		})
 	},
 
     productCart: (req, res )=> {
         res.render('products/productCart', {
-            title:"Carrito"
+            title:"Carrito",
+            session: req.session
         })
     },
 
