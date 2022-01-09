@@ -47,7 +47,7 @@
 
                 <section class="details-2">
                     <i class="fas fa-credit-card"></i>
-                    <h1><%=product.price%><%=product.price%> </h1>
+                    <h1><%=product.price%></h1>
                     <h3><%=product.price%> </h3>
                 </section>
 
@@ -84,7 +84,7 @@
           </div>
            </div>
 
-            <div class="boxProductDetails" id="boxProductDetails">
+            < class="boxProductDetails" id="boxProductDetails">
             <div class="productDetails-2">
                     <section class="details-4">
                         <h1>ESPECIFICACIONES</h1>
@@ -127,42 +127,40 @@
                     </section>
                     <section class="details-5">
                         <h1>DESCRIPCIÓN</h1>
-                        <p><%=product.description%> </p>
+                        <p><%=product.description%></p>
                     </section>
-                </div>
             </div>
-            </div>
-        </thead>
-        </tbody>
-            <%products.forEach(product => { &>
-             <tr>
-                 <td data-label="ID"><%=product.id%>/td>
-                 <td data-label="CATEGORY"><%=productcategory%>/td>
-                 <td data-label="PRICE"><%=product.price%>/td>
-                 <td data-label="NAME"><%=product.name%>/td>
-                 <td data-label="WARRANTY"><%=product.price%>/td>
-                <td data-label="STOCK"><%=product.stock%></td>
-                <% if (product.stock == true) { %>
+
+        <section>
+            <%product.forEach(products => { %>
+                 <p class="ID"><%-product.id%></p>
+                 <p class="CATEGORY"><%-product.category%></p>
+                 <p class="PRICE"><%-product.price%></p>
+                 <p class="NAME"><%-product.name%></p>
+                 <p class="WARRANTY"><%-product.price%></p>
+                <p class="STOCK"><%-product.stock%></p>
+                <% if (product.stock === true) { %>
                                 Active
                             <% } else { %>
                                 Inactive
                             <% } %> 
-                        </td>
-                        <td data-label="ACTION">
+                        </p>
+                    </section>
+                        <div class="ACTION">
                            <!-- ENVIA VISTA PARA EDITAR UN PRODUCTO POR ID--> 
                             <a href="/admin/<%-product.id%>/edit"><i class="fas fa-edit"></i></a>
                             <!-- ELIMINA PRODUCTO POR ID DETERMINADO -->
                             <form action="/admin/<%- product.id %>?_method=DELETE" method="POST">
                                 <button type="submit"><i class="fas fa-trash"></i></button>
-                            </form>
-                            
-                        </td>
-                    </tr>
-                </tr>
+                            </form>   
+                        </p>
+                    </p>
+                </p>
            <% });%>
     </main>
 
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/producpetail.js"></script>
 </body>
 
 </html>

@@ -25,8 +25,10 @@ var productController = {
     },
 
     productDetail: (req, res ) => {
-        let idProducts = +req.params.id;
-        let product = products.find(product => product.id === idProducts);
+        
+        let idProduct = +req.params.id;
+        let product = getProducts.find(product => product.id === idProduct)
+        
 
         res.render('products/productDetail', {
             product
