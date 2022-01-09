@@ -11,15 +11,15 @@
                 <i class="fas fa-search"></i></a>
         </div>
         
-        <a class="icon-cart" href="/carrito">
+        <a class="icon-cart" href="./productos/carrito">
             <i class="fas fa-shopping-cart"></i>
         </a>
-            <% if (typeof user != "undefined") { %>
+            <% if (typeof session.user != "undefined") { %>
                 <span class="session"> 
                     <i class="far fa-user"></i> 
                 </span>
-                <a class="login-session" href="">Mis datos</a>
-                <a class="register-session" href="">| Cerrar sessión</a>
+                <a class="login-session" href="/profileUser">Mis datos</a>
+                <a class="register-session" href="/logout">| Cerrar sessión</a>
 
               <% } else { %>
               <a class="icon-user" href="/login">

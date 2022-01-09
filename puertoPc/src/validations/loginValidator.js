@@ -17,7 +17,7 @@ module.exports = [
     })
     .withMessage('La contraseña debe tener al menos 4 caracteres'),
 
-    body('custom')
+    body('password')
       .custom ((value, {req}) => {
           let user = getUsers.find(user => user.email == req.body.email);
 
