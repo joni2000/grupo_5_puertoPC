@@ -14,19 +14,23 @@ var productController = {
 			products,
            // sliderTitle: "Productos relacionados",
           //  slideProducts: relatedProducts,
-			toThousand
+			toThousand,
+            session: req.session
 		})
 	},
 
     productCart: (req, res )=> {
         res.render('products/productCart', {
-            title:"Carrito"
+            title:"Carrito",
+            session: req.session
         })
     },
 
     productDetail: (req, res ) => {
-        let idProducts = +req.params.id;
-        let product = products.find(product => product.id === idProducts);
+        
+        let idProduct = +req.params.id;
+        let product = getProducts.find(product => product.id === idProduct)
+        
 
         res.render('products/productDetail', {
             product

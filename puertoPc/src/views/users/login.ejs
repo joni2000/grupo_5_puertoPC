@@ -21,7 +21,7 @@
                     <div class="input-container pass">
                         <label for="pass">Contraseña:</label>
                         <input class="input-style" type="password" name="password" id="pass" placeholder="Ingresá tu contraseña">
-                        <% if (locals.errors && errors.email) { %>
+                        <% if (locals.errors && errors.password) { %>
                             <span class="error-message"> <%= errors.password.msg %> </span>
                           <% } %> 
                     </div>

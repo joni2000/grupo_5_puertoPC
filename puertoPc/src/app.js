@@ -37,7 +37,7 @@ app.use(cookieSession);
 /* Middlewares de routes */
 app.use('/', indexRouter);
 app.use('/', usersRouter);
-app.use('/productos', productRouter);
+app.use('/products', productRouter);
 app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler

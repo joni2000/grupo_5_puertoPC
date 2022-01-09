@@ -36,6 +36,7 @@ var usersController = {
 
                   res.locals.user = req.session.user;
                   res.redirect('/')
+                  
 
             }else{
                 res.render('users/login', {
