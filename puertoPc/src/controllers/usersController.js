@@ -1,5 +1,6 @@
 let {getUsers, writeJson} = require("../data/dataBase")
 let { validationResult } = require('express-validator');
+const { redirect } = require("express/lib/response");
 //const session = require("express-session");
 
 var usersController = {
@@ -54,6 +55,17 @@ var usersController = {
         res.render('users/register', {
             title: "Registro"
         });
+    },
+    processRegister: (req, res) => {
+        let errors = validationResult(req);
+        redirect.send(errors.mapped())
+        if(errors.isEmpty()){
+
+        }else{
+            res.render("register", {
+                errors: errors.mapped()
+            })
+        }
     },
     createUser: (req, res) => {
         let lastId = 1;
