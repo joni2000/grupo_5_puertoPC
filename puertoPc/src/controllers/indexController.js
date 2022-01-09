@@ -12,7 +12,8 @@ let controller = {
       title: "Puerto PC",
       productsInSale,
       productsAdvantages,
-      toThousand
+      toThousand,
+      session: req.session
     })
   },
   

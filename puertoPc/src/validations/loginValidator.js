@@ -1,5 +1,6 @@
 var { check, body } = require('express-validator');
-var {getUsers, writeJson} = require("../data/dataBase");
+var { getUsers } = require("../data/dataBase");
+const res = require('express/lib/response');
 
 module.exports = [
     check('email')
@@ -16,7 +17,7 @@ module.exports = [
     })
     .withMessage('La contraseña debe tener al menos 4 caracteres'),
 
-    body('custom')
+    body('password')
       .custom ((value, {req}) => {
           let user = getUsers.find(user => user.email == req.body.email);
 
