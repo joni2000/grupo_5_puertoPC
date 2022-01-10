@@ -59,36 +59,37 @@ var usersController = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
-        redirect.send(errors.mapped())
-        if(errors.isEmpty()){
 
+        if(errors.isEmpty()){
+            let lastId = 1;
+
+            getUsers.forEach(user => {
+    
+                if (user.id > lastId) {
+                    lastId = user.id
+                }
+            });
+            let {firstName, lastName, email, password, address} = req.body
+
+            let newUser = {
+                id: lastId + 1,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: req.body.password,
+                address: req.body.address,
+                category: "user",
+                image: "img-default.jpg"
+            };
+            getUsers.push(newUser);
+            writeJson(getUsers, "users");
+            res.redirect("login");
         }else{
-            res.render("register", {
-                errors: errors.mapped()
+            res.render("users/register", {
+                errors: errors.mapped(),
+                session: req.session
             })
         }
-    },
-    createUser: (req, res) => {
-        let lastId = 1;
-
-        getUsers.forEach(user => {
-
-            if (user.id > lastId) {
-                lastId = user.id
-            }
-        });
-        let newUser = {
-            id: lastId + 1,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            category: "user",
-            image: "img-default.jpg"
-        };
-        getUsers.push(newUser);
-        writeJson(getUsers, "users");
-        res.redirect("/")
     },
     logout: (req, res) => {
           req.session.destroy();

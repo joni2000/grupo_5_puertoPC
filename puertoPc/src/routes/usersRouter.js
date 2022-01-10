@@ -11,7 +11,7 @@ router.get('/logout', usersController.logout)
 
 /* POST - Login and Register */
 router.post('/login', loginValidator ,usersController.processLogin);
-router.post('/register', registerValidator, usersController.createUser);
+router.post('/register', registerValidator, usersController.processRegister);
 
 /* Profile User */
 router.get("/profileUser", usersController.profileUser);
