@@ -1,7 +1,9 @@
 function isUser(req, res, next){
-    if(){
+    if(req.session.user){
         next()
     }else{
         res.status().redirect('/login')
     }
 }
+
+module.exports = isUser;
