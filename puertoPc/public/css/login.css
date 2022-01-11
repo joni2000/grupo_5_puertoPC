@@ -246,6 +246,7 @@ hr {
     }
 
     .form-login .input-container input{
+        font-size: 1.7rem;
         height: 4.1rem;
         width: 34.6rem;
     }

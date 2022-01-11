@@ -73,7 +73,7 @@
      border-radius: 2rem;
      border: 0.5px solid #000000;
      padding: 1.5rem;
-     margin-top: 1rem;
+     margin: 0.9rem 0 0.1rem 0;
 
 }
 .container-inputs-register input:focus{
@@ -101,9 +101,28 @@
 
  }
 
-.box-form-register  .box-register .terms-register{
-    margin-top: 1rem;
+ .terms {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
     font-size: 1.3rem;
+    align-items: center;
+
+}
+.terms label {
+    position: absolute;
+
+}
+.check-terms {
+    order: -1;
+position: relative;
+right: 10.9rem;
+top: 0.04rem;
+}
+.terms span{
+    margin-top: 0.8rem;
+    margin-left: -1rem;
+    color: var(--errorMessage);
 }
 
 .submit-register{
@@ -406,7 +425,7 @@
     }
     .container-inputs-register input{
             font-size: 1.7rem;
-            color: #C5C5C5;
+            color: #000000;
 
     }
 

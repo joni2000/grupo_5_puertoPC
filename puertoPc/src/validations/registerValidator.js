@@ -42,7 +42,7 @@ module.exports = [
     body('password2').custom((value, {req}) => value !== req.body.password ? false : true)
     .withMessage('Las contraseñas no coinciden'),
 
-    check('terms-register')
+    check('terms')
     .isString('on')
     .withMessage('Debes aceptar las bases y condiciones')
 ]
