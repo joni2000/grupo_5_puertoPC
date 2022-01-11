@@ -13,19 +13,19 @@
 
                     <div class="box-input-register">
                       <label for="name">Nombre:</label>
-                      <input class="input-register" type="text" name="firstName" id="name" placeholder="Ingresa tu nombre.." value="<%= locals.old && old.firstName %>" required >
+                      <input class="input-register" type="text" name="firstName" id="name" placeholder="Ingresa tu nombre.." value="<%= locals.old && old.firstName %>">
                       <% if (locals.errors && errors.firstName) { %>
                       <span class="error-message-register"><%= errors.firstName.msg %></span>
                       <% } %>
 
                       <label for="name">Apellido:</label>
-                      <input class="input-register" type="text" name="lastName" id="name" placeholder="Ingresa tu apellido.." value="<%= locals.old && old.lastName %>" required >
+                      <input class="input-register" type="text" name="lastName" id="name" placeholder="Ingresa tu apellido.." value="<%= locals.old && old.lastName %>">
                       <% if (locals.errors && errors.lastName) { %>
                       <span class="error-message-register"><%= errors.lastName.msg %></span>
                       <% } %> 
 
                       <label for="address">Domicilio:</label>
-                      <input class="input-register" type="address" name="address" id="address" placeholder="Ingresa tu dirección.." required >
+                      <input class="input-register" type="address" name="address" id="address" placeholder="Ingresa tu dirección.." value="<%= locals.old && old.address %>">
                       <% if (locals.errors && errors.address) { %>
                       <span class="error-message-register"><%= errors.address.msg %></span>
                       <% } %> 
@@ -35,19 +35,19 @@
                     <div class="box-input-register2">
 
                       <label for="email">Email:</label>
-                      <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo.." required >
+                      <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo.." value="<%= locals.old && old.email %>">
                       <% if (locals.errors && errors.email) { %>
                       <span class="error-message-register"><%= errors.email.msg %></span>
                       <% } %> 
 
                       <label for="password">Contraseña:</label>
-                      <input class="input-register" type="password"  name="password" id="password" placeholder="Ingresa una contraseña.." required >
+                      <input class="input-register" type="password"  name="password" id="password" placeholder="Ingresa una contraseña.." value="<%= locals.old && old.password %>">
                       <% if (locals.errors && errors.pass) { %>
                       <span class="error-message-register"><%= errors.password.msg %></span>
                       <% } %> 
 
                       <label for="password2">Repite tu contraseña:</label>
-                      <input class="input-register" type="password" name="password2" id="password2" placeholder="Repite tu contraseña.." required >
+                      <input class="input-register" type="password" name="password2" id="password2" placeholder="Repite tu contraseña.." value="<%= locals.old && old.password2 %>">
                       <% if (locals.errors && errors.pass2) { %>
                       <span class="error-message-register"><%= errors.password2.msg %></span>
                       <% } %> 

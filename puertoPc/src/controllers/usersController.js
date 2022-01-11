@@ -69,8 +69,6 @@ var usersController = {
                     lastId = user.id
                 }
             });
-            let {firstName, lastName, email, password, address} = req.body
-
             let newUser = {
                 id: lastId + 1,
                 firstName: req.body.firstName,
@@ -87,7 +85,8 @@ var usersController = {
         }else{
             res.render("users/register", {
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session,
+                old: req.body,
             })
         }
     },
