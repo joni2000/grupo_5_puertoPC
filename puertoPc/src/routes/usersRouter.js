@@ -10,7 +10,7 @@ router.get('/register', usersController.register);
 router.get('/logout', usersController.logout)
 
 /* POST - Login and Register */
-router.post('/login', loginValidator ,usersController.processLogin);
+router.post('/login', loginValidator, usersController.processLogin);
 router.post('/register', registerValidator, usersController.processRegister);
 
 /* Profile User */

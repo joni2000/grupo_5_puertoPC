@@ -1,7 +1,7 @@
 function isUser(req, res, next){
-    if(log){
+    if(){
         next()
     }else{
-        res.status().redirect('/users/login')
+        res.status().redirect('/login')
     }
 }
