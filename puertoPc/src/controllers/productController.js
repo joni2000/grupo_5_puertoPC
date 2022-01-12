@@ -33,12 +33,12 @@ var productController = {
         
 
         res.render('products/productDetail', {
-            product
-        }
-        )//,{
-          //  product,
-		//	toThousand
-      //  })
+            title: "Detalle de Producto",
+            product,
+            session: req.session,
+            toThousand
+
+        })
     },
 
     categories: (req, res) => {
