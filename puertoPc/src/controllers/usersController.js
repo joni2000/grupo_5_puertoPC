@@ -76,6 +76,8 @@ var usersController = {
                 email: req.body.email,
                 password: req.body.password,
                 address: req.body.address,
+                phone: "",
+                city: "",
                 category: "user",
                 image: "img-default.jpg"
             };
