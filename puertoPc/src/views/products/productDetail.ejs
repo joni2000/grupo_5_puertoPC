@@ -9,31 +9,31 @@
           <div class="productAdress">
             <h3 class="enrutador">Puerto Pc></h3>
           </div>
-           <!--<div class="product">
+           <div class="product">
             <div class="productImages">
                 <div class="productImageSelector">
                     <div class="imgSelector">
-                        <img src="images/AppleMacbookAir/macBook_vista.webp" alt="">
+                        <img src="<%-product.image%>"" alt="">
                     </div>
                     <div class="imgSelector">
-                        <img src="images/AppleMacbookAir/macBook_vista2.webp" alt="">
+                        <img src="<%-product.image%>" alt="">
                     </div>
                     <div class="imgSelector">
-                        <img src="images/AppleMacbookAir/macBook_vista4.webp" alt="">
+                        <img src="<%-product.image%>" alt="">
                     </div>
                       <div class="imgSelector">
-                        <img src="images/AppleMacbookAir/macBook_vista6webp.webp" alt="">
+                        <img src="<%-product.image%>" alt="">
                       </div>
 
                       </div>
                       <div class="productImagePrincipal">
-                    <img src="images/AppleMacbookAir/macBookAir.webp" alt="">
+                    <img src="<%-product.image%>" alt="">
                 </div>
-              </div>-->
+              </div>
               <div class="boxProductDetails">
               <div class="productDetails">
                 
-                <section class="details-1">
+<section class="details-1">
                     <h1><%= product.name %> </h1>
                     <div class="details-1-row">
                         <h2 id="price"> <%=product.price %></h2>
@@ -84,15 +84,19 @@
           </div>
            </div>
 
-            < class="boxProductDetails" id="boxProductDetails">
+            <div class="boxProductDetails" id="boxProductDetails">
             <div class="productDetails-2">
+                    <section class="details-5">
+                        <h1>DESCRIPCIÓN</h1>
+                        <p><%=product.description%></p>
+                    </section>
                     <section class="details-4">
                         <h1>ESPECIFICACIONES</h1>
                         <div class="category">
                             <div>
                                 <h2><%=product.category%></h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
+                                <h3>Descuento de % <%-product.discount%></h3>
+                                <h4>En Stock <%-product.stock%></h4>
                             </div>
                             <div>
                                 <h2><%=product.category%> </h2>
@@ -100,67 +104,12 @@
                                 <h4>DATO</h4>
                             </div>
                         </div>
-                        <div class="category">
-                            <div>
-                                <h2><%=product.category%></h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                            <div>
-                                <h2><%=product.category%> </h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                        </div>
-                        <div class="category">
-                            <div>
-                                <h2><%=product.category%></h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                            <div>
-                                <h2><%=product.category%> </h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="details-5">
-                        <h1>DESCRIPCIÓN</h1>
-                        <p><%=product.description%></p>
                     </section>
             </div>
-
-        <section>
-            <%product.forEach(products => { %>
-                 <p class="ID"><%-product.id%></p>
-                 <p class="CATEGORY"><%-product.category%></p>
-                 <p class="PRICE"><%-product.price%></p>
-                 <p class="NAME"><%-product.name%></p>
-                 <p class="WARRANTY"><%-product.price%></p>
-                <p class="STOCK"><%-product.stock%></p>
-                <% if (product.stock === true) { %>
-                                Active
-                            <% } else { %>
-                                Inactive
-                            <% } %> 
-                        </p>
-                    </section>
-                        <div class="ACTION">
-                           <!-- ENVIA VISTA PARA EDITAR UN PRODUCTO POR ID--> 
-                            <a href="/admin/<%-product.id%>/edit"><i class="fas fa-edit"></i></a>
-                            <!-- ELIMINA PRODUCTO POR ID DETERMINADO -->
-                            <form action="/admin/<%- product.id %>?_method=DELETE" method="POST">
-                                <button type="submit"><i class="fas fa-trash"></i></button>
-                            </form>   
-                        </p>
-                    </p>
-                </p>
-           <% });%>
     </main>
 
     <%- include('../partials/footer.ejs') %>
-    <script src="/js/producpetail.js"></script>
+    <script src="/js/producpDetail.js"></script>
 </body>
 
 </html>

@@ -12,7 +12,7 @@
     "name": "Notebook HP 15-EF2127WM silver 15.6",
     "description": "La notebook HP 15-EF2127WM es una solución tanto para trabajar y estudiar como para entretenerte. Al ser portátil, el escritorio dejará de ser tu único espacio de uso para abrirte las puertas a otros ambientes ya sea en tu casa o en la oficina.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 6 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.",
     "category": "Notebooks",
-    "price": 103464,
+    "price": 103.464,
     "stock": 10,
     "discount": 5,
     "image": ["1639438564656_img_.jpg"]
@@ -21,9 +21,9 @@
     "name": "Notebook Dell Inspiron 3505 plata 15.6\", AMD Ryzen 5 3450U",
     "description": "Los equipos Dell se destacan por ofrecer soluciones reales para cada una de las necesidades. Ya sea para conectarte, entretenerte, trabajar o colaborar de manera online, podrás hacerlo de forma segura desde cualquier lugar y en cualquier momento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 4 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.",
     "category": "Notebooks",
-    "price": 93999,
+    "price": 93.999,
     "stock": 10,
-    "discount": 5,
+    "discount": 20,
     "image": ["1639439994516_img_.jpg"]
 }, {
     "id": 4,
