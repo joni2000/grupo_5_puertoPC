@@ -14,7 +14,10 @@ router.get('/logout', userCheck, usersController.logout)
 router.post('/login', loginValidator, usersController.processLogin);
 router.post('/register', registerValidator, usersController.processRegister);
 
-/* Profile User */
+/* GET - Profile User */
 router.get("/profileUser", usersController.profileUser);
+
+/* PUT - Profile User */
+router.put("/profileUser/:id", usersController.editUser);
 
 module.exports = router;

@@ -26,7 +26,7 @@ var usersController = {
                      rol: user.rol
                }
                if (req.body.keepsession) {
-                   const TIME_IN_MILISECONS = 60000
+                   const TIME_IN_MILISECONS = 600000000000000
                    res.cookie("userPuertoPc", req.session.user, {
                        expires: new Date(Date.now() + TIME_IN_MILISECONS),
                        httpOnly: true,
@@ -76,8 +76,10 @@ var usersController = {
                 email: req.body.email,
                 password: req.body.password,
                 address: req.body.address,
-                phone: "",
+                country: "",
                 city: "",
+                province: "",
+                phone: "",
                 category: "user",
                 image: "img-default.jpg"
             };
@@ -101,9 +103,33 @@ var usersController = {
     },
     profileUser: (req, res )=> { 
         res.render('users/profileUser',{
-            title: "Perfil de usuario"
+            title: "Perfil de usuario",
+            session: req.session
+
         })
     },
+    editUser: (req, res) => {
+        let userId = +req.params.id;
+            let {firstName, lastName, email, password, country, province, city, address, phone} = req.body
+
+            getUsers.forEach(user => {
+                if(user.id === userId){
+                    user.id = user.id,
+                    user.firstName = req.body.firstName,
+                    user.lastName = req.body.lastName,
+                    user.email = req.body.email,
+                    user.password = req.body.password,
+                    user.country = req.body.country,
+                    user.province = req.body.province,
+                    user.city = req.body.city,
+                    user.address = req.body.address,
+                    user.phone = req.body.phone,
+                    user.image = req.file ? [req.file.filename] : user.image
+                }
+            })
+                writeJson(getUsers, "users")
+                res.redirect('/profileUser')
+    }
 
 }
 

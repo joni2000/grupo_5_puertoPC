@@ -48,5 +48,18 @@
         "email": "marilyn@gmail.com",
         "password": "123marilyn",
         "rol": "user"
+    },
+    {
+        "id": 7,
+        "firstName": "Nahuel",
+        "lastName": "Rosales",
+        "email": "nahuel@nahuel.com",
+        "address": "",
+        "country": "Argentina",
+        "city": "Avelllaneda",
+        "province": "Buenos Aires",
+        "phone": "123445644",
+        "category": "user",
+        "image": "img-default.jpg"
     }
 ]
