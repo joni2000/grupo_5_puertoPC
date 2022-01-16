@@ -76,17 +76,16 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 5rem;
 
 }
 .productDetails {
-    height: 68rem;
-    width: 90%;
+    height: 70rem;
+    width: 80%;
     border: 1px var(--greyLight) solid;
     border-radius: 1rem;
     background-color: var(--greyLight);
-    margin-top: .5rem;
-    padding: .8rem;
-    
+    padding-top: 1rem;    
 }
 
 .productDetails .details-1 {
