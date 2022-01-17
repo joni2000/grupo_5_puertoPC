@@ -80,7 +80,7 @@ var usersController = {
                 city: "",
                 province: "",
                 phone: "",
-                category: "user",
+                ROL: "user",
                 image: "img-default.jpg"
             };
             getUsers.push(newUser);
@@ -102,23 +102,31 @@ var usersController = {
         res.redirect('/')
     },
     profileUser: (req, res )=> { 
+        let user = getUsers.find(user => user.id === +req.session.user.id)
         res.render('users/profileUser',{
             title: "Perfil de usuario",
-            session: req.session
-
+            session: req.session,
+            user
         })
     },
     editUser: (req, res) => {
+        let user = getUsers.find(user => user.id === +req.session.user.id)
+        res.render('users/editUser',{
+            title: "Editar usuario",
+            session: req.session,
+            user
+        })
+    },
+    updateUser: (req, res) => {
         let userId = +req.params.id;
             let {firstName, lastName, email, password, country, province, city, address, phone} = req.body
-
             getUsers.forEach(user => {
                 if(user.id === userId){
                     user.id = user.id,
-                    user.firstName = req.body.firstName,
-                    user.lastName = req.body.lastName,
-                    user.email = req.body.email,
-                    user.password = req.body.password,
+                    user.firstName,
+                    user.lastName,
+                    user.email,
+                    user.password,
                     user.country = req.body.country,
                     user.province = req.body.province,
                     user.city = req.body.city,

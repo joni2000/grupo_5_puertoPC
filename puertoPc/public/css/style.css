@@ -16,6 +16,8 @@
 @import url('createProducts.css');
 @import url('products.css');
 @import url('profileUser.css');
+@import url('editUser.css');
+
 
 /* General */
 * {
