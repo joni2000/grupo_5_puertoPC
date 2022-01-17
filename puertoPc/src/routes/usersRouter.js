@@ -18,6 +18,7 @@ router.post('/register', registerValidator, usersController.processRegister);
 router.get("/profileUser", usersController.profileUser);
 
 /* PUT - Profile User */
-router.put("/profileUser/:id", usersController.editUser);
+router.get("/editUser", usersController.editUser)
+router.put("/editUser/:id", usersController.updateUser);
 
 module.exports = router;
