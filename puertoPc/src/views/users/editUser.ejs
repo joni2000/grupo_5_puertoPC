@@ -8,13 +8,13 @@
 
             <main class="">
 
-                <form class="form-account">
+                <form class="form-account" action="/editUser/<%-user.id%>?_method=PUT" method="POST">
                     <div>
                         <h3>Mi cuenta</h3>
-                        <div class="avatar-profileUser">
+                        <div class="avatar-editUser">
                             <label>Lugar para el avatar</label>
                             <figure class="">
-                                <label class="" for=""></label>
+                                <input class="" type="file" name="" id="">
                             </figure>
                         </div>
                     </div>
@@ -40,30 +40,30 @@
                             <div>
                                 <div class="data ">
                                     <label>País:</label>
-                                    <p><%-user.country%></p>
+                                    <input type="text" name="country" value="<%-user.country%>">
                                 </div>
                                 <div class="data ">
                                     <label>Provincia:</label>
-                                    <p><%-user.province%></p>
+                                    <input type="text" name="province" value="<%-user.province%>">
                                 </div>
                                 <div class="data ">
                                     <label>Ciudad:</label>
-                                    <p><%-user.city%></p>
+                                    <input type="text" name="city" value="<%-user.city%>">
                                 </div>
                                 <div class="data ">
                                     <label>Domicilio: </label>
-                                    <p><%-user.address%></p>
+                                    <input type="address" name="address" value="<%-user.address%>">
                                 </div>
 
                                 <div class="data ">
                                     <label>Teléfono: </label>
-                                    <p><%-user.phone%></p>
+                                    <input type="tel" name="phone" value="<%-user.phone%>">
                                 </div>
 
                             </div>
                     </div>
                     <div class="button-edit-info">
-                        <a href="/editUser" class="submit">Editar Información</a>
+                        <button class="submit">Guardar cambios</button>
                     </div>
                 </form>
             </main>

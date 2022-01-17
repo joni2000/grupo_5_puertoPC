@@ -30,6 +30,10 @@ module.exports = [
         }
     }).withMessage('Email ya registrado'),
 
+    check('address')
+    .notEmpty()
+    .withMessage('Debes ingresar tu domicilio'),
+
     check('password')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña')
