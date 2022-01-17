@@ -56,7 +56,7 @@
 
 .productImagePrincipal{
     margin-left: .5rem;
-    height: 100%;
+    height: 80%;
     width: 80%;
     border: 1px var(--greyLight) solid;
     border-radius: 1rem;
