@@ -12,8 +12,9 @@
     font-size: 1.6rem;
 }
 .form-account h3 {
-    font-size: 2.2rem;
+    font-size: 2.7rem;
     text-align: center;
+    font-family: var(--fontBebas);
 }
 .avatar-profileUser{
     display: flex;
@@ -47,6 +48,9 @@
         flex-wrap: wrap;
 
     }
+    .form-account h3 {
+        font-size: 3.2rem;
+    }
         .my-account{
           width: 100%;
           order: 1;
@@ -68,4 +72,5 @@
             width: 100%;
             order: 5;
         }
+        
 }
