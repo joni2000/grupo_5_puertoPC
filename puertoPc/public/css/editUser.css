@@ -9,9 +9,7 @@
     flex-direction: column;
     align-items: center;
 }
-
 .button-edit-info .submit{
-
     color: white;
     font-size: 2rem;
     width: 23.8rem;
@@ -41,19 +39,14 @@
     border-radius: 2rem;
     border: 0.2px solid #b1b1b1;
     padding: 0 1rem;
-
-
 }
 /* Media queries */
     /* Desktop */
 
     @media (min-width: 760px) {
         .button-edit-info .submit{
-
-
             font-size: 2.2rem;
             width: 26.8rem;
             height: 4.2rem;
-
         }
     }
