@@ -1,1 +1,26 @@
-[{"id":1,"firstName":"Nahuel","lastName":"Rosales","email":"nahuel@gmail.com","password":"hola123","category":"user","image":"img-default.jpg","rol":"adm"},{"id":2,"firstName":"Nahuel Farid","lastName":"Rosales","email":"nahuel@nahuel.com","password":"123123","address":"Avenida Falsa 1234","country":"Argentina","city":"Avelllaneda","province":"Buenos Aires","phone":"1512345678","ROL":"user","image":"img-default.jpg"}]
+[
+    {
+        "id": 1,
+        "firstName": "Nahuel",
+        "lastName": "Rosales",
+        "email": "nahuel@gmail.com",
+        "password": "hola123",
+        "category": "user",
+        "image": "img-default.jpg",
+        "rol": "adm"
+    },
+    {
+        "id": 2,
+        "firstName": "Nahuel Farid",
+        "lastName": "Rosales",
+        "email": "nahuel@nahuel.com",
+        "password": "123123",
+        "address": "Avenida Falsa 1234",
+        "city": "Avelllaneda",
+        "phone": "1512345678",
+        "ROL": "user",
+        "image": "img-default.jpg",
+        "country": "Argentina",
+        "province": "Buenos Aires"
+    }
+]
