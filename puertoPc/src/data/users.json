@@ -46,8 +46,12 @@
         "firstName": "Marilyn",
         "lastName": "Vino Flores",
         "email": "marilyn@gmail.com",
-        "password": "123marilyn",
-        "rol": "user"
+        "rol": "user",
+        "country": "",
+        "province": "",
+        "city": "",
+        "address": "",
+        "phone": ""
     },
     {
         "id": 7,
