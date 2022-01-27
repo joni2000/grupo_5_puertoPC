@@ -1,15 +1,20 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = "Product";
+    const alias = "Category";
     const cols = {
-
-
-
-        
+        id: {
+            type: dataTypes.INTEGER(11),
+            primaryKey: true,
+            allowNull: false,
+        },
+        name: {
+            type: dataTypes.STRING(80) ,
+            allowNull: false,
+        },
     };
     const config = {
-        tableName: "products"
+        tableName: "categories"
     };
-    const Product = sequelize.define(alias, cols, config);
+    const Category = sequelize.define(alias, cols, config);
 
     Category.associate = function (models){
         Category.hasMany(models.Product, {
@@ -18,5 +23,5 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return Product
+    return Category
 }
