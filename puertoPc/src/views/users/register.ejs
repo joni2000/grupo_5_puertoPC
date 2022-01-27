@@ -24,8 +24,8 @@
                       <span class="error-message-register"><%= errors.lastName.msg %></span>
                       <% } %> 
 
-                      <label for="address">Domicilio:</label>
-                      <input class="input-register" type="address" name="address" id="address" placeholder="Ingresa tu dirección" value="<%= locals.old && old.address %>">
+                      <label for="address">Domicilio (opcional):</label>
+                      <input class="input-register" type="text" name="address" id="address" placeholder="Ingresa tu dirección" value="<%= locals.old && old.address %>">
                       <% if (locals.errors && errors.address) { %>
                       <span class="error-message-register"><%= errors.address.msg %></span>
                       <% } %> 

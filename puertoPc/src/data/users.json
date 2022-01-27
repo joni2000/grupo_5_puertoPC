@@ -58,12 +58,13 @@
         "firstName": "Nahuel",
         "lastName": "Rosales",
         "email": "nahuel@nahuel.com",
-        "address": "",
-        "country": "Argentina",
+        "password": "123123",
+        "address": "Avenida Falsa 1234",
         "city": "Avelllaneda",
-        "province": "Buenos Aires",
-        "phone": "123445644",
-        "category": "user",
-        "image": "img-default.jpg"
+        "phone": "1512345678",
+        "ROL": "user",
+        "image": "img-default.jpg",
+        "country": "Argentina",
+        "province": "Buenos Aires"
     }
 ]

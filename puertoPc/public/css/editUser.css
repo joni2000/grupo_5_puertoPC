@@ -1,0 +1,52 @@
+.button-edit-info{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avatar-editUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button-edit-info .submit{
+    color: white;
+    font-size: 2rem;
+    width: 23.8rem;
+    height: 3.5rem;
+    border: none;
+    font-family: var(--fontBebas);
+    background-color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+.button-edit-info .submit:hover{
+    background-color: #2baefa;
+    transition: all .3s ease-in-out;
+}
+.data {
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 0.1rem rgb(229 229 229);  
+}
+.data input {
+    height: 2.2rem;
+    width: 65%;
+    border-radius: 2rem;
+    border: 0.2px solid #b1b1b1;
+    padding: 0 1rem;
+}
+/* Media queries */
+    /* Desktop */
+
+    @media (min-width: 760px) {
+        .button-edit-info .submit{
+            font-size: 2.2rem;
+            width: 26.8rem;
+            height: 4.2rem;
+        }
+    }
