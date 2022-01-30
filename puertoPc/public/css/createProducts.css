@@ -70,3 +70,8 @@ header .top-create {
 .color .text-camp {
     width: 2rem;
 }
+
+.form-create span.error-message {
+    font-family: var(--fontText);
+    font-weight: bold;
+}

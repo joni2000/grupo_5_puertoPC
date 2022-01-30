@@ -13,9 +13,9 @@ module.exports = [
 
     check('price')
     .notEmpty()
-    .withMessage('Debes ingresar un precio').bail()
-    .isNumeric()
-    .withMessage('Sólo números'),
+    .withMessage('Debes ingresar un precio').bail(),
+ /*    .isNumeric()
+    .withMessage('Sólo números') */
 
     check('discount')
     .isNumeric()
