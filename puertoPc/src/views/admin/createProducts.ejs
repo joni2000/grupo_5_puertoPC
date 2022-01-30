@@ -17,44 +17,58 @@
         <form class="form-create action=" action="/admin/store" method="POST" enctype="multipart/form-data">
                 <div class="container-input">
                     <label class="text-form" for="name" minlength="6" maxlength="80">Nombre:</label>
-                    <input class="text-camp" type="text" name="name" id="name" required>
-                    <span class="error-message">Coloca un nombre</span>
+                    <input class="text-camp" type="text" name="name" id="name" value="<%= locals.old && old.name %>">
+                    <% if (locals.errors && errors.name) { %>
+                        <span class="error-message"><%= errors.name.msg %> </span>
+                    <% } %>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="description">Descripción:</label>
-                    <textarea class="text-camp" name="description" id="description" required></textarea>
-                    <span class="error-message">Debes agregar un descripción</span>
+                    <textarea class="text-camp" name="description" id="description" required><%= locals.old && old.description %>"</textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <span class="error-message"><%= errors.description.msg %> </span>
+                    <% } %>
                 </div>
                 <div class="container-input">
                     <label class="text-form"  for="select">Categoría:</label>
-                    <select class="text-camp" name="category" id="select" required>
+                    <select class="text-camp" name="category" id="select">
                         <option value="">Elegir</option>
                         <% listCategories.forEach(categoria => { %>
-                            <option value="<%-categoria%>"><%=categoria%></option>
+                            <option value="<%- old.category ? old.category : categoria%>"><%=categoria%></option>
                         <% }) %>
                     </select>
-                    <span class="error-message">Elige una categoría</span>    
+                    <% if (locals.errors && errors.category) { %>
+                        <span class="error-message"><%= errors.category.msg %> </span>
+                    <% } %>    
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="stock">Stock:</label>
-                    <input class="text-camp" type="number" name="stock" id="stock" required>
-                    <span class="error-message">Debes definir el stock</span>
+                    <input class="text-camp" type="number" name="stock" id="stock" value="<%= locals.old && old.stock %>">
+                    <% if (locals.errors && errors.stock) { %>
+                        <span class="error-message"><%= errors.stock.msg %> </span>
+                    <% } %>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="price">Precio:</label>
-                    <input class="text-camp" type="text" name="price" id="price" required>
-                    <span class="error-message">Debes definir un precio</span>
+                    <input class="text-camp" type="text" name="price" id="price" value="<%= locals.old && old.price %>">
+                    <% if (locals.errors && errors.price) { %>
+                        <span class="error-message"><%= errors.price.msg %> </span>
+                    <% } %>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="discount">Descuento:</label>
-                    <input class="text-camp" type="text" name="discount" id="discount">
-                    <span class="error-message"></span>
+                    <input class="text-camp" type="number" name="discount" id="discount" value="<%= locals.old ? old.discount : 0 %>">
+                    <% if (locals.errors && errors.discount) { %>
+                        <span class="error-message"><%= errors.discount.msg %> </span>
+                    <% } %>
                 </div>
                     <figure class="select-image">
                         <label class="text-form" for="image">Seleccionar imagen</label>
                         <input class="buttom-image" type="file" name="image" id="image">
                     </figure>    
-                    <span class="error-message">Formato no valído</span>
+                    <% if (locals.errors && errors.image) { %>
+                        <span class="text-danger"><%= errors.image.msg %> </span>
+                    <% } %>
                     <button  class="button-buy" type="submit">
                         Guardar producto
                     </button>

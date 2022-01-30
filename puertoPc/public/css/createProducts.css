@@ -39,6 +39,7 @@ header .top-create {
     border: 1px solid var(--grey);
     padding: 1rem;
     width: 40rem;
+    font-family: var(--fontText);
 }
 
 .select-image {
