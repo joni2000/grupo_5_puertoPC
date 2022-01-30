@@ -1,5 +1,6 @@
 let {getCategories, getProducts, writeJson} = require('../data/dataBase');
 let fs = require('fs')
+const { validationResult } = require('express-validator')
 
 let orderedCategories = getCategories.map(category => category.name)
 
@@ -21,7 +22,7 @@ var adminController = {
             if(product.id > lastId){
                 lastId = product.id
             }
-        });
+            });
 
             let newProduct = {
                 id: lastId + 1,
@@ -99,7 +100,7 @@ var adminController = {
 
         delete: (req, res) => {
             let productId = +req.params.id;
-    
+
             getProducts.forEach(product => {
                 if(product.id === productId){
                     if(fs.existsSync("./public/images/products", product.image[0])){
