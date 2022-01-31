@@ -29,7 +29,6 @@ app.use(session({
   secret: 'puertopc',
   resave: false,
   saveUninitialized: true
-
 }));
 
 app.use(cookieSession);

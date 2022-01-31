@@ -1,0 +1,24 @@
+{
+  "name": "grupo_5_puertoPC",
+  "version": "1.0.0",
+  "description": "- En **PuertoPC** vas a encontrar productos como hardware y perifericos para tener la mejor experiencia de gaming.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joni2000/grupo_5_puertoPC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joni2000/grupo_5_puertoPC/issues"
+  },
+  "homepage": "https://github.com/joni2000/grupo_5_puertoPC#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14"
+  }
+}

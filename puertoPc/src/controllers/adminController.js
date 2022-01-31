@@ -1,43 +1,73 @@
 let {getCategories, getProducts, writeJson} = require('../data/dataBase');
 let fs = require('fs')
+const { validationResult } = require('express-validator')
+const db = require('../data/models')
+
+
+const Products = db.Product
+const Categories = db.Category
 
 let orderedCategories = getCategories.map(category => category.name)
 
 
 var adminController = {
-
+        admin: (req, res )=> {
+            res.render('admin/admin', {
+                name: "jonathan",
+                title: "Crear Producto",
+                products: getProducts,
+            });
+        },
+    
         createProducts: (req, res )=> {
-            res.render('admin/createProducts',{
+                res.render('admin/createProducts',{
                 title: "Crear Producto",
                 listCategories: orderedCategories.sort(),
                 category: getCategories,
             })
         },
         store: (req, res) => {
-            let {name, description, category, /* colors, */ stock, image, price, discount} = req.body
-            let lastId = 0;
-            
-            getProducts.forEach(product => {
-            if(product.id > lastId){
-                lastId = product.id
-            }
-        });
+            let errors = validationResult(req)
 
-            let newProduct = {
-                id: lastId + 1,
-                name: name.trim(),
-                description: description.trim(),
-                category,
-                price: +price,
-                stock: +stock,
-                discount: discount ? +discount : 0,
-                image: req.file ? [req.file.filename] : ["default-image.png"]
-            }
-            
-            getProducts.push(newProduct)
-            writeJson(getProducts, "products") 
+            const {name, description, category, /* colors, */ stock, image, price, discount} = req.body
+           
+            if(errors.isEmpty()){
 
-            res.redirect('/admin') 
+                let lastId = 1;
+                
+                getProducts.forEach(product => {
+                if(product.id > lastId){
+                    lastId = product.id
+                }
+                });
+    
+                let newProduct = {
+                    id: lastId + 1,
+                    name: name.trim(),
+                    description: description.trim(),
+                    category,
+                    price: +price,
+                    stock: +stock,
+                    discount: discount ? +discount : 0,
+                    image: req.file ? [req.file.filename] : ["default-image.png"]
+                }
+                
+                getProducts.push(newProduct)
+                writeJson(getProducts, "products") 
+    
+                res.redirect('/admin') 
+            }else{
+                res.render('admin/createProducts', {
+                    title: "Crear Producto",
+                    listCategories: orderedCategories.sort(),
+                    category: getCategories,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    session: req.session
+    
+                })
+            }
+
         },
 
         editProducts: (req, res )=> {
@@ -51,55 +81,50 @@ var adminController = {
                 product,
             });
         },
-        /* deleteProduct: (req, res) => {
-            let productId = +req.params.id;
-
-            getProducts.forEach(product => {
-                if(product.id === productId){
-                    let productToDestroyIndex = products.indexOf(product)
-                    productToDestroyIndex !== -1 ? product.splice(productToDestroyIndex, 1) : console.log("No encontré el producto")
-
-                }
-            })
-            writeJson(getProducts, "products")
-            res.send(`Has eliminado el producto ${productId}`)
-        }, */
         
         update: (req, res)=> {
+            let errors = validationResult(req)
             let productId = +req.params.id;
-
-            let {name, description, category,/*  colors , */ stock, image, price, discount} = req.body
-
-            getProducts.forEach(product => {
-                if(product.id === productId){
-                    product.id = product.id,
-                    product.name = name.trim(),
-                    product.price = +price.trim(),
-                    product.category = category,
-                    product.description = description.trim(),
-                    product.discount = +discount,
-                    product.stock = +stock,
-                    /* product.colors = colors, */
-                    product.image = req.file ? [req.file.filename] : product.image
-                }
-            })
-                writeJson(getProducts, "products")
             
-                res.redirect('/')
+            if(errors.isEmpty()){
+    
+                let {name, description, category,/*  colors , */ stock, image, price, discount} = req.body
+    
+                getProducts.forEach(product => {
+                    if(product.id === productId){
+                        product.id = product.id,
+                        product.name = name.trim(),
+                        product.price = +price.trim(),
+                        product.category = category,
+                        product.description = description.trim(),
+                        product.discount = +discount,
+                        product.stock = +stock,
+                        /* product.colors = colors, */
+                        product.image = req.file ? [req.file.filename] : product.image
+                    }
+                })
+                    writeJson(getProducts, "products")
+                
+                    res.redirect('/')
+            }else{
+                let product = getProducts.find(product => product.id === productId)
+                res.render('admin/editProducts',{
+                    title: "Editar Producto",
+                    listCategories: orderedCategories.sort(),
+                    category: getCategories,
+                    product,
+                    old: req.body,
+                    errors: errors.mapped(),
+                })
+            }
+
         },
         
         
-        admin: (req, res )=> {
-            res.render('admin/admin', {
-                name: "jonathan",
-                title: "Crear Producto",
-                products: getProducts
-            });
-        },
 
         delete: (req, res) => {
             let productId = +req.params.id;
-    
+
             getProducts.forEach(product => {
                 if(product.id === productId){
                     if(fs.existsSync("./public/images/products", product.image[0])){

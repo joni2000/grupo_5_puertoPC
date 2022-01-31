@@ -322,7 +322,7 @@ hr {
     
     .form-login span.error-message {
         position: absolute;
-        top: 7.9rem
+        font-family: var(--fontText);
     }
     .form-login span.credenciales{
         position: absolute;
