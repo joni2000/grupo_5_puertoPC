@@ -30,9 +30,15 @@ module.exports = (sequelize, dataTypes) => {
         discount: {
             type: dataTypes.INTEGER(11),
             allowNull: false
+        },
+        image_id: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        },
+        color_id: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
         }
-
-
 
     };
     const config = {
@@ -46,6 +52,14 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsTo(models.Category, {
             as: "category",
             foreingKey: "category_id"
+        }),
+        Product.belongsTo(models.Color, {
+            as: "color",
+            foreingKey: "color_id"
+        }),
+        Product.belongsTo(models.Image, {
+            as: "image",
+            foreingKey: "image_id"
         })
     }
 

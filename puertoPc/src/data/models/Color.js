@@ -18,6 +18,13 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "colors"
     };
     const Color = sequelize.define(alias, cols, config);
+    
+    Category.associate = function (models){
+        Category.hasMany(models.Product, {
+            as: "products",
+            foreingKey: "color_id"
+        })
+    }
 
     return Color
 }
