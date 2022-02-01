@@ -6,6 +6,7 @@ const db = require('../data/models')
 
 const Products = db.Product
 const Categories = db.Category
+const ProductImages = db.Image
 
 let orderedCategories = getCategories.map(category => category.name)
 
@@ -20,7 +21,16 @@ var adminController = {
         },
     
         createProducts: (req, res )=> {
-                res.render('admin/createProducts',{
+                let allCategories = Categories.findAll()
+                .then(categories => {
+                    res.render('admin/createProducts',{
+                        title: "Crear Producto",
+                        categories: categories.sort(),
+                        category: categories,
+                    })
+                })
+        
+            res.render('admin/createProducts',{
                 title: "Crear Producto",
                 listCategories: orderedCategories.sort(),
                 category: getCategories,
@@ -31,6 +41,38 @@ var adminController = {
 
             const {name, description, category, /* colors, */ stock, image, price, discount} = req.body
            
+            /* if(errors.isEmpty()){
+
+                let lastId = 1;
+                
+                Products.create({
+                    name: name.trim(),
+                    description: description.trim(),
+                    category,
+                    price: +price,
+                    stock: +stock,
+                    discount: discount ? +discount : 0,
+                }).then(product => {
+                    ProductImages.create({
+                        image: req.file ? req.file.filename : 'default-image.png',
+                        productId: product.id
+                    })
+                    .then(()=> {
+                        res.redirect('/admin')
+                    })
+                })
+                .catch(error => console.log(error))
+            }else{
+                res.render('admin/createProducts', {
+                    title: "Crear Producto",
+                    categories: allCategories.sort(),
+                    category: allCategories,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    session: req.session
+                })
+            }
+             */
             if(errors.isEmpty()){
 
                 let lastId = 1;
