@@ -33,7 +33,7 @@
                     <label class="text-form"  for="select">Categoría:</label>
                     <select class="text-camp" name="category" id="select">
                         <option value="">Elegir</option>
-                        <% listCategories.forEach(categoria => { %>
+                        <% categories.forEach(categoria => { %>
                             <option value="<%- old.category ? old.category : categoria%>"><%=categoria%></option>
                         <% }) %>
                     </select>
