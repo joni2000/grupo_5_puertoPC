@@ -15,7 +15,7 @@ router.post('/store', upload.single('image'), productFormValidator, adminControl
 /* GET show edit form */
 router.get('/editar/:id', adminController.editProducts);
 /* PUT send edit form */
-router.put('/editar/:id', upload.single('image'), productFormValidator,adminController.update);
+router.put('/editar/:id', upload.array('image'), productFormValidator, adminController.update);
 
 router.delete('/eliminar/:id', adminController.delete)
 

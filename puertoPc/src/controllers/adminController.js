@@ -21,7 +21,7 @@ var adminController = {
         },
     
         createProducts: (req, res )=> {
-                let allCategories = Categories.findAll()
+                Categories.findAll()
                 .then(categories => {
                     res.render('admin/createProducts',{
                         title: "Crear Producto",
@@ -29,21 +29,37 @@ var adminController = {
                         category: categories,
                     })
                 })
-        
-            res.render('admin/createProducts',{
-                title: "Crear Producto",
-                listCategories: orderedCategories.sort(),
-                category: getCategories,
-            })
         },
         store: (req, res) => {
             let errors = validationResult(req)
+            let arrayImages = [];
+            if(req.files){
+                req.files.forEach((image) => {
+                    arrayImages.push(image.filename)
+                })
+            }
 
             const {name, description, category, /* colors, */ stock, image, price, discount} = req.body
            
-            /* if(errors.isEmpty()){
-
-                let lastId = 1;
+            if(errors.isEmpty()){
+                if(arrayImages.length > 0){
+                    let images = arrayImages.map((image) => {
+                        return {
+                            image: image,
+                            productId: product.id
+                        }
+                    });
+                    ProductImages.bulkCreate(images)
+                    .then(() => res.redirect('/admin/products'))
+                    .catch(error => console.log(error))
+                }else {
+                    ProductImages.create({
+                        image: 'default-image.png',
+                        productId: product.id
+                    })
+                    .then(() => {res.redirect('/admin/products')})
+                    .catch(error => console.log(error))
+                }
                 
                 Products.create({
                     name: name.trim(),
@@ -52,27 +68,26 @@ var adminController = {
                     price: +price,
                     stock: +stock,
                     discount: discount ? +discount : 0,
-                }).then(product => {
-                    ProductImages.create({
-                        image: req.file ? req.file.filename : 'default-image.png',
-                        productId: product.id
-                    })
-                    .then(()=> {
-                        res.redirect('/admin')
-                    })
+                    image_id: image.id
+                })
+                .then(()=> {
+                    res.redirect('/admin')
                 })
                 .catch(error => console.log(error))
             }else{
-                res.render('admin/createProducts', {
-                    title: "Crear Producto",
-                    categories: allCategories.sort(),
-                    category: allCategories,
-                    errors: errors.mapped(),
-                    old: req.body,
-                    session: req.session
+                Categories.findAll()
+                .then(categories => {
+                    res.render('admin/createProducts', {
+                        title: "Crear Producto",
+                        categories: categories.sort(),
+                        category: categories,
+                        errors: errors.mapped(),
+                        old: req.body,
+                        session: req.session
+                    })
                 })
             }
-             */
+            
             if(errors.isEmpty()){
 
                 let lastId = 1;
@@ -99,6 +114,7 @@ var adminController = {
     
                 res.redirect('/admin') 
             }else{
+                
                 res.render('admin/createProducts', {
                     title: "Crear Producto",
                     listCategories: orderedCategories.sort(),
