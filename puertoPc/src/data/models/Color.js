@@ -6,11 +6,17 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
             allowNull: false,
+            autoIncrement: true,
         },
         name: {
             type: dataTypes.STRING(45) ,
             allowNull: false,
         },
+        product_id: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        }
+
 
         
     };
@@ -20,9 +26,9 @@ module.exports = (sequelize, dataTypes) => {
     const Color = sequelize.define(alias, cols, config);
     
     Color.associate = function (models){
-        Category.hasMany(models.Product, {
+        Color.belongsTo(models.Product, {
             as: "products",
-            foreingKey: "color_id"
+            foreingKey: "product_id"
         })
     }
 

@@ -34,10 +34,6 @@ module.exports = (sequelize, dataTypes) => {
         image_id: {
             type: dataTypes.INTEGER(11),
             allowNull: false
-        },
-        color_id: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
         }
 
     };
@@ -53,13 +49,13 @@ module.exports = (sequelize, dataTypes) => {
             as: "category",
             foreingKey: "category_id"
         }),
-        Product.belongsTo(models.Color, {
-            as: "color",
-            foreingKey: "color_id"
-        }),
         Product.belongsTo(models.Image, {
             as: "image",
             foreingKey: "image_id"
+        }),
+        Product.hasMany(models.Color, {
+            as: "color",
+            foreingKey: "product_id"
         })
     }
 
