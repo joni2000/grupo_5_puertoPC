@@ -6,6 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
             allowNull: false,
+            autoIncrement: true,
         },
         name: {
             type: dataTypes.STRING(100) ,
@@ -20,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
     const Image = sequelize.define(alias, cols, config);
 
     Image.associate = function (models){
-        Image.belongTo(models.Product, {
+        Image.hasMany(models.Product, {
             as: "products",
             foreingKey: "image_id"
         })
