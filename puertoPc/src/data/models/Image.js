@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Image = sequelize.define(alias, cols, config);
 
-    Category.associate = function (models){
+    Image.associate = function (models){
         Category.hasMany(models.Product, {
             as: "products",
             foreingKey: "image_id"
