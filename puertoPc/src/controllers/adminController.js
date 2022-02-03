@@ -38,15 +38,13 @@ var adminController = {
                     arrayImages.push(image.filename)
                 })
             }
-
-            const {name, description, category, /* colors, */ stock, image, price, discount} = req.body
+            const {name, description, category, /* colors, */ stock, price, discount} = req.body
            
             if(errors.isEmpty()){
                 if(arrayImages.length > 0){
                     let images = arrayImages.map((image) => {
                         return {
-                            image: image,
-                            productId: product.id
+                            name: image,
                         }
                     });
                     ProductImages.bulkCreate(images)
@@ -54,26 +52,14 @@ var adminController = {
                     .catch(error => console.log(error))
                 }else {
                     ProductImages.create({
-                        image: 'default-image.png',
-                        productId: product.id
+                        name: 'default-image.png',
                     })
-                    .then(() => {res.redirect('/admin/products')})
+                    .then(() => {
+                        
+                    })
                     .catch(error => console.log(error))
                 }
-                
-                Products.create({
-                    name: name.trim(),
-                    description: description.trim(),
-                    category,
-                    price: +price,
-                    stock: +stock,
-                    discount: discount ? +discount : 0,
-                    image_id: image.id
-                })
-                .then(()=> {
-                    res.redirect('/admin')
-                })
-                .catch(error => console.log(error))
+            
             }else{
                 Categories.findAll()
                 .then(categories => {
