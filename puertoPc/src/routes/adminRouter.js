@@ -10,7 +10,7 @@ router.get('/', adminController.admin);
 /* GET show creation form */
 router.get('/crear', adminController.createProducts);
 /* POST send form */
-router.post('/store', upload.single('image'), productFormValidator, adminController.store);
+router.post('/store', upload.array('image'), productFormValidator, adminController.store);
 
 /* GET show edit form */
 router.get('/editar/:id', adminController.editProducts);

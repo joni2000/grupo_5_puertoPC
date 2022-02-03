@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `puerto_pc` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `puerto_pc`;
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
 -- Host: localhost    Database: puerto_pc
@@ -30,7 +28,7 @@ CREATE TABLE `categories` (
   `createdAt` date DEFAULT NULL,
   `updateAt` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +37,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Escritorio','2022-02-03','2022-02-03'),(2,'Notebooks','2022-02-03','2022-02-03'),(3,'Motherboards','2022-02-03','2022-02-03'),(4,'Procesadores','2022-02-03','2022-02-03'),(5,'Memorias RAM','2022-02-03','2022-02-03'),(6,'Almacenamiento','2022-02-03','2022-02-03'),(7,'Placas de video','2022-02-03','2022-02-03'),(8,'Fuentes','2022-02-03','2022-02-03'),(9,'Gabinetes','2022-02-03','2022-02-03'),(10,'Collers','2022-02-03','2022-02-03'),(11,'Teclados y mouses','2022-02-03','2022-02-03'),(12,'Sonido','2022-02-03','2022-02-03'),(13,'Monitores','2022-02-03','2022-02-03'),(14,'Sillas','2022-02-03','2022-02-03'),(15,'Camaras web','2022-02-03','2022-02-03'),(16,'Cables','2022-02-03','2022-02-03');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +113,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,6 +122,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Notebook Lenovo IdeaPad 15IML05  abyss blue táctil 16',2,'La notebook Lenovo IdeaPad 3 fue pensada para hacer tu vida más sencilla. Su diseño elegante e innovador y su comodidad para transportarla, la convertirá en tu PC favorita. Cualquier tarea que te propongas, ya sea en casa o en la oficina, la harás con facilidad gracias a su poderoso rendimiento.\r\nPantalla con gran impacto visual\r\nSu pantalla LCD de 15.6 y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i3 de 2 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. En base a esto, permite el desempeño necesario para la edición de fotografías o videos en programas básicos.',123234,12,15,'2022-02-03 23:12:02','2022-02-03 23:12:02');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-02 21:37:25
+-- Dump completed on 2022-02-03 20:13:00
