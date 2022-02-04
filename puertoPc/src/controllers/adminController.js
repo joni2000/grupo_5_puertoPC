@@ -89,7 +89,20 @@ var adminController = {
 
         editProducts: (req, res )=> {
             let productId = +req.params.id;
-            
+          //const productPromise = Products.findByPk(productId);
+          //const categoriesPromise = Categories.findAll();
+          //Promise.all([productPromise, categoriesPromise])
+      //  .then(([product, categories])=>{
+      //      res.render('admin/createProducts', {
+      //          product,
+      //          categories,
+      //          session: req.session
+      //      })
+    //    })
+    //})
+    // .catch(error => console.log(error)) 
+     //   },
+   
             let product = getProducts.find(product => product.id === productId)
             res.render('admin/editProducts',{
                 title: "Editar Producto",
@@ -106,7 +119,72 @@ var adminController = {
             if(errors.isEmpty()){
     
                 let {name, description, category, stock, image, price, discount} = req.body
-    
+                      /* 
+                          Products.update({
+                              name,
+                              price,
+                              description,
+                              category,
+                              stock,
+                              discount,
+                              category,
+                           },  {
+                                  where: {
+                                        id: req.params.id
+                                 }
+                               })
+                               .then((result) => {
+                                    ProductImages.findAll({
+                                           where: {
+                                           productId: req.params.id
+                                            }
+                                      })
+                                       .then((images) => {
+                                             images.forEach((image) => {
+                                                   fs.existsSync('../public/images/products/', image.image)
+                                                     ? fs.unlinkSync(`../public/images/products/${image.image}`)
+                                                         : console.log('No se encontró el archivo')
+                                                        })
+                                                        ProductImages.destroy({
+                                                              where: {
+                                                                  productId: req.params.id
+                                                                 }
+                                                                    })
+                                                                    .then(() => {
+                                                                        ProductImages.create({
+                                                                              image: req.file ? req.file.filename : 'default-image.png',
+                                                                              productId: req.params.id
+                                                                            })
+                                                                            .then(() => {
+                                                                                res.redirect('/admin/products')
+                                                                            })
+                                                                        })
+                                                                    })
+                                                                    .catch(error => console.log(error))
+                                                                 })     
+                                                                }else{
+                                                                     let productId = +req.params.id;
+                                                                     const productPromise = Products.findByPk(productId);
+                                                                     const categoriesPromise = Categories.findAll();
+                                                                     Promise.all([productPromise, categoriesPromise])
+                                                                      .then(([product, categories])=>{
+                                                                          res.render('admin/createProducts', {
+                                                                            
+                                                                              title: "Crear Producto",
+                                                                              product,
+                                                                              categories: categories.sort(),
+                                                                              category: categories,
+                                                                               errors: errors.mapped(),
+                                                                               old: req.body,
+                                                                               session: req.session
+                                                                            })
+                                                                        })
+                                                                        .catch(error => console.log(error)) 
+                                                                    }
+                                                                 },
+
+
+                      */
                 getProducts.forEach(product => {
                     if(product.id === productId){
                         product.id = product.id,
