@@ -21,13 +21,13 @@ var adminController = {
         createProducts: (req, res )=> {
                 Categories.findAll()
                 .then(categories => {
-                    res.send(categories)
-                    /* res.render('admin/createProducts',{
+                    res.render('admin/createProducts',{
                         title: "Crear Producto",
-                        categories: categories.sort(),
+                        categories: categories,
                         category: categories,
-                    }) */
-                })
+                        old: req.body
+                    })
+                }).catch(error => console.log(error))
         },
         store: (req, res) => {
             let errors = validationResult(req)
@@ -40,7 +40,7 @@ var adminController = {
     
             if (errors.isEmpty()) {
                 const {name, description, category, stock, price, discount} = req.body
-    
+
                 Products.create({
                     name,
                     price,
@@ -48,6 +48,7 @@ var adminController = {
                     category,
                     stock,
                     discount,
+                    category,
                 })
                 .then((product) => {
                     if(arrayImages.length > 0){

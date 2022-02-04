@@ -30,10 +30,6 @@ module.exports = (sequelize, dataTypes) => {
         discount: {
             type: dataTypes.INTEGER(11),
             allowNull: false
-        },
-        image_id: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
         }
 
     };
