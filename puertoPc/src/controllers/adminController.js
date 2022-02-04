@@ -48,7 +48,7 @@ var adminController = {
                     category,
                     stock,
                     discount,
-                    category,
+                    category_id: category,
                 })
                 .then((product) => {
                     if(arrayImages.length > 0){
