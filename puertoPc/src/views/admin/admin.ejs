@@ -48,10 +48,10 @@
                         <th><%=product.name%></th>
                         <th><%=product.category%></th>
                         <th><%=product.stock%></th>
-                        <th><%=product.price%></th>
+                        <th><%=product.price%></th> 
                         <th>
                             <a class="btn btn-success" href="/admin/editar/<%= product.id %>">
-                              editar  
+                              editar
                             </a>
                             <form action="/admin/eliminar/<%- product.id %>?_method=DELETE" method="POST">
                               <button type="submit" class="btn btn-danger" >

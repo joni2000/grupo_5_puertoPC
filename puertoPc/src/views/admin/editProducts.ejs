@@ -14,17 +14,17 @@
         </nav>
     </header>    
     <main class="main-create padding-top-fixed">
-        <form class="form-create action=" action="/admin/editar/<%-product.id%>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="none">
+        <form class="form-create" action="/admin/editar/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="none">
                 <div class="container-input">
                     <label class="text-form" for="name" minlength="6" maxlength="80">Nombre:</label>
-                    <input class="text-camp" type="text" name="name" id="name" value="<%-locals.errors && old.name? old.name : product.name%>">
+                    <input class="text-camp" type="text" name="name" id="name" value="<%= locals.errors && old.name? old.name : product.name %>">
                     <% if (locals.errors && errors.name) { %>
                         <span class="error-message"><%= errors.name.msg %> </span>
                     <% } %>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="description">Descripción:</label>
-                    <textarea class="text-camp" name="description" id="description"><%-locals.errors && old.description? old.description : product.description%></textarea>
+                    <textarea class="text-camp" name="description" id="description"><%= locals.errors && old.description? old.description : product.description %></textarea>
                     <% if (locals.errors && errors.description) { %>
                         <span class="error-message"><%= errors.description.msg %> </span>
                     <% } %>
@@ -33,8 +33,8 @@
                     <label class="text-form"  for="select">Categoría:</label>
                     <select class="text-camp" name="category" id="select" required>
                         <option value="">Elegir</option>
-                        <% category.forEach(categoria => { %>
-                            <option value="<%-categoria.name%>" <%- categoria.name === product.category ? "selected" : "" %>><%=categoria.name%></option>
+                        <% categories.forEach(category => { %>  
+                            <option value="<%- category.id %>" <%= locals.old && old.category.id == category.id ? "selected" : category.id == product.category ? "selected" : "" %>><%- category.name%></option>
                         <% }) %>
                     </select>
                     <% if (locals.errors && errors.category) { %>

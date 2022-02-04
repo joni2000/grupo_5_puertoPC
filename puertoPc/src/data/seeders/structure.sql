@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `puerto_pc` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `puerto_pc`;
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
 -- Host: localhost    Database: puerto_pc
@@ -77,7 +79,7 @@ DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `product_id` int(11) NOT NULL DEFAULT 0,
+  `product_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `images_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
