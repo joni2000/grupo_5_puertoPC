@@ -11,11 +11,18 @@ const ProductImages = db.Image
 
 var adminController = {
         admin: (req, res )=> {
-            res.render('admin/admin', {
-                name: "jonathan",
-                title: "Crear Producto",
-                products: getProducts,
-            });
+            Products.findAll()
+            .then(products => {
+                res.send(products)
+            
+                /*     res.render('admin/admin', {
+                    name: "jonathan",
+                    title: "Crear Producto",
+                    products,
+                }); */
+            }).catch(error => console.log(error))
+            
+            
         },
     
         createProducts: (req, res )=> {
@@ -45,7 +52,6 @@ var adminController = {
                     name,
                     price,
                     description,
-                    category,
                     stock,
                     discount,
                     category_id: category,
@@ -59,14 +65,14 @@ var adminController = {
                             }
                         });
                         ProductImages.bulkCreate(images)
-                        .then(() => res.redirect('/admin/products'))
+                        .then(() => res.redirect('/admin'))
                         .catch(error => console.log(error))
                     }else {
                         ProductImages.create({
                             name: 'default-image.png',
-                            productId: product.id
+                            product_id: product.id
                         })
-                        .then(() => {res.redirect('/admin/products')})
+                        .then(() => {res.redirect('/admin')})
                         .catch(error => console.log(error))
                     }
                 })

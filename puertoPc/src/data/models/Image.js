@@ -12,11 +12,15 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100) ,
             allowNull: false,
         },
-
+        product_id: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        }
         
     };
     const config = {
-        tableName: "images"
+        tableName: "images",
+        timestamps: false
     };
     const Image = sequelize.define(alias, cols, config);
 
