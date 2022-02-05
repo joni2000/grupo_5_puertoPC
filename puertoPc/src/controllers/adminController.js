@@ -82,7 +82,7 @@ var adminController = {
                 .then(categories => {
                     res.render('admin/createProducts', {
                         title: "Crear Producto",
-                        categories: categories.sort(),
+                        categories,
                         category: categories,
                         errors: errors.mapped(),
                         old: req.body,
