@@ -13,13 +13,11 @@ var adminController = {
         admin: (req, res )=> {
             Products.findAll()
             .then(products => {
-                res.send(products)
-            
-                /*     res.render('admin/admin', {
+                    res.render('admin/admin', {
                     name: "jonathan",
                     title: "Crear Producto",
                     products,
-                }); */
+                });
             }).catch(error => console.log(error))
             
             
@@ -31,7 +29,6 @@ var adminController = {
                     res.render('admin/createProducts',{
                         title: "Crear Producto",
                         categories: categories,
-                        category: categories,
                         old: req.body
                     })
                 }).catch(error => console.log(error))
@@ -83,7 +80,6 @@ var adminController = {
                     res.render('admin/createProducts', {
                         title: "Crear Producto",
                         categories,
-                        category: categories,
                         errors: errors.mapped(),
                         old: req.body,
                         session: req.session
