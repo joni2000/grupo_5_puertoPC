@@ -2,6 +2,7 @@ let {getUsers, writeJson} = require("../data/dataBase")
 let { validationResult } = require('express-validator');
 const { redirect } = require("express/lib/response");
 //const session = require("express-session");
+const db = require('../data/models')
 
 var usersController = {
 
@@ -59,17 +60,43 @@ var usersController = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
+        let lastId = 1;
 
         if(errors.isEmpty()){
-            let lastId = 1;
+            let { id, firstName, lastName, email, password, address, city, phone, rol, image, country, province } = req.body;
+            
+            db.User.create({
+                id,
+                firstName, 
+                lastName, 
+                email, 
+                password: bcrypt.hashSync(password, 10), 
+                address,
+                city, 
+                phone, 
+                rol, 
+                image, 
+                country, 
+                province,
+                rol: 'ROL_USER',
+                image: req.file ? req.file.filename: "default-image.png"
+            })
+            .then((user)=>{
+                res.redirect('user/login');
+            })
 
             getUsers.forEach(user => {
-    
-                if (user.id > lastId) {
+              if (user.id > lastId) {
                     lastId = user.id
                 }
             });
-            let newUser = {
+            }else{
+            res.render("users/register", {
+                errors: errors.mapped(),
+                session: req.session,
+                old: req.body,
+            })
+            /* let newUser = {
                 id: lastId + 1,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -85,13 +112,7 @@ var usersController = {
             };
             getUsers.push(newUser);
             writeJson(getUsers, "users");
-            res.redirect("login");
-        }else{
-            res.render("users/register", {
-                errors: errors.mapped(),
-                session: req.session,
-                old: req.body,
-            })
+            res.redirect("login"); */
         }
     },
     logout: (req, res) => {

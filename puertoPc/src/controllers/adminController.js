@@ -11,11 +11,16 @@ const ProductColor = db.Color
 
 var adminController = {
         admin: (req, res )=> {
-            res.render('admin/admin', {
-                name: "jonathan",
-                title: "Crear Producto",
-                products: getProducts,
-            });
+            Products.findAll()
+            .then(products => {
+                    res.render('admin/admin', {
+                    name: "jonathan",
+                    title: "Crear Producto",
+                    products,
+                });
+            }).catch(error => console.log(error))
+            
+            
         },
     
         createProducts: (req, res )=> {
@@ -24,7 +29,6 @@ var adminController = {
                     res.render('admin/createProducts',{
                         title: "Crear Producto",
                         categories: categories,
-                        category: categories,
                         old: req.body
                     })
                 }).catch(error => console.log(error))
@@ -45,7 +49,6 @@ var adminController = {
                     name,
                     price,
                     description,
-                    category,
                     stock,
                     discount,
                     category_id: category,
@@ -59,14 +62,14 @@ var adminController = {
                             }
                         });
                         ProductImages.bulkCreate(images)
-                        .then(() => res.redirect('/admin/products'))
+                        .then(() => res.redirect('/admin'))
                         .catch(error => console.log(error))
                     }else {
                         ProductImages.create({
                             name: 'default-image.png',
-                            productId: product.id
+                            product_id: product.id
                         })
-                        .then(() => {res.redirect('/admin/products')})
+                        .then(() => {res.redirect('/admin')})
                         .catch(error => console.log(error))
                     }
                 })
@@ -76,8 +79,7 @@ var adminController = {
                 .then(categories => {
                     res.render('admin/createProducts', {
                         title: "Crear Producto",
-                        categories: categories.sort(),
-                        category: categories,
+                        categories,
                         errors: errors.mapped(),
                         old: req.body,
                         session: req.session
