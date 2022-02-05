@@ -1,23 +1,29 @@
-let {getProducts} = require('../data/dataBase')
-let products = getProducts;
+//let {getProducts} = require('../data/dataBase')
+//let products = getProducts;
 
 var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { Op } = require('sequelize');
+const db = require('../data/models')
 
 
-var productController = {
+const Products = db.Product
+const Categories = db.Category
+const ProductImages = db.Image
+
+let productController = {
     	// Root - Show all products
 	index: (req, res) => {
-     // let products = products.filter(product => product.categories === products.categories)
-
-        	res.render('products/products', {
-            title:"Productos",        
-			products,
-           // sliderTitle: "Productos relacionados",
-          //  slideProducts: relatedProducts,
-			toThousand,
-            session: req.session
-		})
-	},
+        Products.findAll() 
+        .then(products => {
+            res.render('products/products', {
+                title:"Productos",        
+                products,
+                toThousand,
+                session: req.session
+            })
+        })
+        .catch(error => console.log(error))
+    },
 
     productCart: (req, res )=> {
         res.render('products/productCart', {

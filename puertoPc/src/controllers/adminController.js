@@ -89,58 +89,35 @@ var adminController = {
 
         },
 
-        editProducts: (req, res )=> {
-            Products.findByPk(+req.params.id)
-            .then(product => {
-             console.log(product)   
-            }).catch(error => console.log(error))
-          },
-          //  
-
-            /*  const productPromise = Products.findByPk(productId);
+        editProducts: (req, res )=> { 
+            let productId = Number(req.params.id);
+             const productPromise = Products.findByPk(productId);
              const categoriesPromise = Categories.findAll();
             Promise.all([productPromise, categoriesPromise])
             .then(([product, categories])=>{
-                res.send(product)
-                res.render('admin/editProducts', {
+                  res.render('admin/editProducts', {
                   title: "Editar Producto",
                   product,
-                  category: categories,
+                  categories,
                   session: req.session
               })
           })
         .catch(error => console.log(error))
-        }, */
-   
-        /*    let product = getProducts.find(product => product.id === productId)
-           
-            res.render('admin/editProducts',{
-                title: "Editar Producto",
-             //   listCategories: orderedCategories.sort(),
-                category: getCategories,
-                product,
-                session: req.session
-            })
-
-        },*/
+        },
         
         update: (req, res)=> {
-        /*         let errors = validationResult(req)
-            let productId = +req.params.id
-            
+            let errors = validationResult(req)      
         if(errors.isEmpty()){
-    
-                let {name, description, category, stock, image, price, discount} = req.body
+                let {name, description, category, stock, price, discount} = req.body
                       
                           Products.update({
                               name,
                               price,
                               description,
-                              category,
                               stock,
                               discount,
-                              category,
-                           },  {
+                              category_id: category,
+                           }, {
                                   where: {
                                         id: req.params.id
                                  }
@@ -148,9 +125,9 @@ var adminController = {
                                .then((result) => {
                                     ProductImages.findAll({
                                            where: {
-                                           productId: req.params.id
+                                           product_id: req.params.id
                                             }
-                                      })
+                                      }) 
                                        .then((images) => {
                                              images.forEach((image) => {
                                                    fs.existsSync('../public/images/products/', image.image)
@@ -159,69 +136,39 @@ var adminController = {
                                                         })
                                                         ProductImages.destroy({
                                                           where: {
-                                                          productId: req.params.id
+                                                          product_id: req.params.id
                                                          }
                                                     })
                                       .then(() => {
                                             ProductImages.create({
                                                    image: req.file ? req.file.filename : 'default-image.png',
-                                                          productId: req.params.id
+                                                          product_id: req.params.id
                                                     })
                                        .then(() => {
-                                                    res.redirect('/admin/products')
+                                                    res.redirect('/products')
                                                     })
                                                  })
                                            })
                                       .catch(error => console.log(error))
                                      })     
                                         }else{
-                                        let productId = +req.params.id;
+                                        let productId = Number(req.params.id);
                                         const productPromise = Products.findByPk(productId);
                                         const categoriesPromise = Categories.findAll();
                                         Promise.all([productPromise, categoriesPromise])
                                        .then(([product, categories])=>{
-                                                res.render('admin/createProducts', {
-                                                 title: "Crear Producto",
+                                                res.render('admin/editProducts', {
+                                                  title: "Editar Producto",
                                                   product,
-                                                  categories: categories.sort(),
-                                                  category: categories,
+                                                  categories,
+                                                  listCategories: orderedCategories.sort(),
                                                   errors: errors.mapped(),
                                                   old: req.body,
                                                   session: req.session
                                                   })
                                                })
                                      .catch(error => console.log(error)) 
-                                      }
-                                },*/
-
-
-                /*
-                getProducts.forEach(product => {
-                    if(product.id === productId){
-                        product.id = product.id,
-                        product.name = name.trim(),
-                        product.price = +price.trim(),
-                        product.category = category,
-                        product.description = description.trim(),
-                        product.discount = +discount,
-                        product.stock = +stock,
-                        /* product.colors = colors, *//*
-                        product.image = req.file ? [req.file.filename] : product.image
-                    }
-                })
-                    writeJson(getProducts, "products")
-                
-                    res.redirect('/')
-            }else{
-                let product = getProducts.find(product => product.id === productId)
-                res.render('admin/editProducts',{
-                    title: "Editar Producto",
-                    listCategories: orderedCategories.sort(),
-                    category: getCategories,
-                    product,
-                    old: req.body,
-                    errors: errors.mapped()
-            })*/
+                               }
         },
         delete: (req, res) => {
             let productId = +req.params.id;
