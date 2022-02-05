@@ -63,14 +63,21 @@ var usersController = {
         let lastId = 1;
 
         if(errors.isEmpty()){
-            let { firstName, lastName, email, password, address } = req.body;
+            let { id, firstName, lastName, email, password, address, city, phone, rol, image, country, province } = req.body;
             
             db.User.create({
+                id,
                 firstName, 
                 lastName, 
                 email, 
                 password: bcrypt.hashSync(password, 10), 
                 address,
+                city, 
+                phone, 
+                rol, 
+                image, 
+                country, 
+                province,
                 rol: 'ROL_USER',
                 image: req.file ? req.file.filename: "default-image.png"
             })
