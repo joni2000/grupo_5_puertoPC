@@ -108,7 +108,7 @@ var adminController = {
         update: (req, res)=> {
           let errors = validationResult(req)      
           if(errors.isEmpty()){
-                let {name, description, category, stock, image, price, discount} = req.body
+                let {name, description, category, stock, price, discount} = req.body
                       
                           Products.update({
                               name,

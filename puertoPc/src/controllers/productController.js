@@ -13,7 +13,10 @@ const ProductImages = db.Image
 let productController = {
     	// Root - Show all products
 	index: (req, res) => {
-        Products.findAll() 
+        Products.findAll({
+            include: [{association: 'image'}],
+
+        })
         .then(products => {
             res.render('products/products', {
                 title:"Productos",        
