@@ -88,8 +88,14 @@ var adminController = {
         },
 
         editProducts: (req, res )=> {
-            let productId = +req.params.id;
-             const productPromise = Products.findByPk(productId);
+            Products.findByPk(+req.params.id)
+            .then(product => {
+             console.log(product)   
+            }).catch(error => console.log(error))
+          },
+          //  
+
+            /*  const productPromise = Products.findByPk(productId);
              const categoriesPromise = Categories.findAll();
             Promise.all([productPromise, categoriesPromise])
             .then(([product, categories])=>{
@@ -102,7 +108,7 @@ var adminController = {
               })
           })
         .catch(error => console.log(error))
-        },
+        }, */
    
         /*    let product = getProducts.find(product => product.id === productId)
            
