@@ -106,9 +106,9 @@ var adminController = {
         },
         
         update: (req, res)=> {
-            let errors = validationResult(req)      
-        if(errors.isEmpty()){
-                let {name, description, category, stock, price, discount} = req.body
+          let errors = validationResult(req)      
+          if(errors.isEmpty()){
+                let {name, description, category, stock, image, price, discount} = req.body
                       
                           Products.update({
                               name,
@@ -119,55 +119,55 @@ var adminController = {
                               category_id: category,
                            }, {
                                   where: {
-                                        id: req.params.id
-                                 }
-                               })
-                               .then((result) => {
-                                    ProductImages.findAll({
-                                           where: {
-                                           product_id: req.params.id
-                                            }
-                                      }) 
-                                       .then((images) => {
-                                             images.forEach((image) => {
-                                                   fs.existsSync('../public/images/products/', image.image)
-                                                     ? fs.unlinkSync(`../public/images/products/${image.image}`)
-                                                         : console.log('No se encontró el archivo')
-                                                        })
-                                                        ProductImages.destroy({
-                                                          where: {
-                                                          product_id: req.params.id
-                                                         }
-                                                    })
-                                      .then(() => {
-                                            ProductImages.create({
-                                                   image: req.file ? req.file.filename : 'default-image.png',
-                                                          product_id: req.params.id
-                                                    })
-                                       .then(() => {
-                                                    res.redirect('/products')
-                                                    })
-                                                 })
-                                           })
-                                      .catch(error => console.log(error))
-                                     })     
-                                        }else{
-                                        let productId = Number(req.params.id);
-                                        const productPromise = Products.findByPk(productId);
-                                        const categoriesPromise = Categories.findAll();
-                                        Promise.all([productPromise, categoriesPromise])
-                                       .then(([product, categories])=>{
-                                                res.render('admin/editProducts', {
-                                                  title: "Editar Producto",
-                                                  product,
-                                                  categories,
-                                                  listCategories: orderedCategories.sort(),
-                                                  errors: errors.mapped(),
-                                                  old: req.body,
-                                                  session: req.session
-                                                  })
-                                               })
-                                     .catch(error => console.log(error)) 
+                                   id: req.params.id
+                             }
+                           })
+                           .then((result) => {
+                            ProductImages.findAll({
+                                   where: {
+                                   product_id: req.params.id
+                              }
+                           }) 
+                           .then((images) => {
+                                images.forEach((image) => {
+                            fs.existsSync('../public/images/products/', image.image)
+                            ? fs.unlinkSync(`../public/images/products/${image.image}`)
+                            : console.log('No se encontró el archivo')
+                          })
+                            ProductImages.destroy({
+                                   where: {
+                                   product_id: req.params.id
+                                          }
+                           })
+                           .then(() => {
+                            ProductImages.create({
+                                  name: req.file ? req.file.filename : 'default-image.png',
+                                  product_id: req.params.id
+                           })
+                           .then(() => {
+                                res.redirect('/admin')
+                           })
+                         })
+                     })
+                        .catch(error => console.log(error))
+                          })     
+                             }else{
+            let productId = Number(req.params.id);
+            const productPromise = Products.findByPk(productId);
+            const categoriesPromise = Categories.findAll();
+            Promise.all([productPromise, categoriesPromise])
+            .then(([product, categories])=>{
+                 res.render('admin/editProducts', {
+                    title: "Editar Producto",
+                     product,
+                     categories,
+                    listCategories: orderedCategories.sort(),
+                    errors: errors.mapped(),
+                    old: req.body,
+                    session: req.session
+                     })
+                     })
+                       .catch(error => console.log(error)) 
                                }
         },
         delete: (req, res) => {

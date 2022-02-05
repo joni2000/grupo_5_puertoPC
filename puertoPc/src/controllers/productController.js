@@ -46,7 +46,9 @@ let productController = {
 
         })
     },
+    /* productCategory:(req, res) =>{
 
+    } */
     categories: (req, res) => {
         let categoriesId = +req.params.id;
 
@@ -58,6 +60,9 @@ let productController = {
             categories,
         })
     }
+    /* productSearch:(req, res) =>{
+
+    } */
 
 };
 

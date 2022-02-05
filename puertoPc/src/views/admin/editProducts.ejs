@@ -65,6 +65,9 @@
                     <figure class="select-image">
                         <label class="text-form" for="image">Seleccionar imagen</label>
                         <input class="buttom-image" type="file" name="image" id="image">
+                        <% if (locals.errors && errors.image) { %>
+                            <span class="error-message"><%= errors.image.msg %> </span>
+                        <% } %>
                     </figure>    
                     <span class="error-message">Formato no valído</span>
                     <div class="button-box button__buy-cart">
