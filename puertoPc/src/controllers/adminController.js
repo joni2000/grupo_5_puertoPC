@@ -1,13 +1,12 @@
 let {getCategories, getProducts, writeJson} = require('../data/dataBase');
-let fs = require('fs')
-const { validationResult } = require('express-validator')
-const db = require('../data/models')
+let fs = require('fs');
+const { validationResult } = require('express-validator');
+const db = require('../data/models');
 
-
-const Products = db.Product
-const Categories = db.Category
-const ProductImages = db.Image
-const ProductColor = db.Color
+const Products = db.Product;
+const Categories = db.Category;
+const ProductImages = db.Image;
+const ProductColor = db.Color;
 
 var adminController = {
         admin: (req, res )=> {
@@ -171,9 +170,32 @@ var adminController = {
                                }
         },
         delete: (req, res) => {
-            let productId = +req.params.id;
-
-            getProducts.forEach(product => {
+            ProductImages.findAll({
+                where: {
+                    product_id: req.params.id
+                }
+            })
+            .then((images) => {
+                images.forEach((image) => {
+                    fs.existsSync('../public/images/products/', image.name)
+                    ? fs.unlinkSync(`../public/images/products/${image.name}`)
+                    : console.log('No se encontró el archivo')
+                })
+            })
+            .then(result => {
+                Products.destroy({
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(res.redirect('/admin'))
+                .catch(error => console.log(error))
+            })
+            
+            
+            
+            /* let productId = +req.params.id; */
+            /* getProducts.forEach(product => {
                 if(product.id === productId){
                     if(fs.existsSync("./public/images/products", product.image[0])){
                         fs.unlinkSync(`./public/images/products/${product.image[0]}`)
@@ -188,10 +210,8 @@ var adminController = {
                         console.log('No encontré el producto')
                     }
                 }
-            })
+            }) */
     
-            writeJson(getProducts, "products")
-            res.redirect('/admin/')
         }
   };
 
