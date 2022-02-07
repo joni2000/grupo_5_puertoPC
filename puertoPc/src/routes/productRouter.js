@@ -2,9 +2,6 @@ let express = require('express');
 let router = express.Router();
 let productController = require("../controllers/productController")
 
-/* GET - Page the allproducts */
-router.get('/', productController.index);
-
 /* GET home page. */
 router.get('/detalles/:id', productController.productDetail);
 
@@ -12,7 +9,7 @@ router.get('/detalles/:id', productController.productDetail);
 router.get('/category/:id', productController.productCategory)
 */
 router.get('/carrito', productController.productCart);
-
+router.get('/', productController.index);
 /* GET - Search products 
 router.get('/search', productController.productSearch)*/
 module.exports = router;
