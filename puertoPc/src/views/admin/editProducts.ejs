@@ -34,7 +34,7 @@
                     <select class="text-camp" name="category" id="select" required>
                         <option value="">Elegir</option>
                         <% categories.forEach(category => { %>  
-                            <option value="<%- category.id %>" <%= locals.old && old.category.id == category.id ? "selected" : category.id == product.category ? "selected" : "" %>><%- category.name%></option>
+                            <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? /* "selected" : category.id == product.category ? */ "selected" : "" %>><%- category.name%></option>
                         <% }) %>
                     </select>
                     <% if (locals.errors && errors.category) { %>
