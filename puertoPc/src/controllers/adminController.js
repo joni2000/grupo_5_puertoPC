@@ -129,8 +129,8 @@ var adminController = {
                            }) 
                            .then((images) => {
                                 images.forEach((image) => {
-                            fs.existsSync('../public/images/products/', image.image)
-                            ? fs.unlinkSync(`../public/images/products/${image.image}`)
+                            fs.existsSync('../public/images/products/', image.name)
+                            ? fs.unlinkSync(`../public/images/products/${image.name}`)
                             : console.log('No se encontró el archivo')
                           })
                             ProductImages.destroy({
