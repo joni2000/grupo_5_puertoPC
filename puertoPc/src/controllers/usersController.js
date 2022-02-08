@@ -1,4 +1,4 @@
-let {getUsers, writeJson} = require("../data/dataBase")
+//let {getUsers, writeJson} = require("../data/dataBase")
 let { validationResult } = require('express-validator');
 const { redirect } = require("express/lib/response");
 //const session = require("express-session");
@@ -68,18 +68,16 @@ var usersController = {
             
             db.User.create({
                 id,
-                first_name, 
-                last_name, 
-                email, 
+                first_name: user.first_name,
+                last_name: user.last_name,
+                email: email.toLowerCase(), 
                 password: bcrypt.hashSync(password, 10), 
-                address,
-                city, 
-                phone, 
-                rol, 
-                image, 
-                country, 
-                province,
-                rol: 'ROL_USER',
+                address: user.address,
+                city:user.city, 
+                phone: user.phone, 
+                country: user.country, 
+                province: user.province,
+                rol: 'rol_user',
                 image: req.file ? req.file.filename: "default-image.png"
             })
             .then((user)=>{
@@ -90,8 +88,8 @@ var usersController = {
               if (user.id > lastId) {
                     lastId = user.id
                 }
-            });
-            }else{
+            })            
+    }else{
             res.render("users/register", {
                 errors: errors.mapped(),
                 session: req.session,
