@@ -1,19 +1,20 @@
 <header class="header">
-    <nav class="top">
-        <a class="icon-menu">
-            <i class="fas fa-bars"></i>
-        </a>
-        <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
-        <a class="logo-text" href="/">PuertoPc</a>
-        <div class="search-bar">
+    <div class="boxMenu">      
+     <nav class="top">
+          <div class="icon-menu">    
+            <i id="icon-menu-mobile" class="fas fa-bars"></i>   
+          </div>   
+            <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
+            <a class="logo-text" href="/">PuertoPc</a>      
+          <div class="search-bar">
             <input type="search" placeholder="Buscar productos">
             <a class="icon-search">
                 <i class="fas fa-search"></i></a>
-        </div>
-        
-        <a class="icon-cart" href="./productos/carrito">
+          </div>
+          <a class="icon-cart" href="./productos/carrito">
             <i class="fas fa-shopping-cart"></i>
-        </a>
+          </a>
+ 
             <% if (typeof locals.user != "undefined") { %>
                 <span class="session"> 
                     <i class="far fa-user"></i> 
@@ -27,10 +28,10 @@
               </a>
               <a class="login" href="/login">Iniciar sesión</a>
               <a class="register" href="/register">| Regístrate</a>
-             <% } %>
-
-        
+             <% } %>      
     </nav>
+    <%- include('../partials/menuMobile.ejs') %>
+   </div>
     
     <nav class="menu">
         <ul class="item">
