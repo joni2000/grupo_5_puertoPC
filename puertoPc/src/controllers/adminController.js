@@ -129,9 +129,9 @@ var adminController = {
                            }) 
                            .then((images) => {
                                 images.forEach((image) => {
-                            fs.existsSync('../public/images/products/', image.name)
-                            ? fs.unlinkSync(`../public/images/products/${image.name}`)
-                            : console.log('No se encontró el archivo')
+                            fs.existsSync(`./public/images/products/${image.name}`)
+                            ? fs.unlinkSync(`./public/images/products/${image.name}`)
+                            : console.log(`No se encontró el archivo`)
                           })
                             ProductImages.destroy({
                                    where: {
@@ -177,9 +177,9 @@ var adminController = {
             })
             .then((images) => {
                 images.forEach((image) => {
-                    fs.existsSync('../../public/images/products/', image.name)
-                    ? fs.unlinkSync(`../../public/images/products/${image.name}`)
-                    : console.log('No se encontró el archivo')
+                    fs.existsSync(`./public/images/products/${image.name}`)
+                    ? fs.unlinkSync(`./public/images/products/${image.name}`)
+                    : console.log('No se encontró el archivo') 
                 })
                 ProductImages.destroy({
                     where: {
