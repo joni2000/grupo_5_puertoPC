@@ -14,13 +14,13 @@
                     <div class="box-input-register">
                       <label for="name">Nombre:</label>
                       <input class="input-register" type="text" name="firstName" id="name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.firstName %>">
-                      <% if (locals.errors && errors.firstName) { %>
+                      <% if (locals.errors && errors.first_name) { %>
                       <span class="error-message-register"><%= errors.firstName.msg %></span>
                       <% } %>
 
                       <label for="name">Apellido:</label>
                       <input class="input-register" type="text" name="lastName" id="name" placeholder="Ingresa tu apellido" value="<%= locals.old && old.lastName %>">
-                      <% if (locals.errors && errors.lastName) { %>
+                      <% if (locals.errors && errors.last_name) { %>
                       <span class="error-message-register"><%= errors.lastName.msg %></span>
                       <% } %> 
 

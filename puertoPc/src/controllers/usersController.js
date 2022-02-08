@@ -3,6 +3,7 @@ let { validationResult } = require('express-validator');
 const { redirect } = require("express/lib/response");
 //const session = require("express-session");
 const db = require('../data/models')
+let bcrypt = require('bcryptjs')
 
 var usersController = {
 
@@ -21,8 +22,8 @@ var usersController = {
 
                req.session.user = {
                      id: user.id,
-                     firstName: user.firstName,
-                     lastName: user.lastName,
+                     firstName: user.firstN_name,
+                     lastName: user.last_name,
                      email: user.email,
                      rol: user.rol
                }
@@ -63,12 +64,12 @@ var usersController = {
         let lastId = 1;
 
         if(errors.isEmpty()){
-            let { id, firstName, lastName, email, password, address, city, phone, rol, image, country, province } = req.body;
+            let { id, first_name, last_name, email, password, address, city, phone, rol, image, country, province } = req.body;
             
             db.User.create({
                 id,
-                firstName, 
-                lastName, 
+                first_name, 
+                last_name, 
                 email, 
                 password: bcrypt.hashSync(password, 10), 
                 address,
