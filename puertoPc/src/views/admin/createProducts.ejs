@@ -24,7 +24,7 @@
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="description">Descripción:</label>
-                    <textarea class="text-camp" name="description" id="description" required><%= locals.old && old.description %>"</textarea>
+                    <textarea class="text-camp" name="description" id="description" required><%= locals.old && old.description %></textarea>
                     <% if (locals.errors && errors.description) { %>
                         <span class="error-message"><%= errors.description.msg %> </span>
                     <% } %>
@@ -63,7 +63,14 @@
                     <% } %>
                 </div>
                     <figure class="select-image">
-                        <label class="text-form" for="image">Seleccionar imagen</label>
+                        <label class="text-form" for="mainImage">Seleccionar imagen principal</label>
+                        <input class="buttom-image" type="file" name="mainImage" id="mainImage">
+                    </figure>    
+                    <% if (locals.errors && errors.mainImage) { %>
+                        <span class="text-danger"><%= errors.mainImage.msg %> </span>
+                    <% } %>
+                    <figure class="select-image">
+                        <label class="text-form" for="image">Seleccionar imagenes</label>
                         <input class="buttom-image" type="file" name="image" id="image" multiple>
                     </figure>    
                     <% if (locals.errors && errors.image) { %>
