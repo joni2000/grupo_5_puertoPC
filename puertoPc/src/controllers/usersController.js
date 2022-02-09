@@ -25,13 +25,8 @@ var usersController = {
 
                req.session.user = {
                      id: user.id,
-<<<<<<< HEAD
                      firstName: user.first_name,
                      lastName: user.last_name,
-=======
-                     first_name: user.first_name,
-                     last_name: user.last_name,
->>>>>>> bee2174596a3a124bdefafc454f4fdac640f5e90
                      email: user.email,
                      rol: user.rol
                }
@@ -71,7 +66,7 @@ var usersController = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let { firstName, lastName, email, password, address, city, phone, rol, image, country, province } = req.body;
+            let { firstName, lastName, email, password } = req.body;
             
             Users.create({
                 first_name: firstName,
