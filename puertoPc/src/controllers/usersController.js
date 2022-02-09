@@ -1,8 +1,9 @@
-let {getUsers, writeJson} = require("../data/dataBase")
+//let {getUsers, writeJson} = require("../data/dataBase")
 let { validationResult } = require('express-validator');
 const { redirect } = require("express/lib/response");
 //const session = require("express-session");
 const db = require('../data/models')
+let bcrypt = require('bcryptjs')
 
 const Users = db.User;
 
@@ -24,8 +25,8 @@ var usersController = {
 
                req.session.user = {
                      id: user.id,
-                     firstName: user.firstName,
-                     lastName: user.lastName,
+                     firstName: user.firstN_name,
+                     lastName: user.last_name,
                      email: user.email,
                      rol: user.rol
                }
@@ -66,22 +67,20 @@ var usersController = {
         let lastId = 1;
 
         if(errors.isEmpty()){
-            let { id, firstName, lastName, email, password, address, city, phone, rol, image, country, province } = req.body;
+            let { id, first_name, last_name, email, password, address, city, phone, rol, image, country, province } = req.body;
             
             Users.create({
                 id,
-                firstName, 
-                lastName, 
-                email, 
+                first_name: user.first_name,
+                last_name: user.last_name,
+                email: email.toLowerCase(), 
                 password: bcrypt.hashSync(password, 10), 
-                address,
-                city, 
-                phone, 
-                rol, 
-                image, 
-                country, 
-                province,
-                rol: 'ROL_USER',
+                address: user.address,
+                city:user.city, 
+                phone: user.phone, 
+                country: user.country, 
+                province: user.province,
+                rol: 'rol_user',
                 image: req.file ? req.file.filename: "default-image.png"
             })
             .then((user)=>{
@@ -92,8 +91,8 @@ var usersController = {
               if (user.id > lastId) {
                     lastId = user.id
                 }
-            });
-            }else{
+            })            
+    }else{
             res.render("users/register", {
                 errors: errors.mapped(),
                 session: req.session,

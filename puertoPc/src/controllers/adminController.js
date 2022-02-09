@@ -29,7 +29,7 @@ var adminController = {
                         title: "Crear Producto",
                         categories: categories,
                         old: req.body
-                    })
+                    }) 
                 }).catch(error => console.log(error))
         },
         store: (req, res) => {
@@ -84,7 +84,7 @@ var adminController = {
                         session: req.session
                     })
                 })
-            }
+            } 
 
         },
 
@@ -129,9 +129,9 @@ var adminController = {
                            }) 
                            .then((images) => {
                                 images.forEach((image) => {
-                            fs.existsSync('../public/images/products/', image.image)
-                            ? fs.unlinkSync(`../public/images/products/${image.image}`)
-                            : console.log('No se encontró el archivo')
+                            fs.existsSync(`./public/images/products/${image.name}`)
+                            ? fs.unlinkSync(`./public/images/products/${image.name}`)
+                            : console.log(`No se encontró el archivo`)
                           })
                             ProductImages.destroy({
                                    where: {
@@ -177,41 +177,27 @@ var adminController = {
             })
             .then((images) => {
                 images.forEach((image) => {
-                    fs.existsSync('../public/images/products/', image.name)
-                    ? fs.unlinkSync(`../public/images/products/${image.name}`)
-                    : console.log('No se encontró el archivo')
+                    fs.existsSync(`./public/images/products/${image.name}`)
+                    ? fs.unlinkSync(`./public/images/products/${image.name}`)
+                    : console.log('No se encontró el archivo') 
                 })
-            })
-            .then(result => {
-                Products.destroy({
+                ProductImages.destroy({
                     where: {
-                        id: req.params.id
+                        product_id: req.params.id
                     }
                 })
-                .then(res.redirect('/admin'))
+                .then(result => {
+                    Products.destroy({
+                        where: {
+                            id: req.params.id
+                        }
+                    })
+                    .then(res.redirect('/admin'))
+                    .catch(error => console.log(error))
+                })
                 .catch(error => console.log(error))
             })
-            
-            
-            
-            /* let productId = +req.params.id; */
-            /* getProducts.forEach(product => {
-                if(product.id === productId){
-                    if(fs.existsSync("./public/images/products", product.image[0])){
-                        fs.unlinkSync(`./public/images/products/${product.image[0]}`)
-                    }else{
-                        console.log('No encontré el archivo')
-                    }
-    
-                    let productToDestroyIndex = getProducts.indexOf(product) // si lo encuentra devuelve el indice si no -1
-                    if(productToDestroyIndex !== -1) {
-                        getProducts.splice(productToDestroyIndex, 1)
-                    }else{  // primer parámetro es el indice del elemento a borrar, el segundo, la cantidad a eliminar 
-                        console.log('No encontré el producto')
-                    }
-                }
-            }) */
-    
+            .catch(error => console.log(error))
         }
   };
 

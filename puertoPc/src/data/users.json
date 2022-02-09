@@ -66,5 +66,19 @@
         "image": "img-default.jpg",
         "country": "Argentina",
         "province": "Buenos Aires"
+    },
+    {
+        "id":8,
+        "firstName": "Silvana",
+        "lastName": "Zalazar",
+        "email": "123456@mail.com",
+        "password": "1234567",
+        "address": "Avenida Siempre Viva 1234",
+        "city": "Luzuriaga",
+        "phone": "1512345678",
+        "ROL": "user",
+        "image": "img-default.jpg",
+        "country": "Argentina",
+        "province": "La quiaca"
     }
 ]
