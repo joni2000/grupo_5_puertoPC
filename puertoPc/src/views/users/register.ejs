@@ -13,15 +13,15 @@
 
                     <div class="box-input-register">
                       <label for="name">Nombre:</label>
-                      <input class="input-register" type="text" name="firstName" id="name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.firstName %>">
+                      <input class="input-register" type="text" name="first_name" id="name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.first_name %>">
                       <% if (locals.errors && errors.first_name) { %>
-                      <span class="error-message-register"><%= errors.firstName.msg %></span>
+                      <span class="error-message-register"><%= errors.first_name.msg %></span>
                       <% } %>
 
                       <label for="name">Apellido:</label>
-                      <input class="input-register" type="text" name="lastName" id="name" placeholder="Ingresa tu apellido" value="<%= locals.old && old.lastName %>">
+                      <input class="input-register" type="text" name="last_name" id="name" placeholder="Ingresa tu apellido" value="<%= locals.old && old.last_name %>">
                       <% if (locals.errors && errors.last_name) { %>
-                      <span class="error-message-register"><%= errors.lastName.msg %></span>
+                      <span class="error-message-register"><%= errors.last_name.msg %></span>
                       <% } %> 
 
                       <label for="address">Domicilio (opcional):</label>
