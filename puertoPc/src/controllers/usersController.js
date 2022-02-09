@@ -25,8 +25,13 @@ var usersController = {
 
                req.session.user = {
                      id: user.id,
+<<<<<<< HEAD
                      firstName: user.first_name,
                      lastName: user.last_name,
+=======
+                     first_name: user.first_name,
+                     last_name: user.last_name,
+>>>>>>> bee2174596a3a124bdefafc454f4fdac640f5e90
                      email: user.email,
                      rol: user.rol
                }
@@ -64,57 +69,32 @@ var usersController = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
-        let lastId = 1;
 
         if(errors.isEmpty()){
-            let { id, first_name, last_name, email, password, address, city, phone, rol, image, country, province } = req.body;
+            let { firstName, lastName, email, password, address, city, phone, rol, image, country, province } = req.body;
             
             Users.create({
-                id,
-                first_name: user.first_name,
-                last_name: user.last_name,
+                first_name: firstName,
+                last_name: lastName,
                 email: email.toLowerCase(), 
-                password, 
-                address: user.address,
-                city:user.city, 
-                phone: user.phone, 
-                country: user.country, 
-                province: user.province,
+                password: bcrypt.hashSync(password, 10), 
+                address: "",
+                city: "", 
+                phone: "", 
+                country: "", 
+                province: "",
                 rol: 'rol_user',
                 image: req.file ? req.file.filename: "default-image.png"
             })
             .then((user)=>{
-                res.redirect('user/login');
-            })
-
-            Users.forEach(user => {
-              if (user.id > lastId) {
-                    lastId = user.id
-                }
-            })            
+                res.redirect('users/login');
+            })          
     }else{
             res.render("users/register", {
                 errors: errors.mapped(),
                 session: req.session,
                 old: req.body,
             })
-            /* let newUser = {
-                id: lastId + 1,
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: req.body.password,
-                address: req.body.address,
-                country: "",
-                city: "",
-                province: "",
-                phone: "",
-                ROL: "user",
-                image: "img-default.jpg"
-            };
-            getUsers.push(newUser);
-            writeJson(getUsers, "users");
-            res.redirect("login"); */
         }
     },
     logout: (req, res) => {
