@@ -4,6 +4,9 @@ const { redirect } = require("express/lib/response");
 //const session = require("express-session");
 const db = require('../data/models')
 
+const Users = db.User;
+
+
 var usersController = {
 
     login: (req, res )=> { 
@@ -65,7 +68,7 @@ var usersController = {
         if(errors.isEmpty()){
             let { id, firstName, lastName, email, password, address, city, phone, rol, image, country, province } = req.body;
             
-            db.User.create({
+            Users.create({
                 id,
                 firstName, 
                 lastName, 
@@ -85,7 +88,7 @@ var usersController = {
                 res.redirect('user/login');
             })
 
-            getUsers.forEach(user => {
+            Users.forEach(user => {
               if (user.id > lastId) {
                     lastId = user.id
                 }
@@ -123,23 +126,79 @@ var usersController = {
         res.redirect('/')
     },
     profileUser: (req, res )=> { 
-        let user = getUsers.find(user => user.id === +req.session.user.id)
+
+        Users.findByPk(req.params.id)
+        .then((user) =>
+        res.render('users/profileUser', {
+            title: "Perfil de Usuario",
+            session: req.session,
+            user
+        })
+        .catch(error => res.send(error))
+
+/*         let user = getUsers.find(user => user.id === +req.session.user.id)
         res.render('users/profileUser',{
             title: "Perfil de usuario",
             session: req.session,
             user
-        })
-    },
+        }) */
+        )},
     editUser: (req, res) => {
-        let user = getUsers.find(user => user.id === +req.session.user.id)
+
+        Users.findAll()
+            .then(users => {
+                    res.render('users/editUser', {
+                    title: "Edición de usuario",
+                    users,
+                    session: req.session,
+
+                });
+            }).catch(error => console.log(error))
+        
+        /* let user = getUsers.find(user => user.id === +req.session.user.id)
         res.render('users/editUser',{
             title: "Editar usuario",
             session: req.session,
             user
-        })
+        }) */
     },
     updateUser: (req, res) => {
-        let userId = +req.params.id;
+
+        const { id, first_name, last_name, email, password, address, city, phone, rol, image, country, province } = req.body;
+        
+        Users.update({
+            id,
+                first_name, 
+                last_name, 
+                email, 
+                password, 
+                address,
+                city, 
+                phone, 
+                rol, 
+                image, 
+                country, 
+                province,
+                rol: 'ROL_USER',
+                image: req.file ? req.file.filename: "default-image.png"
+        }, {
+            where: {
+                id: req.params.id,
+            }
+        })
+        .then(result => {
+            Users.update({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(res.redirect('/profileUser'))
+            .catch(error => console.log(error))
+        })
+        
+        
+
+        /* let userId = +req.params.id;
             let {firstName, lastName, email, password, country, province, city, address, phone} = req.body
             getUsers.forEach(user => {
                 if(user.id === userId){
@@ -157,7 +216,7 @@ var usersController = {
                 }
             })
                 writeJson(getUsers, "users")
-                res.redirect('/profileUser')
+                res.redirect('/profileUser') */
     }
 
 }
