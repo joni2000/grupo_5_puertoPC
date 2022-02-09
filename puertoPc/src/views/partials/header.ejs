@@ -1,9 +1,9 @@
 <header class="header">
     <div class="boxMenu">      
-     <nav class="top">
-          <div class="icon-menu">    
-            <i id="icon-menu-mobile" class="fas fa-bars"></i>   
-          </div>   
+     <nav class="top">  
+                <button  type="button" onclick="menuMobile();" id="icon-menu-mobile"  class="icon-menu">
+                 <i class="fas fa-bars"></i> 
+               </button>           
             <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
             <a class="logo-text" href="/">PuertoPc</a>      
           <div class="search-bar">
@@ -14,7 +14,9 @@
           <a class="icon-cart" href="./productos/carrito">
             <i class="fas fa-shopping-cart"></i>
           </a>
- 
+          <button type="button" onclick="menuUsers();" id="icon-userMobile">
+            <i class="far fa-user"></i>
+          </button>
             <% if (typeof locals.user != "undefined") { %>
                 <span class="session"> 
                     <i class="far fa-user"></i> 
@@ -44,5 +46,39 @@
             <li class="item6"><a href="/carrito">Carrito <i class="fas fa-shopping-cart"></i></a></li>
         </ul>
     </nav>
+    <script lang="JavaScript">
+      function menuOn(){
+        document.getElementById("boxMenuLi").style.display = 'block';
+      }
+      function menuOff(){
+        document.getElementById("boxMenuLi").style.display = 'none';
+      }
+
+      function menuMobile() {
+        let boxMenu = document.getElementById("boxMenuLi");
+        if (boxMenu.style.display === "none"){
+          menuOn();
+        }else{
+          menuOff();
+        }
+      }
+
+      function userOn(){
+        document.getElementById("boxMenuUsers").style.display = 'block';
+      }
+      function userOff(){
+        document.getElementById("boxMenuUsers").style.display = 'none';
+      }
+     
+      function menuUsers() {
+        let boxUser = document.getElementById("boxMenuUsers");
+        if (boxUser.style.display === "none"){
+          userOn();
+        }else{
+          userOff();
+        }
+      }
+
+  </script>
 
 </header>

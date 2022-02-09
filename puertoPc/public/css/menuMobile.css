@@ -1,11 +1,11 @@
-.boxMenuLi{
+#boxMenuLi{
     width: 100%;
     margin-top: 1rem ;
     background-color: white;
     /*implementar javascritp */
     display: none;
-   
 }
+
 .menu-mobile {
   background-color: white;
 } 

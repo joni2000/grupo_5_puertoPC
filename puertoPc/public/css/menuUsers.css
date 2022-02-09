@@ -1,11 +1,11 @@
-.boxMenuUsers{
+#boxMenuUsers{
     width: 100%;
     margin-top: 1rem ;
     background-color: white;
   /* implementar javascritp */
-    display: none;
-   
+    display: none; 
 }
+
 /*box image and texts*/
 .boxImagUsers{
     display: flex;
@@ -108,9 +108,15 @@
  }*/
      /*DESKTOP*/
 @media (min-width: 760px){
-    .boxMenuUsers{
+    #boxMenuUsers{
       /*  implementar javascritp*/ 
         display: none;
        
+    }
+    .boxImagUsers{
+        display: none;
+    }
+    .buttonUsersMenu{
+        display: none;
     }
 }
