@@ -6,20 +6,30 @@
         <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
         <a class="logo-text" href="/">PuertoPc</a>
         <div class="search-bar">
-            <input type="text" placeholder="Buscar productos">
+            <input type="search" placeholder="Buscar productos">
             <a class="icon-search">
-                <i class="fas fa-search"></i>
-            </a>
+                <i class="fas fa-search"></i></a>
         </div>
         
-        <a class="icon-cart" href="/carrito">
+        <a class="icon-cart" href="./productos/carrito">
             <i class="fas fa-shopping-cart"></i>
         </a>
-        <a class="icon-user" href="/login">
-            <i class="far fa-user"></i>
-        </a>
-        <a class="login" href="/login">Iniciar sesión</a>
-        <a class="register" href="/register">| Regístrate</a>
+            <% if (typeof locals.user != "undefined") { %>
+                <span class="session"> 
+                    <i class="far fa-user"></i> 
+                </span>
+                <a class="login-session" href="/profileUser">Mis datos</a>
+                <a class="register-session" href="/logout">| Cerrar sessión</a>
+
+              <% } else { %>
+              <a class="icon-user" href="/login">
+                   <i class="far fa-user"></i>
+              </a>
+              <a class="login" href="/login">Iniciar sesión</a>
+              <a class="register" href="/register">| Regístrate</a>
+             <% } %>
+
+        
     </nav>
     
     <nav class="menu">

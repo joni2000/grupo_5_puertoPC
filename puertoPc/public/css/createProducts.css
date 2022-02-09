@@ -39,6 +39,7 @@ header .top-create {
     border: 1px solid var(--grey);
     padding: 1rem;
     width: 40rem;
+    font-family: var(--fontText);
 }
 
 .select-image {
@@ -68,4 +69,9 @@ header .top-create {
 
 .color .text-camp {
     width: 2rem;
+}
+
+.form-create span.error-message {
+    font-family: var(--fontText);
+    font-weight: bold;
 }

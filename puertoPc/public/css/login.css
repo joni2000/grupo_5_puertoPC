@@ -90,8 +90,7 @@ span.error-message {
     display: flex;
     align-self: flex-start;
     margin-left: 2.2rem;
-    color: red;
-    font-family: var(--fontText);
+    color: var(--errorMessage);
 }
 span.credenciales{
     position: absolute;
@@ -247,6 +246,7 @@ hr {
     }
 
     .form-login .input-container input{
+        font-size: 1.7rem;
         height: 4.1rem;
         width: 34.6rem;
     }
@@ -322,7 +322,7 @@ hr {
     
     .form-login span.error-message {
         position: absolute;
-        top: 7.9rem
+        font-family: var(--fontText);
     }
     .form-login span.credenciales{
         position: absolute;

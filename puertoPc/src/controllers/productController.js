@@ -1,50 +1,57 @@
-var fs = require('fs');
-var path = require('path');
-
-var productsFilePath = path.join(__dirname, '../data/products.json');
-var products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//let {getProducts} = require('../data/dataBase')
+//let products = getProducts;
 
 var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { Op } = require('sequelize');
+const db = require('../data/models')
 
 
-var productController = {
+const Products = db.Product
+const Categories = db.Category
+const ProductImages = db.Image
+
+let productController = {
     	// Root - Show all products
-	products: (req, res) => {
+	index: (req, res) => {
+        Products.findAll({
+            include: [{association: 'image'}],
 
-      //  let idProduct = +req.params.id;
-      //  let product = products.find(product => product.id === idProduct);
-       // let products = products.filter(product => product.categories === products.categories)
-
-        
-		res.render('products/products', {
-            title:"Productos",        
-			products,
-           // sliderTitle: "Productos relacionados",
-          //  slideProducts: relatedProducts,
-			toThousand
-		});
-	},
+        })
+        .then(products => {
+            res.render('products/products', {
+                title:"Productos",        
+                products,
+                toThousand,
+                session: req.session
+            })
+        })
+        .catch(error => console.log(error))
+    },
 
     productCart: (req, res )=> {
         res.render('products/productCart', {
-            title:"Carrito"
-        }); 
+            title:"Carrito",
+            session: req.session
+        })
     },
 
-    productDetail: (req, res )=> {
-        let products =require('../data/products.json')
+    productDetail: (req, res ) => {
+        
+        let idProduct = +req.params.id;
+        let product = getProducts.find(product => product.id === idProduct)
+        
 
-        let controller ={
-            product : (req, res) => {
+        res.render('products/productDetail', {
+            title: "Detalle de Producto",
+            product,
+            session: req.session,
+            toThousand
 
-                let   productDetailId = +req.params.id;
-                
-            }
-        }
-        res.render('products/productDetail',{
-            title: "Detalle de Producto"
-        });
+        })
     },
+    /* productCategory:(req, res) =>{
+
+    } */
     categories: (req, res) => {
         let categoriesId = +req.params.id;
 
@@ -55,7 +62,10 @@ var productController = {
             products: productsCategories,
             categories,
         })
-    },
+    }
+    /* productSearch:(req, res) =>{
+
+    } */
 
 };
 

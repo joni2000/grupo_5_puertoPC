@@ -6,50 +6,49 @@
 <body class="product-detail-body">
     <%- include('../partials/header.ejs') %>
     <main class="main-product-detail padding-top-fixed">
-        <div class="productAdress">
-            <h3>PuertoPc > categoria > producto</h3>
-        </div>
-        <div class="product">
+          <div class="productAdress">
+            <h3 class="enrutador">Puerto Pc></h3>
+          </div>
+           <div class="product">
             <div class="productImages">
                 <div class="productImageSelector">
                     <div class="imgSelector">
-                        <img src="images/AppleMacbookAir/macBook_vista.webp" alt="">
+                        <img src="/images/products/<%-product.image%>" alt="">
                     </div>
                     <div class="imgSelector">
-                        <img src="images/AppleMacbookAir/macBook_vista2.webp" alt="">
+                        <img src="/images/products/<%-product.image%>" alt="">
                     </div>
                     <div class="imgSelector">
-                        <img src="images/AppleMacbookAir/macBook_vista4.webp" alt="">
+                        <img src="/images/products/<%-product.image%>" alt="">
                     </div>
-                    <div class="imgSelector">
-                        <img src="images/AppleMacbookAir/macBook_vista6webp.webp" alt="">
-                    </div>
+                      <div class="imgSelector">
+                        <img src="/images/products/<%-product.image%>" alt="">
+                      </div>
 
+                      </div>
+                      <div class="productImagePrincipal">
+                        <img src="/images/products/<%-product.image%>" alt="">
                 </div>
-                <div class="productImagePrincipal">
-                    <img src="images/AppleMacbookAir/macBookAir.webp" alt="">
-                </div>
-            </div>
-            <div class="boxProductDetails">
-            <div class="productDetails">
+              </div>
+              <div class="boxProductDetails">
+              <div class="productDetails">
                 
-                <section class="details-1">
-                    <h1>Apple Macbook Air (13 pulgadas, 2020, Chip M1, 512 GB de SSD, 8 GB de RAM) - Plata</h1>
+         <section class="details-1">
+                    <h1><%= product.name %> </h1>
                     <div class="details-1-row">
-                        <h2 id="price">$256.700</h2>
-                        <h3>EN STOCK</h3>
+                        <h2 id="price"> <%=product.price %></h2>
+                        <h3> <%=product.stock %></h3>
                     </div>
                 </section>
 
                 <section class="details-2-tablet">
-                    <h1>¡HASTA 12 CUOTAS SIN INTERES DE $21.400!</h1>
-                    <h3>VER CUOTAS</h3>
+                    <h1><%=product.price%><%= product.price %></h1>
                 </section>         
 
                 <section class="details-2">
                     <i class="fas fa-credit-card"></i>
-                    <h1>¡HASTA 12 CUOTAS SIN INTERES DE $21.400!</h1>
-                    <h3>VER CUOTAS</h3>
+                    <h1><%=product.price%></h1>
+                    <h3><%=product.price%> </h3>
                 </section>
 
                 <section class="details-2">
@@ -58,7 +57,7 @@
                 </section>
                 <section class="details-2">
                     <i class="fas fa-user-shield"></i>
-                    <h1>GARANTÍA POR 12 MESES</h1>
+                    <h1><%=product.price%> </h1>
                 </section>
                 <section class="details-3">
                     <button class="increment-btn">
@@ -78,83 +77,39 @@
                     </section>
                     <section class="details-4">
                         <i class="fas fa-user-shield"></i>
-                        <h1>GARANTÍA POR 12 MESES</h1>
+                        <h1><%=product.price%></h1>
                     </section>
                 </div>
             </div>
-        </div>
-        </div>
+          </div>
+           </div>
 
-        <div class="boxProductDetails" id="boxProductDetails">
+            <div class="boxProductDetails" id="boxProductDetails">
             <div class="productDetails-2">
+                    <section class="details-5">
+                        <h1>DESCRIPCIÓN</h1>
+                        <p><%=product.description%></p>
+                    </section>
                     <section class="details-4">
                         <h1>ESPECIFICACIONES</h1>
                         <div class="category">
                             <div>
-                                <h2>CATEGORIA</h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
+                                <h2><%=product.category%></h2>
+                                <h3>Descuento de % <%-product.discount%></h3>
+                                <h4>En Stock <%-product.stock%></h4>
                             </div>
                             <div>
-                                <h2>CATEGORIA</h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                        </div>
-                        <div class="category">
-                            <div>
-                                <h2>CATEGORIA</h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                            <div>
-                                <h2>CATEGORIA</h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                        </div>
-                        <div class="category">
-                            <div>
-                                <h2>CATEGORIA</h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                            <div>
-                                <h2>CATEGORIA</h2>
+                                <h2><%=product.category%> </h2>
                                 <h3>ESPECIFICACION</h3>
                                 <h4>DATO</h4>
                             </div>
                         </div>
                     </section>
-                    <section class="details-5">
-                        <h1>DESCRIPCIÓN</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla autem obcaecati unde harum
-                            deserunt
-                            iste, perferendis illum accusantium saepe quo ad voluptatem voluptate eligendi, fugiat
-                            pariatur
-                            maiores id! Quisquam doloremque fuga minus non eum, nostrum a beatae mollitia velit itaque,
-                            obcaecati repellendus ipsum? Corrupti vero repellat ad culpa quisquam. Hic, asperiores
-                            placeat
-                            perferendis, voluptates, incidunt earum itaque assumenda facilis error molestias vel nam
-                            modi
-                            nemo
-                            dolorem debitis accusamus repudiandae laudantium? Magni blanditiis inventore ad ipsum
-                            exercitationem, architecto non, cumque odit enim rerum quisquam iure voluptatum sapiente
-                            quis
-                            voluptatem quasi amet facere natus recusandae excepturi libero itaque doloremque commodi
-                            corrupti?
-                            Corrupti.
-                        </p>
-                    </section>
-                </div>
-            </div>
             </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>
-    <script src="/js/productDetail.js"></script>
-     
+    <script src="/js/producpDetail.js"></script>
 </body>
 
 </html>

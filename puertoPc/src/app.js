@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override')
+var session = require('express-session');
+var cookieSession = require('./middlewares/cookieSessionM');
 
 /* Routes */
 var indexRouter = require('./routes/indexRouter');
@@ -23,11 +25,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
+app.use(session({
+  secret: 'puertopc',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(cookieSession);
 
 /* Middlewares de routes */
 app.use('/', indexRouter);
 app.use('/', usersRouter);
-app.use('/', productRouter);
+app.use('/products', productRouter);
 app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+
+        <%- include('../partials/header.ejs') %>
+
+            <main class="padding-top-fixed">
+
+                <form class="form-account" action="/editUser/<%-user.id%>?_method=PUT" method="POST">
+                    <div class="my-account">
+                        <h3>Mi cuenta</h3>
+                        <div class="avatar-editUser">
+                            <label>Lugar para el avatar</label>
+                            <figure class="">
+                                <input class="" type="file" name="" id="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="account-data">
+                        <h4>Datos de cuenta</h4>
+                            <div>
+                                <div class="data ">
+                                    <label>Nombre: </label>
+                                    <p><%-user.first_name%></p>
+                                </div>
+                                <div class="data ">
+                                    <label for="">Apellido: </label>
+                                    <p><%-user.last_name%></p>
+                                </div>
+                                <div class="data ">
+                                    <label>Email: </label>
+                                    <p><%-user.email%></p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="personal-information">
+                        <h4>Datos personales</h4>
+                            <div>
+                                <div class="data ">
+                                    <label>País:</label>
+                                    <input type="text" name="country" value="<%-user.country%>">
+                                </div>
+                                <div class="data ">
+                                    <label>Provincia:</label>
+                                    <input type="text" name="province" value="<%-user.province%>">
+                                </div>
+                                <div class="data ">
+                                    <label>Ciudad:</label>
+                                    <input type="text" name="city" value="<%-user.city%>">
+                                </div>
+                                <div class="data ">
+                                    <label>Domicilio: </label>
+                                    <input type="address" name="address" value="<%-user.address%>">
+                                </div>
+
+                                <div class="data ">
+                                    <label>Teléfono: </label>
+                                    <input type="tel" name="phone" value="<%-user.phone%>">
+                                </div>
+
+                            </div>
+                    </div>
+                    <div class="button-edit-info">
+                        <button class="submit">Guardar cambios</button>
+                    </div>
+                </form>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+
+    </body>
+
+</html>

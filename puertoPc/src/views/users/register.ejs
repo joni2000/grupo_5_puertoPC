@@ -13,32 +13,57 @@
 
                     <div class="box-input-register">
                       <label for="name">Nombre:</label>
-                      <input class="input-register" type="text" name="firstName" id="name" placeholder="Ingresa tu nombre.." required >
-                      <span class="error-message-register">Debes ingresar tu nombre</span>
+                      <input class="input-register" type="text" name="firstName" id="name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.firstName %>">
+                      <% if (locals.errors && errors.first_name) { %>
+                      <span class="error-message-register"><%= errors.firstName.msg %></span>
+                      <% } %>
 
                       <label for="name">Apellido:</label>
-                      <input class="input-register" type="text" name="lastName" id="name" placeholder="Ingresa tu apellido.." required >
-                      <span class="error-message-register">Debes ingresar tu apellido</span>
-                    </div>
-                     
-                    <div class="box-input-register2">
-                      <label for="email">Email:</label>
-                      <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo.."  required >
-                      <span class="error-message-register">Debes ingresar tu email</span>
+                      <input class="input-register" type="text" name="lastName" id="name" placeholder="Ingresa tu apellido" value="<%= locals.old && old.lastName %>">
+                      <% if (locals.errors && errors.last_name) { %>
+                      <span class="error-message-register"><%= errors.lastName.msg %></span>
+                      <% } %> 
 
-                      <label for="pass">Contraseña:</label>
-                      <input class="input-register" type="password"  name="password" id="pass" placeholder="Ingresa una contraseña.." required >
-                      <span class="error-message-register">Debes ingresar tu contraseña</span>
+                      <label for="address">Domicilio (opcional):</label>
+                      <input class="input-register" type="text" name="address" id="address" placeholder="Ingresa tu dirección" value="<%= locals.old && old.address %>">
+                      <% if (locals.errors && errors.address) { %>
+                      <span class="error-message-register"><%= errors.address.msg %></span>
+                      <% } %> 
+
+                    </div>
+                    <hr class="hr-register-desktop">
+                    <div class="box-input-register2">
+
+                      <label for="email">Email:</label>
+                      <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo" value="<%= locals.old && old.email %>">
+                      <% if (locals.errors && errors.email) { %>
+                      <span class="error-message-register"><%= errors.email.msg %></span>
+                      <% } %> 
+
+                      <label for="password">Contraseña:</label>
+                      <input class="input-register" type="password"  name="password" id="password" placeholder="Ingresa una contraseña" value="<%= locals.old && old.password %>">
+                      <% if (locals.errors && errors.password) { %>
+                      <span class="error-message-register"><%= errors.password.msg %></span>
+                      <% } %> 
+
+                      <label for="password2">Repite tu contraseña:</label>
+                      <input class="input-register" type="password" name="password2" id="password2" placeholder="Repite tu contraseña" value="<%= locals.old && old.password2 %>">
+                      <% if (locals.errors && errors.password2) { %>
+                      <span class="error-message-register"><%= errors.password2.msg %></span>
+                      <% } %> 
+
                     </div> 
 
                     </div>
-                <div class="terms-register">
+                <div class="terms">
                    <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
-                   <input type="checkbox" name="terms-register" id="terms">
+                   <input class="check-terms" type="checkbox" name="terms" id="terms">
+                   <% if (locals.errors && errors.terms) { %> 
+                    <span class="error-message-register"><%= errors.terms.msg %></span>
+                   <% } %> 
                  </div>
 
                  <div class="submit-register">
-                      <span class="error-message credenciales">Completa todos los campos</span>
                        <button type="submit" class="registrarse">Registrarse</button> 
                  </div>
             <hr class="hr-register">
