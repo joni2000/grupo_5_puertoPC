@@ -1,4 +1,4 @@
-//let {getUsers, writeJson} = require("../data/dataBase")
+let {getUsers, writeJson} = require("../data/dataBase")
 let { validationResult } = require('express-validator');
 const { redirect } = require("express/lib/response");
 //const session = require("express-session");
@@ -25,7 +25,7 @@ var usersController = {
 
                req.session.user = {
                      id: user.id,
-                     firstName: user.firstN_name,
+                     firstName: user.first_name,
                      lastName: user.last_name,
                      email: user.email,
                      rol: user.rol
@@ -74,7 +74,7 @@ var usersController = {
                 first_name: user.first_name,
                 last_name: user.last_name,
                 email: email.toLowerCase(), 
-                password: bcrypt.hashSync(password, 10), 
+                password, 
                 address: user.address,
                 city:user.city, 
                 phone: user.phone, 
@@ -144,11 +144,11 @@ var usersController = {
         )},
     editUser: (req, res) => {
 
-        Users.findAll()
-            .then(users => {
+        Users.findByPk(req.params.id)
+            .then(user => {
                     res.render('users/editUser', {
                     title: "Edición de usuario",
-                    users,
+                    user,
                     session: req.session,
 
                 });
@@ -191,7 +191,7 @@ var usersController = {
                     id: req.params.id
                 }
             })
-            .then(res.redirect('/profileUser'))
+            .then(res.redirect(`/profileUser/${req.params.id}`))
             .catch(error => console.log(error))
         })
         
