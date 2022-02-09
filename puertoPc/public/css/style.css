@@ -18,7 +18,7 @@
 @import url('profileUser.css');
 @import url('editUser.css');
 @import url('menuMobile.css');
-
+@import url('menuUsers.css');
 /* General */
 * {
     margin: 0;
