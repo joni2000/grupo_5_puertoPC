@@ -51,6 +51,7 @@ var adminController = {
                     stock,
                     discount,
                     category_id: category,
+                    mainImage: req.file ? req.file.filename : 'default-image.png'
                 })
                 .then((product) => {
                     if(arrayImages.length > 0){

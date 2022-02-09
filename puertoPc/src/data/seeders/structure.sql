@@ -112,6 +112,7 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `discount` int(11) NOT NULL,
+  `mainImage` varchar(100) NOT NULL,
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
