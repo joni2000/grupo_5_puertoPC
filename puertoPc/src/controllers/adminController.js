@@ -150,7 +150,7 @@ var adminController = {
                                 let images = arrayImages.map((image) => {
                                     return {
                                         name: image,
-                                        product_id: product.id
+                                        product_id: req.params.id
                                     }
                                 });
                                 ProductImages.bulkCreate(images)
@@ -159,7 +159,7 @@ var adminController = {
                             }else {
                                 ProductImages.create({
                                     name: 'default-image.png',
-                                    product_id: product.id
+                                    product_id: req.params.id
                                 })
                                 .then(() => {res.redirect('/admin')})
                                 .catch(error => console.log(error))
