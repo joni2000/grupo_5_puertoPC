@@ -129,24 +129,41 @@ var adminController = {
                            }) 
                            .then((images) => {
                                 images.forEach((image) => {
-                            fs.existsSync(`./public/images/products/${image.name}`)
-                            ? fs.unlinkSync(`./public/images/products/${image.name}`)
-                            : console.log(`No se encontró el archivo`)
+                                    fs.existsSync(`./public/images/products/${image.name}`)
+                                    ? fs.unlinkSync(`./public/images/products/${image.name}`)
+                                    : console.log(`No se encontró el archivo`)
                           })
                             ProductImages.destroy({
                                    where: {
-                                   product_id: req.params.id
-                                          }
+                                        product_id: req.params.id
+                                    }
                            })
                            .then(() => {
-                            ProductImages.create({
-                                  name: req.file ? req.file.filename : 'default-image.png',
-                                  product_id: req.params.id
-                           })
-                           .then(() => {
-                                res.redirect('/admin')
-                           })
-                         })
+                            let arrayImages = [];
+                            if(req.files){
+                                req.files.forEach((image) => {
+                                    arrayImages.push(image.filename)
+                                })
+                            }
+                            if(arrayImages.length > 0){
+                                let images = arrayImages.map((image) => {
+                                    return {
+                                        name: image,
+                                        product_id: product.id
+                                    }
+                                });
+                                ProductImages.bulkCreate(images)
+                                .then(() => res.redirect('/admin'))
+                                .catch(error => console.log(error))
+                            }else {
+                                ProductImages.create({
+                                    name: 'default-image.png',
+                                    product_id: product.id
+                                })
+                                .then(() => {res.redirect('/admin')})
+                                .catch(error => console.log(error))
+                            }
+                            })
                      })
                         .catch(error => console.log(error))
                           })     

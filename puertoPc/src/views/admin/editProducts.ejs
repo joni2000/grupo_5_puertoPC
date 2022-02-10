@@ -64,7 +64,7 @@
                 </div>
                     <figure class="select-image">
                         <label class="text-form" for="image">Seleccionar imagen</label>
-                        <input class="buttom-image" type="file" name="image" id="image">
+                        <input class="buttom-image" type="file" name="image" id="image" multiple>
                         <% if (locals.errors && errors.image) { %>
                             <span class="error-message"><%= errors.image.msg %> </span>
                         <% } %>
