@@ -1,10 +1,7 @@
-//let {getProducts} = require('../data/dataBase')
-//let products = getProducts;
-
-var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const { Op } = require('sequelize');
 const db = require('../data/models')
 
+var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const Products = db.Product
 const Categories = db.Category
@@ -36,17 +33,20 @@ let productController = {
     },
 
     productDetail: (req, res ) => {
-        
-        let idProduct = +req.params.id;
-        let product = getProducts.find(product => product.id === idProduct)
-        
-
-        res.render('products/productDetail', {
-            title: "Detalle de Producto",
-            product,
-            session: req.session,
-            toThousand
-
+        Products.findOne({
+            include: [{association: 'image'}],
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(product => {
+            
+            res.render('products/productDetail', {
+                title: product.name,
+                product,
+                session: req.session,
+                toThousand
+            })
         })
     },
     /* productCategory:(req, res) =>{

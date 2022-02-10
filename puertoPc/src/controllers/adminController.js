@@ -176,9 +176,8 @@ var adminController = {
             .then(([product, categories])=>{
                  res.render('admin/editProducts', {
                     title: "Editar Producto",
-                     product,
-                     categories,
-                    listCategories: orderedCategories.sort(),
+                    product,
+                    categories,
                     errors: errors.mapped(),
                     old: req.body,
                     session: req.session
