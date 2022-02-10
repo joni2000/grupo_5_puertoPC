@@ -16,10 +16,10 @@ router.post('/login', loginValidator, usersController.processLogin);
 router.post('/register', registerValidator, usersController.processRegister);
 
 /* GET - Profile User */
-router.get("/profileUser", userCheck,usersController.profileUser);
+router.get("/profileUser/:id", userCheck,usersController.profileUser);
 
 /* PUT - Profile User */
-router.get("/editUser", userCheck,usersController.editUser)
+router.get("/editUser/:id", userCheck,usersController.editUser)
 router.put("/editUser/:id", userCheck,usersController.updateUser);
 
 module.exports = router;

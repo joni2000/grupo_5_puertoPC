@@ -1,9 +1,12 @@
-//let {getUsers, writeJson} = require("../data/dataBase")
+let {getUsers, writeJson} = require("../data/dataBase")
 let { validationResult } = require('express-validator');
 const { redirect } = require("express/lib/response");
 //const session = require("express-session");
 const db = require('../data/models')
 let bcrypt = require('bcryptjs')
+
+const Users = db.User;
+
 
 var usersController = {
 
@@ -22,7 +25,7 @@ var usersController = {
 
                req.session.user = {
                      id: user.id,
-                     firstName: user.firstN_name,
+                     firstName: user.first_name,
                      lastName: user.last_name,
                      email: user.email,
                      rol: user.rol
@@ -61,57 +64,32 @@ var usersController = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
-        let lastId = 1;
 
         if(errors.isEmpty()){
-            let { id, first_name, last_name, email, password, address, city, phone, rol, image, country, province } = req.body;
+            let { firstName, lastName, email, password } = req.body;
             
-            db.User.create({
-                id,
-                first_name: user.first_name,
-                last_name: user.last_name,
+            Users.create({
+                first_name: firstName,
+                last_name: lastName,
                 email: email.toLowerCase(), 
                 password: bcrypt.hashSync(password, 10), 
-                address: user.address,
-                city:user.city, 
-                phone: user.phone, 
-                country: user.country, 
-                province: user.province,
+                address: "",
+                city: "", 
+                phone: "", 
+                country: "", 
+                province: "",
                 rol: 'rol_user',
                 image: req.file ? req.file.filename: "default-image.png"
             })
             .then((user)=>{
-                res.redirect('user/login');
-            })
-
-            getUsers.forEach(user => {
-              if (user.id > lastId) {
-                    lastId = user.id
-                }
-            })            
+                res.redirect('users/login');
+            })          
     }else{
             res.render("users/register", {
                 errors: errors.mapped(),
                 session: req.session,
                 old: req.body,
             })
-            /* let newUser = {
-                id: lastId + 1,
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: req.body.password,
-                address: req.body.address,
-                country: "",
-                city: "",
-                province: "",
-                phone: "",
-                ROL: "user",
-                image: "img-default.jpg"
-            };
-            getUsers.push(newUser);
-            writeJson(getUsers, "users");
-            res.redirect("login"); */
         }
     },
     logout: (req, res) => {
@@ -122,23 +100,79 @@ var usersController = {
         res.redirect('/')
     },
     profileUser: (req, res )=> { 
-        let user = getUsers.find(user => user.id === +req.session.user.id)
+
+        Users.findByPk(req.params.id)
+        .then((user) =>
+        res.render('users/profileUser', {
+            title: "Perfil de Usuario",
+            session: req.session,
+            user
+        })
+        .catch(error => res.send(error))
+
+/*         let user = getUsers.find(user => user.id === +req.session.user.id)
         res.render('users/profileUser',{
             title: "Perfil de usuario",
             session: req.session,
             user
-        })
-    },
+        }) */
+        )},
     editUser: (req, res) => {
-        let user = getUsers.find(user => user.id === +req.session.user.id)
+
+        Users.findByPk(req.params.id)
+            .then(user => {
+                    res.render('users/editUser', {
+                    title: "Edición de usuario",
+                    user,
+                    session: req.session,
+
+                });
+            }).catch(error => console.log(error))
+        
+        /* let user = getUsers.find(user => user.id === +req.session.user.id)
         res.render('users/editUser',{
             title: "Editar usuario",
             session: req.session,
             user
-        })
+        }) */
     },
     updateUser: (req, res) => {
-        let userId = +req.params.id;
+
+        const { id, first_name, last_name, email, password, address, city, phone, rol, image, country, province } = req.body;
+        
+        Users.update({
+            id,
+                first_name, 
+                last_name, 
+                email, 
+                password, 
+                address,
+                city, 
+                phone, 
+                rol, 
+                image, 
+                country, 
+                province,
+                rol: 'ROL_USER',
+                image: req.file ? req.file.filename: "default-image.png"
+        }, {
+            where: {
+                id: req.params.id,
+            }
+        })
+        .then(result => {
+            Users.update({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(res.redirect(`/profileUser/${req.params.id}`))
+            .catch(error => console.log(error))
+        })
+        
+        
+
+        /* let userId = +req.params.id;
             let {firstName, lastName, email, password, country, province, city, address, phone} = req.body
             getUsers.forEach(user => {
                 if(user.id === userId){
@@ -156,7 +190,7 @@ var usersController = {
                 }
             })
                 writeJson(getUsers, "users")
-                res.redirect('/profileUser')
+                res.redirect('/profileUser') */
     }
 
 }

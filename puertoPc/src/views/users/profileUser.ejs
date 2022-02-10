@@ -26,7 +26,7 @@
                                     <p><%-user.first_name%></p>
                                 </div>
                                 <div class="data ">
-                                    <label for="">Apellido: </label>
+                                    <label>Apellido: </label>
                                     <p><%-user.last_name%></p>
                                 </div>
                                 <div class="data ">
@@ -63,7 +63,7 @@
                             </div>
                     </div>
                     <div class="button-edit-info">
-                        <a href="/editUser" class="submit">Editar Información</a>
+                        <a href="/editUser/<%- user.id %>" class="submit">Editar Información</a>
                     </div>
                 </form>
             </main>

@@ -1,6 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `puerto_pc` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `puerto_pc`;
-
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
 -- Host: localhost    Database: puerto_pc
@@ -54,7 +51,7 @@ DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `product_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `colors_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
@@ -80,7 +77,7 @@ DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `product_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `images_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
@@ -112,7 +109,6 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `discount` int(11) NOT NULL,
-  `mainImage` varchar(100) NOT NULL,
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -163,7 +159,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO users VALUES (7, "Nahuel", "Rosales", "nahuel@nahuel.com", "123123", "calle falsa 123", "Avelllaneda", "5645634543", "user", "img-default.jpg", "Argentina", "Buenos Aires", now(), now())
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,4 +175,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-04 21:35:41
+-- Dump completed on 2022-02-04 21:34:29
