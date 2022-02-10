@@ -26,10 +26,17 @@ let productController = {
     },
 
     productCart: (req, res )=> {
-        res.render('products/productCart', {
-            title:"Carrito",
-            session: req.session
+        Products.findAll({
+            include: [{association: 'image'}]
         })
+        .then(products => {
+            res.render('products/productCart', {
+                title:"Carrito",
+                products,
+                session: req.session
+            })
+        })
+        
     },
 
     productDetail: (req, res ) => {
