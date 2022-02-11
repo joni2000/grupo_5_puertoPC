@@ -66,7 +66,7 @@ var usersController = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let { firstName, lastName, email, password, address, city, phone, rol, image, country, province } = req.body;
+            let { firstName, lastName, email, password } = req.body;
             
             Users.create({
                 first_name: firstName,
