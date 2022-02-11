@@ -1,8 +1,9 @@
 <header class="header">
+    <div class="boxMenu">
     <nav class="top">
-        <a class="icon-menu">
+        <div type="button" onclick="menuMobile();" id="icon-menu-mobile"  class="icon-menu">
             <i class="fas fa-bars"></i>
-        </a>
+        </div>
         <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
         <a class="logo-text" href="/">PuertoPc</a>
         <div class="search-bar">
@@ -11,9 +12,12 @@
                 <i class="fas fa-search"></i></a>
         </div>
         
-        <a class="icon-cart" href="./productos/carrito">
+        <a class="icon-cart" href="/products/carrito">
             <i class="fas fa-shopping-cart"></i>
         </a>
+        <div type="button" onclick="menuUsers();" id="icon-userMobile">
+            <i class="far fa-user"></i>
+         </div>
             <% if (typeof locals.user != "undefined") { %>
                 <span class="session"> 
                     <i class="far fa-user"></i> 
@@ -31,6 +35,10 @@
 
         
     </nav>
+    <%- include('../partials/menuMobile.ejs') %>
+    <%- include('../partials/menuUsers.ejs') %>
+   </div>
+
     
     <nav class="menu">
         <ul class="item">
