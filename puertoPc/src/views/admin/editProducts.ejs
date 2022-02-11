@@ -15,7 +15,9 @@
     </header>    
     <main class="main-create padding-top-fixed">
         <form class="form-create" action="/admin/editar/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="none">
-                <div class="container-input">
+            <h2 class="title-crear">Editar Producto</h2>
+                <hr class="hr-create">    
+            <div class="container-input">
                     <label class="text-form" for="name" minlength="6" maxlength="80">Nombre:</label>
                     <input class="text-camp" type="text" name="name" id="name" value="<%= locals.errors && old.name? old.name : product.name %>">
                     <% if (locals.errors && errors.name) { %>
@@ -62,14 +64,23 @@
                         <span class="error-message"><%= errors.discount.msg %> </span>
                     <% } %>
                 </div>
+                <div class="container-select-image">
                     <figure class="select-image">
                         <label class="text-form" for="image">Seleccionar imagen</label>
                         <input class="buttom-image" type="file" name="image" id="image" multiple>
-                        <% if (locals.errors && errors.image) { %>
-                            <span class="error-message"><%= errors.image.msg %> </span>
-                        <% } %>
                     </figure>    
-                    <span class="error-message">Formato no valído</span>
+                    <figure class="select-image">
+                        <label class="text-form" for="image">Seleccionar imagen</label>
+                        <input class="buttom-image" type="file" name="image" id="image" multiple>
+                    </figure>    
+                    <figure class="select-image">
+                        <label class="text-form" for="image">Seleccionar imagen</label>
+                        <input class="buttom-image" type="file" name="image" id="image" multiple>
+                    </figure>    
+                </div>
+                    <% if (locals.errors && errors.image) { %>
+                            <span class="error-message"><%= errors.image.msg %> </span>
+                    <% } %>
                     <div class="button-box button__buy-cart">
                         <button  class="button-buy" type="submit">
                             Editar producto

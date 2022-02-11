@@ -3,7 +3,7 @@
     
     <%- include('../partials/head.ejs') %>
     
-<body>
+<body class="body-create">
     <header class="header">
         <nav class="top-create top">
             <a class="icon-menu">
@@ -15,8 +15,10 @@
     </header>    
     <main class="main-create padding-top-fixed">
         <form class="form-create action=" action="/admin/store" method="POST" enctype="multipart/form-data">
+                <h2 class="title-crear">Crear Producto</h2>
+                <hr class="hr-create">
                 <div class="container-input">
-                    <label class="text-form" for="name" minlength="6" maxlength="80">Nombre:</label>
+                    <label class="text-form" for="name" minlength="6" maxlength="80" aria-placeholder="Nombre del producto">Nombre:</label>
                     <input class="text-camp" type="text" name="name" id="name" value="<%= locals.old && old.name %>">
                     <% if (locals.errors && errors.name) { %>
                         <span class="error-message"><%= errors.name.msg %> </span>
@@ -62,21 +64,25 @@
                         <span class="error-message"><%= errors.discount.msg %> </span>
                     <% } %>
                 </div>
-                    <figure class="select-image">
-                        <label class="text-form" for="mainImage">Seleccionar imagen principal</label>
-                        <input class="buttom-image" type="file" name="mainImage" id="mainImage">
-                    </figure>    
-                    <% if (locals.errors && errors.mainImage) { %>
-                        <span class="text-danger"><%= errors.mainImage.msg %> </span>
-                    <% } %>
-                    <figure class="select-image">
-                        <label class="text-form" for="image">Seleccionar imagenes</label>
-                        <input class="buttom-image" type="file" name="image" id="image" multiple>
-                    </figure>    
+                    <div class="container-select-image">
+                        <figure class="select-image">
+                            <label class="text-form" for="image">Seleccionar imagen</label>
+                            <input class="buttom-image" type="file" name="image" id="image" multiple>
+                        </figure>    
+                        <figure class="select-image">
+                            <label class="text-form" for="image">Seleccionar imagen</label>
+                            <input class="buttom-image" type="file" name="image" id="image" multiple>
+                        </figure>    
+                        <figure class="select-image">
+                            <label class="text-form" for="image">Seleccionar imagen</label>
+                            <input class="buttom-image" type="file" name="image" id="image" multiple>
+                        </figure>    
+                    </div>
                     <% if (locals.errors && errors.image) { %>
                         <span class="text-danger"><%= errors.image.msg %> </span>
                     <% } %>
-                    <button  class="button-buy" type="submit">
+
+                    <button  class="button-buy button-submit-create" type="submit">
                         Guardar producto
                     </button>
             </form>
