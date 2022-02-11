@@ -3,7 +3,7 @@ module.exports = {
     "username": "root",
     "password": null,
     "database": "puerto_pc",
-    "host": "127.0.0.1",
+    "host": "47478",
     "dialect": "mysql"
   },
   "test": {

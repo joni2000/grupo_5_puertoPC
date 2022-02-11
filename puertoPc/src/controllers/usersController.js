@@ -64,34 +64,33 @@ var usersController = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
-
+       
         if(errors.isEmpty()){
-            let { firstName, lastName, email, password } = req.body;
-            
+            let { first_name, last_name, email, password } = req.body;
             Users.create({
-                first_name: firstName,
-                last_name: lastName,
-                email: email.toLowerCase(), 
-                password: bcrypt.hashSync(password, 10), 
+                first_name, 
+                last_name,
+                email,
+                pass: bcrypt.hashSync(password, 10),
                 address: "",
                 city: "", 
                 phone: "", 
                 country: "", 
                 province: "",
                 rol: 'rol_user',
-                image: req.file ? req.file.filename: "default-image.png"
+                image: req.file ? req.file.filename : 'default-image.png',
             })
-            .then((user)=>{
-                res.redirect('users/login');
-            })          
-    }else{
-            res.render("users/register", {
+            .then(() => {
+                res.redirect('/login')
+            })
+        }else{
+            res.render('register', {
                 errors: errors.mapped(),
-                session: req.session,
                 old: req.body,
+                session: req.session
             })
         }
-    },
+    },       
     logout: (req, res) => {
           req.session.destroy();
           if(req.cookies.userPuertoPc){
