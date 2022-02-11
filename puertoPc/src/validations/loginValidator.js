@@ -1,6 +1,8 @@
 var { check, body } = require('express-validator');
-var { getUsers } = require("../data/dataBase");
-const res = require('express/lib/response');
+const db = require("../data/models")
+let bcrypt = require('bcryptjs')
+
+const Users = db.User;
 
 module.exports = [
     check('email')
@@ -17,20 +19,20 @@ module.exports = [
     })
     .withMessage('La contraseña debe tener al menos 4 caracteres'),
 
-    body('password')
-      .custom ((value, {req}) => {
-          let user = getUsers.find(user => user.email == req.body.email);
-
-          if(user){
-              if(user.password === req.body.password){
-                  return true
-              }else{
-                  return false
-              }
-
-          }else{
-              return false
-          }
-
-      }) .withMessage('Credenciales Invalidas')
+    body('custom')
+        .custom((value, {req}) => {
+           return Users.findOne({
+               where: {
+                   email: req.body.email
+               }
+           })
+           .then(user => {
+               if(!bcrypt.compareSync(req.body.pass, user.dataValues.pass)){
+                   return Promise.reject()
+               }
+           })
+           .catch(() => {
+               return Promise.reject("Credenciales inválidas")
+           })
+        })
 ]

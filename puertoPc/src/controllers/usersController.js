@@ -1,4 +1,4 @@
-let {getUsers, writeJson} = require("../data/dataBase")
+//let {getUsers, writeJson} = require("../data/dataBase")
 let { validationResult } = require('express-validator');
 const { redirect } = require("express/lib/response");
 //const session = require("express-session");
@@ -17,45 +17,47 @@ var usersController = {
         })
 
     },
-         processLogin: (req, res) => {
-            let errors = validationResult(req);
-
-            if (errors.isEmpty()) {
-                let user = getUsers.find(user => user.email === req.body.email);
-
-               req.session.user = {
-                     id: user.id,
-                     first_name: user.first_name,
-                     last_name: user.last_name,
+            processLogin: (req, res) => {
+                let errors = validationResult(req);
+                res.send(errors)
+                if(errors.isEmpty()){
+                    Users.findOne({
+                        where: {
+                            email: req.body.email
+                        }
+                    })
+                    .then(user => {
+                        req.session.user = {
+                            id: user.id,
+                     firstName: user.first_name,
+                     lastName: user.last_name,
                      email: user.email,
                      rol: user.rol
-               }
-               if (req.body.keepsession) {
-                   const TIME_IN_MILISECONS = 600000000000000
-                   res.cookie("userPuertoPc", req.session.user, {
-                       expires: new Date(Date.now() + TIME_IN_MILISECONS),
-                       httpOnly: true,
-                       secure: true
-                   })
+                        }
+            
+                       if(req.body.keepsession){
+                           const TIME_IN_MILISECONDS = 60000
+                           res.cookie("userPuertoPc", req.session.user, {
+                               expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                               httpOnly: true,
+                               secure: true
+                           })
+                       }
+                       
+            
+                        res.locals.user = req.session.user;
+            
+                        res.redirect('/')
+                    })
+                }else{
+                    res.render('users/login', {
+                        title: "Iniciar Sesión",
+                        errors: errors.mapped(),
+                        session: req.session
+                        
+                    })
                 }
-
-                  res.locals.user = req.session.user;
-                  res.redirect('/')
-                  
-
-            }else{
-                res.render('users/login', {
-                    title: "Iniciar Sesión",
-                    errors: errors.mapped(),
-                    session: req.session
-                    
-                })
-            }
-
-            res.locals.user = req.session.user;
-            res.redirect('/')
-
-    },
+            },
 
     register: (req, res) => {
         res.render('users/register', {

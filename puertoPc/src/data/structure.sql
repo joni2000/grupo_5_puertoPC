@@ -159,6 +159,8 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+insert into users
+values (7, "Nahuel", "Rosales", "nahuel@nahuel.com", "123123", "calle falsa 123", "Avelllaneda", "5645634543", "user", "img-default.jpg", "Argentina", "Buenos Aires", now(), now());
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 

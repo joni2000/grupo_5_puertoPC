@@ -54,20 +54,6 @@
         "phone": ""
     },
     {
-        "id": 7,
-        "firstName": "Nahuel",
-        "lastName": "Rosales",
-        "email": "nahuel@nahuel.com",
-        "password": "123123",
-        "address": "calle falsa 123",
-        "city": "Avelllaneda",
-        "phone": "5645634543",
-        "ROL": "user",
-        "image": "img-default.jpg",
-        "country": "Argentina",
-        "province": "Buenos Aires"
-    },
-    {
         "id":8,
         "firstName": "Silvana",
         "lastName": "Zalazar",
