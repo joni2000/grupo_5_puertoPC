@@ -19,7 +19,7 @@ var usersController = {
     },
             processLogin: (req, res) => {
                 let errors = validationResult(req);
-                res.send(errors)
+
                 if(errors.isEmpty()){
                     Users.findOne({
                         where: {
@@ -73,7 +73,7 @@ var usersController = {
                 first_name, 
                 last_name,
                 email,
-                pass: bcrypt.hashSync(password, 10),
+                password: bcrypt.hashSync(password, 10),
                 address: "",
                 city: "", 
                 phone: "", 
