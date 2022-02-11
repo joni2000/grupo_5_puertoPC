@@ -31,7 +31,7 @@
                 </div>
                 <div class="container-input">
                     <label class="text-form"  for="select">Categoría:</label>
-                    <select class="text-camp" name="category" id="select" required>
+                    <select class="text-camp" name="category" id="select">
                         <option value="">Elegir</option>
                         <% categories.forEach(category => { %>  
                             <option value="<%- category.id %>" <%= locals.old && old.category.id == category.id ? "selected" : category.id == product.category ? "selected" : "" %>><%- category.name%></option>
@@ -64,7 +64,7 @@
                 </div>
                     <figure class="select-image">
                         <label class="text-form" for="image">Seleccionar imagen</label>
-                        <input class="buttom-image" type="file" name="image" id="image">
+                        <input class="buttom-image" type="file" name="image" id="image" multiple>
                         <% if (locals.errors && errors.image) { %>
                             <span class="error-message"><%= errors.image.msg %> </span>
                         <% } %>

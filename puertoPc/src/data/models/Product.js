@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         description: {
-            type: dataTypes.STRING(800),
+            type: dataTypes.STRING(5000),
             allowNull: false
         },
         price: {
@@ -30,10 +30,6 @@ module.exports = (sequelize, dataTypes) => {
         discount: {
             type: dataTypes.INTEGER(11),
             allowNull: false
-        },
-        mainImage: {
-            type: dataTypes.STRING(100) ,
-            allowNull: false,
         }
 
     };

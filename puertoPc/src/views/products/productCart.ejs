@@ -9,13 +9,13 @@
         <h2 class="section-title">Mi carrito</h2>
         <div class="card-cart">
                 <div class="image-container-ext">
-                    <a href="detalles" class="image-container">
-                        <img class="image-cart" src="images/NotebookASUS/Notebook_ASUS.jpg">
+                    <a href="detalles/<%-products[1].id%>" class="image-container">
+                        <img class="image-cart" src="/images/products/<%-products[1].image[0].name%>">
                     </a>
                 </div>
                 <div class="container-info">
                     <div class="cart-description-text">
-                        <h3><a href="detalles"> Notebook ASUS x509 15.6 Celeron N4020 4GB 500GB Win10 </a></h3>
+                        <h3><a href="detalles/<%-products[1].id%>"> <%-products[1].name%>  </a></h3>
                     </div>
                     <div class="container-increment">
                         <label for="increment">Cantidad:</label>
@@ -23,20 +23,20 @@
                     </div>
                     <div class="price" >
                         <p>Subtotal: </p>
-                        <p>$96.355</p>
+                        <p>$<%-products[1].price%></p>
                     </div>
                 </div>
                 <i class="fas fa-times"></i>
             </div>
         <div class="card-cart">
                 <div class="image-container-ext">
-                    <a href="detalles" class="image-container">
-                        <img class="image-cart" src="images/SillónSillaPremium/SillaPremium.webp">
+                    <a href="detalles/<%-products[0].id%>" class="image-container">
+                        <img class="image-cart" src="/images/products/<%-products[0].image[0].name%>">
                     </a>
                 </div>
                 <div class="container-info">
                     <div class="cart-description-text">
-                        <h3><a href="detalles">Sillón Silla Premium Gamer Gaming Pro Reclinable Pc Oficina</a></h3>
+                        <h3><a href="detalles/<%-products[0].id %>"><%-products[0].name%> </a></h3>
                     </div>
                     <div class="container-increment">
                         <label for="increment2">Cantidad:</label>
@@ -44,20 +44,20 @@
                     </div>
                     <div class="price" >
                         <p>Subtotal: </p>
-                        <p>$96.355</p>
+                        <p>$<%-products[0].price%> </p>
                     </div>
                 </div>
                 <i class="fas fa-times"></i>
             </div>
         <div class="card-cart">
                 <div class="image-container-ext">
-                    <a href="detalles" class="image-container">
-                        <img class="image-cart" src="images/AppleMacbookAir/macBookAir.webp">
+                    <a href="detalles/<%-products[2].id %>" class="image-container">
+                        <img class="image-cart" src="/images/products/<%-products[2].image[0].name%>">
                     </a>
                 </div>
                 <div class="container-info">
                     <div class="cart-description-text">
-                        <h3><a href="detalles"> Apple Macbook Air (13 pulgadas, 2020, Chip M1, 512 GB de SSD, 8 GB de RAM) - Plata </a></h3>
+                        <h3><a href="detalles/<%-products[2].id %>"> <%- products[2].name %>  </a></h3>
                     </div>
                     <div class="container-increment">
                         <label for="increment3">Cantidad:</label>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="price" >
                         <p>Subtotal: </p>
-                        <p>$96.355</p>
+                        <p>$<%- products[2].price %> </p>
                     </div>
                 </div>
                 <i class="fas fa-times"></i>

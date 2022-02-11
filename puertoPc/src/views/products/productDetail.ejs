@@ -13,37 +13,34 @@
             <div class="productImages">
                 <div class="productImageSelector">
                     <div class="imgSelector">
-                        <img src="/images/products/<%-product.image%>" alt="">
+                        <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%> ">
                     </div>
                     <div class="imgSelector">
-                        <img src="/images/products/<%-product.image%>" alt="">
+                        <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%> ">
                     </div>
                     <div class="imgSelector">
-                        <img src="/images/products/<%-product.image%>" alt="">
+                        <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%> ">
                     </div>
-                      <div class="imgSelector">
-                        <img src="/images/products/<%-product.image%>" alt="">
-                      </div>
+                    <div class="imgSelector">
+                        <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%> ">
+                    </div>
 
-                      </div>
-                      <div class="productImagePrincipal">
-                        <img src="/images/products/<%-product.image%>" alt="">
                 </div>
-              </div>
+
+                <div class="productImagePrincipal">
+                    <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%>">
+                </div>
+            </div>
               <div class="boxProductDetails">
               <div class="productDetails">
                 
          <section class="details-1">
                     <h1><%= product.name %> </h1>
                     <div class="details-1-row">
-                        <h2 id="price"> <%=product.price %></h2>
+                        <h2 id="price"> $<%=product.price %></h2>
                         <h3> <%=product.stock %></h3>
                     </div>
                 </section>
-
-                <section class="details-2-tablet">
-                    <h1><%=product.price%><%= product.price %></h1>
-                </section>         
 
                 <section class="details-2">
                     <i class="fas fa-credit-card"></i>
@@ -89,21 +86,6 @@
                     <section class="details-5">
                         <h1>DESCRIPCIÓN</h1>
                         <p><%=product.description%></p>
-                    </section>
-                    <section class="details-4">
-                        <h1>ESPECIFICACIONES</h1>
-                        <div class="category">
-                            <div>
-                                <h2><%=product.category%></h2>
-                                <h3>Descuento de % <%-product.discount%></h3>
-                                <h4>En Stock <%-product.stock%></h4>
-                            </div>
-                            <div>
-                                <h2><%=product.category%> </h2>
-                                <h3>ESPECIFICACION</h3>
-                                <h4>DATO</h4>
-                            </div>
-                        </div>
                     </section>
             </div>
     </main>
