@@ -19,7 +19,16 @@
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: all 300ms ease;
 }
+.menu-mobile-item:hover{
+    transform: scale(0.9);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
+    background-color: var(--blue);
+
+}
+
 
 .menu-mobile-item i {
     font-size: 2.3rem;
@@ -27,10 +36,16 @@
     padding-right: 0.5rem;
     transition: all 0.3s ease;
 }
+.menu-mobile-item:hover i {
+    color: white;
+}
 /*link li*/
 .menu-mobileLink{
     display: flex;
     align-items: center;
+}
+.menu-mobile-item:hover .menu-mobileLink {
+    color: white;
 }
 /*icon menu */
 #menu-mobileIcon{
