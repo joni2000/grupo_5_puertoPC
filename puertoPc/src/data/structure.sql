@@ -150,7 +150,7 @@ CREATE TABLE `users` (
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +159,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (7,'Nahuel','Rosales','nahuel@nahuel.com','123123','calle falsa 123','Avelllaneda','5645634543','user','img-default.jpg','Argentina','Buenos Aires','2022-02-11 02:36:47','2022-02-11 02:36:47'),(8,'f','f','1@2.com','$2a$10$i51YA360tZArdYzNieoHkeRWiCXhzd3Z1LovVzaRtkm687y7BL/0W','','','','ROL_USER','default-image.png','Argentina','','2022-02-11 18:28:42','2022-02-11 18:30:20'),(9,'sdf','sdf','123@123.com','$2a$10$0P1quDXjO6IXPKqcpXFfFuTSTkj64.xz0Hyc14nN6MayBghCGH4Ve','','','','rol_user','default-image.png','','','2022-02-11 19:24:22','2022-02-11 19:24:22'),(10,'user','user','user@user.com','$2a$10$1tEqlm73iHrIMgWIOQJxi.fw/wfy7ZZI5biw7fnOD.MS/GeMJ6b5i','calle falsa 123','Avelllaneda','5645634543','ROL_USER','default-image.png','Argentina','Buenos Aires','2022-02-18 22:47:31','2022-02-18 22:48:08');
+INSERT INTO `users` VALUES (11,'Jonathan','Ibarrola','joni@joni.com','$2a$10$qKSpCfZxpVcCgk.s0u60cOcXy64o5A01ZYZIzEN/BkKplfXD8UAPC','','','','admin','default-image.png','','','2022-02-21 20:26:29','2022-02-21 20:26:29');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-18 19:55:01
+-- Dump completed on 2022-02-21 17:28:39
