@@ -23,6 +23,7 @@
                     <% if (locals.errors && errors.name) { %>
                         <span class="error-message"><%= errors.name.msg %> </span>
                     <% } %>
+                    <span class="error" id="nameErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="description">Descripción:</label>
@@ -30,10 +31,11 @@
                     <% if (locals.errors && errors.description) { %>
                         <span class="error-message"><%= errors.description.msg %> </span>
                     <% } %>
+                    <span class="error" id="descriptionErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form"  for="select">Categoría:</label>
-                    <select class="text-camp" name="category" id="select">
+                    <select class="text-camp" name="category" id="select category">
                         <option value="">Elegir</option>
                         <% categories.forEach(categoria => { %>
                             <option value="<%-categoria.id%>" <%= locals.old && old.category == categoria.id ? "selected" : ""%> ><%=categoria.name%></option>
@@ -42,6 +44,7 @@
                     <% if (locals.errors && errors.category) { %>
                         <span class="error-message"><%= errors.category.msg %> </span>
                     <% } %>    
+                    <span class="error" id="categoryErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="stock">Stock:</label>
@@ -49,6 +52,7 @@
                     <% if (locals.errors && errors.stock) { %>
                         <span class="error-message"><%= errors.stock.msg %> </span>
                     <% } %>
+                    <span class="error" id="stockErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="price">Precio:</label>
@@ -56,6 +60,7 @@
                     <% if (locals.errors && errors.price) { %>
                         <span class="error-message"><%= errors.price.msg %> </span>
                     <% } %>
+                    <span class="error" id="priceErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="discount">Descuento:</label>
@@ -63,11 +68,15 @@
                     <% if (locals.errors && errors.discount) { %>
                         <span class="error-message"><%= errors.discount.msg %> </span>
                     <% } %>
+                    <span class="error" id="discountErrors"></span>
                 </div>
                     <div class="container-select-image">
+                        <div class="img-container" id="img-preview">
+                            
+                        </div>
                         <figure class="select-image">
                             <label class="text-form" for="image">Seleccionar imagen</label>
-                            <input class="buttom-image" type="file" name="image" id="image" multiple>
+                            <input class="buttom-image" type="file" name="image" id="file" multiple>
                         </figure>    
                         <figure class="select-image">
                             <label class="text-form" for="image">Seleccionar imagen</label>
@@ -81,6 +90,7 @@
                     <% if (locals.errors && errors.image) { %>
                         <span class="text-danger"><%= errors.image.msg %> </span>
                     <% } %>
+                    <span class="error" id="fileErrors"></span>
 
                     <button  class="button-buy button-submit-create" type="submit">
                         Guardar producto
