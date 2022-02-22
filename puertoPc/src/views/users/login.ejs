@@ -29,8 +29,10 @@
                         <input type="checkbox" name="keepsession" id="checksession">
                         <label for="checksession">Mantener sesión abierta</label>
                     </div>
-                    <div class="form-button-container">
-                      <!-- <span class="error-message credenciales">Credenciales inválidas</span>--> 
+                    <div class="form-button-container log">
+                        <% if (locals.errors && errors.custom) { %>
+                            <span class="error-message credenciales"> <%= errors.custom.msg %> </span>
+                          <% } %> 
                         <button type="submit" class="enter">Ingresar</button> <!-- type submit envía el form -->
                     </div>
                     <p class="log-with">O ingresa con:</p>

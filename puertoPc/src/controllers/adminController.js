@@ -98,7 +98,7 @@ var adminController = {
                   res.render('admin/editProducts', {
                   title: "Editar Producto",
                   product,
-                  categories,
+                  categories: categories,
                   session: req.session
               })
           })

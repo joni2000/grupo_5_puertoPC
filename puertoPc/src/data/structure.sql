@@ -150,7 +150,7 @@ CREATE TABLE `users` (
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,8 +159,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-insert into users
-values (7, "Nahuel", "Rosales", "nahuel@nahuel.com", "123123", "calle falsa 123", "Avelllaneda", "5645634543", "user", "img-default.jpg", "Argentina", "Buenos Aires", now(), now());
+INSERT INTO `users` VALUES (11,'Jonathan','Ibarrola','joni@joni.com','$2a$10$qKSpCfZxpVcCgk.s0u60cOcXy64o5A01ZYZIzEN/BkKplfXD8UAPC','','','','admin','default-image.png','','','2022-02-21 20:26:29','2022-02-21 20:26:29');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-10 20:16:24
+-- Dump completed on 2022-02-21 17:28:39
