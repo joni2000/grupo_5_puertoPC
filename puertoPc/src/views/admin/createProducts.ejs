@@ -26,7 +26,7 @@
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="description">Descripción:</label>
-                    <textarea class="text-camp" name="description" id="description" required><%= locals.old && old.description %></textarea>
+                    <textarea class="text-camp" name="description" id="description"><%= locals.old && old.description %></textarea>
                     <% if (locals.errors && errors.description) { %>
                         <span class="error-message"><%= errors.description.msg %> </span>
                     <% } %>
