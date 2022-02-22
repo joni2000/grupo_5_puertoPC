@@ -94,7 +94,10 @@ span.error-message {
 }
 span.credenciales{
     position: absolute;
-    top: 34.7rem;
+    top: 27.2rem;
+}
+.form-login .log{
+    margin-top: 1rem;
 }
 
 .main-form form .form-login .check-keep-session {
