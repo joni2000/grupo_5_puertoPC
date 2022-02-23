@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <%- include('../partials/head.ejs') %>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <title>Puerto Pc</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/menuMobile.js" defer></script>    
+    </head>
 <body class="body-create">
     <header class="header">
         <nav class="top-create top">
@@ -14,7 +20,7 @@
         </nav>
     </header>    
     <main class="main-create padding-top-fixed">
-        <form class="form-create action=" action="/admin/store" method="POST" enctype="multipart/form-data">
+        <form class="form-create action=" action="/admin/store" method="POST" enctype="multipart/form-data" autocomplete="off">
                 <h2 class="title-crear">Crear Producto</h2>
                 <hr class="hr-create">
                 <div class="container-input">
@@ -23,7 +29,7 @@
                     <% if (locals.errors && errors.name) { %>
                         <span class="error-message"><%= errors.name.msg %> </span>
                     <% } %>
-                    <span class="error" id="nameErrors"></span>
+                    <span class="error error-message" id="nameErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="description">Descripción:</label>
@@ -31,7 +37,7 @@
                     <% if (locals.errors && errors.description) { %>
                         <span class="error-message"><%= errors.description.msg %> </span>
                     <% } %>
-                    <span class="error" id="descriptionErrors"></span>
+                    <span class="error error-message" id="descriptionErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form"  for="select">Categoría:</label>
@@ -97,5 +103,6 @@
                     </button>
             </form>
     </main>
+    <script src="/js/productForm.js"></script>
 </body>
 </html>

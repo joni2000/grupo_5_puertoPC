@@ -7,6 +7,10 @@ module.exports = [
     .isLength({ min: 4, max: 100 })
     .withMessage('El nombre tiene que tener entre 4 y 50 caracteres'),
 
+    check('description')
+    .notEmpty()
+    .withMessage('Debes agregar una descripción'),
+
     check('category')
     .notEmpty()
     .withMessage('Debes elegir una categoría'),
