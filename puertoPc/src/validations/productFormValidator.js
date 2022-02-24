@@ -27,6 +27,7 @@ module.exports = [
     
     check('stock')
     .notEmpty()
+    .withMessage('Debes asignar un stock válido').bail()
     .isNumeric()
     .withMessage('Sólo números'),
     

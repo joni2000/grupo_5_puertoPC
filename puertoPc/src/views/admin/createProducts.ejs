@@ -41,8 +41,8 @@
                 </div>
                 <div class="container-input">
                     <label class="text-form"  for="select">Categoría:</label>
-                    <select class="text-camp" name="category" id="select category">
-                        <option value="">Elegir</option>
+                    <select class="text-camp" name="category" id="category">
+                        <option value="" hidden selected>Elegir</option>
                         <% categories.forEach(categoria => { %>
                             <option value="<%-categoria.id%>" <%= locals.old && old.category == categoria.id ? "selected" : ""%> ><%=categoria.name%></option>
                         <% }) %>
@@ -50,7 +50,7 @@
                     <% if (locals.errors && errors.category) { %>
                         <span class="error-message"><%= errors.category.msg %> </span>
                     <% } %>    
-                    <span class="error" id="categoryErrors"></span>
+                    <span class="error-message" id="categoryErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="stock">Stock:</label>
@@ -58,7 +58,7 @@
                     <% if (locals.errors && errors.stock) { %>
                         <span class="error-message"><%= errors.stock.msg %> </span>
                     <% } %>
-                    <span class="error" id="stockErrors"></span>
+                    <span class="error-message" id="stockErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="price">Precio:</label>
@@ -66,7 +66,7 @@
                     <% if (locals.errors && errors.price) { %>
                         <span class="error-message"><%= errors.price.msg %> </span>
                     <% } %>
-                    <span class="error" id="priceErrors"></span>
+                    <span class="error-message" id="priceErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="discount">Descuento:</label>

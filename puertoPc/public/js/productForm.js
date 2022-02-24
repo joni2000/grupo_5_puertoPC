@@ -10,7 +10,7 @@ window.addEventListener('load', function(){
     $category = qs('#category'),
     $categoryErrors = qs('#categoryErrors'),
     $inputStock = qs('#stock'),
-    $stockErrors = qs('stockErrors'),
+    $stockErrors = qs('#stockErrors'),
     $inputPrice = qs('#price'),
     $priceErrors = qs('#priceErrors'),
     $inputDiscount = qs('#discount'),
@@ -28,7 +28,7 @@ window.addEventListener('load', function(){
                 $inputName.classList.add('is-invalid');
                 validationsErrors = true
                 break;
-            case $inputName.value.length > 4:
+            case !$inputName.value.length > 4:
                 $nameErrors.innerHTML = 'El nombre debe tener mas de 4 caracteres';
                 $inputName.classList.add('is-invalid')
                 validationsErrors = true;
@@ -45,10 +45,58 @@ window.addEventListener('load', function(){
         switch (true) {
             case !$inputDescription.value.trim():
                 $descriptionErrors.innerHTML = 'Debes agregar una descripción';
-                $inputName.classList.add('is-invalid');
+                $inputStock.classList.add('is-invalid');
                 validationsErrors = true
                 break;
             default:
+                $inputDescription.classList.remove('is-invalid');
+                $inputDescription.classList.add('is-valid');
+                $descriptionErrors.innerHTML = '';
+                break;
+        }
+    })
+
+    $category.addEventListener('blur', ()=> {
+        switch (true) {
+            case !$category.value.trim():
+                $categoryErrors.innerHTML = 'Debes elegir una categoría';
+                $category.classList.add('is-invalid');
+                validationsErrors = true
+                break;
+            default:
+                $category.classList.remove('is-invalid');
+                $category.classList.add('is-valid');
+                $categoryErrors.innerHTML = '';
+                break;
+        }
+    })
+
+    $inputStock.addEventListener('blur', ()=> {
+        switch (true) {
+            case !$inputStock.value.trim():
+                $stockErrors.innerHTML = 'Debes asignar un Stock válido';
+                $inputStock.classList.add('is-invalid');
+                validationsErrors = true
+                break;
+            default:
+                $inputStock.classList.remove('is-invalid');
+                $inputStock.classList.add('is-valid');
+                $stockErrors.innerHTML = '';
+                break;
+        }
+    })
+
+    $inputPrice.addEventListener('blur', ()=> {
+        switch (true) {
+            case !$inputPrice.value.trim():
+                $priceErrors.innerHTML = 'Debes ingresar un precio';
+                $inputPrice.classList.add('is-invalid');
+                validationsErrors = true
+                break;
+            default:
+                $inputPrice.classList.remove('is-invalid');
+                $inputPrice.classList.add('is-valid');
+                $priceErrors.innerHTML = '';
                 break;
         }
     })
