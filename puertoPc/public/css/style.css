@@ -19,7 +19,7 @@
 @import url('editUser.css');
 @import url('menuMobile.css');
 @import url('menuUsers.css');
-
+@import url('menuCategory.css');
 /* General */
 * {
     margin: 0;

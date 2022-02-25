@@ -86,7 +86,7 @@ var usersController = {
                 res.redirect('/login')
             })
         }else{
-            res.render('register', {
+            res.render('users/register', {
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
