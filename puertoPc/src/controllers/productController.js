@@ -1,3 +1,4 @@
+const res = require('express/lib/response');
 const { Op } = require('sequelize');
 const db = require('../data/models')
 
@@ -56,9 +57,29 @@ let productController = {
             })
         })
     },
-    /* productCategory:(req, res) =>{
+    
+    productCategory:(req, res) =>{
+      Categories.findOne( {
+            include:[{ association: 'product',}],
+               where: {
+                id: req.params.id
+           }
+        })
+        .then((category)  => {
+             Categories.findByPk(req.params.category_id,{
+                  include: [{ association: 'categories'}]
+             })
+         .then((productCategory) => {
+             res.render('index',{
+                products:category.products,
+                category,
+                product,
+                session: req.session
+             })
+           })
+         })
+    },
 
-    } */
     categories: (req, res) => {
         let categoriesId = +req.params.id;
 
