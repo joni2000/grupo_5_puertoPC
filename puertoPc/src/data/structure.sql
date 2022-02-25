@@ -81,7 +81,7 @@ CREATE TABLE `images` (
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `images_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (72,'1644534824326_img_.webp',40),(73,'1644534888756_img_.webp',42),(74,'1644534899625_img_.webp',43),(76,'1644534925418_img_.webp',44);
+INSERT INTO `images` VALUES (80,'1645747661515_img_.webp',40),(81,'1645747661516_img_.webp',40),(82,'1645747661517_img_.webp',40),(83,'1645747661518_img_.webp',40),(84,'1645747661519_img_.webp',40),(85,'1645747759942_img_.webp',42),(86,'1645747759943_img_.webp',42),(87,'1645747759945_img_.webp',42),(88,'1645747759949_img_.webp',42),(89,'1645747791431_img_.webp',43),(90,'1645747791431_img_.webp',43),(91,'1645747791432_img_.webp',43),(92,'1645747791433_img_.webp',43),(93,'1645747831439_img_.webp',44),(94,'1645747831439_img_.webp',44),(95,'1645747831440_img_.webp',44),(96,'1645747831442_img_.webp',44);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +114,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +123,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (40,'Notebook Asus VivoBook X543UA gris oscura 15.6\"',2,'Pantalla con gran impacto visual\r\nSu pantalla LED de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 4 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.',109999,10,10,'2022-02-10 01:04:45','2022-02-10 23:13:44'),(42,'Notebook HP 15-EF2127WM silver 15.6\", AMD Ryzen 5 5500U  8GB de RAM 256GB SSD',2,'Pantalla con gran impacto visual\r\nSu pantalla de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 6 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.',96999,10,10,'2022-02-10 01:08:32','2022-02-10 23:14:48'),(43,'Notebook Dell Inspiron 3505 plata 15.6\", AMD Ryzen 5 3450U  8GB de RAM 256GB SSD',2,'Los equipos Dell se destacan por ofrecer soluciones reales para cada una de las necesidades. Ya sea para conectarte, entretenerte, trabajar o colaborar de manera online, podrás hacerlo de forma segura desde cualquier lugar y en cualquier momento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.',99999,10,10,'2022-02-10 01:09:33','2022-02-10 23:14:59'),(44,'Notebook Lenovo IdeaPad 15ITL6  arctic gray táctil Core i5 1135G7  12GB de RAM 2',2,'La notebook Lenovo IdeaPad 3 fue pensada para hacer tu vida más sencilla. Su diseño elegante e innovador y su comodidad para transportarla, la convertirá en tu PC favorita. Cualquier tarea que te propongas, ya sea en casa o en la oficina, la harás con facilidad gracias a su poderoso rendimiento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LCD de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n',120999,10,10,'2022-02-10 02:00:10','2022-02-10 23:15:25');
+INSERT INTO `products` VALUES (40,'Notebook Asus VivoBook X543UA gris oscura 15.6\"',2,'Pantalla con gran impacto visual\r\nSu pantalla LED de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador Intel Core i5 de 4 núcleos, está pensado para aquellas personas generadoras y consumidoras de contenidos. Con esta unidad central, la máquina llevará a cabo varios procesos de forma simultánea, desde edición de videos hasta retoques fotográficos con programas profesionales.',109999,10,10,'2022-02-10 01:04:45','2022-02-25 00:07:41'),(42,'Notebook HP 15-EF2127WM silver 15.6\", AMD Ryzen 5 5500U  8GB de RAM 256GB SSD',2,'Pantalla con gran impacto visual\r\nSu pantalla de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n\r\nEficiencia a tu alcance\r\nSu procesador AMD Ryzen 5 de 6 núcleos, te permitirá ejecutar programas variados y procesos indispensables para desenvolverte en el día a día, ya sea en tu trabajo o en los momentos de ocio en tu hogar.',96999,10,10,'2022-02-10 01:08:32','2022-02-25 00:09:19'),(43,'Notebook Dell Inspiron 3505 plata 15.6\", AMD Ryzen 5 3450U  8GB de RAM 256GB SSD',2,'Los equipos Dell se destacan por ofrecer soluciones reales para cada una de las necesidades. Ya sea para conectarte, entretenerte, trabajar o colaborar de manera online, podrás hacerlo de forma segura desde cualquier lugar y en cualquier momento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LED de 15.6\" y 1366x768 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.',99999,10,10,'2022-02-10 01:09:33','2022-02-25 00:09:51'),(44,'Notebook Lenovo IdeaPad 15ITL6  arctic gray táctil Core i5 1135G7  12GB de RAM 2',2,'La notebook Lenovo IdeaPad 3 fue pensada para hacer tu vida más sencilla. Su diseño elegante e innovador y su comodidad para transportarla, la convertirá en tu PC favorita. Cualquier tarea que te propongas, ya sea en casa o en la oficina, la harás con facilidad gracias a su poderoso rendimiento.\r\n\r\nPantalla con gran impacto visual\r\nSu pantalla LCD de 15.6\" y 1920x1080 px de resolución te brindará colores más vivos y definidos. Tus películas y series preferidas cobrarán vida, ya que ganarán calidad y definición en cada detalle.\r\n',120999,10,10,'2022-02-10 02:00:10','2022-02-25 00:10:31');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-22 19:49:26
+-- Dump completed on 2022-02-25 19:06:00
