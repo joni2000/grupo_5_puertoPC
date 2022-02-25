@@ -17,8 +17,8 @@ window.addEventListener('load', function(){
     $discountErrors = qs('#discountErrors'),
     $file = qs('#file'),
     $fileErrors = qs('#fileErrors'),
-    $imagePreview = qs('#img-preview')
-    
+    $imgPreview = qs('#img-preview'),
+    $form = qs('#form')   
     let validationsErrors = false;
     
     $inputName.addEventListener('blur', () => {
@@ -100,5 +100,52 @@ window.addEventListener('load', function(){
                 break;
         }
     })
+
+    $form.addEventListener('submit', function(event){
+        event.preventDefault()
+        
+        let error = false;
+        let elementsForm = this.elements;
+
+        for (let index = 0; index < elementsForm.length - 1; index++){
+            if(elementsForm[index].value == ''
+            && elementsForm[index].type !== 'file'){
+                elementsForm[index].classList.add('is-invalid');
+                submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                error = true
+            }
+        }
+
+        if(!error && !validationsErrors) {
+            $form.submit()
+        }
+
+    })
+
+    $file.addEventListener('change', function(){
+        let filePath = $file.value; //captura el valor del input
+        let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+        if(!allowedExtension.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
+            $file.value = '';
+            $imgPreview.innerHTML = '';
+            return false;
+        }else{
+            //Image preview
+            console.log($file.files)
+            if($file.files && $file.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    $imgPreview.innerHTML = `<img src="${e.target.result}" alt="">`
+                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`
+                };
+
+                reader.readAsDataURL($file.files[cont])
+                $fileErrors.innerHTML = '';
+                $file.classList.remove('is-invalid')
+            }
+        }
+    })
+
 
 })

@@ -20,7 +20,7 @@
         </nav>
     </header>    
     <main class="main-create padding-top-fixed">
-        <form class="form-create action=" action="/admin/store" method="POST" enctype="multipart/form-data" autocomplete="off">
+        <form class="form-create action=" id="form" action="/admin/store" method="POST" enctype="multipart/form-data" autocomplete="off">
                 <h2 class="title-crear">Crear Producto</h2>
                 <hr class="hr-create">
                 <div class="container-input">
@@ -81,22 +81,18 @@
                             
                         </div>
                         <figure class="select-image">
-                            <label class="text-form" for="image">Seleccionar imagen</label>
+                            <label class="text-form" for="image">Seleccionar imagen principal</label>
                             <input class="buttom-image" type="file" name="image" id="file" multiple>
                         </figure>    
                         <figure class="select-image">
-                            <label class="text-form" for="image">Seleccionar imagen</label>
-                            <input class="buttom-image" type="file" name="image" id="image" multiple>
-                        </figure>    
-                        <figure class="select-image">
-                            <label class="text-form" for="image">Seleccionar imagen</label>
+                            <label class="text-form" for="image">agregar mas imagenes</label>
                             <input class="buttom-image" type="file" name="image" id="image" multiple>
                         </figure>    
                     </div>
                     <% if (locals.errors && errors.image) { %>
                         <span class="text-danger"><%= errors.image.msg %> </span>
                     <% } %>
-                    <span class="error" id="fileErrors"></span>
+                    <span class="error-message" id="fileErrors"></span>
 
                     <button  class="button-buy button-submit-create" type="submit">
                         Guardar producto

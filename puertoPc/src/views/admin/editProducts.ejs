@@ -14,7 +14,7 @@
         </nav>
     </header>    
     <main class="main-create padding-top-fixed">
-        <form class="form-create" action="/admin/editar/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="none">
+        <form class="form-create" id="form" action="/admin/editar/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="none">
             <h2 class="title-crear">Editar Producto</h2>
                 <hr class="hr-create">    
             <div class="container-input">
@@ -66,15 +66,11 @@
                 </div>
                 <div class="container-select-image">
                     <figure class="select-image">
-                        <label class="text-form" for="image">Seleccionar imagen</label>
+                        <label class="text-form" for="image">Seleccionar imagen principal</label>
                         <input class="buttom-image" type="file" name="image" id="image" multiple>
                     </figure>    
                     <figure class="select-image">
-                        <label class="text-form" for="image">Seleccionar imagen</label>
-                        <input class="buttom-image" type="file" name="image" id="image" multiple>
-                    </figure>    
-                    <figure class="select-image">
-                        <label class="text-form" for="image">Seleccionar imagen</label>
+                        <label class="text-form" for="image">Agregar mas imagenes</label>
                         <input class="buttom-image" type="file" name="image" id="image" multiple>
                     </figure>    
                 </div>
