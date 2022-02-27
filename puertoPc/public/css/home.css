@@ -182,15 +182,29 @@ i.fa-chevron-down:hover {
     background-color: var(--grey);
 }
 
-i.fa-chevron-down:nth-child(5) {
+.fa-chevron-down:nth-child(5) {
     position: absolute;
     transform: rotate(90deg);
     left: -0.2rem;
 }
 
-i.fa-chevron-down:nth-child(6) {
+.fa-chevron-down:nth-child(6) {
     position: absolute;
     transform: rotate(270deg);
+    right: -0.2rem;
+}
+
+a .fa-1 {
+    position: absolute;
+    transform: rotate(90deg);
+    top: 24.2rem;
+    left: -0.2rem;
+}
+
+a .fa-2 {
+    position: absolute;
+    transform: rotate(270deg);
+    top: 24.2rem;
     right: -0.2rem;
 }
 
