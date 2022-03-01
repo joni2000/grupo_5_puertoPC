@@ -18,7 +18,9 @@ window.addEventListener('load', function(){
     $file = qs('#file'),
     $fileErrors = qs('#fileErrors'),
     $imgPreview = qs('#img-preview'),
-    $form = qs('#form')   
+    $form = qs('#form'),
+    $moreImages = qs('#more-images'),
+    $mainImage = qs('#main-image')
     let validationsErrors = false;
     
     $inputName.addEventListener('blur', () => {
@@ -136,13 +138,15 @@ window.addEventListener('load', function(){
             if($file.files && $file.files[0]) {
                 let reader = new FileReader();
                 reader.onload = function(e) {
-                    $imgPreview.innerHTML = `<img src="${e.target.result}" alt="">`
-                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`
+                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
+                    $imgPreview.classList.add('border');
+                    $mainImage.style.display = 'none'
+                    $moreImages.style.display = 'block';
                 };
 
-                reader.readAsDataURL($file.files[cont])
+                reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = '';
-                $file.classList.remove('is-invalid')
+                $file.classList.remove('is-invalid');
             }
         }
     })
