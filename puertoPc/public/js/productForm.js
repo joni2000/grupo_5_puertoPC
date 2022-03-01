@@ -18,9 +18,11 @@ window.addEventListener('load', function(){
     $file = qs('#file'),
     $fileErrors = qs('#fileErrors'),
     $imgPreview = qs('#img-preview'),
+    $submitErrors = qs('#submit-errors')
     $form = qs('#form'),
     $moreImages = qs('#more-images'),
-    $mainImage = qs('#main-image')
+    $mainImage = qs('#main-image'),
+    $btnDelete = qs('#btn-delete')
     let validationsErrors = false;
     
     $inputName.addEventListener('blur', () => {
@@ -113,7 +115,7 @@ window.addEventListener('load', function(){
             if(elementsForm[index].value == ''
             && elementsForm[index].type !== 'file'){
                 elementsForm[index].classList.add('is-invalid');
-                submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
                 error = true
             }
         }
@@ -143,10 +145,13 @@ window.addEventListener('load', function(){
                     $mainImage.style.display = 'none'
                     $moreImages.style.display = 'block';
                 };
-
+                
+                
                 reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = '';
                 $file.classList.remove('is-invalid');
+        
+                $btnDelete.onmouseover = () => console.log('funciona')
             }
         }
     })

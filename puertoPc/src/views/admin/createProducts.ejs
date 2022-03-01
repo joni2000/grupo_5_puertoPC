@@ -78,7 +78,7 @@
                 </div>
                     <div class="container-select-image">
                         <figure class="img-container" id="img-preview">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <i class="fa-solid fa-trash-can" id="btn-delete" style="z-index: 1;"></i>
                         </figure>
                         <figure class="select-image" id="main-image">
                             <label class="text-form" for="image"><i class="fa-solid fa-image"></i></label>
@@ -93,7 +93,8 @@
                         <span class="text-danger"><%= errors.image.msg %> </span>
                     <% } %>
                     <span class="error-message" id="fileErrors"></span>
-
+                    
+                    <span class="error-message" id="submit-errors"></span>
                     <button  class="button-buy button-submit-create" type="submit">
                         Guardar producto
                     </button>
