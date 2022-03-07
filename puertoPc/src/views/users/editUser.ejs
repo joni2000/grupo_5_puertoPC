@@ -52,9 +52,9 @@
                                 </div>
                                 <div class="data ">
                                     <label>Provincia:</label>
-                                    <select class="select-css" name="" id="">                       
-                                    <% provinces.forEach(province => { %>
-                                        <option value="<%= province.id %>"><%= province.nombre %></option>
+                                    <select class="select-css" name="province" id="province">                       
+                                    <% provincias.forEach(province => { %>
+                                        <option value="<%= province.nombre %>"><%= province.nombre %></option>
                                     <% }) %> 
                                     </select>
                                     <% if (locals.errors && errors.province) { %>

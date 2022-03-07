@@ -1,6 +1,6 @@
 //let {getUsers, writeJson} = require("../data/dataBase")
 let { validationResult } = require('express-validator');
-const { redirect } = require("express/lib/response");
+/* const { redirect } = require("express/lib/response"); */
 //const session = require("express-session");
 const db = require('../data/models')
 let bcrypt = require('bcryptjs')
@@ -119,12 +119,15 @@ var usersController = {
             user
         }) */
         )},
-    editUser: (req, res) => {
-
+    editUser: async (req, res) => {
+        let provinces = await fetch("https://apis.datos.gob.ar/georef/api/provincias").then(response => response.json())
+        let provincias = provinces.provincias
+        /* return res.render(`users/editUser${req.params.id}`, {provinces: provinces.provincias}) */
         Users.findByPk(req.params.id)
             .then(user => {
                     res.render('users/editUser', {
                     title: "Edición de usuario",
+                    provincias,
                     user,
                     session: req.session,
 
@@ -138,7 +141,7 @@ var usersController = {
             user
         }) */
     },
-    updateUser: (req, res) => {
+    updateUser: async (req, res) => {
         let errors = validationResult(req);
        
         if(errors.isEmpty()){
@@ -154,22 +157,18 @@ var usersController = {
             where: {
                 id: req.params.id,
             }
-        })
-        .then(result => {
-            Users.update({
-                where: {
-                    id: req.params.id
-                }
-            }).then(() => {
-                res.redirect(`users/profileUser/${req.params.id}`)
-            })
+        }).then(() => {
+            res.redirect(`/profileUser/${req.params.id}`)
         }).catch(error => console.log(error))
         }else{
+            let provinces = await fetch("https://apis.datos.gob.ar/georef/api/provincias").then(response => response.json())
+            let provincias = provinces.provincias
             Users.findByPk(req.params.id)
             .then(user => {
                     res.render('users/editUser', {
                     errors: errors.mapped(),
                     title: "Edición de usuario",
+                    provincias,
                     user,
                     session: req.session,
 
@@ -181,12 +180,9 @@ var usersController = {
 
     listProvinces: async (req, res) => {
         let provinces = await fetch("https://apis.datos.gob.ar/georef/api/provincias").then(response => response.json())
-        Users.findByPk(req.params.id)
-        .then(user => {
-            return res.render(`users/editUser${req.params.id}`, {provinces: provinces.provincias}, user)
-        })
-            /* return res.render(`users/editUser${req.params.id}`, {provinces: provinces.provincias}) */
         
+            return res.render(`users/editUser${req.params.id}`, {provinces: provinces.provincias})
+            
     },
     
 }      

@@ -23,10 +23,10 @@ router.get("/profileUser/:id", userCheck, usersController.profileUser);
 
 /* PUT - Profile User */
 router.get("/editUser/:id", userCheck, usersController.editUser)
-router.get("/editUser", usersController.listProvinces)
+/* router.get("/editUser", usersController.listProvinces) */
 
 router.put("/editUser/:id", editUserValidator, userCheck, usersController.updateUser);
-router.put("/editUser", usersController.listProvinces)
+/* router.put("/editUser", usersController.listProvinces) */
 
 
 module.exports = router;
