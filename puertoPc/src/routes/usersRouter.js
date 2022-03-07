@@ -6,6 +6,8 @@ var loginValidator = require('../validations/loginValidator');
 var registerValidator = require('../validations/registerValidator');
 var editUserValidator = require('../validations/editUserValidator');
 
+var uploadAvatar = require("../middlewares/uploadAvatar")
+
 let userCheck = require('../middlewares/userCheck');
 const { editUser } = require('../controllers/usersController');
 
@@ -25,7 +27,8 @@ router.get("/profileUser/:id", userCheck, usersController.profileUser);
 router.get("/editUser/:id", userCheck, usersController.editUser)
 /* router.get("/editUser", usersController.listProvinces) */
 
-router.put("/editUser/:id", editUserValidator, userCheck, usersController.updateUser);
+router.put("/editUser/:id", uploadAvatar.single("image"), editUserValidator, userCheck, usersController.updateUser);
+
 /* router.put("/editUser", usersController.listProvinces) */
 
 
