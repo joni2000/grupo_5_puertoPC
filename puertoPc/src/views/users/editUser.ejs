@@ -40,24 +40,48 @@
                             <div>
                                 <div class="data ">
                                     <label>País:</label>
-                                    <input type="text" name="country" value="<%-user.country%>">
+                                    <select class="select-css" name="country" id="country" placeholder="dsaf">                       
+                                        
+                                            <option>Argentina</option>
+                                        
+                                        </select>
+                                    <% if (locals.errors && errors.country) { %>
+                                        <span class="error-message-editUser"><%= errors.country.msg %></span>
+                                        <% } %>
+
                                 </div>
                                 <div class="data ">
                                     <label>Provincia:</label>
-                                    <input type="text" name="province" value="<%-user.province%>">
+                                    <select class="select-css" name="" id="">                       
+                                    <% provinces.forEach(province => { %>
+                                        <option value="<%= province.id %>"><%= province.nombre %></option>
+                                    <% }) %> 
+                                    </select>
+                                    <% if (locals.errors && errors.province) { %>
+                                        <span class="error-message-editUser"><%= errors.province.msg %></span>
+                                        <% } %>
                                 </div>
                                 <div class="data ">
                                     <label>Ciudad:</label>
-                                    <input type="text" name="city" value="<%-user.city%>">
+                                    <input type="city" name="city" value="<%-user.city%>">
+                                    <% if (locals.errors && errors.city) { %>
+                                        <span class="error-message-editUser"><%= errors.city.msg %></span>
+                                        <% } %>
                                 </div>
                                 <div class="data ">
                                     <label>Domicilio: </label>
                                     <input type="address" name="address" value="<%-user.address%>">
+                                    <% if (locals.errors && errors.address) { %>
+                                        <span class="error-message-editUser"><%= errors.address.msg %></span>
+                                        <% } %>
                                 </div>
 
                                 <div class="data ">
                                     <label>Teléfono: </label>
                                     <input type="tel" name="phone" value="<%-user.phone%>">
+                                    <% if (locals.errors && errors.phone) { %>
+                                        <span class="error-message-editUser"><%= errors.phone.msg %></span>
+                                        <% } %>
                                 </div>
 
                             </div>

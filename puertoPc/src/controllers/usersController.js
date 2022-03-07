@@ -4,6 +4,7 @@ const { redirect } = require("express/lib/response");
 //const session = require("express-session");
 const db = require('../data/models')
 let bcrypt = require('bcryptjs')
+const fetch = require("node-fetch");
 
 const Users = db.User;
 
@@ -36,7 +37,7 @@ var usersController = {
                         }
             
                        if(req.body.keepsession){
-                           const TIME_IN_MILISECONDS = 60000
+                           const TIME_IN_MILISECONDS = 60000000
                            res.cookie("userPuertoPc", req.session.user, {
                                expires: new Date(Date.now() + TIME_IN_MILISECONDS),
                                httpOnly: true,
@@ -138,24 +139,17 @@ var usersController = {
         }) */
     },
     updateUser: (req, res) => {
-
-        const { id, first_name, last_name, email, password, address, city, phone, rol, image, country, province } = req.body;
+        let errors = validationResult(req);
+       
+        if(errors.isEmpty()){
+        const { address, city, country, province,  phone,} = req.body;
         
         Users.update({
-            id,
-                first_name, 
-                last_name, 
-                email, 
-                password, 
                 address,
                 city, 
-                phone, 
-                rol, 
-                image, 
                 country, 
                 province,
-                rol: 'ROL_USER',
-                image: req.file ? req.file.filename: "default-image.png"
+                phone,  
         }, {
             where: {
                 id: req.params.id,
@@ -166,34 +160,35 @@ var usersController = {
                 where: {
                     id: req.params.id
                 }
+            }).then(() => {
+                res.redirect(`users/profileUser/${req.params.id}`)
             })
-            .then(res.redirect(`/profileUser/${req.params.id}`))
-            .catch(error => console.log(error))
+        }).catch(error => console.log(error))
+        }else{
+            Users.findByPk(req.params.id)
+            .then(user => {
+                    res.render('users/editUser', {
+                    errors: errors.mapped(),
+                    title: "Edición de usuario",
+                    user,
+                    session: req.session,
+
+                });
+            }).catch(error => console.log(error))
+        }
+    
+    },
+
+    listProvinces: async (req, res) => {
+        let provinces = await fetch("https://apis.datos.gob.ar/georef/api/provincias").then(response => response.json())
+        Users.findByPk(req.params.id)
+        .then(user => {
+            return res.render(`users/editUser${req.params.id}`, {provinces: provinces.provincias}, user)
         })
+            /* return res.render(`users/editUser${req.params.id}`, {provinces: provinces.provincias}) */
         
-        
-
-        /* let userId = +req.params.id;
-            let {firstName, lastName, email, password, country, province, city, address, phone} = req.body
-            getUsers.forEach(user => {
-                if(user.id === userId){
-                    user.id = user.id,
-                    user.firstName,
-                    user.lastName,
-                    user.email,
-                    user.password,
-                    user.country = req.body.country,
-                    user.province = req.body.province,
-                    user.city = req.body.city,
-                    user.address = req.body.address,
-                    user.phone = req.body.phone,
-                    user.image = req.file ? [req.file.filename] : user.image
-                }
-            })
-                writeJson(getUsers, "users")
-                res.redirect('/profileUser') */
-    }
-
-}
+    },
+    
+}      
 
 module.exports = usersController;
