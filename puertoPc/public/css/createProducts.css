@@ -71,6 +71,13 @@ header .top-create {
     background-color: white;
 }
 
+.container-select-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .select-image {
     background-color: var(--blue);
     border-radius: 0.8rem;
@@ -98,6 +105,10 @@ header .top-create {
     color: white;
 }
 
+.more-images {
+    display: none;
+}
+
 .buttom-image {
     opacity: 0;
     width: 100%;
@@ -114,6 +125,41 @@ header .top-create {
     font-family: var(--fontText);
     font-weight: bold;
 }
+
+.img-container {
+    border-radius: 5px;
+    width:  25rem;
+    height: 25rem;
+    display: none;
+    position: relative;
+}
+
+.border {
+    border: solid 1px rgb(175, 175, 175);
+    display: block;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.fa-trash-can {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: red;
+    font-size: 2rem;
+    opacity: 60%;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.fa-trash-can:hover {
+    opacity: 100%;
+    
+}
+
 
 .button-submit-create:hover {
     transform: scale(1.02);
@@ -132,21 +178,15 @@ header .top-create {
     .container-select-image {
         width: 90%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
     }
 
-    .select-image:nth-child(2),
-    .select-image:nth-child(3){
+    .select-image:nth-child(2){
         display: block;
     }
 
     .select-image {
         width: 30%;
         height: 10rem;
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
         background-color: white;
         border-style: dashed solid ;
         border-color: var(--blue);

@@ -1,26 +1,30 @@
-function qs (element) {
+function qs(element) {
     return document.querySelector(element)
 }
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
     let $inputName = qs('#name'),
-    $nameErrors = qs('#nameErrors'),
-    $inputDescription = qs('#description'),
-    $descriptionErrors = qs('#descriptionErrors'),
-    $category = qs('#category'),
-    $categoryErrors = qs('#categoryErrors'),
-    $inputStock = qs('#stock'),
-    $stockErrors = qs('#stockErrors'),
-    $inputPrice = qs('#price'),
-    $priceErrors = qs('#priceErrors'),
-    $inputDiscount = qs('#discount'),
-    $discountErrors = qs('#discountErrors'),
-    $file = qs('#file'),
-    $fileErrors = qs('#fileErrors'),
-    $imgPreview = qs('#img-preview'),
-    $form = qs('#form')   
+        $nameErrors = qs('#nameErrors'),
+        $inputDescription = qs('#description'),
+        $descriptionErrors = qs('#descriptionErrors'),
+        $category = qs('#category'),
+        $categoryErrors = qs('#categoryErrors'),
+        $inputStock = qs('#stock'),
+        $stockErrors = qs('#stockErrors'),
+        $inputPrice = qs('#price'),
+        $priceErrors = qs('#priceErrors'),
+        $inputDiscount = qs('#discount'),
+        $discountErrors = qs('#discountErrors'),
+        $file = qs('#file'),
+        $fileErrors = qs('#fileErrors'),
+        $imgPreview = qs('#img-preview'),
+        $submitErrors = qs('#submit-errors')
+    $form = qs('#form'),
+        $moreImages = qs('#more-images'),
+        $mainImage = qs('#main-image'),
+        $btnDelete = qs('#btn-delete')
     let validationsErrors = false;
-    
+
     $inputName.addEventListener('blur', () => {
         switch (true) {
             case !$inputName.value.trim():
@@ -41,7 +45,7 @@ window.addEventListener('load', function(){
         }
     })
 
-    $inputDescription.addEventListener('blur', ()=> {
+    $inputDescription.addEventListener('blur', () => {
         switch (true) {
             case !$inputDescription.value.trim():
                 $descriptionErrors.innerHTML = 'Debes agregar una descripción';
@@ -56,7 +60,7 @@ window.addEventListener('load', function(){
         }
     })
 
-    $category.addEventListener('blur', ()=> {
+    $category.addEventListener('blur', () => {
         switch (true) {
             case !$category.value.trim():
                 $categoryErrors.innerHTML = 'Debes elegir una categoría';
@@ -71,7 +75,7 @@ window.addEventListener('load', function(){
         }
     })
 
-    $inputStock.addEventListener('blur', ()=> {
+    $inputStock.addEventListener('blur', () => {
         switch (true) {
             case !$inputStock.value.trim():
                 $stockErrors.innerHTML = 'Debes asignar un Stock válido';
@@ -86,7 +90,7 @@ window.addEventListener('load', function(){
         }
     })
 
-    $inputPrice.addEventListener('blur', ()=> {
+    $inputPrice.addEventListener('blur', () => {
         switch (true) {
             case !$inputPrice.value.trim():
                 $priceErrors.innerHTML = 'Debes ingresar un precio';
@@ -101,48 +105,53 @@ window.addEventListener('load', function(){
         }
     })
 
-    $form.addEventListener('submit', function(event){
+    $form.addEventListener('submit', function (event) {
         event.preventDefault()
-        
+
         let error = false;
         let elementsForm = this.elements;
 
-        for (let index = 0; index < elementsForm.length - 1; index++){
-            if(elementsForm[index].value == ''
-            && elementsForm[index].type !== 'file'){
+        for (let index = 0; index < elementsForm.length - 1; index++) {
+            if (elementsForm[index].value == ''
+                && elementsForm[index].type !== 'file') {
                 elementsForm[index].classList.add('is-invalid');
-                submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
                 error = true
             }
         }
 
-        if(!error && !validationsErrors) {
+        if (!error && !validationsErrors) {
             $form.submit()
         }
 
     })
 
-    $file.addEventListener('change', function(){
+    $file.addEventListener('change', function () {
         let filePath = $file.value; //captura el valor del input
         let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-        if(!allowedExtension.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+        if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
             $file.value = '';
             $imgPreview.innerHTML = '';
             return false;
-        }else{
+        } else {
             //Image preview
             console.log($file.files)
-            if($file.files && $file.files[0]) {
+            if ($file.files && $file.files[0]) {
                 let reader = new FileReader();
-                reader.onload = function(e) {
-                    $imgPreview.innerHTML = `<img src="${e.target.result}" alt="">`
-                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`
+                reader.onload = function (e) {
+                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
+                    $imgPreview.classList.add('border');
+                    $mainImage.style.display = 'none'
+                    $moreImages.style.display = 'block';
                 };
 
-                reader.readAsDataURL($file.files[cont])
+
+                reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = '';
-                $file.classList.remove('is-invalid')
+                $file.classList.remove('is-invalid');
+
+                $btnDelete.onmouseover = () => console.log('funciona')
             }
         }
     })

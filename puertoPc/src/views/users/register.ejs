@@ -1,98 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('../partials/head.ejs') %> 
-   <body class="body-register">
-       <%- include('../partials/headerLogin.ejs') %> 
 
-      <main class="box-form-register">
-        <form action="/register" method="POST">
-          <div class="box-register">
-            
-               <h2>Registro de Usuario</h2>
-                   <div class="container-inputs-register">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <title>Puerto Pc</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/menuMobile.js" defer></script>
+</head>
 
-                    <div class="box-input-register">
-                      <label for="name">Nombre:</label>
-                      <input class="input-register" type="text" name="first_name" id="name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.first_name %>">
-                      <% if (locals.errors && errors.first_name) { %>
-                      <span class="error-message-register"><%= errors.first_name.msg %></span>
-                      <% } %>
+<body class="body-register">
+  <%- include('../partials/headerLogin.ejs') %>
 
-                      <label for="name">Apellido:</label>
-                      <input class="input-register" type="text" name="last_name" id="name" placeholder="Ingresa tu apellido" value="<%= locals.old && old.last_name %>">
-                      <% if (locals.errors && errors.last_name) { %>
-                      <span class="error-message-register"><%= errors.last_name.msg %></span>
-                      <% } %> 
+    <main class="box-form-register">
+      <form action="/register" method="POST">
+        <div class="box-register">
+
+          <h2>Registro de Usuario</h2>
+          <div class="container-inputs-register">
+
+            <div class="box-input-register">
+              <label for="name">Nombre:</label>
+              <input class="input-register" type="text" name="first_name" id="name" placeholder="Ingresa tu nombre"
+                value="<%= locals.old && old.first_name %>">
+              <% if (locals.errors && errors.first_name) { %>
+                <span class="error-message-register">
+                  <%= errors.first_name.msg %>
+                </span>
+                <% } %>
+                <span class="error-message-register" id="first_nameErrors"></span>
+
+                  <label for="name">Apellido:</label>
+                  <input class="input-register" type="text" name="last_name" id="name" placeholder="Ingresa tu apellido"
+                    value="<%= locals.old && old.last_name %>">
+                  <% if (locals.errors && errors.last_name) { %>
+                    <span class="error-message-register">
+                      <%= errors.last_name.msg %>
+                    </span>
+                    <% } %>
+                      <span class="error error-message-register"id="last_nameError"></span>
 
                       <label for="address">Domicilio (opcional):</label>
-                      <input class="input-register" type="text" name="address" id="address" placeholder="Ingresa tu dirección" value="<%= locals.old && old.address %>">
+                      <input class="input-register" type="text" name="address" id="address"
+                        placeholder="Ingresa tu dirección" value="<%= locals.old && old.address %>">
                       <% if (locals.errors && errors.address) { %>
-                      <span class="error-message-register"><%= errors.address.msg %></span>
-                      <% } %> 
+                        <span class="error-message-register">
+                          <%= errors.address.msg %>
+                        </span>
+                        <% } %>
+                        <span class="error-message-register" id="addressErrors"></span>
+                        
 
-                    </div>
-                    <hr class="hr-register-desktop">
-                    <div class="box-input-register2">
+            </div>
+            <hr class="hr-register-desktop">
+            <div class="box-input-register2">
 
-                      <label for="email">Email:</label>
-                      <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo" value="<%= locals.old && old.email %>">
-                      <% if (locals.errors && errors.email) { %>
-                      <span class="error-message-register"><%= errors.email.msg %></span>
-                      <% } %> 
+              <label for="email">Email:</label>
+              <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo"
+                value="<%= locals.old && old.email %>">
+              <% if (locals.errors && errors.email) { %>
+                <span class="error-message-register">
+                  <%= errors.email.msg %>
+                </span>
+                <% } %>
+                <span class="error-message-register" id="emailErrors"></span>
 
-                      <label for="password">Contraseña:</label>
-                      <input class="input-register" type="password"  name="password" id="password" placeholder="Ingresa una contraseña" value="<%= locals.old && old.password %>">
-                      <% if (locals.errors && errors.password) { %>
-                      <span class="error-message-register"><%= errors.password.msg %></span>
-                      <% } %> 
+                  <label for="password">Contraseña:</label>
+                  <input class="input-register" type="password" name="password" id="password"
+                    placeholder="Ingresa una contraseña" value="<%= locals.old && old.password %>">
+                  <% if (locals.errors && errors.password) { %>
+                    <span class="error-message-register">
+                      <%= errors.password.msg %>
+                    </span>
+                    <% } %>
+                    <span class="error-message-register" id="passwordErrors"></span>
 
                       <label for="password2">Repite tu contraseña:</label>
-                      <input class="input-register" type="password" name="password2" id="password2" placeholder="Repite tu contraseña" value="<%= locals.old && old.password2 %>">
+                      <input class="input-register" type="password" name="password2" id="password2"
+                        placeholder="Repite tu contraseña" value="<%= locals.old && old.password2 %>">
                       <% if (locals.errors && errors.password2) { %>
-                      <span class="error-message-register"><%= errors.password2.msg %></span>
-                      <% } %> 
+                        <span class="error-message-register">
+                          <%= errors.password2.msg %>
+                        </span>
+                        <% } %>
+                        <span class="error-message-register" id="password2Errors"></span>
 
-                    </div> 
-
-                    </div>
-                <div class="terms">
-                   <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
-                   <input class="check-terms" type="checkbox" name="terms" id="terms">
-                   <% if (locals.errors && errors.terms) { %> 
-                    <span class="error-message-register"><%= errors.terms.msg %></span>
-                   <% } %> 
-                 </div>
-
-                 <div class="submit-register">
-                       <button type="submit" class="registrarse">Registrarse</button> 
-                 </div>
-            <hr class="hr-register">
-
-           <div class="button-img-fb">
-               
-               <button><i class="fab fa-facebook-square"></i>registrarse con facebook</button>
             </div>
-      
-           <div class="button-img-google-register">
-             <button><img src="/images/button-login/google1.png" alt="icon-google">Registrarse con google</button>
-           </div>
-      
-      
-            <div class="icon-register-fb-box">
-              <span class="icon-register-text">o registrarse con: </span>
-             <button class="icon-register-fb"><i class="fab fa-facebook-square"></i></button>
-           </div>
-           <div class="icon-register-gl-box">
-               <span  class="icon-register-text2">o</span>
-              <button class="icon-register-gl"><img src="/images/button-login/google1.png" alt="icon-google"></button>
-           </div>
-      
-              <span class="end-register">¿Ya tienes una cuenta? <a href="login">Ingresa aquí</a></span>
-         </div>
-       </form>
-      </main>   
-   
-      <%- include('../partials/footer.ejs') %> 
 
-  </body>
+          </div>
+          <div class="terms">
+            <label for="terms">Acepto los <a href="">términos y condiciones</a></label>
+            <input class="check-terms" type="checkbox" name="terms" id="terms">
+            <% if (locals.errors && errors.terms) { %>
+              <span class="error-message-register">
+                <%= errors.terms.msg %>
+              </span>
+              <% } %>
+              <span class="error-message-register" id="termsErrors"></span>
+
+          </div>
+
+          <div class="submit-register">
+            <button type="submit" class="registrarse">Registrarse</button>
+          </div>
+          <hr class="hr-register">
+
+          <div class="button-img-fb">
+
+            <button><i class="fab fa-facebook-square"></i>registrarse con facebook</button>
+          </div>
+
+          <div class="button-img-google-register">
+            <button><img src="/images/button-login/google1.png" alt="icon-google">Registrarse con google</button>
+          </div>
+
+
+          <div class="icon-register-fb-box">
+            <span class="icon-register-text">o registrarse con: </span>
+            <button class="icon-register-fb"><i class="fab fa-facebook-square"></i></button>
+          </div>
+          <div class="icon-register-gl-box">
+            <span class="icon-register-text2">o</span>
+            <button class="icon-register-gl"><img src="/images/button-login/google1.png" alt="icon-google"></button>
+          </div>
+
+          <span class="end-register">¿Ya tienes una cuenta? <a href="login">Ingresa aquí</a></span>
+        </div>
+      </form>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+
 </html>

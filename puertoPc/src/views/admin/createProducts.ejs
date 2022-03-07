@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <title>Puerto Pc</title>
         <link rel="stylesheet" href="/css/style.css">
-        <script src="/js/menuMobile.js" defer></script>    
+        <script src="/js/menuMobile.js" defer></script>
+        <script src="https://kit.fontawesome.com/20e7bf528f.js" crossorigin="anonymous"></script>    
     </head>
 <body class="body-create">
     <header class="header">
@@ -77,23 +77,24 @@
                     <span class="error" id="discountErrors"></span>
                 </div>
                     <div class="container-select-image">
-                        <div class="img-container" id="img-preview">
-                            
-                        </div>
-                        <figure class="select-image">
-                            <label class="text-form" for="image">Seleccionar imagen principal</label>
-                            <input class="buttom-image" type="file" name="image" id="file" multiple>
+                        <figure class="img-container" id="img-preview">
+                            <i class="fa-solid fa-trash-can" id="btn-delete" style="z-index: 1;"></i>
+                        </figure>
+                        <figure class="select-image" id="main-image">
+                            <label class="text-form" for="image"><i class="fa-solid fa-image"></i></label>
+                            <input class="buttom-image" type="file" name="image" id="file">
                         </figure>    
-                        <figure class="select-image">
+                        <figure class="select-image more-images" id="more-images">
                             <label class="text-form" for="image">agregar mas imagenes</label>
-                            <input class="buttom-image" type="file" name="image" id="image" multiple>
+                            <input class="buttom-image" type="file" name="image" id="files" multiple>
                         </figure>    
                     </div>
                     <% if (locals.errors && errors.image) { %>
                         <span class="text-danger"><%= errors.image.msg %> </span>
                     <% } %>
                     <span class="error-message" id="fileErrors"></span>
-
+                    
+                    <span class="error-message" id="submit-errors"></span>
                     <button  class="button-buy button-submit-create" type="submit">
                         Guardar producto
                     </button>
