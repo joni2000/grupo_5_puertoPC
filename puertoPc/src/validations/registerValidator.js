@@ -37,9 +37,29 @@ module.exports = [
         max: 12
     })
     .withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+    
 
     body('password2').custom((value, {req}) => value !== req.body.password ? false : true)
     .withMessage('Las contraseñas no coinciden'),
+
+    check('phone')
+    .notEmpty()
+    .withMessage("Debes ingresar tu teléfono")
+    .isMobilePhone()
+    .withMessage("Debes ingresar un número de teléfono válido")
+
+    .custom((value) => {
+        return db.User.findOne({
+            where: {
+                phone: value,
+            }
+        })
+        .then((user) => {
+            if(user){
+                return Promise.reject('Teléfono ya registrado')
+            }
+        })
+    }),
 
     check('terms')
     .isString('on')

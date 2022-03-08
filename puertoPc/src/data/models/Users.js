@@ -39,6 +39,8 @@ module.exports = (sequelize, dataTypes) => {
 
         phone: {
             type: dataTypes.STRING(30) ,
+            allowNull: false,
+
         },
 
         rol: {

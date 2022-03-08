@@ -9,6 +9,55 @@
     flex-direction: column;
     align-items: center;
 }
+.avatar-editUser img{
+    border-radius: 5rem;
+    border: 0.2rem solid var(--blue);
+    margin: 1rem;
+}
+.btnAvatar{
+	text-align: center;
+	color:white;
+}
+
+.avatar-editUser .div_file{
+    border: none;
+    width: 20%;
+    height: 10%;
+    font-size: 2rem;
+    font-family: var(--fontBebas);
+    color: white;
+    background-color: var(--darkBlue);
+    border-radius: 0.2rem;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.3rem;
+    box-shadow: 0.3rem 0.3rem 0.2rem rgb(0 0 0 / 25%);
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    position: relative;
+
+}
+
+.uploadAvatar{
+    font-family: var(--fontBebas);
+
+	position: absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	width:100%;
+	height:100%;
+	opacity: 0;
+}
+.avatar-editUser .div_file:hover{
+	background-color: #2baefa;
+    transition: all .3s ease-in-out;
+}
+.avatar-editUser .div_file:focus{
+    outline: none;
+    border-color: var(--blue);
+}
+
 .button-edit-info .submit{
     color: white;
     font-size: 2rem;

@@ -20,18 +20,8 @@ module.exports = [
     .withMessage('Debes ingresar tu dirección'),
 
 
-    check('phone')
-    .custom((value) => {
-        return db.User.findOne({
-            where: {
-                phone: value,
-            }
-        })
-        .then((user) => {
-            if(user){
-                return Promise.reject('Teléfono ya registrado')
-            }
-        })
-    }),
+    check('address')
+    .notEmpty()
+    .withMessage("Debes ingresar tu domicilio"),
 
 ]

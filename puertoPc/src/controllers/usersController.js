@@ -70,15 +70,14 @@ var usersController = {
         let errors = validationResult(req);
        
         if(errors.isEmpty()){
-            let { first_name, last_name, email, password } = req.body;
+            let { first_name, last_name, email, password, phone } = req.body;
             Users.create({
                 first_name, 
                 last_name,
                 email,
                 password: bcrypt.hashSync(password, 10),
-                address: "",
-                city: "", 
-                phone: "", 
+                phone,
+                city: "",  
                 country: "", 
                 province: "",
                 rol: 'rol_user',
@@ -112,18 +111,11 @@ var usersController = {
             user
         })
         .catch(error => res.send(error))
-
-/*         let user = getUsers.find(user => user.id === +req.session.user.id)
-        res.render('users/profileUser',{
-            title: "Perfil de usuario",
-            session: req.session,
-            user
-        }) */
         )},
+
     editUser: async (req, res) => {
         let provinces = await fetch("https://apis.datos.gob.ar/georef/api/provincias").then(response => response.json())
         let provincias = provinces.provincias
-        /* return res.render(`users/editUser${req.params.id}`, {provinces: provinces.provincias}) */
         Users.findByPk(req.params.id)
             .then(user => {
                     res.render('users/editUser', {
@@ -131,35 +123,23 @@ var usersController = {
                     provincias,
                     user,
                     session: req.session,
-
+                    old: req.body,
                 });
             }).catch(error => console.log(error))
-        
-        /* let user = getUsers.find(user => user.id === +req.session.user.id)
-        res.render('users/editUser',{
-            title: "Editar usuario",
-            session: req.session,
-            user
-        }) */
     },
+
     updateUser: async (req, res) => {
         let errors = validationResult(req);
-        console.log("effe")
-
-
-        console.log(errors)
 
         if(errors.isEmpty()){
-        const { image, address, city, country, province,  phone,} = req.body;
-       console.log(req.file)
+        const { image, address, city, country, province,} = req.body;
         
         Users.update({
                 image: req.file ? req.file.filename : 'default-image.png',
                 address,
                 city, 
                 country, 
-                province,
-                phone,  
+                province,  
         }, {
             where: {
                 id: req.params.id,
@@ -178,7 +158,7 @@ var usersController = {
                     provincias,
                     user,
                     session: req.session,
-
+                    old: req.body,
                 });
             }).catch(error => console.log(error))
         }

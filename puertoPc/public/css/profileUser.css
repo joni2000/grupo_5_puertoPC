@@ -20,6 +20,11 @@
     display: flex;
     justify-content: center;
 }
+.avatar-profileUser img{
+    border-radius: 5rem;
+    border: 0.2rem solid var(--blue);
+    margin: 1rem;
+}
 .form-account h4 {
     font-size: 1.8rem;
     padding: 2rem 0 0.5rem 0;

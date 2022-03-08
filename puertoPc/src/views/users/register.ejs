@@ -43,12 +43,12 @@
                     <% } %>
                       <span class="error error-message-register"id="last_nameError"></span>
 
-                      <label for="address">Domicilio (opcional):</label>
-                      <input class="input-register" type="text" name="address" id="address"
-                        placeholder="Ingresa tu dirección" value="<%= locals.old && old.address %>">
-                      <% if (locals.errors && errors.address) { %>
+                      <label for="phone">Teléfono:</label>
+                      <input class="input-register" type="text" name="phone" id="phone"
+                        placeholder="Ej.: 1165748724" value="<%= locals.old && old.phone %>">
+                      <% if (locals.errors && errors.phone) { %>
                         <span class="error-message-register">
-                          <%= errors.address.msg %>
+                          <%= errors.phone.msg %>
                         </span>
                         <% } %>
                         <span class="error-message-register" id="addressErrors"></span>
@@ -59,7 +59,7 @@
             <div class="box-input-register2">
 
               <label for="email">Email:</label>
-              <input class="input-register" type="email" name="email" id="email" placeholder="Ingresa tu correo"
+              <input class="input-register" type="email" name="email" id="email" placeholder="Ej.: nombre@correo.com"
                 value="<%= locals.old && old.email %>">
               <% if (locals.errors && errors.email) { %>
                 <span class="error-message-register">
