@@ -8,13 +8,13 @@
 
             <main class="padding-top-fixed">
 
-                <form class="form-account" action="/editUser/<%-user.id%>?_method=PUT" method="POST">
+                <form class="form-account" action="/editUser/<%-user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="my-account">
                         <h3>Mi cuenta</h3>
                         <div class="avatar-editUser">
-                            <label>Lugar para el avatar</label>
+                            <img src="/images/avatars/<%-user.image%>" alt="avatarImage">
                             <figure class="">
-                                <input class="" type="file" name="" id="">
+                                <input class="" type="file" name="image" id="avatar" value="<%-user.image%>">
                             </figure>
                         </div>
                     </div>
@@ -52,9 +52,9 @@
                                 </div>
                                 <div class="data ">
                                     <label>Provincia:</label>
-                                    <select class="select-css" name="" id="">                       
-                                    <% provinces.forEach(province => { %>
-                                        <option value="<%= province.id %>"><%= province.nombre %></option>
+                                    <select class="select-css" name="province" id="province">                       
+                                    <% provincias.forEach(province => { %>
+                                        <option value="<%= province.nombre %>"><%= province.nombre %></option>
                                     <% }) %> 
                                     </select>
                                     <% if (locals.errors && errors.province) { %>
