@@ -31,10 +31,10 @@ var usersController = {
                     .then(user => {
                         req.session.user = {
                             id: user.id,
-                     firstName: user.first_name,
-                     lastName: user.last_name,
-                     email: user.email,
-                     rol: user.rol
+                            firstName: user.first_name,
+                            lastName: user.last_name,
+                            email: user.email,
+                            rol: user.rol
                         }
             
                        if(req.body.keepsession){

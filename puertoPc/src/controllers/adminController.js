@@ -91,7 +91,12 @@ var adminController = {
 
         editProducts: (req, res )=> { 
             let productId = Number(req.params.id);
-             const productPromise = Products.findByPk(productId);
+             const productPromise = Products.findOne({
+                include: [{ association: 'image'}],
+                where: {
+                  id: productId
+                }
+             });
              const categoriesPromise = Categories.findAll();
             Promise.all([productPromise, categoriesPromise])
             .then(([product, categories])=>{
