@@ -65,18 +65,26 @@
                     <% } %>
                 </div>
                 <div class="container-select-image">
-                    <figure class="select-image">
-                        <label class="text-form" for="image">Seleccionar imagen principal</label>
-                        <input class="buttom-image" type="file" name="image" id="image" multiple>
-                    </figure>    
-                    <figure class="select-image">
-                        <label class="text-form" for="image">Agregar mas imagenes</label>
-                        <input class="buttom-image" type="file" name="image" id="image" multiple>
-                    </figure>    
+                    <figure class="img-container" id="img-preview">
+                        <div class="container-change-image">
+                            <label for="file-db"><i class="fa-solid fa-trash-can" id="btn-delete"></i></label>
+                            <input class="buttom-image" type="file" name="image" id="file-db">
+                        </div>
+                        <img id="db-image" src="/images/products/<%-product.image[0].name%>" alt="">
+                    </figure>
+                    <figure class="select-image" id="main-image">
+                        <label class="text-form" for="file"><i class="fa-solid fa-image"></i></label>
+                        <input class="buttom-image" type="file" name="image" id="file">
+                    </figure> 
+                    <figure class="select-image more-images" id="more-images">
+                        <label class="text-form" for="image">agregar mas imagenes</label>
+                        <input class="buttom-image" type="file" name="image" id="files" multiple>
+                    </figure> 
                 </div>
-                    <% if (locals.errors && errors.image) { %>
-                            <span class="error-message"><%= errors.image.msg %> </span>
-                    <% } %>
+                <% if (locals.errors && errors.image) { %>
+                    <span class="text-danger"><%= errors.image.msg %> </span>
+                <% } %>
+                <span class="error-message" id="fileErrors"></span>
                     <div class="button-box button__buy-cart">
                         <button  class="button-buy" type="submit">
                             Editar producto
@@ -89,5 +97,7 @@
                     </div>
             </form>
     </main>
+    <script src="/js/productEditForm.js"></script> 
+    <script src="https://kit.fontawesome.com/20e7bf528f.js" crossorigin="anonymous"></script>    
 </body>
 </html>
