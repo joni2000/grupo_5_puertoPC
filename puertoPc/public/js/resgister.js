@@ -2,23 +2,26 @@ function qs(element) {
     return document.querySelector(element)
 }
 
-let $inputfirst_name = qs('#first_name'),
-    $first_nameErrors = qs('#first_nameErrors'),
-    $inputlast_name = qs('#last_name'),
-    $last_nameErrors = qs('#last_nameErrors'),
-    $address = qs('#address'),
-    $addressErrors = qs('#addressErrors'),
-    $email = qs('#email'),
-    $emailErrors = qs('emailErrors'),
-    $password = qs('#pasword'),
-    $passwordErrors = qs('#passwordErrors'),
-    $password2 = qs('#password2'),
-    $password2Errors = qs('#password2Errors'),
-    $terms = qs('#terms'),
-    $termsErrors = qs('#termsErrors'),
-    $imagePreview = qs('#img-preview')
+window.addEventListener('load', function () {
 
-    let validationsErrors = false;
+    let $inputfirst_name = qs('#first_name'),
+        $first_nameErrors = qs('#first_nameErrors'),
+        $inputlast_name = qs('#last_name'),
+        $last_nameErrors = qs('#last_nameErrors'),
+        $address = qs('#address'),
+        $addressErrors = qs('#addressErrors'),
+        $email = qs('#email'),
+        $emailErrors = qs('emailErrors'),
+        $password = qs('#pasword'),
+        $passwordErrors = qs('#passwordErrors'),
+        $password2 = qs('#password2'),
+        $password2Errors = qs('#password2Errors'),
+        $terms = qs('#terms'),
+        $termsErrors = qs('#termsErrors'),
+        $imagePreview = qs('#img-preview')
+
+})
+let validationsErrors = false;
 
 $inputfirst_name.addEventListener('blur', () => {
     switch (true) {
@@ -48,7 +51,7 @@ $inputlast_name.addEventListener('blur', () => {
             validationsErrors = true
             break;
         case !$inputlast_name.value.length > 4:
-            $last_nameErrors.innerHTML = 'El apellido debe tener mas de 2 caracteres';
+            $last_nameErrors.innerHTML = 'Ingresa un apllido válido';
             $inputlast_name.classList.add('is-invalid')
             validationsErrors = true;
             break;
@@ -79,4 +82,3 @@ $email.addEventListener('blur', () => {
             break;
     }
 })
-
