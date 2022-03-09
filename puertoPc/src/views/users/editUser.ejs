@@ -8,7 +8,7 @@
 
             <main class="padding-top-fixed">
 
-                <form class="form-account" action="/editUser/<%-user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="form-account form-edit-user" action="/editUser/<%-user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="my-account">
                         <h3>Mi cuenta</h3>
                         <div class="avatar-editUser">
@@ -48,7 +48,7 @@
                                 <div class="data ">
                                     <label>País:</label>
                                     <select class="select-css" name="country" id="country" value="<%-user.country%>">                       
-                                            <option>Selecciona un país</option> 
+                                            <option value="">Selecciona un país</option> 
                                             <option value="Argentina">Argentina</option>
                                         
                                         </select>
@@ -60,7 +60,7 @@
                                 <div class="data ">
                                     <label>Provincia:</label>
                                     <select class="select-css" name="province" id="province" value="<%-user.province%>">
-                                        <option>Selecciona una provincia</option>                     
+                                        <option value="">Selecciona una provincia</option>                     
                                     <% provincias.forEach(province => { %>
                                         <option value="<%= province.nombre %>"><%= province.nombre %></option>
                                     <% }) %> 
@@ -83,10 +83,9 @@
                                         <span class="error-message-editUser"><%= errors.address.msg %></span>
                                         <% } %>
                                 </div>
+                            </div>                             
 
-                                
-
-                            </div>
+                        </div>
                     </div>
                     <div class="button-edit-info">
                         <button class="submit">Guardar cambios</button>

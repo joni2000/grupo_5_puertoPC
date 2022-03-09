@@ -21,7 +21,7 @@
 
 .avatar-editUser .div_file{
     border: none;
-    width: 20%;
+    width: 30%;
     height: 10%;
     font-size: 2rem;
     font-family: var(--fontBebas);
@@ -80,7 +80,8 @@
     padding: 0.5rem 1.5rem;
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 0.1rem rgb(229 229 229);  
+    border-bottom: solid 0.1rem rgb(229 229 229); 
+    flex-wrap: wrap; 
 }
 .data input {
     height: 2.2rem;
@@ -102,15 +103,57 @@
 }
 
 .error-message-editUser{
-
+    color: red;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5rem 1rem 0 0;
 }
 /* Media queries */
     /* Desktop */
 
     @media (min-width: 760px) {
+        .data { 
+            flex-wrap: nowrap; 
+            position: relative;
+        }
         .button-edit-info .submit{
             font-size: 2.2rem;
             width: 26.8rem;
             height: 4.2rem;
         }
+        
+        .form-edit-user .my-account {
+            width: 100%;
+            order: 1;
+      
+        }
+        .form-edit-user .personal-information{
+              width: 75%;
+              order: 3;
+              padding-left: 5rem;
+        }
+        
+        .form-edit-user .account-data{
+              width: 89%;
+              order: 2;  
+              padding-left: 5rem;
+              padding-right: 10rem;
+
+        }.data input {
+
+            z-index: 2 ;
+        }
+        .select-css{
+            z-index: 2;
+        }
+        .error-message-editUser{
+            color: red;
+            position: absolute;
+            left: 18rem;
+            bottom: 0.8rem;
+            z-index: 1;
+
+        }
+        
     }

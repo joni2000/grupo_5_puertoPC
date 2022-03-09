@@ -5,23 +5,23 @@ const db = require('../data/models')
 module.exports = [
     check('country')
     .notEmpty()
-    .withMessage('Debes ingresar un país'),
+    .withMessage("Este campo es obligatorio"),
 
     check('province')
     .notEmpty()
-    .withMessage('Debes ingresar una provincia'),
+    .withMessage("Este campo es obligatorio"),
 
     check('city')
     .notEmpty()
-    .withMessage('Debes ingresar una ciudad'),
+    .withMessage("Este campo es obligatorio"),
 
     check('address')
     .notEmpty()
-    .withMessage('Debes ingresar tu dirección'),
+    .withMessage("Este campo es obligatorio"),
 
 
     check('address')
     .notEmpty()
-    .withMessage("Debes ingresar tu domicilio"),
+    .withMessage("Este campo es obligatorio"),
 
 ]

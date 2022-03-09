@@ -507,6 +507,9 @@ top: 0.04rem;
         background: linear-gradient(180deg, rgb(110, 110, 110), rgb(194, 194, 194));
         opacity: 50%;
     }
+    .hr-register{
+        display: none;
+    }
 }
 
 
