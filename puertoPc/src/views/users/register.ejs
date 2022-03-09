@@ -31,7 +31,7 @@
                   <%= errors.first_name.msg %>
                 </span>
                 <% } %>
-                <span class="error-message-register" id="first_nameErrors"></span>
+                  <span class="error error-message-register" id="first_nameErrors"></span>
 
                   <label for="name">Apellido:</label>
                   <input class="input-register" type="text" name="last_name" id="name" placeholder="Ingresa tu apellido"
@@ -41,18 +41,18 @@
                       <%= errors.last_name.msg %>
                     </span>
                     <% } %>
-                      <span class="error error-message-register"id="last_nameError"></span>
+                      <span class="error error-message-register" id="last_nameError"></span>
 
                       <label for="phone">Teléfono:</label>
-                      <input class="input-register" type="text" name="phone" id="phone"
-                        placeholder="Ej.: 1165748724" value="<%= locals.old && old.phone %>">
+                      <input class="input-register" type="text" name="phone" id="phone" placeholder="Ej.: 1165748724"
+                        value="<%= locals.old && old.phone %>">
                       <% if (locals.errors && errors.phone) { %>
                         <span class="error-message-register">
                           <%= errors.phone.msg %>
                         </span>
                         <% } %>
-                        <span class="error-message-register" id="addressErrors"></span>
-                        
+                          <span class="error error-message-register" id="phoneErrors"></span>
+
 
             </div>
             <hr class="hr-register-desktop">
@@ -66,17 +66,17 @@
                   <%= errors.email.msg %>
                 </span>
                 <% } %>
-                <span class="error-message-register" id="emailErrors"></span>
+                  <span class="error error-message-register" id="emailErrors"></span>
 
                   <label for="password">Contraseña:</label>
                   <input class="input-register" type="password" name="password" id="password"
                     placeholder="Ingresa una contraseña" value="<%= locals.old && old.password %>">
                   <% if (locals.errors && errors.password) { %>
-                    <span class="error-message-register">
+                    <span class="error error-message-register">
                       <%= errors.password.msg %>
                     </span>
                     <% } %>
-                    <span class="error-message-register" id="passwordErrors"></span>
+                      <span class="error error-message-register" id="passwordErrors"></span>
 
                       <label for="password2">Repite tu contraseña:</label>
                       <input class="input-register" type="password" name="password2" id="password2"
@@ -86,7 +86,7 @@
                           <%= errors.password2.msg %>
                         </span>
                         <% } %>
-                        <span class="error-message-register" id="password2Errors"></span>
+                          <span class="error error-message-register" id="password2Errors"></span>
 
             </div>
 
@@ -99,7 +99,7 @@
                 <%= errors.terms.msg %>
               </span>
               <% } %>
-              <span class="error-message-register" id="termsErrors"></span>
+                <span class="error error-message-register" id="termsErrors"></span>
 
           </div>
 
@@ -133,6 +133,8 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
+
+      <script src="/puertoPc/public/js/register.js"></script>
 
 </body>
 

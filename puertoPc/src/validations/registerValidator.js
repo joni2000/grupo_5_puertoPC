@@ -31,7 +31,7 @@ module.exports = [
 
     check('password')
     .notEmpty()
-    .withMessage('Debes escribir tu contraseña')
+    .withMessage('Debes escribir una contraseña')
     .isLength({
         min: 6,
         max: 12
@@ -44,7 +44,7 @@ module.exports = [
 
     check('phone')
     .notEmpty()
-    .withMessage("Debes ingresar tu teléfono")
+    .withMessage("Debes ingresar un teléfono")
     .isMobilePhone()
     .withMessage("Debes ingresar un número de teléfono válido")
 
