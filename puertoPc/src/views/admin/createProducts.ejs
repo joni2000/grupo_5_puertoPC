@@ -78,14 +78,19 @@
                 </div>
                     <div class="container-select-image">
                         <figure class="img-container" id="img-preview">
-                            <i class="fa-solid fa-trash-can fa-trash-create" id="btn-delete"></i>
+                            <div class="container-change-image">
+                                <label for="change-file"><i class="fa-solid fa-arrow-right-arrow-left fa-trash-create"></i></label>
+                                <input class="buttom-image" type="file" name="image" id="change-file">
+                            </div>
                         </figure>
+                        <!-- IMAGEN PRINCIPAL -->
                         <figure class="select-image" id="main-image">
-                            <label class="text-form" for="image"><i class="fa-solid fa-image"></i></label>
+                            <label class="text-form" for="image"><i class="fa-solid fa-image fa-image-create"></i></label>
                             <input class="buttom-image" type="file" name="image" id="file">
                         </figure>    
+                        <!-- AGREGAR MAS IMAGENES -->
                         <figure class="select-image more-images" id="more-images">
-                            <label class="text-form" for="image">agregar mas imagenes</label>
+                            <label class="text-form" for="files"><i class="fa-thin fa-plus fa-plus-create"></i></label>
                             <input class="buttom-image" type="file" name="image" id="files" multiple>
                         </figure>    
                     </div>
