@@ -16,10 +16,11 @@ window.addEventListener('load', function () {
         $inputDiscount = qs('#discount'),
         $discountErrors = qs('#discountErrors'),
         $file = qs('#file'),
+        $changeFile = qs('#change-file'),
         $fileErrors = qs('#fileErrors'),
         $imgPreview = qs('#img-preview'),
-        $submitErrors = qs('#submit-errors')
-    $form = qs('#form'),
+        $submitErrors = qs('#submit-errors'),
+        $form = qs('#form'),
         $moreImages = qs('#more-images'),
         $mainImage = qs('#main-image'),
         $btnDelete = qs('#btn-delete')
@@ -143,6 +144,36 @@ window.addEventListener('load', function () {
                     $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
                     $imgPreview.classList.add('border');
                     $mainImage.style.display = 'none'
+                    $moreImages.style.display = 'flex';
+                };
+
+
+                reader.readAsDataURL($file.files[0]);
+                $fileErrors.innerHTML = '';
+                $file.classList.remove('is-invalid');
+
+                $btnDelete.onmouseover = () => console.log('funciona')
+            }
+        }
+    }),
+
+    $changeFile.addEventListener('click', function() {
+        let filePath = $changeFile.value; //captura el valor del input
+        let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+        if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
+            $changeFile.value = '';
+            $imgPreview.innerHTML = '';
+            return false;
+        } else {
+            //Image preview
+            console.log($file.files)
+            if ($changeFile.files && $changeFile.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
+                    $imgPreview.classList.add('border');
+                    $mainImage.style.display = 'none'
                     $moreImages.style.display = 'block';
                 };
 
@@ -154,7 +185,7 @@ window.addEventListener('load', function () {
                 $btnDelete.onmouseover = () => console.log('funciona')
             }
         }
-    })
+    }) 
 
 
 })
