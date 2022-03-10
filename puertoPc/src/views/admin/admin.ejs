@@ -10,16 +10,10 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
 <body>
-    <nav class="nav-admin">
-        <a href="/" class="logo logo-admin"><img src="/images/logo.png" alt="logo-puertopc"></a>
-        <ul>
-            <li><a href="/admin">Productos</a></li>
-            <li><a href="/admin/crear">Crear producto</a></li>
-            <li><a href="">Users</a></li>
-            <li><a href="">Banners</a></li>
-        </ul>
-    </nav>
-    <main>
+    <!-- include admin header -->
+    <%- include('../partials/adminHeader') %>
+     
+    <main class="margin-top-fixed-admin">
         <div class="container container-search">
             <div class="search-bar col-6 search-bar-admin">
                 <input type="text" placeholder="Buscar productos">

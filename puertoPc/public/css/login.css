@@ -92,6 +92,7 @@ span.error-message {
     margin-left: 2.2rem;
     color: var(--errorMessage);
 }
+
 span.credenciales{
     position: absolute;
     top: 27.2rem;
