@@ -1,8 +1,5 @@
 
 .body-create {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .main-create {
@@ -35,11 +32,6 @@
     height: 3px;
     background: linear-gradient(to right, #7f7fd5, #cddeff, #ffffff);
     width: 50%;
-}
-
-header .top-create {
-    flex-direction: row;
-    justify-content: flex-start;
 }
 
 .container-input {
