@@ -16,7 +16,7 @@
   <%- include('../partials/headerLogin.ejs') %>
 
     <main class="box-form-register">
-      <form action="/register" method="POST">
+      <form action="/register" method="POST" id="form_register">
         <div class="box-register">
 
           <h2>Registro de Usuario</h2>
@@ -24,18 +24,18 @@
 
             <div class="box-input-register">
               <label for="name">Nombre:</label>
-              <input class="input-register" type="text" name="first_name" id="name" placeholder="Ingresa tu nombre"
-                value="<%= locals.old && old.first_name %>">
+              <input class="input-register" type="text" name="first_name" id="first_name"
+                placeholder="Ingresa tu nombre" value="<%= locals.old && old.first_name %>">
               <% if (locals.errors && errors.first_name) { %>
                 <span class="error-message-register">
                   <%= errors.first_name.msg %>
                 </span>
                 <% } %>
-                  <span class="error error-message-register" id="first_nameErrors"></span>
+                  <span class="error error-message-register" id="first_nameError"></span>
 
                   <label for="name">Apellido:</label>
-                  <input class="input-register" type="text" name="last_name" id="name" placeholder="Ingresa tu apellido"
-                    value="<%= locals.old && old.last_name %>">
+                  <input class="input-register" type="text" name="last_name" id="last_name"
+                    placeholder="Ingresa tu apellido" value="<%= locals.old && old.last_name %>">
                   <% if (locals.errors && errors.last_name) { %>
                     <span class="error-message-register">
                       <%= errors.last_name.msg %>
@@ -51,7 +51,7 @@
                           <%= errors.phone.msg %>
                         </span>
                         <% } %>
-                          <span class="error error-message-register" id="phoneErrors"></span>
+                          <span class="error error-message-register" id="phoneError"></span>
 
 
             </div>
@@ -59,14 +59,14 @@
             <div class="box-input-register2">
 
               <label for="email">Email:</label>
-              <input class="input-register" type="email" name="email" id="email" placeholder="Ej.: nombre@correo.com"
+              <input class="form-control input-register" type="email" name="email" id="email" placeholder="Ej.: nombre@correo.com"
                 value="<%= locals.old && old.email %>">
               <% if (locals.errors && errors.email) { %>
                 <span class="error-message-register">
                   <%= errors.email.msg %>
                 </span>
                 <% } %>
-                  <span class="error error-message-register" id="emailErrors"></span>
+                  <span class="error error-message-register" id="emailError"></span>
 
                   <label for="password">Contraseña:</label>
                   <input class="input-register" type="password" name="password" id="password"
@@ -76,7 +76,7 @@
                       <%= errors.password.msg %>
                     </span>
                     <% } %>
-                      <span class="error error-message-register" id="passwordErrors"></span>
+                      <span class="error error-message-register" id="passwordError"></span>
 
                       <label for="password2">Repite tu contraseña:</label>
                       <input class="input-register" type="password" name="password2" id="password2"
@@ -86,7 +86,7 @@
                           <%= errors.password2.msg %>
                         </span>
                         <% } %>
-                          <span class="error error-message-register" id="password2Errors"></span>
+                          <span class="error error-message-register" id="password2Error"></span>
 
             </div>
 
@@ -99,13 +99,14 @@
                 <%= errors.terms.msg %>
               </span>
               <% } %>
-                <span class="error error-message-register" id="termsErrors"></span>
+                <span class="error error-message-register" id="termsError"></span>
 
           </div>
 
           <div class="submit-register">
             <button type="submit" class="registrarse">Registrarse</button>
           </div>
+          <span class="error error-message-register" id="submitError"></span>
           <hr class="hr-register">
 
           <div class="button-img-fb">
