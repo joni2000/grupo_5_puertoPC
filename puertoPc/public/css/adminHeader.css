@@ -1,0 +1,30 @@
+/* * Header */ 
+.nav-admin {
+    width: 100%;
+    background-color: var(--blue);
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+a.logo-admin img {
+    transform: scale(70%);
+}
+
+nav a.logo-admin {
+    height: 5rem;
+}
+
+.nav-admin ul{
+    display: flex;
+    align-items: flex-end;
+    gap: 5rem;
+}
+
+.nav-admin ul li a {
+    font-family: var(--fontPrimary);
+    color: white;
+    font-size: 1.5rem;
+}

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <%- include('../partials/head.ejs') %>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Puerto Pc</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/menuMobile.js" defer></script>
+        <script src="https://kit.fontawesome.com/20e7bf528f.js" crossorigin="anonymous"></script>    
+    </head>
 <body>
-    <header class="header">
-        <nav class="top-create top">
-            <a class="icon-menu">
-                <i class="fas fa-bars"></i>
-            </a>
-            <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
-            <a class="logo-text" href="/">PuertoPc</a>
-        </nav>
-    </header>    
-    <main class="main-create padding-top-fixed">
+    <!-- admin header -->
+    <%- include('../partials/adminHeader') %>  
+
+    <main class="main-create margin-top-fixed-admin">
         <form class="form-create" id="form" action="/admin/editar/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="none">
             <h2 class="title-crear">Editar Producto</h2>
                 <hr class="hr-create">    

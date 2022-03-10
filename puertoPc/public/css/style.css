@@ -20,6 +20,8 @@
 @import url('menuMobile.css');
 @import url('menuUsers.css');
 @import url('menuCategory.css');
+@import url('adminHeader.css');
+
 /* General */
 * {
     margin: 0;
@@ -69,6 +71,9 @@ li {
 @media (min-width: 760px){
     .padding-top-fixed {
         padding-top: 10.6rem;
+    }
+    .margin-top-fixed-admin {
+        margin-top: 5rem;
     }
 }
 

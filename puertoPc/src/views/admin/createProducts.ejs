@@ -10,16 +10,10 @@
         <script src="https://kit.fontawesome.com/20e7bf528f.js" crossorigin="anonymous"></script>    
     </head>
 <body class="body-create">
-    <header class="header">
-        <nav class="top-create top">
-            <a class="icon-menu">
-                <i class="fas fa-bars"></i>
-            </a>
-            <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
-            <a class="logo-text" href="/">PuertoPc</a>
-        </nav>
-    </header>    
-    <main class="main-create padding-top-fixed">
+    <!-- header admin -->
+    <%- include('../partials/adminHeader') %>     
+    
+    <main class="main-create margin-top-fixed-admin">
         <form class="form-create action=" id="form" action="/admin/store" method="POST" enctype="multipart/form-data" autocomplete="off">
                 <h2 class="title-crear">Crear Producto</h2>
                 <hr class="hr-create">
