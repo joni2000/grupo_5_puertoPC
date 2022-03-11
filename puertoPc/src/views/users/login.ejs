@@ -19,7 +19,7 @@
             <form id="formLogin" action="./login " method="POST">
                 <h2>Iniciar sesión</h2>
                 <div class="form-login">
-                    <div class="input-container email">
+                    <div class="input-container  inputSubmitLogin email">
                         <label for="email">Email:</label>
                         <input class="input-style" type="email" name="email" id="email" placeholder="Ingresá tu email">
                        <% if (locals.errors && errors.email) { %>
@@ -27,7 +27,7 @@
                        <% } %>
                        <span  id="emailErrorLogin" class="error-message "></span>
                         </div>
-                    <div class="input-container pass">
+                    <div class="input-container inputSubmitLogin pass">
                         <label for="pass">Contraseña:</label>
                         <input class="input-style" type="password" name="password" id="pass" placeholder="Ingresá tu contraseña">
                         <% if (locals.errors && errors.password) { %>
@@ -39,6 +39,8 @@
                         <input type="checkbox" name="keepsession" id="checksession">
                         <label for="checksession">Mantener sesión abierta</label>
                     </div>
+                    <span id="submitLogin" class="error-message credenciales"> </span>
+                         
                     <div class="form-button-container log">
                         <% if (locals.errors && errors.custom) { %>
                             <span class="error-message credenciales"> <%= errors.custom.msg %> </span>

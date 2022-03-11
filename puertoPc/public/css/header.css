@@ -151,6 +151,11 @@ header .session {
         color: white;
     
     }
+
+    /*icon-user-login*/
+    header .session {
+        display: none;
+    }
      
 }
 
