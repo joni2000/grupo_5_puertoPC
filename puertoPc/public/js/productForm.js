@@ -1,8 +1,6 @@
 function qs(element) {
     return document.querySelector(element)
 }
-
-window.addEventListener('load', function () {
     let $inputName = qs('#name'),
         $nameErrors = qs('#nameErrors'),
         $inputDescription = qs('#description'),
@@ -127,11 +125,12 @@ window.addEventListener('load', function () {
 
     })
 
-    $file.addEventListener('change', function () {
+    const addImage = ()=> {
         let filePath = $file.value; //captura el valor del input
+        console.log(filePath)
         let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
         if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
             $file.value = '';
             $imgPreview.innerHTML = '';
             return false;
@@ -151,17 +150,16 @@ window.addEventListener('load', function () {
                 reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = '';
                 $file.classList.remove('is-invalid');
-
-                $btnDelete.onmouseover = () => console.log('funciona')
             }
         }
-    }),
+    }
 
-    $changeFile.addEventListener('click', function() {
-        let filePath = $changeFile.value; //captura el valor del input
-        let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+const changeImg = ()=> {
+    let filePath = $changeFile.value; //captura el valor del input
+    console.log(filePath)
+        /* let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
         if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
             $changeFile.value = '';
             $imgPreview.innerHTML = '';
             return false;
@@ -171,7 +169,7 @@ window.addEventListener('load', function () {
             if ($changeFile.files && $changeFile.files[0]) {
                 let reader = new FileReader();
                 reader.onload = function (e) {
-                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
+                    $imgPreview.innerHTML = `<img src="${e.target.result}" alt="">`;
                     $imgPreview.classList.add('border');
                     $mainImage.style.display = 'none'
                     $moreImages.style.display = 'block';
@@ -181,11 +179,6 @@ window.addEventListener('load', function () {
                 reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = '';
                 $file.classList.remove('is-invalid');
-
-                $btnDelete.onmouseover = () => console.log('funciona')
             }
-        }
-    }) 
-
-
-})
+        } */
+}

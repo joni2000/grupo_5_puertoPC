@@ -74,13 +74,13 @@
                         <figure class="img-container" id="img-preview">
                             <div class="container-change-image">
                                 <label for="change-file"><i class="fa-solid fa-arrow-right-arrow-left fa-trash-create"></i></label>
-                                <input class="buttom-image" type="file" name="image" id="change-file">
+                                <input class="buttom-image" type="file" name="change-file" id="change-file" onchange="changeImg()">
                             </div>
                         </figure>
                         <!-- IMAGEN PRINCIPAL -->
                         <figure class="select-image" id="main-image">
                             <label class="text-form" for="image"><i class="fa-solid fa-image fa-image-create"></i></label>
-                            <input class="buttom-image" type="file" name="image" id="file">
+                            <input class="buttom-image" type="file" name="image" id="file" onchange="addImage()">
                         </figure>    
                         <!-- AGREGAR MAS IMAGENES -->
                         <figure class="select-image more-images" id="more-images">
