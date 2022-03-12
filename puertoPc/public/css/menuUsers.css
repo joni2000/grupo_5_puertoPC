@@ -97,6 +97,102 @@
     border-radius: 0.3rem;
 
 }
+  /*LOGIN-MOBILE-LOGOUT-PROFILE/USER*/
+  
+/*box image and texts*/
+.boxImagUsers-mobile{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 9rem;
+}
+.imagUsersMenu-mobile{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.imagUsersIcon-mobile{
+    padding-top: 0.5rem;
+    background-color: white;
+    border-radius: 3rem; 
+}
+.imagUsersMenu-mobile i{
+    border-radius: 8rem 8rem 8rem 8rem;
+    font-size: 8.5rem;
+    color: white;
+    background-color: var(--greyLight);
+}
+
+.textsUsersMenu-mobile{
+    width: 70%;
+    height: 100%;
+    font-family: var(--fontText);
+    display: flex;
+    flex-direction: column;
+   justify-content: flex-start;
+}
+.textsUsersMenu-mobile h3{
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+.textsUsersMenu-mobile p{
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+/*box button logout and profile/user*/
+.buttonUsersMenu-mobile{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.buttonUsersMenuL-mobile{
+    margin-right: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+.buttonUsersMenuR-mobile{
+    margin-left: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+}
+.buttonUsersMenuL-mobile button{
+    width: 73%;
+    height: 2.7rem;
+    background-color: var(--blue);
+    font-size: 1.5rem;
+    color: white;
+    border: solid var(--blue);
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonUsersMenuL-mobile button a{
+    color: white;
+}
+
+.buttonUsersMenuR-mobile button{
+    width: 73%;
+    height: 2.7rem;
+    background-color: white;
+    color: var(--blue);
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: solid var(--blue);
+    border-radius: 0.3rem;
+
+}
+.buttonUsersMenuR-mobile button a{
+    color: var(--blue);
+}
 
 /* MEDIA QUERIES */ 
  /*MOBILE
@@ -122,4 +218,58 @@
     .buttonUsersMenu{
         display: none;
     }
+    /*LOGIN-MOBILE-LOGOUT-PROFILE/USER*/
+  
+/*box image and texts*/
+.boxImagUsers-mobile{
+    display: none;
+}
+.imagUsersMenu-mobile{
+    display:none;
+}
+.imagUsersIcon-mobile{
+    display:none;
+}
+.imagUsersMenu-mobile i{
+    display:none;
+}
+
+.textsUsersMenu-mobile{
+    display:none;
+}
+.textsUsersMenu-mobile h3{
+    display:none;
+}
+.textsUsersMenu-mobile p{
+    display:none;
+    
+
+}
+/*box button logout and profile/user*/
+.buttonUsersMenu-mobile{
+    display:none;
+}
+.buttonUsersMenuL-mobile{
+    display: none;
+    
+}
+.buttonUsersMenuR-mobile{
+    display: none;
+    
+}
+.buttonUsersMenuL-mobile button{
+    display: none;
+}
+.buttonUsersMenuL-mobile button a{
+    display:none;
+}
+
+.buttonUsersMenuR-mobile button{
+    display:none;
+
+}
+.buttonUsersMenuR-mobile button a{
+    display:none;
+} 
+
 }

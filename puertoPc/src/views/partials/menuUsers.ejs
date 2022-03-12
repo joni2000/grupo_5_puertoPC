@@ -1,21 +1,45 @@
 <div id="boxMenuUsers">
-    <div class="boxImagUsers">
-        <div class="imagUsersMenu">
-            <div class="imagUsersIcon">
-                <i class="fal fa-user-circle"></i>
+    <% if (typeof locals.user != "undefined") { %>
+        <div class="boxImagUsers-mobile">
+            <div class="imagUsersMenu-mobile">
+                <div class="imagUsersIcon-mobile">
+                    <i class="fal fa-user-circle"></i>
+                </div>
+            </div>
+            <div class="textsUsersMenu-mobile">
+                <h3>Bienvenido</h3>
+                <p>Donde encontraras tus compras, favoritos etc</p>
             </div>
         </div>
-        <div class="textsUsersMenu">
-            <h3>Bienvenido</h3>
-            <p>Ingresa a tu cuenta para ver tus compras, favoritos etc</p>
-        </div>
-    </div>
-     <div class="buttonUsersMenu">
-        <div class="buttonUsersMenuL">
-         <button> <a href="/login">Ingresa</a></button>
-        </div>
-        <div class="buttonUsersMenuR">
-         <button><a href="/register"> Crea tu cuenta</a></button>
+         <div class="buttonUsersMenu-mobile">
+            <div class="buttonUsersMenuL-mobile">
+             <button>  <a href="/profileUser/<%- user.id %> ">Mis datos</a></button>
+            </div>
+            <div class="buttonUsersMenuR-mobile">
+             <button> <a  href="/logout">Cerrar sessión</a></button>
+             </div>
          </div>
-     </div>
+    
+      <% } else { %>
+        <div class="boxImagUsers">
+            <div class="imagUsersMenu">
+                <div class="imagUsersIcon">
+                    <i class="fal fa-user-circle"></i>
+                </div>
+            </div>
+            <div class="textsUsersMenu">
+                <h3>Bienvenido</h3>
+                <p>Ingresa a tu cuenta para ver tus compras, favoritos etc</p>
+            </div>
+        </div>
+         <div class="buttonUsersMenu">
+            <div class="buttonUsersMenuL">
+                
+             <button> <a href="/login">Ingresa</a></button>
+            </div>
+            <div class="buttonUsersMenuR">
+             <button><a href="/register"> Crea tu cuenta</a></button>
+             </div>
+         </div>
+     <% } %>
 </div>
