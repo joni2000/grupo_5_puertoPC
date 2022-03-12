@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .avatar-editUser{
     display: flex;
@@ -31,7 +32,6 @@
     padding: 0.3rem 0.5rem;
     margin-top: 0.3rem;
     box-shadow: 0.3rem 0.3rem 0.2rem rgb(0 0 0 / 25%);
-    cursor: pointer;
     transition: all 0.5s ease-out;
     position: relative;
 
@@ -39,7 +39,7 @@
 
 .uploadAvatar{
     font-family: var(--fontBebas);
-
+    cursor: pointer;
 	position: absolute;
 	top:0px;
 	left:0px;
@@ -110,26 +110,35 @@
     margin: 0.5rem 1rem 0 0;
 }
 
-.editErrors, .addressErrors{
+.editErrors{
     color: red;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     margin: 0.5rem 1rem 0 0;
 }
-.editErrorsOk{
-    color: green;
+
+ .submitEditErrors{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5rem ;
 }
+
+
+.form-edit-user input.error {
+    border: 2px solid red;
+  }
+  
+  input.ok {
+    border: 2px solid green;
+  }
 
 /* Media queries */
     /* Desktop */
 
-    @media (min-width: 760px) {
-        .data { 
-            flex-wrap: nowrap; 
-            position: relative;
-        }
-        .button-edit-info .submit{
+    @media (min-width: 1050px) {
+        
+        .form-edit-user .button-edit-info .submit{
             font-size: 2.2rem;
             width: 26.8rem;
             height: 4.2rem;
@@ -141,45 +150,30 @@
       
         }
         .form-edit-user .personal-information{
-              width: 75%;
-              order: 3;
-              padding-left: 5rem;
+              width: 50%;
+              order: 2;
+              
         }
         
         .form-edit-user .account-data{
-              width: 89%;
-              order: 2;  
-              padding-left: 5rem;
-              padding-right: 10rem;
+              width: 50%;
+              order: 3;  
+              
 
         }
-        .data label {
-            width: 10%;
+        .form-edit-user .data label {
+            width: 30%;
         }
-        .data input {
-
-            z-index: 2 ;
-            width: 50%;
-        }
-        .select-css{
-            z-index: 2;
-            width: 50%;
+        
+        .form-edit-user .error-message-editUser{
+            width: 100%;
 
         }
-        .error-message-editUser{
+        .form-edit-user .editErrors, .form-edit-user .addressErrors{
             color: red;
-            position: absolute;
-            left: 18rem;
-            bottom: 0.8rem;
-            z-index: 1;
-
+            width: 100%;            
         }
-        .editErrors, .addressErrors{
-            position: absolute;
-        }
-        .editErrorsOk{
-            position: absolute;
-
-        }
+        
+        
         
     }

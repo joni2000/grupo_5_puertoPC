@@ -37,6 +37,7 @@
     border-bottom: solid 0.1rem 90% rgb(229 229 229);  
 }
 .data p{
+    height: 2.4rem;
     padding-left: 0.5rem;
     color: grey;
     align-items: flex-end;

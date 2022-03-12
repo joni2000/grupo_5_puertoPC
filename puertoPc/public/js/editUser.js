@@ -1,6 +1,6 @@
 window.onload = () => {
     let $form = document.querySelector("#formEditUser");
-    let $submitErrors = document.querySelector("submitErrors")
+    let $submitErrors = document.querySelector("#submitErrors")
     let $inputCountry = document.querySelector("#countryEdit");
     let $inputCountryErrors = document.querySelector("#countryEditErrors");
     let $inputProvince = document.querySelector("#provinceEdit")
@@ -13,43 +13,107 @@ window.onload = () => {
     let $regExAlpha = /^[a-zA-Z\s]+$/
     let $regExAlphaNumeric = /^[\w/.%+\s]+$/
     
+    
 
     let validationsErrors = false;
-
-   /*  $form.addEventListener("submit", function(){ */
-        /* e.preventDefault() *///para trabajar tranqui, después lo borro
     
-    $inputCountry.addEventListener("change", (event) => {
-        console.log(event.target.value)
+    
+    $inputCountry.addEventListener("focus", () => {
+        switch(true){
+            case !$inputCountry.value.trim():
+                $inputCountryErrors.innerHTML = "Campo obligatorio"
+                $inputCountry.classList.add("#countryEditErrors")
+                validationsErrors = true
+                break;
+            
+            default:
+                $inputCityErrors.innerHTML = "";
+
+                $inputCountry.classList.add("#countryEditErrors")             
+        }
     })
     
     $inputProvince.addEventListener("change", (event) => {
         console.log(event.target.value)
     })
     
-    $inputCity.addEventListener("change", function() {
+            //onFocus
+
+    $inputProvince.addEventListener("focus", function() {
         switch(true){
-            case !$inputCity.value.trim():
-                $inputCityErrors.innerHTML = "Debes completar este campo"
-                $inputCity.classList.add("#cityEditErrors")
+            case !$inputProvince.value.trim():
+                $inputProvinceErrors.innerHTML = "Campo obligatorio"
+                $inputProvince.classList.add("#provinceEditErrors")
                 validationsErrors = true
                 break;
-            case !$regExAlpha.test($inputCity.value):
-                $inputCityErrors.innerHTML = "Ingrese una ciudad válida"
-                $inputCity.classList.add("#cityEditErrors")
-                validationsErrors = true
-                break;
+            
             default:
-                $inputCity.classList.remove("#cityEditErrors") 
-                $inputCity.classList.add("#cityEditErrorsOk")             
-        }   
+                $inputProvinceErrors.innerHTML = "";
+
+                $inputProvince.classList.add("#provinceEditErrors")             
+        }
+    
+    })    
+
+    $inputAddress.addEventListener("focus", function() {
+         
+    
+    })    
+
+            //onFocus
+
+            $inputCity.addEventListener(("focus"), function() {
+                
+                switch(true){
+                    case !$inputCity.value.trim():
+                        $inputCityErrors.innerHTML = "Campo obligatorio"
+                        $inputCity.classList.add("#cityEditErrors")
+                        validationsErrors = true
+                        break;
+                    
+                    default:
+                        $inputCityErrors.innerHTML = "";
+
+                        $inputCity.classList.add("#cityEditErrorsOk")             
+                }   
+
+            }) 
+        
+
+            //onBlur
+            $inputCity.addEventListener(("blur"), function() {
+                switch(true){
+                    case !$inputCity.value.trim():
+                        $inputCityErrors.innerHTML = "Campo obligatorio"
+                        $inputCity.classList.add("#cityEditErrors")
+                        validationsErrors = true
+                        break;
+                    case !$regExAlpha.test($inputCity.value):
+                        $inputCityErrors.innerHTML = "No debe contener símbolos, acéntos, puntos ni números"
+                        $inputCity.classList.add("#cityEditErrors")
+                        validationsErrors = true
+                        break;
+                    default:
+                        $inputCityErrors.innerHTML = "";
+
+                        $inputCity.classList.add("valid")             
+                }   
+            
+            })
+            //onChange
+
+    $inputCity.addEventListener(("change"), function() {
+         
     
     })
+            //Adress
 
-    $inputAddress.addEventListener("change", function() {
+    $inputAddress.addEventListener(("focus"), function() {
+
+
         switch(true){
             case !$inputAddress.value.trim():
-                $inputAddressErrors.innerHTML = "Debes completar este campo"
+                $inputAddressErrors.innerHTML = "Campo obligatorio"
                 $inputAddress.classList.add("#AddressEditErrors")
                 validationsErrors = true
                 break;
@@ -59,32 +123,43 @@ window.onload = () => {
                 validationsErrors = true
                 break;
             default:
+                $inputAddressErrors.innerHTML = "";
                 $inputAddress.classList.remove("#AddressEditErrors") 
-                $inputAddress.classList.add("#AddressEditErrorsOk")             
+                          
         }   
     
     })
 
-    /* $form.addEventListener("submit", function(event){
+    $form.addEventListener("submit", function(event){
         event.preventDefault()
     
         let error = false;
         let elementsForm = this.elements;
 
-        for (let i = 0; i < elementsForm.length - 1; i++) {
-            if (elementsForm[i].value == ''
-                && elementsForm[i].type !== 'file') {
-                elementsForm[i].classList.add('#submitErrors');
-                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+        for (let i = 0; i < elementsForm.length-1 ; i++){
+            if (elementsForm[i].value == ""){
+                $submitErrors.innerHTML = "*campos obligatorios"
+                elementsForm[i].classList.add('#submitErrors')
                 error = true
+                
+            }
+            if (!error && !validationsErrors) {
+                $form.submit()
             }
         }
-
-        if (!error && !validationsErrors) {
-            $form.submit()
-        }
+    });
     
-    }); */
+
+
+
+
+
+
+
+
+
+
+    
 
     
 
@@ -123,4 +198,6 @@ window.onload = () => {
         }
     })
 
-}) */}
+}) */
+
+}

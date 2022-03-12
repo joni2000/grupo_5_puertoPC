@@ -46,8 +46,8 @@
                         <h4>Datos personales</h4>
                             <div>
                                 <div class="data ">
-                                    <label>País:</label>
-                                    <select class="select-css" name="country" id="countryEdit" value="<%-user.country%>">                       
+                                    <label>*País:</label>
+                                    <select  class="select-css" name="country" id="countryEdit" value="<%-user.country%>">                       
                                             <option value="">Selecciona un país</option> 
                                             <option value="Argentina">Argentina</option>
                                         
@@ -55,11 +55,11 @@
                                     <% if (locals.errors && errors.country) { %>
                                         <span class="error-message-editUser"><%= errors.country.msg %></span>
                                         <% } %>
-
+                                        <span class="editErrors" id="countryEditErrors"></i></span>
                                 </div>
                                 <div class="data ">
-                                    <label>Provincia:</label>
-                                    <select class="select-css" name="province" id="provinceEdit" value="<%-user.province%>">
+                                    <label>*Provincia:</label>
+                                    <select  class="select-css" name="province" id="provinceEdit" value="<%-user.province%>">
                                         <option value="">Selecciona una provincia</option>                     
                                     <% provincias.forEach(province => { %>
                                         <option value="<%= province.nombre %>"><%= province.nombre %></option>
@@ -68,10 +68,11 @@
                                     <% if (locals.errors && errors.province) { %>
                                         <span class="error-message-editUser"><%= errors.province.msg %></span>
                                         <% } %>
+                                        <span class="editErrors" id="provinceEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
                                 </div>
                                 <div class="data ">
-                                    <label>Ciudad:</label>
-                                    <input type="city" name="city" id="cityEdit" value="<%-user.city%>" placeholder="Ingresa tu ciudad">
+                                    <label>*Ciudad:</label>
+                                    <input  type="city" name="city" id="cityEdit" value="<%-user.city%>" placeholder="Ingresa tu ciudad">
                                     <% if (locals.errors && errors.city) { %>
                                         <span class="error-message-editUser"><%= errors.city.msg %></span>
                                     <% } %>
@@ -80,12 +81,12 @@
                                 </div>
                                 
                                 <div class="data ">
-                                    <label>Domicilio: </label>
-                                    <input type="address" name="address" id="addressEdit" value="<%-user.address%>" placeholder="Ingresa calle y altura">
+                                    <label>*Domicilio: </label>
+                                    <input  type="address" name="address" id="addressEdit" value="<%-user.address%>" placeholder="Ingresa calle y altura">
                                     <% if (locals.errors && errors.address) { %>
                                         <span class="error-message-editUser"><%= errors.address.msg %></span>
                                     <% } %>
-                                    <span class="addressErrors" id="addressEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
+                                    <span class="editErrors" id="addressEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
                                     <span class="editErrorsOk" id="addressEditErrorsOk"><i class="fa-solid fa-circle-check"></i></span>
                                 </div>
                             </div>                             
@@ -93,8 +94,8 @@
                         </div>
                     </div>
                     <div class="button-edit-info">
+                        <span class="editErrors submitEditErrors" id="submitErrors"></i></span>
                         <button class="submit">Guardar cambios</button>
-                        <span class="submitErrors" id="submitErrors"></i></span>
                     </div>
                 </form>
             </main>
