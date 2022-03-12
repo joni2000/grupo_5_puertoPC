@@ -85,7 +85,7 @@
 }
 .data input {
     height: 2.2rem;
-    width: 65%;
+    width: 68%;
     border-radius: 2rem;
     border: 0.2px solid #b1b1b1;
     padding: 0 1rem;
@@ -96,7 +96,7 @@
     font-family: var(--fontText);
     line-height: 1.3;
     border-radius: 2rem;
-    width: 65%; 
+    width: 68%; 
     height: 10%;
     border: 1px solid rgb(173, 173, 173);
     box-shadow: 0 1px 0 1px rgba(255, 0, 0, 0.03);
@@ -109,6 +109,18 @@
     justify-content: flex-end;
     margin: 0.5rem 1rem 0 0;
 }
+
+.editErrors, .addressErrors{
+    color: red;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5rem 1rem 0 0;
+}
+.editErrorsOk{
+    color: green;
+}
+
 /* Media queries */
     /* Desktop */
 
@@ -140,12 +152,19 @@
               padding-left: 5rem;
               padding-right: 10rem;
 
-        }.data input {
+        }
+        .data label {
+            width: 10%;
+        }
+        .data input {
 
             z-index: 2 ;
+            width: 50%;
         }
         .select-css{
             z-index: 2;
+            width: 50%;
+
         }
         .error-message-editUser{
             color: red;
@@ -153,6 +172,13 @@
             left: 18rem;
             bottom: 0.8rem;
             z-index: 1;
+
+        }
+        .editErrors, .addressErrors{
+            position: absolute;
+        }
+        .editErrorsOk{
+            position: absolute;
 
         }
         

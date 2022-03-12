@@ -8,7 +8,7 @@
 
             <main class="padding-top-fixed">
 
-                <form class="form-account form-edit-user" action="/editUser/<%-user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="form-account form-edit-user" id="formEditUser" action="/editUser/<%-user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="my-account">
                         <h3>Mi cuenta</h3>
                         <div class="avatar-editUser">
@@ -47,7 +47,7 @@
                             <div>
                                 <div class="data ">
                                     <label>País:</label>
-                                    <select class="select-css" name="country" id="country" value="<%-user.country%>">                       
+                                    <select class="select-css" name="country" id="countryEdit" value="<%-user.country%>">                       
                                             <option value="">Selecciona un país</option> 
                                             <option value="Argentina">Argentina</option>
                                         
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="data ">
                                     <label>Provincia:</label>
-                                    <select class="select-css" name="province" id="province" value="<%-user.province%>">
+                                    <select class="select-css" name="province" id="provinceEdit" value="<%-user.province%>">
                                         <option value="">Selecciona una provincia</option>                     
                                     <% provincias.forEach(province => { %>
                                         <option value="<%= province.nombre %>"><%= province.nombre %></option>
@@ -71,17 +71,22 @@
                                 </div>
                                 <div class="data ">
                                     <label>Ciudad:</label>
-                                    <input type="city" name="city" value="<%-user.city%>">
+                                    <input type="city" name="city" id="cityEdit" value="<%-user.city%>" placeholder="Ingresa tu ciudad">
                                     <% if (locals.errors && errors.city) { %>
                                         <span class="error-message-editUser"><%= errors.city.msg %></span>
-                                        <% } %>
+                                    <% } %>
+                                    <span class="editErrors" id="cityEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
+                                    <span class="editErrorsOk" id="cityEditErrorsOk"><i class="fa-solid fa-circle-check"></i></span>   
                                 </div>
+                                
                                 <div class="data ">
                                     <label>Domicilio: </label>
-                                    <input type="address" name="address" value="<%-user.address%>">
+                                    <input type="address" name="address" id="addressEdit" value="<%-user.address%>" placeholder="Ingresa calle y altura">
                                     <% if (locals.errors && errors.address) { %>
                                         <span class="error-message-editUser"><%= errors.address.msg %></span>
-                                        <% } %>
+                                    <% } %>
+                                    <span class="addressErrors" id="addressEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
+                                    <span class="editErrorsOk" id="addressEditErrorsOk"><i class="fa-solid fa-circle-check"></i></span>
                                 </div>
                             </div>                             
 
@@ -89,12 +94,13 @@
                     </div>
                     <div class="button-edit-info">
                         <button class="submit">Guardar cambios</button>
+                        <span class="submitErrors" id="submitErrors"></i></span>
                     </div>
                 </form>
             </main>
 
             <%- include('../partials/footer.ejs') %>
-
+            <script src="/js/editUser.js"></script>
     </body>
 
 </html>
