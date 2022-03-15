@@ -47,9 +47,13 @@
                             <div>
                                 <div class="data ">
                                     <label>*País:</label>
-                                    <select  class="select-css" name="country" id="countryEdit" value="<%-user.country%>">                       
-                                            <option value="">Selecciona un país</option> 
+                                    <select  class="select-css" name="country" id="countryEdit" value="<%-user.country%>">
+                                        <option value="<%= user.country %>" <%= locals.old && old.user == user.id ? "selected" : ""%> ><%=user.country%></option> 
+
+                                        <option value="">Selecciona un país</option>                       
+                                        
                                             <option value="Argentina">Argentina</option>
+
                                         
                                         </select>
                                     <% if (locals.errors && errors.country) { %>
@@ -59,11 +63,14 @@
                                 </div>
                                 <div class="data ">
                                     <label>*Provincia:</label>
-                                    <select  class="select-css" name="province" id="provinceEdit" value="<%-user.province%>">
+                                    <select class="select-css" name="province" id="provinceEdit" value="<%-user.province%>">
+                                    <option value="<%= user.province %>" <%= locals.old && old.user == user.id ? "selected" : ""%> ><%=user.province%></option> 
+
                                         <option value="">Selecciona una provincia</option>                     
                                     <% provincias.forEach(province => { %>
                                         <option value="<%= province.nombre %>"><%= province.nombre %></option>
                                     <% }) %> 
+
                                     </select>
                                     <% if (locals.errors && errors.province) { %>
                                         <span class="error-message-editUser"><%= errors.province.msg %></span>
@@ -76,18 +83,18 @@
                                     <% if (locals.errors && errors.city) { %>
                                         <span class="error-message-editUser"><%= errors.city.msg %></span>
                                     <% } %>
-                                    <span class="editErrors" id="cityEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
+                                    <span class="editErrors" id="cityEditErrors"></span>
                                     <span class="editErrorsOk" id="cityEditErrorsOk"><i class="fa-solid fa-circle-check"></i></span>   
                                 </div>
                                 
                                 <div class="data ">
                                     <label>*Domicilio: </label>
-                                    <input  type="address" name="address" id="addressEdit" value="<%-user.address%>" placeholder="Ingresa calle y altura">
+                                    <input type="address" name="address" id="addressEdit" value="<%-user.address%>" placeholder="Ingresa calle y altura">
                                     <% if (locals.errors && errors.address) { %>
                                         <span class="error-message-editUser"><%= errors.address.msg %></span>
                                     <% } %>
                                     <span class="editErrors" id="addressEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
-                                    <span class="editErrorsOk" id="addressEditErrorsOk"><i class="fa-solid fa-circle-check"></i></span>
+                                    
                                 </div>
                             </div>                             
 
