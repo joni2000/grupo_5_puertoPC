@@ -72,18 +72,18 @@
                 </div>
                     <div class="container-select-image">
                         <figure class="img-container" id="img-preview">
-                            <div class="container-change-image">
-                                <label for="change-file"><i class="fa-solid fa-arrow-right-arrow-left fa-trash-create"></i></label>
-                                <input class="buttom-image" type="file" name="change-file" id="change-file" onchange="changeImg()">
+                            <div class="select-image" id="select-image"> <!-- container-change-image -->
+                                <label class="text-form" for="file"><i class="fa-solid fa-image fa-image-create" id="icon-image"></i><i class="fa-solid fa-arrow-right-arrow-left fa-trash-create change-file " id="icon-arrows"></i></label>
+                                <input class="buttom-image" type="file" name="image" id="file" onchange="addImage()">
                             </div>
                         </figure>
                         <!-- IMAGEN PRINCIPAL -->
-                        <figure class="select-image" id="main-image">
+<!--                         <figure class="select-image" id="main-image">
                             <label class="text-form" for="image"><i class="fa-solid fa-image fa-image-create"></i></label>
                             <input class="buttom-image" type="file" name="image" id="file" onchange="addImage()">
-                        </figure>    
+                        </figure>     -->
                         <!-- AGREGAR MAS IMAGENES -->
-                        <figure class="select-image more-images" id="more-images">
+                        <figure class="more-images" id="more-images">
                             <label class="text-form" for="files"><i class="fa-thin fa-plus fa-plus-create"></i></label>
                             <input class="buttom-image" type="file" name="image" id="files" multiple>
                         </figure>    

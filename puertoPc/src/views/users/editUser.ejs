@@ -8,7 +8,7 @@
 
             <main class="padding-top-fixed">
 
-                <form class="form-account" action="/editUser/<%-user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="form-account form-edit-user" id="formEditUser" action="/editUser/<%-user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="my-account">
                         <h3>Mi cuenta</h3>
                         <div class="avatar-editUser">
@@ -46,56 +46,69 @@
                         <h4>Datos personales</h4>
                             <div>
                                 <div class="data ">
-                                    <label>País:</label>
-                                    <select class="select-css" name="country" id="country" value="<%-user.country%>">                       
-                                            <option>Selecciona un país</option> 
+                                    <label>*País:</label>
+                                    <select  class="select-css" name="country" id="countryEdit" value="<%-user.country%>">
+                                        <option value="<%= user.country %>" <%= locals.old && old.user == user.id ? "selected" : ""%> ><%=user.country%></option> 
+
+                                        <option value="">Selecciona un país</option>                       
+                                        
                                             <option value="Argentina">Argentina</option>
+
                                         
                                         </select>
                                     <% if (locals.errors && errors.country) { %>
                                         <span class="error-message-editUser"><%= errors.country.msg %></span>
                                         <% } %>
-
+                                        <span class="editErrors" id="countryEditErrors"></i></span>
                                 </div>
                                 <div class="data ">
-                                    <label>Provincia:</label>
-                                    <select class="select-css" name="province" id="province" value="<%-user.province%>">
-                                        <option>Selecciona una provincia</option>                     
+                                    <label>*Provincia:</label>
+                                    <select class="select-css" name="province" id="provinceEdit" value="<%-user.province%>">
+                                    <option value="<%= user.province %>" <%= locals.old && old.user == user.id ? "selected" : ""%> ><%=user.province%></option> 
+
+                                        <option value="">Selecciona una provincia</option>                     
                                     <% provincias.forEach(province => { %>
                                         <option value="<%= province.nombre %>"><%= province.nombre %></option>
                                     <% }) %> 
+
                                     </select>
                                     <% if (locals.errors && errors.province) { %>
                                         <span class="error-message-editUser"><%= errors.province.msg %></span>
                                         <% } %>
+                                        <span class="editErrors" id="provinceEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
                                 </div>
                                 <div class="data ">
-                                    <label>Ciudad:</label>
-                                    <input type="city" name="city" value="<%-user.city%>">
+                                    <label>*Ciudad:</label>
+                                    <input  type="city" name="city" id="cityEdit" value="<%-user.city%>" placeholder="Ingresa tu ciudad">
                                     <% if (locals.errors && errors.city) { %>
                                         <span class="error-message-editUser"><%= errors.city.msg %></span>
-                                        <% } %>
+                                    <% } %>
+                                    <span class="editErrors" id="cityEditErrors"></span>
+                                    <span class="editErrorsOk" id="cityEditErrorsOk"><i class="fa-solid fa-circle-check"></i></span>   
                                 </div>
+                                
                                 <div class="data ">
-                                    <label>Domicilio: </label>
-                                    <input type="address" name="address" value="<%-user.address%>">
+                                    <label>*Domicilio: </label>
+                                    <input type="address" name="address" id="addressEdit" value="<%-user.address%>" placeholder="Ingresa calle y altura">
                                     <% if (locals.errors && errors.address) { %>
                                         <span class="error-message-editUser"><%= errors.address.msg %></span>
-                                        <% } %>
+                                    <% } %>
+                                    <span class="editErrors" id="addressEditErrors"><i class="fa-regular fa-circle-exclamation"></i></span>
+                                    
                                 </div>
+                            </div>                             
 
-                                
-
-                            </div>
+                        </div>
                     </div>
                     <div class="button-edit-info">
+                        <span class="editErrors submitEditErrors" id="submitErrors"></i></span>
                         <button class="submit">Guardar cambios</button>
                     </div>
                 </form>
             </main>
 
             <%- include('../partials/footer.ejs') %>
-
+            <script src="/js/editUser.js"></script>
     </body>
 
 </html>

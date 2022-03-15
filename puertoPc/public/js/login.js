@@ -55,8 +55,8 @@ window.onload = () =>{
        }
          
     })
-    $formLogin.addEventListener('submit', function(e){
-           /*   e.preventDefault();
+    /*  $formLogin.addEventListener('submit', function(e){
+            e.preventDefault();
             let errorLogin = false;
             let elementsFormLogin = this.elements;
            
@@ -76,8 +76,8 @@ window.onload = () =>{
         if(!errorLogin && !validationsErrorsLogin){
             $formLogin.submit()
         } 
- */
+ 
          
-    }) 
+    }) */
       
 }
