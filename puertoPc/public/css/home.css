@@ -19,6 +19,7 @@
     width: 100%;
     height: 100%;
     padding: 0px;
+    position: relative;
 }
 
 /* Subtitles */
@@ -194,19 +195,19 @@ i.fa-chevron-down:hover {
     right: -0.2rem;
 }
 
-a .fa-1 {
+.prev {
     position: absolute;
     transform: rotate(90deg);
-    top: 24.2rem;
+    top: 12rem;
     left: -0.2rem;
 }
 
-a .fa-2 {
+.next {
     position: absolute;
     transform: rotate(270deg);
-    top: 24.2rem;
-    right: -0.2rem;
-}
+    top: 12rem;
+    right: 0.2rem;
+} 
 
 
 /* display none to the cards */
