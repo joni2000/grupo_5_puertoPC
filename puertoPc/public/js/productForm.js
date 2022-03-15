@@ -17,12 +17,17 @@ function qs(element) {
         $changeFile = qs('#change-file'),
         $fileErrors = qs('#fileErrors'),
         $imgPreview = qs('#img-preview'),
+        $selectImage = qs('#select-image'),
+        $iconImage = qs('#icon-image'),
+        $iconArrows = qs('#icon-arrows'),
         $submitErrors = qs('#submit-errors'),
         $form = qs('#form'),
         $moreImages = qs('#more-images'),
         $mainImage = qs('#main-image'),
         $btnDelete = qs('#btn-delete')
     let validationsErrors = false;
+
+    
 
     $inputName.addEventListener('blur', () => {
         switch (true) {
@@ -127,7 +132,7 @@ function qs(element) {
 
     const addImage = ()=> {
         let filePath = $file.value; //captura el valor del input
-        console.log(filePath)
+        alert('hola')
         let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
         if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
@@ -141,23 +146,27 @@ function qs(element) {
                 let reader = new FileReader();
                 reader.onload = function (e) {
                     $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
-                    $imgPreview.classList.add('border');
-                    $mainImage.style.display = 'none'
+                    $imgPreview.classList.add('border')
+                    /* $mainImage.style.display = 'none' */
                     $moreImages.style.display = 'flex';
                 };
-
-
+                $selectImage.classList.remove('select-image')
+                $selectImage.classList.add('change')
+                $iconImage.style.display = 'none'
+                $iconArrows.style.opacity = '100%'
+                
+                
                 reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = '';
                 $file.classList.remove('is-invalid');
             }
         }
     }
-
-const changeImg = ()=> {
+    
+/* const changeImg = ()=> {
     let filePath = $changeFile.value; //captura el valor del input
     console.log(filePath)
-        /* let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+     let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
         if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
             $changeFile.value = '';
@@ -180,5 +189,5 @@ const changeImg = ()=> {
                 $fileErrors.innerHTML = '';
                 $file.classList.remove('is-invalid');
             }
-        } */
-}
+        } 
+}  */

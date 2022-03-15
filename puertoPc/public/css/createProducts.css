@@ -73,7 +73,7 @@
 .select-image {
     background-color: var(--blue);
     border-radius: 0.8rem;
-    width: 70%;
+    width: 100%;
     height: 6rem;
     display: flex;
     justify-content: center;
@@ -82,10 +82,10 @@
     width: fit-content;
 }
 
-.select-image:nth-child(2),
+/* .select-image:nth-child(2),
 .select-image:nth-child(3){
     display: none;
-}
+} */
 
 .select-image:hover {
     filter: brightness(90%);
@@ -98,9 +98,26 @@
 }
 
 .more-images {
-    display: none;
     align-self: flex-end;
     margin-bottom: 1rem;
+    background-color: white;
+    border-style: solid;
+    border-color: var(--blue);
+    border-radius: 0.8rem;
+    height: 15rem;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    width: 30%;
+    position: relative;
+}
+
+.more-images:hover{
+    filter: brightness(90%);
+}
+
+.more-images input {
+    position: absolute;
 }
 
 .buttom-image {
@@ -125,7 +142,6 @@
     width:  25rem;
     height: 25rem;
     margin-bottom: 1rem;
-    display: none;
     position: relative;
 }
 
@@ -140,7 +156,7 @@
     object-fit: scale-down; 
 }
 
-.container-change-image {
+.change {
     width: 1rem;
     height: 1rem;
     position: absolute;
@@ -154,6 +170,7 @@
     opacity: 60%;
     transition: all 0.5s;
     cursor: pointer;
+    opacity: 0%;
 }
 
 .fa-trash-create {
@@ -186,6 +203,16 @@
     }
 }
 
+.select-image{
+    height: 20rem;
+    background-color: white;
+    border-style: solid;
+    border-color: var(--blue);
+}
+
+.select-image label {
+    color: var(--grey);
+}
 @media (min-width: 768px) {
     .form-create{
         width: 60%;
@@ -199,17 +226,4 @@
         display: block;
         display: flex;
     }
-
-    .select-image {
-        width: 30%;
-        height: 10rem;
-        background-color: white;
-        border-style: solid;
-        border-color: var(--blue);
-    }
-
-    .select-image label {
-        color: var(--grey);
-    }
-
 }
