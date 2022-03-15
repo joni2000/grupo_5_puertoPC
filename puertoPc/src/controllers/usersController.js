@@ -44,6 +44,17 @@ var usersController = {
                                httpOnly: true,
                                secure: true
                            })
+                       }else{
+                           
+                        const TIME_IN_MILISECONDS = 60000000
+                        res.cookie("userPuertoPc", req.session.user, {
+                            expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                            httpOnly: true,
+                            secure: true
+                        })
+                        res.locals.user = req.session.user;
+            
+                        res.redirect('/')
                        }
                        
             

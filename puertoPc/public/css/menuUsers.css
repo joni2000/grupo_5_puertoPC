@@ -142,6 +142,16 @@
     font-size: 1.5rem;
     padding-left: 1rem;
 }
+  /*IMAGE AVATAR*/
+.imagUsersImage-mobile {
+    width: 70%;
+    height: 100%;
+}
+.imagUsersImage-mobile img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+}
 /*box button logout and profile/user*/
 .buttonUsersMenu-mobile{
     display: flex;

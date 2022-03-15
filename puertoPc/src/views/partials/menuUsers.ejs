@@ -1,14 +1,15 @@
 <div id="boxMenuUsers">
     <% if (typeof locals.user != "undefined") { %>
-        <div class="boxImagUsers-mobile">
-            <div class="imagUsersMenu-mobile">
-                <div class="imagUsersIcon-mobile">
-                    <i class="fal fa-user-circle"></i>
+        <div class="boxImagUsers-mobile">         
+            <figure class="imagUsersMenu-mobile">
+                <div class="imagUsersImage-mobile">
+                    <img src="/images/avatars/<%- user.image %>" alt="<%- user.firstName %>">
                 </div>
-            </div>
-            <div class="textsUsersMenu-mobile">
-                <h3>Bienvenido</h3>
-                <p>Donde encontraras tus compras, favoritos etc</p>
+            </figure>
+
+            <div class="textsUsersMenu-mobile">  
+                <h3>¡Hola <%- user.firstName %>!</h3>
+                <p>Bienvenido/a a tu cuenta, donde encontraras tus compras, favoritos etc</p>
             </div>
         </div>
          <div class="buttonUsersMenu-mobile">

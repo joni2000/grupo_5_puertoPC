@@ -1,5 +1,5 @@
 window.onload = () =>{
-    let $formLogin = document.getElementById('formLogin');
+    let $formLogin = document.querySelector('#formLogin');
     let $emailLogin = document.querySelector('#email');
     let $emailErrorlogin = document.querySelector('#emailErrorLogin');
     
@@ -7,73 +7,77 @@ window.onload = () =>{
     let $passErrorlogin = document.querySelector('#passErrorLogin');
     let regExEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let regExPass =/^[a-z0-9_-]{6,12}$/ ;
-    let $submitErrorlogin = document.getElementById('submitLogin');
+    let $submitErrorLogin = document.querySelector('error-messageLoginForm');
 
-    let errors = {};
+    let validationsErrorsLogin = false;
+
     $emailLogin.addEventListener('blur', (event)=>{
-       let value = event.target.value;
-       let errorMsg ;
+         let value = event.target.value;
        switch(true){
-           case !value.trim ():
-               errorMsg = 'El campo email es requerido'
-               errors.inputEmailError = errorMsg;
-               $emailErrorlogin.classList.add('error-message');
-               $emailErrorlogin.innerHTML = errorMsg
+        
+           case !$emailLogin.value.trim ():
+               $emailErrorlogin.innerHTML = 'El campo email es requerido';
+               $emailLogin.classList.add('error-message');
+               validationsErrorsLogin = true
                break;
                
           case !regExEmail.test(value):
-              errorMsg = 'Email inválido'
-              errors.inputEmailError = errorMsg;
-              $emailErrorlogin.classList.add('error-message');
-              $emailErrorlogin.innerHTML = errorMsg
+              $emailErrorlogin.innerHTML = 'Email inválido';
+              $emailLogin.classList.add('error-message');
+               validationsErrorsLogin = true
               break;
         default:
             $emailErrorlogin.innerHTML = "";
             $emailErrorlogin.classList.remove('error-message')
-
+            break;
        }
          
     })
-    $passLogin.addEventListener('blur', (event)=>{
+   $passLogin.addEventListener('blur', (event)=>{
        let value = event.target.value;
-       let errorMsg ;
        switch(true){
-           case !value.trim ():
-               errorMsg = 'El campo contraseña es requerido'
-               errors.inputEmailError = errorMsg;
-               $passErrorlogin.classList.add('error-message');
-               $passErrorlogin.innerHTML = errorMsg
+           case !$passLogin.value.trim ():
+                $passErrorlogin.innerHTML = 'El campo contraseña es requerido';
+                $passErrorlogin.classList.add('error-message');
+                validationsErrorsLogin = true
                break;
                
           case !regExPass.test(value):
-              errorMsg = 'La contraseña debe tener entre 6 y 12 caracteres'
-              errors.inputEmailError = errorMsg;
+              $passErrorlogin.innerHTML = 'La contraseña debe tener entre 6 y 12 caracteres';
               $passErrorlogin.classList.add('error-message');
-              $passErrorlogin.innerHTML = errorMsg
+              validationsErrorsLogin = true
               break;
         default:
             $passErrorlogin.innerHTML = "";
             $passErrorlogin.classList.remove('error-message')
+            break;
 
        }
          
-    })/* 
+    })
     $formLogin.addEventListener('submit', function(e){
-             e.preventDefault();
-
-            let error = false; 
-            let elementsForm = this.elements;
-
-             for (let index = 0; index < elementsForm.length - 1; index++){
-             if (elementsForm[index].value == ''
-             
-             ){
-                elementsForm[index].classList.add('.input-style'); 
-                $submitErrorlogin.innerHTML ='Completa todos los campos';
-                error = true;
-             }
+           /*   e.preventDefault();
+            let errorLogin = false;
+            let elementsFormLogin = this.elements;
+           
+             for (let index = 0; index < elementsFormLogin.length - 1; index++){
+             if (elementsForm[index].value == "" ){  
+                $submitErrorLogin.innerHTML ='Completa todos los campos'; 
+                $submitErrorLogin.classList.add('error-messageLoginForm'); 
+                errorLogin = true; 
+                validationsErrorsLogin = true
+                break;
+             default:
+                    $passErrorlogin.innerHTML = "";
+                    $passErrorlogin.classList.remove('error-message')
+                    break;
+               } 
         }
+        if(!errorLogin && !validationsErrorsLogin){
+            $formLogin.submit()
+        } 
+ */
          
-    }) */
+    }) 
       
 }
