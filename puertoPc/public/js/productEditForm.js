@@ -1,8 +1,6 @@
-/* function qs(element) {
+function qs(element) {
     return document.querySelector(element)
 }
-
-window.addEventListener('load', function () {
     let $inputName = qs('#name'),
         $nameErrors = qs('#nameErrors'),
         $inputDescription = qs('#description'),
@@ -16,19 +14,20 @@ window.addEventListener('load', function () {
         $inputDiscount = qs('#discount'),
         $discountErrors = qs('#discountErrors'),
         $file = qs('#file'),
+        $changeFile = qs('#change-file'),
         $fileErrors = qs('#fileErrors'),
         $imgPreview = qs('#img-preview'),
-        $submitErrors = qs('#submit-errors')
+        $selectImage = qs('#select-image'),
+        $iconImage = qs('#icon-image'),
+        $iconArrows = qs('#icon-arrows'),
+        $submitErrors = qs('#submit-errors'),
         $form = qs('#form'),
         $moreImages = qs('#more-images'),
         $mainImage = qs('#main-image'),
-        $btnDelete = qs('#btn-delete'),
-        $dbImage = qs('#db-image')
+        $btnDelete = qs('#btn-delete')
     let validationsErrors = false;
 
-    $imgPreview.classList.add('border');
-    $mainImage.style.display = 'none'
-    $moreImages.style.display = 'block';
+    
 
     $inputName.addEventListener('blur', () => {
         switch (true) {
@@ -131,11 +130,12 @@ window.addEventListener('load', function () {
 
     })
 
-    $file.addEventListener('change', function () {
+    const addImage = ()=> {
         let filePath = $file.value; //captura el valor del input
+        alert('hola')
         let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
         if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)'
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
             $file.value = '';
             $imgPreview.innerHTML = '';
             return false;
@@ -146,22 +146,39 @@ window.addEventListener('load', function () {
                 let reader = new FileReader();
                 reader.onload = function (e) {
                     $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
-                    $imgPreview.classList.add('border');
-                    $dbImage.style.display = 'none'
-                    $mainImage.style.display = 'none'
-                    $moreImages.style.display = 'block';
+                    $imgPreview.classList.add('border')
+                    $moreImages.style.display = 'flex';
                 };
-
-
+                $selectImage.classList.remove('select-image')
+                $selectImage.classList.add('change')
+                $iconImage.style.display = 'none'
+                $iconArrows.style.opacity = '100%'
+                
+                
                 reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerHTML = '';
                 $file.classList.remove('is-invalid');
-
-                $btnDelete.onmouseover = () => console.log('funciona')
             }
         }
+    }
+
+    $form.addEventListener('submit', function(event){
+        event.preventDefault()
+        
+        let error = false;
+        let elementsForm = this.elements;
+
+        for (let index = 0; index < elementsForm.length - 1; index++){
+            if(elementsForm[index].value == ''){
+                elementsForm[index].classList.add('is-invalid');
+                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                error = true
+            }
+        }
+
+        if(!error && !validationsErrors) {
+            $form.submit()
+        }
+
     })
-
-
-})
- */
+    

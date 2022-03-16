@@ -147,7 +147,6 @@ function qs(element) {
                 reader.onload = function (e) {
                     $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
                     $imgPreview.classList.add('border')
-                    /* $mainImage.style.display = 'none' */
                     $moreImages.style.display = 'flex';
                 };
                 $selectImage.classList.remove('select-image')
@@ -162,32 +161,24 @@ function qs(element) {
             }
         }
     }
-    
-/* const changeImg = ()=> {
-    let filePath = $changeFile.value; //captura el valor del input
-    console.log(filePath)
-     let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-        if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
-            $changeFile.value = '';
-            $imgPreview.innerHTML = '';
-            return false;
-        } else {
-            //Image preview
-            console.log($file.files)
-            if ($changeFile.files && $changeFile.files[0]) {
-                let reader = new FileReader();
-                reader.onload = function (e) {
-                    $imgPreview.innerHTML = `<img src="${e.target.result}" alt="">`;
-                    $imgPreview.classList.add('border');
-                    $mainImage.style.display = 'none'
-                    $moreImages.style.display = 'block';
-                };
 
+    $form.addEventListener('submit', function(event){
+        event.preventDefault()
+        
+        let error = false;
+        let elementsForm = this.elements;
 
-                reader.readAsDataURL($file.files[0]);
-                $fileErrors.innerHTML = '';
-                $file.classList.remove('is-invalid');
+        for (let index = 0; index < elementsForm.length - 1; index++){
+            if(elementsForm[index].value == ''){
+                elementsForm[index].classList.add('is-invalid');
+                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                error = true
             }
-        } 
-}  */
+        }
+
+        if(!error && !validationsErrors) {
+            $form.submit()
+        }
+
+    })
+    

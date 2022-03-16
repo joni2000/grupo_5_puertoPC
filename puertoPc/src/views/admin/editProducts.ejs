@@ -23,6 +23,7 @@
                     <% if (locals.errors && errors.name) { %>
                         <span class="error-message"><%= errors.name.msg %> </span>
                     <% } %>
+                    <span class="error error-message" id="nameErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="description">Descripción:</label>
@@ -30,11 +31,12 @@
                     <% if (locals.errors && errors.description) { %>
                         <span class="error-message"><%= errors.description.msg %> </span>
                     <% } %>
+                    <span class="error error-message" id="descriptionErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form"  for="select">Categoría:</label>
                     <select class="text-camp" name="category" id="select">
-                        <option value="">Elegir</option>
+                        <option value=""  hidden selected>Elegir</option>
                         <% categories.forEach(category => { %>  
                             <option value="<%- category.id %>" <%- locals.old && old.category == category.id ? "selected" : category.id == product.category_id ? "selected" : "" %>><%- category.name%></option>
                         <% }) %>
@@ -42,6 +44,7 @@
                     <% if (locals.errors && errors.category) { %>
                         <span class="error-message"><%= errors.category.msg %> </span>
                     <% } %>    
+                    <span class="error-message" id="categoryErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="stock">Stock:</label>
@@ -49,6 +52,7 @@
                     <% if (locals.errors && errors.stock) { %>
                         <span class="error-message"><%= errors.stock.msg %> </span>
                     <% } %>
+                    <span class="error-message" id="stockErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="price">Precio:</label>
@@ -56,6 +60,7 @@
                     <% if (locals.errors && errors.price) { %>
                         <span class="error-message"><%= errors.price.msg %> </span>
                     <% } %>
+                    <span class="error-message" id="priceErrors"></span>
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="discount">Descuento:</label>
@@ -66,25 +71,23 @@
                 </div>
                 <div class="container-select-image">
                     <figure class="img-container" id="img-preview">
-                        <div class="container-change-image">
-                            <label for="file-db"><i class="fa-solid fa-trash-can" id="btn-delete"></i></label>
-                            <input class="buttom-image" type="file" name="image" id="file-db">
+                        <div class="select-image select-image-edit" id="select-image"> <!-- container-change-image -->
+                            <label class="text-form label-edit" for="file"><i class="fa-solid fa-arrow-right-arrow-left fa-trash-edit change-file " id="icon-arrows"></i></label>
+                            <input class="buttom-image" type="file" name="image" id="file" onchange="addImage()" multiple>
+                            <img id="db-image" src="/images/products/<%-product.image[0].name%>" alt=" <%-product.name%> ">
                         </div>
-                        <img id="db-image" src="/images/products/<%-product.image[0].name%>" alt="">
                     </figure>
-                    <figure class="select-image" id="main-image">
-                        <label class="text-form" for="file"><i class="fa-solid fa-image"></i></label>
-                        <input class="buttom-image" type="file" name="image" id="file">
-                    </figure> 
-                    <figure class="select-image more-images" id="more-images">
-                        <label class="text-form" for="image">agregar mas imagenes</label>
+                    <figure class="more-images" id="more-images">
+                        <label class="text-form" for="files"><i class="fa-thin fa-plus fa-plus-create"></i></label>
                         <input class="buttom-image" type="file" name="image" id="files" multiple>
-                    </figure> 
+                    </figure>    
                 </div>
                 <% if (locals.errors && errors.image) { %>
                     <span class="text-danger"><%= errors.image.msg %> </span>
                 <% } %>
                 <span class="error-message" id="fileErrors"></span>
+
+                <span class="error-message" id="submit-errors"></span>
                     <div class="button-box button__buy-cart">
                         <button  class="button-buy" type="submit">
                             Editar producto
@@ -101,3 +104,5 @@
     <script src="https://kit.fontawesome.com/20e7bf528f.js" crossorigin="anonymous"></script>    
 </body>
 </html>
+
+<!--  -->

@@ -1,0 +1,16 @@
+figure .select-image-edit {
+    border: solid grey 1px;
+}
+
+figure .select-image-edit:hover {
+    filter: brightness(100%);
+}
+
+div label .fa-trash-edit {
+    opacity: 100%;
+}
+
+div .label-edit {
+    top: 1rem;
+    right: 1rem;
+}
