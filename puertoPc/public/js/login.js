@@ -29,6 +29,7 @@ window.onload = () =>{
         default:
             $emailErrorlogin.innerHTML = "";
             $emailErrorlogin.classList.remove('error-message')
+            $submitErrorLogin.innerHTML =''
             break;
        }
          
@@ -55,15 +56,16 @@ window.onload = () =>{
        }
          
     })
-    /*  $formLogin.addEventListener('submit', function(e){
+      $formLogin.addEventListener('submit', function(e){
             e.preventDefault();
+            
             let errorLogin = false;
             let elementsFormLogin = this.elements;
            
-             for (let index = 0; index < elementsFormLogin.length - 1; index++){
+             for (let index = 0; index < elementsFormLogin.length - 6; index++){
              if (elementsFormLogin[index].value == "" ){  
                 $submitErrorLogin.innerHTML ='Completa todos los campos'
-                elementsFormLogin[index].classList.add()
+                elementsFormLogin[index].classList.add('error-message')
                 $submitErrorLogin.classList.add('#submitErrorLoginmsj')
                 errorLogin = true;
                 }
@@ -72,6 +74,6 @@ window.onload = () =>{
             $formLogin.submit()
         } 
          
-    })  */
+    })  
       
 }
