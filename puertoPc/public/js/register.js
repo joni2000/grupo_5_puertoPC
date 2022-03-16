@@ -19,7 +19,11 @@ window.addEventListener('load', function () {
         $form = qs('#form_register')
     $submitError = qs('#submitError')
     $terms = qs('#terms'),
-        $termsError = qs('#termsError')
+        $termsError = qs('#termsError'),
+        regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+        regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+        regExPhone = /^[0-9]{10,12}$/,
+        regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
     let validationsErrors = false;
 
@@ -27,17 +31,18 @@ window.addEventListener('load', function () {
         switch (true) {
             case !$inputfirst_name.value.trim():
                 $first_nameError.innerHTML = 'El campo nombre es obligatorio';
-                $inputfirst_name.classList.add('is-invalid');
                 validationsErrors = true
+                break;
+            case !regExAlpha.test($inputfirst_name.value):
+                $first_nameError.innerHTML = 'Debe ingresar un nombre válido';
+                validationsErrors = true;
                 break;
             case !$inputfirst_name.value.length > 4:
                 $first_nameError.innerHTML = 'El nombre debe tener mas de 2 caracteres';
-                $inputfirst_name.classList.add('is-invalid')
                 validationsErrors = true;
                 break;
             default:
-                $inputfirst_name.classList.remove('is-invalid');
-                $inputfirst_name.classList.add('is-valid');
+                $inputfirst_name.style.borderColor = 'lightblue';
                 $first_nameError.innerHTML = '';
                 break;
         }
@@ -47,18 +52,19 @@ window.addEventListener('load', function () {
         switch (true) {
             case !$inputlast_name.value.trim():
                 $inputlast_nameError.innerHTML = 'El campo apellido es obligatorio';
-                $inputlast_name.classList.add('is-invalid');
                 validationsErrors = true
+                break;
+            case !regExAlpha.test($inputlast_name.value):
+                $inputlast_nameError.innerHTML = 'Debes ingresar un apellido válido';
+                validationsErrors = true;
                 break;
             case !$inputlast_name.value.length > 4:
                 $inputlast_nameError.innerHTML = 'Ingresa un apellido válido';
-                $inputlast_name.classList.add('is-invalid')
                 validationsErrors = true;
                 break;
             default:
-                $inputlast_name.classList.remove('is-invalid');
-                $inputlast_name.classList.add('is-valid');
-                $last_nameError.innerHTML = '';
+                $inputlast_name.style.borderColor = 'lightblue';
+                $inputlast_nameError.innerHTML = '';
                 break;
         }
     })
@@ -67,17 +73,18 @@ window.addEventListener('load', function () {
         switch (true) {
             case !$phone.value.trim():
                 $phoneError.innerHTML = 'Debes ingresar tu teléfono ';
-                $phone.classList.add('is-invalid');
+                validationsErrors = true
+                break;
+            case !regExPhone.test($phone.value):
+                $phoneError.innerHTML = 'Debes ingresar un télefono válido';
                 validationsErrors = true
                 break;
             case !$phone.value.length > 4:
                 $phoneError.innerHTML = 'Debes ingresar un número de teléfono válido';
-                $phone.classList.add('is-invalid')
                 validationsErrors = true;
                 break;
             default:
-                $phone.classList.remove('is-invalid');
-                $phone.classList.add('is-valid');
+                $phone.style.borderColor = 'lightblue';
                 $phoneError.innerHTML = '';
                 break;
         }
@@ -87,17 +94,14 @@ window.addEventListener('load', function () {
         switch (true) {
             case !$email.value.trim():
                 $emailError.innerHTML = 'El campo email es obligatorio';
-                $email.classList.add('is-invalid');
                 validationsErrors = true
                 break;
-            case !$email.value.length > 4:
+            case !regExEmail.test($email.value):
                 $emailError.innerHTML = 'El email debe ser válido';
-                $email.classList.add('is-invalid')
                 validationsErrors = true;
                 break;
             default:
-                $email.classList.remove('is-invalid');
-                $email.classList.add('is-valid');
+                $email.style.borderColor = 'lightblue';
                 $emailError.innerHTML = '';
                 break;
         }
@@ -107,17 +111,18 @@ window.addEventListener('load', function () {
         switch (true) {
             case !$password.value.trim():
                 $passwordError.innerHTML = 'El campo email es obligatorio';
-                $password.classList.add('is-invalid');
                 validationsErrors = true
+                break;
+            case !regExPass.test($password.value):
+                $passwordError.innerHTML = 'La contraseña debe tener 1 letra mayúscula, 1 minúscula y/o simbolo';
+                validationsErrors = true;
                 break;
             case !$password.value.length > 6:
                 $passwordError.innerHTML = 'La contraseña debe tener entre 6 y 12 caracteres';
-                $password.classList.add('is-invalid')
                 validationsErrors = true;
                 break;
             default:
-                $password.classList.remove('is-invalid');
-                $password.classList.add('is-valid');
+                $password.style.borderColor = 'lightblue';
                 $passwordError.innerHTML = '';
                 break;
         }
@@ -127,7 +132,6 @@ window.addEventListener('load', function () {
         switch (true) {
             case !$password2.value.trim():
                 $password2Error.innerHTML = 'El campo email es obligatorio';
-                $password2.classList.add('is-invalid');
                 validationsErrors = true
                 break;
             case !$password2.value.length > 4:
@@ -136,8 +140,7 @@ window.addEventListener('load', function () {
                 validationsErrors = true;
                 break;
             default:
-                $password2.classList.remove('is-invalid');
-                $password2.classList.add('is-valid');
+                $password2.style.borderColor = 'lightblue';
                 $password2Error.innerHTML = '';
                 break;
         }
@@ -147,17 +150,13 @@ window.addEventListener('load', function () {
         switch (true) {
             case !$terms.value.trim():
                 $termsError.innerHTML = 'Debes aceptar los términos y condiciones';
-                $terms.classList.add('is-invalid');
                 validationsErrors = true
                 break;
             case !$terms.value.length > 4:
                 $termsError.innerHTML = '';
-                $terms.classList.add('is-invalid')
                 validationsErrors = true;
                 break;
             default:
-                $terms.classList.remove('is-invalid');
-                $terms.classList.add('is-valid');
                 $termsError.innerHTML = '';
                 break;
         }
@@ -168,19 +167,20 @@ window.addEventListener('load', function () {
 
         let error = false;
         let elementsForm = this.elements;
+        console.log(elementsForm)
 
-        for (let index = 0; index < elementsForm.length - 1; index++) {
+        for (let index = 0; index < elementsForm.length - 3; index++) {
             if (elementsForm[index].value == ""
                 //&& elementsForm[index].name !== 'nombre'
                 //&& elementsForm[index].apellido !== 'apellido'
             ) {
-                elementsForm[index].classList.add('is-invalid');
+                elementsForm[index].style.borderColor = 'red';
                 submitError.innerHTML = 'Los campos señalados son obligatorios';
                 error = true;
             }
         }
         if (!$terms.checked) {
-            $terms.classList.add('is-invalid');
+            //$terms.classList.add('is-invalid');
             $termsError.innerHTML = 'Debes aceptar los términos y condiciones';
             error = true;
         }
