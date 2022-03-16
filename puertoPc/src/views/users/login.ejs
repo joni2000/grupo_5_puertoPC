@@ -39,15 +39,14 @@
                         <input type="checkbox" name="keepsession" id="checksession">
                         <label for="checksession">Mantener sesión abierta</label>
                     </div>
-                    
-                         
+                    <span class="error-messageLoginForm" id="submitErrorLoginmsj"></span>     
                     <div class="form-button-container log">
                         <% if (locals.errors && errors.custom) { %>
                             <span class="error-message credenciales"> <%= errors.custom.msg %> </span>
-                          <% } %> 
-                          <span class="error-messageLoginForm"></span>
+                          <% } %>      
                         <button type="submit" class="enter">Ingresar</button> <!-- type submit envía el form -->
                     </div>
+                    
                     <p class="log-with">O ingresa con:</p>
                     
                     <hr class="hr-login">

@@ -76,7 +76,7 @@
     display: flex;
     align-self: flex-start;
     margin-left: 2.2rem;
-}
+} /*SPAN*/
 .form-login span a{
     text-decoration: underline;
 }
@@ -84,7 +84,7 @@
     color: var(--darkBlue);
 
 }
-
+  /*SPAN ERROR*/
 span.error-message {
     font-size: 1.3rem;
     display: flex;
@@ -142,6 +142,24 @@ span.credenciales{
     margin-top: 0.18rem;
     cursor: pointer;
 }
+   /*submit css red and greend */
+
+
+.errorBorderLogin {
+    border-color: var(--errorMessage);
+    box-shadow: 0px 0px 2px 1px var(--errorMessage);
+
+    
+  }
+.errorBorderLoginOk {
+    border-color: green;
+    box-shadow: 0px 0px 2px 1px rgb(0, 255, 0);
+
+}
+#submitErrorLoginmsj{
+    color: var(--errorMessage);
+}
+
 
 .hr-login {
     height: 2px;
@@ -386,6 +404,11 @@ span.credenciales{
         order: 15;
         position: relative;
         bottom: 1.5rem;
+    }
+     /*SPAN ERROR MSJ*/
+    #submitErrorLoginmsj{
+        position: absolute;
+        font-family: var(--fontText);
     }
 
 }

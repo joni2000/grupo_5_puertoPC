@@ -7,7 +7,7 @@ window.onload = () =>{
     let $passErrorlogin = document.querySelector('#passErrorLogin');
     let regExEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let regExPass =/^[a-z0-9_-]{6,12}$/ ;
-    let $submitErrorLogin = document.querySelector('error-messageLoginForm');
+    let $submitErrorLogin = document.querySelector('#submitErrorLoginmsj');
 
     let validationsErrorsLogin = false;
 
@@ -61,23 +61,17 @@ window.onload = () =>{
             let elementsFormLogin = this.elements;
            
              for (let index = 0; index < elementsFormLogin.length - 1; index++){
-             if (elementsForm[index].value == "" ){  
-                $submitErrorLogin.innerHTML ='Completa todos los campos'; 
-                $submitErrorLogin.classList.add('error-messageLoginForm'); 
-                errorLogin = true; 
-                validationsErrorsLogin = true
-                break;
-             default:
-                    $passErrorlogin.innerHTML = "";
-                    $passErrorlogin.classList.remove('error-message')
-                    break;
-               } 
+             if (elementsFormLogin[index].value == "" ){  
+                $submitErrorLogin.innerHTML ='Completa todos los campos'
+                elementsFormLogin[index].classList.add()
+                $submitErrorLogin.classList.add('#submitErrorLoginmsj')
+                errorLogin = true;
+                }
         }
-        if(!errorLogin && !validationsErrorsLogin){
+         if(!errorLogin && !validationsErrorsLogin){
             $formLogin.submit()
         } 
- 
          
-    }) */
+    })  */
       
 }
