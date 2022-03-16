@@ -1,7 +1,4 @@
 
-.body-create {
-}
-
 .main-create {
     display: flex;
     justify-content: center;
@@ -82,10 +79,6 @@
     width: fit-content;
 }
 
-/* .select-image:nth-child(2),
-.select-image:nth-child(3){
-    display: none;
-} */
 
 .select-image:hover {
     filter: brightness(90%);
@@ -140,7 +133,7 @@
 .img-container {
     border-radius: 5px;
     width:  25rem;
-    height: 25rem;
+    height: fit-content;
     margin-bottom: 1rem;
     position: relative;
 }
