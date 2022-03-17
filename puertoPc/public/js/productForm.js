@@ -131,10 +131,61 @@ function qs(element) {
     })
 
     const addImage = ()=> {
-        let filePath = $file.value; //captura el valor del input
-        alert('hola')
         let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-        if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+         
+        let flag = true //banderita para que se ejecute solo una vez
+        for(let i = 0; i < $file.files.length; i++){
+            let file = $file.files[i];
+            let fileName = file.name;
+            if(!allowedExtension.test(fileName)){
+                $fileErrors.style.display = 'block';
+                $fileErrors.innerHTML = 'Solo archivos .jpg - .jpeg - .png - .gif';
+                $file.value = "";
+            }else{
+                if( flag == true) {
+                    $imgPreview.classList.add('border')
+                    $iconImage.innerHTML = 'Cambiar imagenes'
+                    $selectImage.style.height = '4rem'
+
+                    flag = false 
+                }
+                
+                $fileErrors.innerHTML = '';
+            }
+        }
+
+        if($file.files.length < 6){
+            let images = [];
+            $imgPreview.innerHTML = '';
+            for(i = 0; i < $file.files.length; i++){
+                images.push({
+                    "name": $file.files[i].name,
+                    "url": URL.createObjectURL($file.files[i]),
+                    "file": $file.files[i],
+                })
+            }
+
+            images.forEach((i) => {
+                $imgPreview.innerHTML += `
+                <img src="`+ i.url +`" alt="Image">
+                `
+            })
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       /*  if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
             $file.value = '';
             $imgPreview.innerHTML = '';
@@ -179,6 +230,6 @@ function qs(element) {
         if(!error && !validationsErrors) {
             $form.submit()
         }
-
-    })
+ */
+    }
     

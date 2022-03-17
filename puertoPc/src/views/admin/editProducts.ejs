@@ -70,17 +70,17 @@
                     <% } %>
                 </div>
                 <div class="container-select-image">
-                    <figure class="img-container" id="img-preview">
-                        <div class="select-image select-image-edit" id="select-image"> <!-- container-change-image -->
-                            <label class="text-form label-edit" for="file"><i class="fa-solid fa-arrow-right-arrow-left fa-trash-edit change-file " id="icon-arrows"></i></label>
+                    <figure class="container-add-image">
+                        <div class="select-image" id="select-image"> <!-- container-change-image -->
+                            <label class="text-form" for="file" id="icon-image"><i class="fa-solid fa-image fa-image-create"></i></label>
                             <input class="buttom-image" type="file" name="image" id="file" onchange="addImage()" multiple>
-                            <img id="db-image" src="/images/products/<%-product.image[0].name%>" alt=" <%-product.name%> ">
+                        </div>
+                        <div class="img-container" id="img-preview">
+                            <% for( let i = 0; i < product.image.length; i++ ) { %>
+                               <img src="/images/products/<%-product.image[i].name%>" alt="<%-product.image[i].name%>"> 
+                            <% } %>
                         </div>
                     </figure>
-                    <figure class="more-images" id="more-images">
-                        <label class="text-form" for="files"><i class="fa-thin fa-plus fa-plus-create"></i></label>
-                        <input class="buttom-image" type="file" name="image" id="files" multiple>
-                    </figure>    
                 </div>
                 <% if (locals.errors && errors.image) { %>
                     <span class="text-danger"><%= errors.image.msg %> </span>
