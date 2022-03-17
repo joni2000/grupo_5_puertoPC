@@ -71,16 +71,15 @@
                     <span class="error" id="discountErrors"></span>
                 </div>
                     <div class="container-select-image">
-                        <figure class="img-container" id="img-preview">
+                        <figure class="container-add-image">
                             <div class="select-image" id="select-image"> <!-- container-change-image -->
-                                <label class="text-form" for="file"><i class="fa-solid fa-image fa-image-create" id="icon-image"></i><i class="fa-solid fa-arrow-right-arrow-left fa-trash-create change-file " id="icon-arrows"></i></label>
-                                <input class="buttom-image" type="file" name="image" id="file" onchange="addImage()">
+                                <label class="text-form" for="file" id="icon-image"><i class="fa-solid fa-image fa-image-create"></i></label>
+                                <input class="buttom-image" type="file" name="image" id="file" onchange="addImage()" multiple>
+                            </div>
+                            <div class="img-container" id="img-preview">
+
                             </div>
                         </figure>
-                        <figure class="more-images" id="more-images">
-                            <label class="text-form" for="files"><i class="fa-thin fa-plus fa-plus-create"></i></label>
-                            <input class="buttom-image" type="file" name="image" id="files" multiple>
-                        </figure>    
                     </div>
                     <% if (locals.errors && errors.image) { %>
                         <span class="text-danger"><%= errors.image.msg %> </span>

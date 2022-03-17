@@ -5,8 +5,6 @@ function qs(element) {
         $nameErrors = qs('#nameErrors'),
         $inputDescription = qs('#description'),
         $descriptionErrors = qs('#descriptionErrors'),
-        $category = qs('#category'),
-        $categoryErrors = qs('#categoryErrors'),
         $inputStock = qs('#stock'),
         $stockErrors = qs('#stockErrors'),
         $inputPrice = qs('#price'),
@@ -26,8 +24,6 @@ function qs(element) {
         $mainImage = qs('#main-image'),
         $btnDelete = qs('#btn-delete')
     let validationsErrors = false;
-
-    
 
     $inputName.addEventListener('blur', () => {
         switch (true) {
@@ -64,21 +60,6 @@ function qs(element) {
         }
     })
 
-    $category.addEventListener('blur', () => {
-        switch (true) {
-            case !$category.value.trim():
-                $categoryErrors.innerHTML = 'Debes elegir una categoría';
-                $category.classList.add('is-invalid');
-                validationsErrors = true
-                break;
-            default:
-                $category.classList.remove('is-invalid');
-                $category.classList.add('is-valid');
-                $categoryErrors.innerHTML = '';
-                break;
-        }
-    })
-
     $inputStock.addEventListener('blur', () => {
         switch (true) {
             case !$inputStock.value.trim():
@@ -109,6 +90,77 @@ function qs(element) {
         }
     })
 
+    
+    $imgPreview.classList.add('border')
+    $iconImage.innerHTML = 'Cambiar imagenes'
+    $selectImage.style.height = '4rem'
+    
+    const addImage = ()=> {
+        let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+        
+        let flag = true //banderita para que se ejecute solo una vez
+        for(let i = 0; i < $file.files.length; i++){
+            let file = $file.files[i];
+            let fileName = file.name;
+            if(!allowedExtension.test(fileName)){
+                $fileErrors.style.display = 'block';
+                $fileErrors.innerHTML = 'Solo archivos .jpg - .jpeg - .png - .gif';
+                $file.value = "";
+            }else{
+                if( flag == true) {
+                    $imgPreview.classList.add('border')
+                    $iconImage.innerHTML = 'Cambiar imagenes'
+                    $selectImage.style.height = '4rem'
+                    
+                    flag = false 
+                }
+                
+                $fileErrors.innerHTML = '';
+            }
+        }
+        
+        if($file.files.length < 6){
+            let images = [];
+            $imgPreview.innerHTML = '';
+            for(i = 0; i < $file.files.length; i++){
+                images.push({
+                    "name": $file.files[i].name,
+                    "url": URL.createObjectURL($file.files[i]),
+                    "file": $file.files[i],
+                })
+            }
+            
+            $imgPreview.innerHTML = '';
+
+            images.forEach((i) => {
+                $imgPreview.innerHTML += `
+                <img src="`+ i.url +`" alt="Image">
+                `
+            })
+        }
+        
+        
+        $form.addEventListener('submit', function(event){
+        event.preventDefault()
+        
+        let error = false;
+        let elementsForm = this.elements;
+        
+        for (let index = 0; index < elementsForm.length - 1; index++){
+            if(elementsForm[index].value == ''){
+                elementsForm[index].classList.add('is-invalid');
+                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
+                error = true
+            }
+        }
+        
+        if(!error && !validationsErrors) {
+            $form.submit()
+        }
+        
+    })
+    }
+
     $form.addEventListener('submit', function (event) {
         event.preventDefault()
 
@@ -129,56 +181,3 @@ function qs(element) {
         }
 
     })
-
-    const addImage = ()=> {
-        let filePath = $file.value; //captura el valor del input
-        alert('hola')
-        let allowedExtension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
-        if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
-            $file.value = '';
-            $imgPreview.innerHTML = '';
-            return false;
-        } else {
-            //Image preview
-            console.log($file.files)
-            if ($file.files && $file.files[0]) {
-                let reader = new FileReader();
-                reader.onload = function (e) {
-                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
-                    $imgPreview.classList.add('border')
-                    $moreImages.style.display = 'flex';
-                };
-                $selectImage.classList.remove('select-image')
-                $selectImage.classList.add('change')
-                $iconImage.style.display = 'none'
-                $iconArrows.style.opacity = '100%'
-                
-                
-                reader.readAsDataURL($file.files[0]);
-                $fileErrors.innerHTML = '';
-                $file.classList.remove('is-invalid');
-            }
-        }
-    }
-
-    $form.addEventListener('submit', function(event){
-        event.preventDefault()
-        
-        let error = false;
-        let elementsForm = this.elements;
-
-        for (let index = 0; index < elementsForm.length - 1; index++){
-            if(elementsForm[index].value == ''){
-                elementsForm[index].classList.add('is-invalid');
-                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
-                error = true
-            }
-        }
-
-        if(!error && !validationsErrors) {
-            $form.submit()
-        }
-
-    })
-    
