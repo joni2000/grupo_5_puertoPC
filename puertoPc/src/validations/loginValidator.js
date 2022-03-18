@@ -5,6 +5,14 @@ let bcrypt = require('bcryptjs')
 const Users = db.User;
 
 module.exports = [
+    check('email')
+    .notEmpty()
+    .withMessage('Debes escribir un email'),
+
+    check('password')
+    .notEmpty()
+    .withMessage('Debes escribir una contraseña'),
+
     body('custom')
         .custom((value, {req}) => {
            return Users.findOne({

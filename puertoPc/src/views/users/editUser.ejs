@@ -48,7 +48,7 @@
                                 <div class="data ">
                                     <label>*País:</label>
                                     <select  class="select-css" name="country" id="countryEdit" value="<%-user.country%>">
-                                        <option value="<%= user.country %>" <%= locals.old && old.user == user.id ? "selected" : ""%> ><%=user.country%></option> 
+                                        
 
                                         <option value="">Selecciona un país</option>                       
                                         
@@ -64,7 +64,7 @@
                                 <div class="data ">
                                     <label>*Provincia:</label>
                                     <select class="select-css" name="province" id="provinceEdit" value="<%-user.province%>">
-                                    <option value="<%= user.province %>" <%= locals.old && old.user == user.id ? "selected" : ""%> ><%=user.province%></option> 
+                                    
 
                                         <option value="">Selecciona una provincia</option>                     
                                     <% provincias.forEach(province => { %>
