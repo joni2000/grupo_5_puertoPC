@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <title><%= title %> </title>
+        <script src="https://kit.fontawesome.com/20e7bf528f.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/admin.js" defer></script>
+    </head>
+<body>
+    <!-- include admin header -->
+    <%- include('../partials/adminHeader') %>
+     
+    <main class="main-admin margin-top-fixed-admin">
+        <div class="container container-search">
+            <div class="search-bar col-6 search-bar-admin">
+                <input type="text" placeholder="Buscar Usuario">
+                <form class="icon-search search-admin" action="">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <a href="/admin/crear" class="button-buy">Cargar uno</a>
+            </div>
+        </div>
+        <div class="container-table">
+            <table class="table-fill">
+            <thead>
+              <tr class="tr">
+                  <th class="table-left">Id</th>
+                  <th class="table-left">Nombre</th>
+                  <th class="table-left">Email</th>
+                  <th class="table-left">Rol</th>
+                  <th class="table-left">Precio</th>
+                  <th class="table-left"></th>
+              </tr>
+            </thead>
+            <tbody class="table-hover">
+                <% users.forEach(user => { %>
+                    <tr class="tr tr-users" style="height: 3rem;">
+                        <th class="text-left"><%=user.id%></th>
+                        <th class="text-left"><%=user.first_name%></th>
+                        <th class="text-left"><%=user.email%></th>
+                        <th class="text-left"><%=user.rol%></th> 
+                        <th class="text-left"><%=user.rol%></th> 
+                        <th class="text-left">
+                            <a class="btn-edit" href="/admin/editar/<%= user.id %>">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            <form action="/admin/eliminar/<%- user.id %>?_method=DELETE" method="POST">
+                              <button type="submit" class="btn-delete" >
+                                <i class="fa-regular fa-trash-can"></i>
+                              </button>
+                            </form>
+                        </th>
+                    </tr>
+                <% }) %>
+            </tbody>
+          </table>
+
+        </div>
+    </main>
+</body>
+</html>

@@ -1,12 +1,12 @@
-let {getCategories, getProducts, writeJson} = require('../data/dataBase');
 let fs = require('fs');
 const { validationResult } = require('express-validator');
 const db = require('../data/models');
+const { userInfo } = require('os');
 
 const Products = db.Product;
 const Categories = db.Category;
 const ProductImages = db.Image;
-const ProductColor = db.Color;
+const Users = db.User
 
 var adminController = {
         admin: (req, res )=> {
@@ -15,7 +15,6 @@ var adminController = {
             })
             .then(products => {
                     res.render('admin/admin', {
-                    name: "jonathan",
                     title: "Crear Producto",
                     products,
                 });
@@ -222,7 +221,17 @@ var adminController = {
                 .catch(error => console.log(error))
             })
             .catch(error => console.log(error))
+        },
+        users: (req, res) => {
+            Users.findAll()
+            .then( users => {
+                res.render('admin/adminUsers', {
+                    title: 'Usuarios',
+                    users
+                })
+            })
         }
   };
+
 
   module.exports = adminController
