@@ -10,7 +10,9 @@ const ProductColor = db.Color;
 
 var adminController = {
         admin: (req, res )=> {
-            Products.findAll()
+            Products.findAll({
+                include: [{ association: 'category'}]
+            })
             .then(products => {
                     res.render('admin/admin', {
                     name: "jonathan",
