@@ -31,6 +31,7 @@ function qs(element) {
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio';
                 $inputName.classList.add('is-invalid');
                 validationsErrors = true
+                errorMsg.name.error = true
                 break;
             case !$inputName.value.length > 4:
                 $nameErrors.innerHTML = 'El nombre debe tener mas de 4 caracteres';
@@ -137,9 +138,10 @@ function qs(element) {
                 <img src="`+ i.url +`" alt="Image">
                 `
             })
+            console.log($file.value)
         }
         
-        
+        /* 
         $form.addEventListener('submit', function(event){
         event.preventDefault()
         
@@ -158,26 +160,5 @@ function qs(element) {
             $form.submit()
         }
         
-    })
+    }) */
     }
-
-    $form.addEventListener('submit', function (event) {
-        event.preventDefault()
-
-        let error = false;
-        let elementsForm = this.elements;
-
-        for (let index = 0; index < elementsForm.length - 1; index++) {
-            if (elementsForm[index].value == ''
-                && elementsForm[index].type !== 'file') {
-                elementsForm[index].classList.add('is-invalid');
-                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
-                error = true
-            }
-        }
-
-        if (!error && !validationsErrors) {
-            $form.submit()
-        }
-
-    })

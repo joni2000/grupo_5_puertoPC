@@ -30,6 +30,7 @@ function qs(element) {
     
 
     $inputName.addEventListener('blur', () => {
+        console.log($inputName.value.length)
         switch (true) {
             case !$inputName.value.trim():
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio';
@@ -44,6 +45,7 @@ function qs(element) {
             default:
                 $inputName.classList.remove('is-invalid');
                 $inputName.classList.add('is-valid');
+                validationsErrors = false
                 $nameErrors.innerHTML = '';
                 break;
         }
@@ -59,6 +61,7 @@ function qs(element) {
             default:
                 $inputDescription.classList.remove('is-invalid');
                 $inputDescription.classList.add('is-valid');
+                validationsErrors = false
                 $descriptionErrors.innerHTML = '';
                 break;
         }
@@ -74,6 +77,7 @@ function qs(element) {
             default:
                 $category.classList.remove('is-invalid');
                 $category.classList.add('is-valid');
+                validationsErrors = false
                 $categoryErrors.innerHTML = '';
                 break;
         }
@@ -89,6 +93,7 @@ function qs(element) {
             default:
                 $inputStock.classList.remove('is-invalid');
                 $inputStock.classList.add('is-valid');
+                validationsErrors = false
                 $stockErrors.innerHTML = '';
                 break;
         }
@@ -104,6 +109,7 @@ function qs(element) {
             default:
                 $inputPrice.classList.remove('is-invalid');
                 $inputPrice.classList.add('is-valid');
+                validationsErrors = false
                 $priceErrors.innerHTML = '';
                 break;
         }
@@ -112,15 +118,88 @@ function qs(element) {
     $form.addEventListener('submit', function (event) {
         event.preventDefault()
 
+        
         let error = false;
         let elementsForm = this.elements;
 
+        console.log(validationsErrors, error)
         for (let index = 0; index < elementsForm.length - 1; index++) {
             if (elementsForm[index].value == ''
                 && elementsForm[index].type !== 'file') {
                 elementsForm[index].classList.add('is-invalid');
                 $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
                 error = true
+                switch (true) {
+                    case !$inputName.value.trim():
+                        $nameErrors.innerHTML = 'El campo nombre es obligatorio';
+                        $inputName.classList.add('is-invalid');
+                        validationsErrors = true
+                        break;
+                    case !$inputName.value.length > 4:
+                        $nameErrors.innerHTML = 'El nombre debe tener mas de 4 caracteres';
+                        $inputName.classList.add('is-invalid')
+                        validationsErrors = true;
+                        break;
+                    default:
+                        $inputName.classList.remove('is-invalid');
+                        $inputName.classList.add('is-valid');
+                        validationsErrors = false
+                        $nameErrors.innerHTML = '';
+                        break;
+                }
+                switch (true) {
+                    case !$inputDescription.value.trim():
+                        $descriptionErrors.innerHTML = 'Debes agregar una descripción';
+                        $inputStock.classList.add('is-invalid');
+                        validationsErrors = true
+                        break;
+                    default:
+                        $inputDescription.classList.remove('is-invalid');
+                        $inputDescription.classList.add('is-valid');
+                        validationsErrors = false
+                        $descriptionErrors.innerHTML = '';
+                        break;
+                }
+                switch (true) {
+                    case !$category.value.trim():
+                        $categoryErrors.innerHTML = 'Debes elegir una categoría';
+                        $category.classList.add('is-invalid');
+                        validationsErrors = true
+                        break;
+                    default:
+                        $category.classList.remove('is-invalid');
+                        $category.classList.add('is-valid');
+                        validationsErrors = false
+                        $categoryErrors.innerHTML = '';
+                        break;
+                }
+                switch (true) {
+                    case !$inputStock.value.trim():
+                        $stockErrors.innerHTML = 'Debes asignar un Stock válido';
+                        $inputStock.classList.add('is-invalid');
+                        validationsErrors = true
+                        break;
+                    default:
+                        $inputStock.classList.remove('is-invalid');
+                        $inputStock.classList.add('is-valid');
+                        validationsErrors = false
+                        $stockErrors.innerHTML = '';
+                        break;
+                }
+                switch (true) {
+                    case !$inputPrice.value.trim():
+                        $priceErrors.innerHTML = 'Debes ingresar un precio';
+                        $inputPrice.classList.add('is-invalid');
+                        validationsErrors = true
+                        break;
+                    default:
+                        $inputPrice.classList.remove('is-invalid');
+                        $inputPrice.classList.add('is-valid');
+                        validationsErrors = false
+                        $priceErrors.innerHTML = '';
+                        break;
+                }
+
             }
         }
 
@@ -171,65 +250,5 @@ function qs(element) {
                 `
             })
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-       /*  if (!allowedExtension.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)'
-            $file.value = '';
-            $imgPreview.innerHTML = '';
-            return false;
-        } else {
-            //Image preview
-            console.log($file.files)
-            if ($file.files && $file.files[0]) {
-                let reader = new FileReader();
-                reader.onload = function (e) {
-                    $imgPreview.innerHTML += `<img src="${e.target.result}" alt="">`;
-                    $imgPreview.classList.add('border')
-                    $moreImages.style.display = 'flex';
-                };
-                $selectImage.classList.remove('select-image')
-                $selectImage.classList.add('change')
-                $iconImage.style.display = 'none'
-                $iconArrows.style.opacity = '100%'
-                
-                
-                reader.readAsDataURL($file.files[0]);
-                $fileErrors.innerHTML = '';
-                $file.classList.remove('is-invalid');
-            }
-        }
-    }
-
-    $form.addEventListener('submit', function(event){
-        event.preventDefault()
-        
-        let error = false;
-        let elementsForm = this.elements;
-
-        for (let index = 0; index < elementsForm.length - 1; index++){
-            if(elementsForm[index].value == ''){
-                elementsForm[index].classList.add('is-invalid');
-                $submitErrors.innerHTML = 'Los campos señalados son obligatorios'
-                error = true
-            }
-        }
-
-        if(!error && !validationsErrors) {
-            $form.submit()
-        }
- */
     }
     
