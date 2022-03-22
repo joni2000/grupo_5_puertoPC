@@ -40,7 +40,6 @@
     height: 13.3rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
     border-radius: .9rem;
-    border: black solid 1px;
     
   }
  
@@ -163,7 +162,6 @@
 
     /*box general categoty*/
     .box-products-all{
-      border: 2px solid black ;
       height: 16rem;
       width: 43.2;
    }
@@ -280,7 +278,6 @@
    }
     /*general box category*/
     .box-products-all{
-       border: 2px solid black ;
        height: 18rem;
        width: 68.4rem;
     }

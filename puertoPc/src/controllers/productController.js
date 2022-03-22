@@ -81,7 +81,8 @@ let productController = {
     },
 
     categories: (req, res) => {
-        let categoriesId = +req.params.id;
+        res.render('products/categories')
+        /* let categoriesId = +req.params.id;
 
         let productsCategories = products.filter(product => +product.categories === categoriesId)
         let category = categories.find(category => category.id === categoriesId)
@@ -89,7 +90,7 @@ let productController = {
         res.render('categories', {
             products: productsCategories,
             categories,
-        })
+        }) */
     }
     /* productSearch:(req, res) =>{
 
