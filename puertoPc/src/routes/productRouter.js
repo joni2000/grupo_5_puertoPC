@@ -6,7 +6,10 @@ let productController = require("../controllers/productController")
 router.get('/detalles/:id', productController.productDetail);
 
 /* GET - List of products */
-router.get('/category/:id', productController.productCategory)
+router.get('/category/:id', productController.productCategory);
+
+/* GET - categories page general */
+router.get('/category', productController.categories);
 
 router.get('/carrito', productController.productCart);
 router.get('/', productController.index);

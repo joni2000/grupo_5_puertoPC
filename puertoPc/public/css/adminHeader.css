@@ -21,6 +21,7 @@ nav a.logo-admin {
     display: flex;
     align-items: flex-end;
     gap: 5rem;
+    margin-bottom: 0.7rem;
 }
 
 .nav-admin ul li a {

@@ -20,5 +20,7 @@ router.put('/editar/:id', upload.array('image'), userAdminCheck, productFormVali
 
 router.delete('/eliminar/:id', userAdminCheck, adminController.delete)
 
+/* Get admin Users */
+router.get('/users', userAdminCheck, adminController.users)
 
 module.exports = router;

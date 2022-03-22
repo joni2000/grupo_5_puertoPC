@@ -17,7 +17,7 @@
     <main class="main-admin margin-top-fixed-admin">
         <div class="container container-search">
             <div class="search-bar col-6 search-bar-admin">
-                <input type="text" placeholder="Buscar productos">
+                <input type="text" placeholder="Buscar Usuario">
                 <form class="icon-search search-admin" action="">
                     <button type="submit">
                         <i class="fas fa-search"></i>
@@ -34,25 +34,25 @@
               <tr class="tr">
                   <th class="table-left">Id</th>
                   <th class="table-left">Nombre</th>
-                  <th class="table-left">Categoría</th>
-                  <th class="table-left">Stock</th>
+                  <th class="table-left">Email</th>
+                  <th class="table-left">Rol</th>
                   <th class="table-left">Precio</th>
                   <th class="table-left"></th>
               </tr>
             </thead>
             <tbody class="table-hover">
-                <% products.forEach(product => { %>
-                    <tr class="tr">
-                        <th class="text-left"><%=product.id%></th>
-                        <th class="text-left"><%=product.name%></th>
-                        <th class="text-left"><%=product.category.name%></th>
-                        <th class="text-left"><%=product.stock%></th>
-                        <th class="text-left"><%=product.price%></th> 
+                <% users.forEach(user => { %>
+                    <tr class="tr tr-users" style="height: 3rem;">
+                        <th class="text-left"><%=user.id%></th>
+                        <th class="text-left"><%=user.first_name%></th>
+                        <th class="text-left"><%=user.email%></th>
+                        <th class="text-left"><%=user.rol%></th> 
+                        <th class="text-left"><%=user.rol%></th> 
                         <th class="text-left">
-                            <a class="btn-edit" href="/admin/editar/<%= product.id %>">
+                            <a class="btn-edit" href="/admin/editar/<%= user.id %>">
                                 <i class="fa-regular fa-pen-to-square"></i>
                             </a>
-                            <form action="/admin/eliminar/<%- product.id %>?_method=DELETE" method="POST">
+                            <form action="/admin/eliminar/<%- user.id %>?_method=DELETE" method="POST">
                               <button type="submit" class="btn-delete" >
                                 <i class="fa-regular fa-trash-can"></i>
                               </button>

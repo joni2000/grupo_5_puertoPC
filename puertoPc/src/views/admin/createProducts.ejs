@@ -56,7 +56,7 @@
                 </div>
                 <div class="container-input">
                     <label class="text-form" for="price">Precio:</label>
-                    <input class="text-camp" type="text" name="price" id="price" value="<%= locals.old && old.price %>">
+                    <input class="text-camp" type="number" name="price" id="price" value="<%= locals.old && old.price %>">
                     <% if (locals.errors && errors.price) { %>
                         <span class="error-message"><%= errors.price.msg %> </span>
                     <% } %>
