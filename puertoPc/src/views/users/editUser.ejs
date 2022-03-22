@@ -47,14 +47,15 @@
                             <div>
                                 <div class="data ">
                                     <label>*País:</label>
-                                    <select  class="select-css" name="country" id="countryEdit" value="<%-user.country%>">
-                                        
+                                        <select  class="select-css" name="country" id="countryEdit" value="<%-user.country%>">
+                                            
 
-                                        <option value="">Selecciona un país</option>                       
-                                        
+                                            
+                                            
+
                                             <option value="Argentina">Argentina</option>
 
-                                        
+                                            
                                         </select>
                                     <% if (locals.errors && errors.country) { %>
                                         <span class="error-message-editUser"><%= errors.country.msg %></span>
@@ -64,11 +65,12 @@
                                 <div class="data ">
                                     <label>*Provincia:</label>
                                     <select class="select-css" name="province" id="provinceEdit" value="<%-user.province%>">
+                                        <option value="">Selecciona una provincia</option>
                                     
+                                       
 
-                                        <option value="">Selecciona una provincia</option>                     
                                     <% provincias.forEach(province => { %>
-                                        <option value="<%= province.nombre %>"><%= province.nombre %></option>
+                                        <option value="<%= province.nombre %>" <%- locals.old && old.province == user.province ? "selected" : user.province == province.nombre ? "selected" : "" %>><%= province.nombre %></option>
                                     <% }) %> 
 
                                     </select>
