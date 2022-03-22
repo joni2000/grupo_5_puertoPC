@@ -5,7 +5,7 @@ const Products = db.Product
 const Categories = db.Category
 
 module.exports = {
-    apiCategories: (req, res) => {
+    products: (req, res) => {
         Products
         .findAll({
             include: [ { association: 'image'},
@@ -15,6 +15,18 @@ module.exports = {
         .then(e => {
             return res.json({
               products: e
+            })
+        })
+    },
+
+    categories: (req, res)=>{
+        Categories
+        .findAll({
+            include: [ { association: 'products'}],
+               } )
+        .then(e => {
+            return res.json({
+              categories: e
             })
         })
     },

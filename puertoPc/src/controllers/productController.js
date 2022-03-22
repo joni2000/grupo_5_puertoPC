@@ -1,6 +1,7 @@
 const res = require('express/lib/response');
 const { Op } = require('sequelize');
 const db = require('../data/models')
+const fetch = require("node-fetch");
 
 var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -80,8 +81,22 @@ let productController = {
          })
     },
 
-    categories: (req, res) => {
-        res.render('products/categories')
+    categories: async (req, res) => {
+       /*  let categoriesApi = await fetch("http://localhost:3002/api/products/category/").then(response => response.json())
+        
+
+             let categories = categoriesApi.categories
+             Categories.findByPk(req.params.id)
+                .then(category => {
+                        res.render('products/categories', {
+                        title: "Categorias",
+                        categories,
+                        category,
+                        session: req.session,
+                        old: req.body
+                    });
+                }).catch(error => console.log(error)) res.send(categoriesApi)
+          console.log(categoriesApi)*/
         /* let categoriesId = +req.params.id;
 
         let productsCategories = products.filter(product => +product.categories === categoriesId)
