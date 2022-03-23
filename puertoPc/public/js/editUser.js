@@ -125,22 +125,12 @@ window.onload = () => {
     })
 
     $form.addEventListener("submit", function(event){
-        event.preventDefault()
+        
     
         let error = false;
         let elementsForm = this.elements;
 
-        for (let i = 0; i < elementsForm.length-1 ; i++){
-            if (elementsForm[i].value == ""){
-                $submitErrors.innerHTML = "*campos obligatorios"
-                elementsForm[i].classList.add('#submitErrors', "error_borde")
-                error = true
-                
-            }
-            if (!error && !validationsErrors) {
-                $form.submit()
-            }
-        }
+        
     });
     
 
