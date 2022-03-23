@@ -35,8 +35,8 @@ app.use(session({
 app.use(cookieSession);
 
 /* Middlewares de routes */
-app.use('/', indexRouter);
 app.use('/', usersRouter);
+app.use('/', indexRouter);
 app.use('/products', productRouter);
 app.use('/admin', adminRouter);
 app.use('/api/products', apiProductsRouter);
