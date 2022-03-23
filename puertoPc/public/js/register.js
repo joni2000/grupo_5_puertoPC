@@ -42,7 +42,7 @@ window.addEventListener('load', function () {
                 validationsErrors = true;
                 break;
             default:
-                $inputfirst_name.style.borderColor = 'lightblue';
+                $inputfirst_name.style.borderColor = 'green';
                 $first_nameError.innerHTML = '';
                 break;
         }
@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
                 validationsErrors = true;
                 break;
             default:
-                $inputlast_name.style.borderColor = 'lightblue';
+                $inputlast_name.style.borderColor = 'green';
                 $inputlast_nameError.innerHTML = '';
                 break;
         }
@@ -84,7 +84,7 @@ window.addEventListener('load', function () {
                 validationsErrors = true;
                 break;
             default:
-                $phone.style.borderColor = 'lightblue';
+                $phone.style.borderColor = 'green';
                 $phoneError.innerHTML = '';
                 break;
         }
@@ -101,7 +101,7 @@ window.addEventListener('load', function () {
                 validationsErrors = true;
                 break;
             default:
-                $email.style.borderColor = 'lightblue';
+                $email.style.borderColor = 'green';
                 $emailError.innerHTML = '';
                 break;
         }
@@ -122,7 +122,7 @@ window.addEventListener('load', function () {
                 validationsErrors = true;
                 break;
             default:
-                $password.style.borderColor = 'lightblue';
+                $password.style.borderColor = 'green';
                 $passwordError.innerHTML = '';
                 break;
         }
@@ -140,7 +140,7 @@ window.addEventListener('load', function () {
                 validationsErrors = true;
                 break;
             default:
-                $password2.style.borderColor = 'lightblue';
+                $password2.style.borderColor = 'green';
                 $password2Error.innerHTML = '';
                 break;
         }
