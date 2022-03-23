@@ -44,7 +44,7 @@ window.onload = () => {
     $inputProvince.addEventListener(("focus", "change", "blur"), function() {
         switch(true){
             case !$inputProvince.value.trim():
-                $inputProvinceErrors.innerHTML = "Campo obligatorio"
+                $inputProvinceErrors.innerHTML = "Debes seleccionar una provincia"
                 $inputProvince.classList.remove('error_borde_ok');
                 $inputProvince.classList.add('error_borde');
                 $inputProvince.classList.add("#provinceEditErrors")
@@ -71,7 +71,7 @@ window.onload = () => {
                 
                 switch(true){
                     case !$inputCity.value.trim():
-                        $inputCityErrors.innerHTML = "Campo obligatorio"
+                        $inputCityErrors.innerHTML = "Debes ingresar tu ciudad"
                         $inputCity.classList.remove('error_borde_ok');
                         $inputCity.classList.add('error_borde');
                         $inputCity.classList.add("#cityEditErrors")
@@ -101,7 +101,7 @@ window.onload = () => {
 
         switch(true){
             case !$inputAddress.value.trim():
-                $inputAddressErrors.innerHTML = "Campo obligatorio"
+                $inputAddressErrors.innerHTML = "Debes ingresar tu domicilio"
                 $inputAddress.classList.remove('error_borde_ok');   
                 $inputAddress.classList.add('error_borde');
                 $inputAddress.classList.add("#addressEditErrors")
@@ -124,64 +124,44 @@ window.onload = () => {
     
     })
 
-    $form.addEventListener("submit", function(event){
+    $form.addEventListener("submit", function(e){
         
-    
+        e.preventDefault();
         let error = false;
-        let elementsForm = this.elements;
-
+            let elementsForm = this.elements;
+           
+             for (let index = 1; index < elementsForm.length - 1; index++){
+             if (elementsForm[index].value == "" ){  
+                $submitErrors.innerHTML ='Completa todos los campos'
+                $inputCity.classList.add('error_borde',"#cityEditErrors");
+                $inputCityErrors.innerHTML = "Debes ingresar tu ciudad";
+                $inputProvince.classList.add('error_borde', "#provinceEditErrors");
+                $inputProvinceErrors.innerHTML = "Debes seleccionar una provincia";
+                $inputAddress.classList.add('error_borde', "#addressEditErrors")
+                $inputAddressErrors.innerHTML = "Debes ingresar tu domicilio"
+                errorLogin = true;
+                validationsErrors = true
+                }
+        }
+         if(!error && !validationsErrors){
+            $form.submit()
+        } 
         
-    });
-    
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* window.addEventListener("load", function(){
-    let formEditUser = document.querySelector("form.reservation")
-
-    formEditUser.addEventListener("submit", (event) => {
-        event.preventDefault();
-        let campoddress = formEditUser.querySelector("input.address");
-        if(address.value == ""){
-            
-            errors.push("campo obligatorio");
-        }
-        if(errors.length > 0){
-            event.preventDefault()
-        }
+        /* if(document.getElementById(id)) */
+        
+            /* if (document.getElementById("#countryEdit", "#provinceEdit", "#addressEdit", "#cityEdit") != "" ){
+                
+                $submitErrors.innerHTML = "*campos obligatorios"
+                $inputCity.classList.add('error_borde',"#cityEditErrors");
+                $inputProvince.classList.add('error_borde', "#provinceEditErrors");
+                $inputCountry.classList.add('error_borde',"#countryEditErrors");
+                $inputAddress.classList.add('error_borde', "#addressEditErrors")
+                validationsErrors = true
+                
+            } if(document.getElementById("#countryEdit", "#provinceEdit", "#addressEdit", "#cityEdit") = "" ) {
+                $form.submit();
+                
+            } */
     })
 
-}) */
-
-}
+};
