@@ -10,6 +10,7 @@ var uploadAvatar = require("../middlewares/uploadAvatar")
 
 let userCheck = require('../middlewares/userCheck');
 const { editUser } = require('../controllers/usersController');
+const userAdminCheck = require('../middlewares/userAdminCheck');
 
 /* GET - Login and Register */
 router.get('/login', usersController.login);
@@ -30,6 +31,10 @@ router.get("/editUser/:id", userCheck, usersController.editUser)
 router.put("/editUser/:id", uploadAvatar.single("image"), editUserValidator, userCheck, usersController.updateUser);
 
 /* router.put("/editUser", usersController.listProvinces) */
+
+router.delete("/deleteUser/:id", userAdminCheck, usersController.delete)
+
+router.put('/hacerAdmin/:id', userAdminCheck, usersController.admin)
 
 
 module.exports = router;
