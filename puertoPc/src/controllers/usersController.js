@@ -175,6 +175,29 @@ var usersController = {
         }
     
     },
+
+    admin: (req, res) => {
+        Users.update({
+            rol: 'rol_admin'
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(res.redirect('/admin/users'))
+        .catch(error => console.log(error))
+    },
+
+    delete: (req, res) => {
+        Users.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(res.redirect('/admin/users'))
+        .catch(error => console.log(error))
+    }
     
 }      
 

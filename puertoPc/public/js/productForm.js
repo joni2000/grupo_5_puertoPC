@@ -30,7 +30,6 @@ function qs(element) {
     
 
     $inputName.addEventListener('blur', () => {
-        console.log($inputName.value.length)
         switch (true) {
             case !$inputName.value.trim():
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio';
@@ -122,7 +121,6 @@ function qs(element) {
         let error = false;
         let elementsForm = this.elements;
 
-        console.log(validationsErrors, error)
         for (let index = 0; index < elementsForm.length - 1; index++) {
             if (elementsForm[index].value == ''
                 && elementsForm[index].type !== 'file') {

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <title><%= title %> </title>
-        <script src="https://kit.fontawesome.com/20e7bf528f.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/2f4ad9ec2a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/style.css">
         <script src="/js/admin.js" defer></script>
     </head>
@@ -36,23 +36,23 @@
                   <th class="table-left">Nombre</th>
                   <th class="table-left">Email</th>
                   <th class="table-left">Rol</th>
-                  <th class="table-left">Precio</th>
                   <th class="table-left"></th>
               </tr>
             </thead>
             <tbody class="table-hover">
                 <% users.forEach(user => { %>
-                    <tr class="tr tr-users" style="height: 3rem;">
+                    <tr class="tr">
                         <th class="text-left"><%=user.id%></th>
                         <th class="text-left"><%=user.first_name%></th>
                         <th class="text-left"><%=user.email%></th>
                         <th class="text-left"><%=user.rol%></th> 
-                        <th class="text-left"><%=user.rol%></th> 
                         <th class="text-left">
-                            <a class="btn-edit" href="/admin/editar/<%= user.id %>">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                            </a>
-                            <form action="/admin/eliminar/<%- user.id %>?_method=DELETE" method="POST">
+                            <form action="/hacerAdmin/<%- user.id %>?_method=PUT" method="POST">
+                                <button type="submit" class="btn-edit">
+                                    <i class="fa-regular fa-user-police"></i>
+                                </button>
+                            </form>
+                            <form action="/deleteUser/<%- user.id %>?_method=DELETE" method="POST">
                               <button type="submit" class="btn-delete" >
                                 <i class="fa-regular fa-trash-can"></i>
                               </button>

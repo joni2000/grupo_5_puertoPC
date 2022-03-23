@@ -66,7 +66,7 @@ div.table-title {
     background: white;
     border-radius: 0.3rem;
     border-collapse: collapse;
-    height: 32rem;
+    height: 5rem;
     margin: auto;
     max-width: 140rem;
     padding: 0.5rem;
@@ -144,8 +144,10 @@ div.table-title {
 }
 
 .text-left:last-child {
+    align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .btn-delete,
@@ -160,7 +162,7 @@ div.table-title {
     margin-bottom: 0.3rem;
     color: var(--darkBlue);
     border: none;
-
+    cursor: pointer;
 }
 
 .btn-edit {
