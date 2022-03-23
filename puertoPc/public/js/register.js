@@ -103,6 +103,7 @@ window.addEventListener('load', function () {
             default:
                 $email.style.borderColor = 'green';
                 $emailError.innerHTML = '';
+                validationsErrors = false
                 break;
         }
     })
@@ -110,7 +111,7 @@ window.addEventListener('load', function () {
     $password.addEventListener('blur', () => {
         switch (true) {
             case !$password.value.trim():
-                $passwordError.innerHTML = 'El campo email es obligatorio';
+                $passwordError.innerHTML = 'El campo contraseña es obligatorio';
                 validationsErrors = true
                 break;
             case !regExPass.test($password.value):
@@ -124,6 +125,7 @@ window.addEventListener('load', function () {
             default:
                 $password.style.borderColor = 'green';
                 $passwordError.innerHTML = '';
+                validationsErrors = false
                 break;
         }
     })
@@ -131,17 +133,18 @@ window.addEventListener('load', function () {
     $password2.addEventListener('blur', () => {
         switch (true) {
             case !$password2.value.trim():
-                $password2Error.innerHTML = 'El campo email es obligatorio';
+                $password2Error.innerHTML = 'Debes repetir la contraseña';
                 validationsErrors = true
                 break;
-            case !$password2.value.length > 4:
-                $password2Error.innerHTML = 'El apellido debe tener ser válido';
+            case !$password2.value.length > 6:
+                $password2Error.innerHTML = 'Las contraseñas no coinciden';
                 $password2.classList.add('is-invalid')
                 validationsErrors = true;
                 break;
             default:
                 $password2.style.borderColor = 'green';
                 $password2Error.innerHTML = '';
+                validationsErrors = false
                 break;
         }
     })
