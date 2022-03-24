@@ -61,29 +61,29 @@
             <h2 class="subtitle">Te puede interesar</h2>
             
             <section class="slider">
-                        <% products.forEach(product => { %>
-                         
-                            <a href="/products/detalles/<%-product.id%>" class="card">
-                                
-                                <div>
-                                    <img src="/images/products/<%-product.image[0].name%>" alt="imagen de productsAdvanges">	
-                                 </div>
-                                 <div class="card-info">
-                                    <h3>
-                                        <%- product.name %>
-                                    </h3>
-                                 </div> 
-                             
-                                 <div class="card-description-text">   
-                                    <p>$<%- toThousand(product.price - product.price * product.discount / 100) %></p>
-                                    <p>Envío gratis</p>
-                                    <p>18 cuotas sin interés</p>
-                                </div> 
-                                <div class="button-box">
-                                    <button class="button-buy">agregar al carrito</button>
-                                </div>
-                           </a> 
-                        <% }) %>
+
+                <% for( let h = 0; h < 4; h++ ) { %>
+                    <a href="/products/detalles/<%-products[h].id%>" class="card">
+                        
+                        <div>
+                            <img src="/images/products/<%-products[h].image[0].name%>" alt="imagen de productsAdvanges">	
+                         </div>
+                         <div class="card-info">
+                            <h3>
+                                <%- products[h].name %>
+                            </h3>
+                         </div> 
+                     
+                         <div class="card-description-text">   
+                            <p>$<%- toThousand(products[h].price - products[h].price * products[h].discount / 100) %></p>
+                            <p>Envío gratis</p>
+                            <p>18 cuotas sin interés</p>
+                        </div> 
+                        <div class="button-box">
+                            <button class="button-buy">agregar al carrito</button>
+                        </div>
+                   </a> 
+                <% } %>
                     <i class="fas fa-chevron-down"></i>
                     <i class="fas fa-chevron-down"></i>         
             </section>
