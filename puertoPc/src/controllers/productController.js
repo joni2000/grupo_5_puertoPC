@@ -73,7 +73,7 @@ let productController = {
     },
 
     categories: (req, res) => {
-       let productId = Number(req.params.id); 
+     /*   let productId = Number(req.params.id); 
         const categories = Categories.findAll()
         
 
@@ -88,7 +88,7 @@ let productController = {
                         old: req.body
                     });
                 }).catch(error => console.log(error)) res.send(categoriesApi)
-          console.log(categoriesApi)*/
+          console.log(categoriesApi) */
         /* let categoriesId = +req.params.id;
 
         let productsCategories = products.filter(product => +product.categories === categoriesId)
