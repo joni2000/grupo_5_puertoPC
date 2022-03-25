@@ -53,13 +53,14 @@
 }
 
 /* Product Cards */
-.home .products .slider .card {
+.slider .card {
     width: 25rem;
     height: 35.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
     border-radius: .9rem;
     background-color: white;
     transition: all 0.3s ease;
+    margin-top: 0.5rem;
 }
 
 .home .products .slider .card:hover {
@@ -211,33 +212,22 @@ i.fa-chevron-down:hover {
 
 
 /* display none to the cards */
-.home .products .slider .card:nth-child(2),
-.home .products .slider .card:nth-child(3),
-.home .products .slider .card:nth-child(4) {
-    display: none;
-}
 
 /* Media queries */
 /* Primer quiebre */
 @media (min-width: 550px) {
-    .home .products .slider .card:nth-child(2) {
-        display: inline-block;
-    }
+
 }
 
 /* segundo quiebre */
 @media (min-width: 810px) {
-    .home .products .slider .card:nth-child(3) {
-        display: inline-block;
-    }
+
 }
 
 
 /* Tercer quiebre */
 @media (min-width: 1070px) {
-    .home .products .slider .card:nth-child(4) {
-        display: inline-block;
-    }
+
 }
 
 /* Desktop */
