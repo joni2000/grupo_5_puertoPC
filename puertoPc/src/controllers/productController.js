@@ -106,10 +106,25 @@ let productController = {
             products: productsCategories,
             categories,
         }) */
-    }
-    /* productSearch:(req, res) =>{
-
-    } */
+    },
+    productSearch:(req, res) =>{
+        Products.findAll({
+            where: {
+                name: {
+                    [Op.substring]: req.query.keywords
+                }
+            },
+            include: [{association: 'image'}]
+        })
+        .then((result) => {
+            res.render('products/search', {
+                title:"Resultados de búsqueda",
+                result,
+                search: req.query.keywords,
+                session: req.session
+            })
+        })
+    },
 
 };
 

@@ -6,11 +6,17 @@
         </div>
         <a href="/" class="logo"><img src="/images/logo.png" alt="logo-puertopc"></a>
         <a class="logo-text" href="/">PuertoPc</a>
-        <div class="search-bar">
-            <input type="search" placeholder="Buscar productos">
-            <a class="icon-search">
-                <i class="fas fa-search"></i></a>
-        </div>
+
+        
+            <form action="/products/search" method="GET" class="search-bar">
+                
+                    <input type="search" name="keywords" placeholder="Buscar productos">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                    
+                
+            </form>
+            
+        
         
         <a class="icon-cart" href="/products/carrito">
             <i class="fas fa-shopping-cart"></i>
