@@ -44,6 +44,7 @@ window.addEventListener('load', function () {
             default:
                 $inputfirst_name.style.borderColor = 'green';
                 $first_nameError.innerHTML = '';
+                validationsErrors = false
                 break;
         }
     })
@@ -65,6 +66,7 @@ window.addEventListener('load', function () {
             default:
                 $inputlast_name.style.borderColor = 'green';
                 $inputlast_nameError.innerHTML = '';
+                validationsErrors = false
                 break;
         }
     })
@@ -86,6 +88,7 @@ window.addEventListener('load', function () {
             default:
                 $phone.style.borderColor = 'green';
                 $phoneError.innerHTML = '';
+                validationsErrors = false
                 break;
         }
     })
@@ -161,6 +164,7 @@ window.addEventListener('load', function () {
                 break;
             default:
                 $termsError.innerHTML = '';
+                validationsErrors = false
                 break;
         }
     })
