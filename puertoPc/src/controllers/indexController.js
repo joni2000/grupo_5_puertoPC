@@ -1,5 +1,6 @@
 let {getProducts} = require('../data/dataBase')
 const db = require('../data/models');
+const { Op } = require('sequelize');
 
 let Products = db.Product
 
@@ -10,8 +11,10 @@ let controller = {
     Products.findAll({
       include: [{ association: 'image'}],
       where: {
-        discount: 10
-      }
+        discount: {
+            [Op.gte]: 5
+        }
+    }
     }).then( productsInSale => {
         Products.findAll({
           include: [{ association: 'image'}],
