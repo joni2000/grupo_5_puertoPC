@@ -13,6 +13,6 @@ router.get('/category', productController.categories);
 
 router.get('/carrito', productController.productCart);
 router.get('/', productController.index);
-/* GET - Search products 
-router.get('/search', productController.productSearch)*/
+/* GET - Search products */
+router.get('/search', productController.productSearch)
 module.exports = router;

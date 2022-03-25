@@ -58,10 +58,11 @@ header .top .logo{
     outline: none;
 }
 
-.search-bar .icon-search {
+.search-bar button {
+    border: none;
+    background-color: white;
     position: absolute;
-    margin: 1.5rem
-    
+    right: 1.5rem;
 }
 i.fa-search{
     cursor: pointer;

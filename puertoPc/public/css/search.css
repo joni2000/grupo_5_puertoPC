@@ -1,0 +1,27 @@
+.seccion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+
+.tarjeta {
+    
+    margin: 1rem;
+    padding: 1rem;
+    width: 25rem;
+    height: 35.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.30);
+    border-radius: .9rem;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.tarjeta img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
