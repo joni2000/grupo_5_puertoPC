@@ -20,23 +20,28 @@ module.exports = {
     },
 
     categories: (req, res)=>{
-        Categories
+      Categories
         .findAll({
-            include: [ { association: 'products'}],
-               } )
+            include: [
+                { association: 'products'}]
+               })
         .then(e => {
-            return res.json({
-              categories: e
-            })
+            return res.json(e)
         })
     },
+    
     showCategories: (req, res) => {
-        Categories
-        .findByPk(req.params.id)
+        let productId = Number(req.params.id);
+        const categoriesPromise =  Categories.findByPk(productId)
+        const productPromise = Products.findAll({
+            include: [{ association: 'image'}],
+                   where: {
+                    category_id: Number(req.params.id)
+                }  
+        });
+        Promise.all([productPromise, categoriesPromise])
         .then(e => {
-            return res.json({
-                category: e
-              })
+            return res.json(e)
         })
     },
     searchCategory:(req, res)=>{

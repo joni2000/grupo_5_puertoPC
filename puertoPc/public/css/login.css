@@ -147,13 +147,11 @@ span.credenciales{
 
 .errorBorderLogin {
     border-color: var(--errorMessage);
-    box-shadow: 0px 0px 2px 1px var(--errorMessage);
-
-    
+    box-shadow: 0px 0px 1px 1px var(--errorMessage); 
   }
 .errorBorderLoginOk {
     border-color: green;
-    box-shadow: 0px 0px 2px 1px rgb(0, 255, 0);
+    box-shadow: 0px 0px 1px 1px rgb(0, 255, 0);
 
 }
 #submitErrorLoginmsj{
@@ -266,7 +264,11 @@ span.credenciales{
         padding-top: 4.5rem;
         
     }
-
+     
+    .form-login .input-container{
+        width: 35rem;
+        height: 10rem;
+    }
     .form-login .input-container input{
         font-size: 1.7rem;
         height: 4.1rem;
@@ -385,25 +387,28 @@ span.credenciales{
     .form-login .forgot-pass {
         order: 7;
         position: relative;
-        right: 1.2rem;
-        top: 2rem;
+        right: -34.5rem;
+        top: -11.5rem;
         font-size: 1.7rem;
+       
+
     }
     .main-form form .form-login .check-keep-session {
         order: 9;
         position: relative;
-        bottom: 3rem;
+        bottom: 7rem;
+        width: 100%;
     }
     .form-button-container{
         order: 10;
         position: relative;
-        left: -7.7rem;
-        bottom: 1rem;
+        left: 12rem;
+        bottom: 10rem;
     }
     .form-login .register {
         order: 15;
         position: relative;
-        bottom: 1.5rem;
+        right: 38rem;
     }
      /*SPAN ERROR MSJ*/
     #submitErrorLoginmsj{

@@ -21,7 +21,11 @@
 @import url('menuUsers.css');
 @import url('menuCategory.css');
 @import url('adminHeader.css');
+<<<<<<< HEAD
 @import url('search.css');
+=======
+@import url('glider.css');
+>>>>>>> f3f32cd69686cb577d8bd254fab0f5dab42f9d7d
 
 
 /* General */

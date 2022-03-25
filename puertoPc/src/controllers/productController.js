@@ -60,29 +60,21 @@ let productController = {
     },
     
     productCategory:(req, res) =>{
-      Categories.findOne( {
-            include:[{ association: 'product',}],
-               where: {
-                id: req.params.id
-           }
+      let categoryProduct =  Products
+        .findAll({
+            include: [{ association: 'image'}],
+                   where: {
+                    category_id: Number(req.params.id)
+                }  
         })
-        .then((category)  => {
-             Categories.findByPk(req.params.category_id,{
-                  include: [{ association: 'categories'}]
-             })
-         .then((productCategory) => {
-             res.render('index',{
-                products:category.products,
-                category,
-                product,
-                session: req.session
-             })
-           })
-         })
+        .then(categoryProduct => {
+            res.render('products/categories', {categoryProduct})
+        })
     },
 
-    categories: async (req, res) => {
-       /*  let categoriesApi = await fetch("http://localhost:3002/api/products/category/").then(response => response.json())
+    categories: (req, res) => {
+       let productId = Number(req.params.id); 
+        const categories = Categories.findAll()
         
 
              let categories = categoriesApi.categories
