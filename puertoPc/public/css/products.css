@@ -162,9 +162,9 @@
  /*icon event click javascript*/
 .categoryCardListOk{
   color: red;
+  cursor: pointer;
  /*  display: none; */
 }
-
 
    /* MEDIA QUERIES */
 
