@@ -60,52 +60,37 @@ let productController = {
     },
     
     productCategory:(req, res) =>{
-      Categories.findOne( {
-            include:[{ association: 'product',}],
-               where: {
-                id: req.params.id
-           }
+      let categoryProduct =  Products
+        .findAll({
+            include: [{ association: 'image'}],
+                   where: {
+                    category_id: Number(req.params.id)
+                }  
         })
-        .then((category)  => {
-             Categories.findByPk(req.params.category_id,{
-                  include: [{ association: 'categories'}]
-             })
-         .then((productCategory) => {
-             res.render('index',{
-                products:category.products,
-                category,
-                product,
-                session: req.session
-             })
-           })
-         })
+        .then(categoryProduct => {
+            res.render('products/categories', {categoryProduct})
+        })
     },
 
-    categories: async (req, res) => {
-       /*  let categoriesApi = await fetch("http://localhost:3002/api/products/category/").then(response => response.json())
+    categories: (req, res) => {
+       let productId = Number(req.params.id); 
+        const categories = Categories.findAll()
         
-
-             let categories = categoriesApi.categories
-             Categories.findByPk(req.params.id)
-                .then(category => {
-                        res.render('products/categories', {
-                        title: "Categorias",
-                        categories,
-                        category,
-                        session: req.session,
-                        old: req.body
-                    });
-                }).catch(error => console.log(error)) res.send(categoriesApi)
-          console.log(categoriesApi)*/
-        /* let categoriesId = +req.params.id;
-
-        let productsCategories = products.filter(product => +product.categories === categoriesId)
-        let category = categories.find(category => category.id === categoriesId)
-
-        res.render('categories', {
-            products: productsCategories,
-            categories,
-        }) */
+       const categoryProduct = Products.findAll({
+        include: [ 'category','image'],
+      })
+        Promise.all([categories, categoryProduct])
+        .then(([categories, categoryProduct]) => {
+            return res.render('products/categories', {
+                title:"Productos",
+                session: req.session,
+                categories,
+                categoryProduct,
+                toThousand
+            })
+            
+        }).catch(error => console.log(error))
+             
     }
     /* productSearch:(req, res) =>{
 

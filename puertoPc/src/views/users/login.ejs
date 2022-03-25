@@ -23,7 +23,7 @@
                         <label for="email">Email:</label>
                         <input class="input-style" type="email" name="email" id="email" placeholder="Ingresá tu email">
                        <% if (locals.errors && errors.email) { %>
-                         <span  id="emailError" class="error-message"> <%= errors.email.msg %></span>
+                         <span  id="emailError" class="error-message errorBorderLogin errorBorderLoginOk"> <%= errors.email.msg %></span>
                        <% } %>
                        <span  id="emailErrorLogin" class="error-message "></span>
                         </div>
@@ -31,8 +31,8 @@
                         <label for="pass">Contraseña:</label>
                         <input class="input-style" type="password" name="password" id="pass" placeholder="Ingresá tu contraseña">
                         <% if (locals.errors && errors.password) { %>
-                            <span class="error-message"> <%= errors.password.msg %> </span>
-                          <% } %> 
+                            <span class="error-message errorBorderLogin errorBorderLoginOk"> <%= errors.password.msg %> </span>
+                          <% } %>
                           <span  id="passErrorLogin" class="error-message "></span>
                     </div>
                     <div class="check-keep-session">
