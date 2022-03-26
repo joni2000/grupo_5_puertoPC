@@ -15,17 +15,18 @@
     <%- include('../partials/adminHeader') %>
       
       <main class="main-admin margin-top-fixed-admin">
-        <div class="container container-search">
-            <div class="search-bar col-6 search-bar-admin">
+        <div class="container-search">
+            <div class="search-bar-admin">
+                <p>Tienes <%= products.length %> productos</p>
                 <form class="icon-search search-admin" action="/admin/buscar" method="GET">
                     <input type="text" name="keywords" placeholder="Buscar productos">
                     <button type="submit">
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
-            </div>
-            <div>
-                <a href="/admin/crear" class="button-buy">Cargar uno</a>
+                <div class="cargar">
+                    <a href="/admin/crear" class="button-buy">Cargar uno</a>
+                </div>
             </div>
         </div>
         <div class="container-table">
