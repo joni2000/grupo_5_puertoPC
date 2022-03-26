@@ -1,7 +1,7 @@
 let fs = require('fs');
 const { validationResult } = require('express-validator');
 const db = require('../data/models');
-const { userInfo } = require('os');
+const { Op } = require('sequelize');
 
 const Products = db.Product;
 const Categories = db.Category;
@@ -15,7 +15,7 @@ var adminController = {
         })
             .then(products => {
                 res.render('admin/admin', {
-                    title: "Crear Producto",
+                    title: "Admin",
                     products,
                 });
             }).catch(error => console.log(error))
@@ -221,6 +221,25 @@ var adminController = {
             })
             .catch(error => console.log(error))
     },
+
+    search: (req, res) => {
+        /* res.send(req.query.keywords) */
+        Products.findAll({
+            where: {
+                name: {
+                    [Op.substring]: req.query.keywords
+                }
+            },
+            include: [{ association: 'category' }]
+        })
+        .then(products => {
+            res.render('admin/admin', {
+                title: "Admin",
+                products,
+            });
+        }).catch(error => console.log(error))
+    },
+
     users: (req, res) => {
         Users.findAll()
             .then(users => {
@@ -228,7 +247,23 @@ var adminController = {
                     title: 'Usuarios',
                     users
                 })
+            }).catch(error => console.log(error))
+    },
+
+    searchUsers: (req, res) => {
+        Users.findAll({
+            where: {
+                first_name: {
+                    [Op.substring]: req.query.search
+                }
+            }
+        })
+        .then(users => {
+            res.render('admin/adminUsers', {
+                title: 'Usuarios',
+                users
             })
+        }).catch(error => console.log(error))
     }
 };
 

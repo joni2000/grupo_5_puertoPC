@@ -1,12 +1,20 @@
 /* * Header */ 
 .nav-admin {
     width: 100%;
+    height: 4.4rem;
     background-color: var(--blue);
     display: flex;
+    align-items: center;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 999;
+}
+
+.nav-admin .logo-text-admin {
+    font-size: 2rem;
+    color: white;
+    font-family: var(--fontPrimary);
 }
 
 a.logo-admin img {
@@ -14,14 +22,19 @@ a.logo-admin img {
 }
 
 nav a.logo-admin {
-    height: 5rem;
+    height: 4rem;
+    width: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
 }
 
 .nav-admin ul{
+    margin-left: 3rem;
     display: flex;
     align-items: flex-end;
     gap: 5rem;
-    margin-bottom: 0.7rem;
 }
 
 .nav-admin ul li a {

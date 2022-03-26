@@ -1,5 +1,5 @@
 .main-admin{
-    padding:0.1rem 2rem 0;
+    padding:0.1rem 0 2rem 0;
 }
 
 .container {
@@ -76,8 +76,8 @@ div.table-title {
 }
 
 .table-left{
-    color: #D5DDE5;
-    background-color: #1F1D3E;
+    color: #fff;
+    background-color: #7a858e;
     border-bottom: 0.4rem solid #9ea7af;
     border-right: 0.1rem solid #343a45;
     font-size: 1.8rem;
@@ -180,5 +180,9 @@ div.table-title {
     color: white;
 }
 
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
 
 
