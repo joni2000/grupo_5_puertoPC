@@ -3,7 +3,8 @@ var router = express.Router();
 var adminController = require("../controllers/adminController");
 let upload = require('../middlewares/uploadProductFile');
 const productFormValidator = require('../validations/productFormValidator');
-const userAdminCheck = require('../middlewares/userAdminCheck')
+const userAdminCheck = require('../middlewares/userAdminCheck');
+const { admin } = require('../controllers/usersController');
 
 /* GET home page. */
 router.get('/',userAdminCheck, adminController.admin);
@@ -19,8 +20,10 @@ router.get('/editar/:id', adminController.editProducts);
 router.put('/editar/:id', upload.array('image'), userAdminCheck, productFormValidator, adminController.update);
 
 router.delete('/eliminar/:id', userAdminCheck, adminController.delete)
-
+/* GET search products */
+router.get('/buscar', userAdminCheck, adminController.search)
 /* Get admin Users */
-router.get('/users', userAdminCheck, adminController.users)
-
+router.get('/usuarios', userAdminCheck, adminController.users)
+/* Get search users */
+router.get('/buscar/usuario', userAdminCheck, adminController.searchUsers)
 module.exports = router;

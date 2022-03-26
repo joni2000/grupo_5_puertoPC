@@ -13,12 +13,12 @@
 <body>
     <!-- include admin header -->
     <%- include('../partials/adminHeader') %>
-     
-    <main class="main-admin margin-top-fixed-admin">
+      
+      <main class="main-admin margin-top-fixed-admin">
         <div class="container container-search">
             <div class="search-bar col-6 search-bar-admin">
-                <input type="text" placeholder="Buscar productos">
-                <form class="icon-search search-admin" action="">
+                <form class="icon-search search-admin" action="/admin/buscar" method="GET">
+                    <input type="text" name="keywords" placeholder="Buscar productos">
                     <button type="submit">
                         <i class="fas fa-search"></i>
                     </button>

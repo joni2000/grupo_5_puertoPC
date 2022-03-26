@@ -185,7 +185,7 @@ var usersController = {
                 id: req.params.id
             }
         })
-        .then(res.redirect('/admin/users'))
+        .then(res.redirect('/admin/usuarios'))
         .catch(error => console.log(error))
     },
 
