@@ -73,31 +73,24 @@ let productController = {
     },
 
     categories: (req, res) => {
-     /*   let productId = Number(req.params.id); 
+        let productId = Number(req.params.id); 
         const categories = Categories.findAll()
-        
+        const categoryProduct = Products.findAll({
+            include: [ 'category','image'],
+          })
+            Promise.all([categories, categoryProduct])
+            .then(([categories, categoryProduct]) => {
+                return res.render('products/categories', {
+                    title:"Productos",
+                    session: req.session,
+                    categories,
+                    categoryProduct,
+                    toThousand
+                })
+    
+            }).catch(error => console.log(error))
+                   
 
-             let categories = categoriesApi.categories
-             Categories.findByPk(req.params.id)
-                .then(category => {
-                        res.render('products/categories', {
-                        title: "Categorias",
-                        categories,
-                        category,
-                        session: req.session,
-                        old: req.body
-                    });
-                }).catch(error => console.log(error)) res.send(categoriesApi)
-          console.log(categoriesApi) */
-        /* let categoriesId = +req.params.id;
-
-        let productsCategories = products.filter(product => +product.categories === categoriesId)
-        let category = categories.find(category => category.id === categoriesId)
-
-        res.render('categories', {
-            products: productsCategories,
-            categories,
-        }) */
     },
     productSearch:(req, res) =>{
         Products.findAll({
