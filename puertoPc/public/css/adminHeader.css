@@ -35,10 +35,24 @@ nav a.logo-admin {
     display: flex;
     align-items: flex-end;
     gap: 5rem;
+    flex-grow: 0.97;
 }
 
 .nav-admin ul li a {
     font-family: var(--fontPrimary);
     color: white;
     font-size: 1.5rem;
+} 
+
+.nav-admin p {
+    color: white;
+    font-family: var(--fontPrimary);
+    font-size: 1.6rem;
+}
+
+li a #active-productos,
+li a #active-usuarios,
+li a #active-crear-productos{
+    border-bottom: 1px solid rgba(9, 9, 255, 0.705);
+    color: #241aa7;
 }

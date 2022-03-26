@@ -17,6 +17,7 @@ var adminController = {
                 res.render('admin/admin', {
                     title: "Admin",
                     products,
+                    admin: req.session.user
                 });
             }).catch(error => console.log(error))
 
@@ -29,7 +30,8 @@ var adminController = {
                 res.render('admin/createProducts', {
                     title: "Crear Producto",
                     categories: categories,
-                    old: req.body
+                    old: req.body,
+                    admin: req.session.user
                 })
             }).catch(error => console.log(error))
     },
@@ -245,7 +247,8 @@ var adminController = {
             .then(users => {
                 res.render('admin/adminUsers', {
                     title: 'Usuarios',
-                    users
+                    users,
+                    admin: req.session.user
                 })
             }).catch(error => console.log(error))
     },

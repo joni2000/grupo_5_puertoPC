@@ -70,6 +70,10 @@ li {
     padding-top: 5.3rem;
 }
 
+.margin-top-fixed-admin {
+    margin-top: 3rem;
+}
+
 @media (min-width: 760px){
     .padding-top-fixed {
         padding-top: 10.6rem;
