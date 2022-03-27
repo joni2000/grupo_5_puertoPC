@@ -42,21 +42,32 @@ let productController = {
     },
 
     productDetail: (req, res ) => {
-        Products.findOne({
+     let productsInSale = Products.findAll({
+            include: [{ association: 'image'}],
+            where: {
+              discount: {
+                  [Op.gte]: 20
+              }
+          } 
+        })
+        
+       let product =  Products.findOne({
             include: [{association: 'image'}],
             where: {
                 id: req.params.id
             }
         })
-        .then(product => {
-            
-            res.render('products/productDetail', {
+      Promise.all([productsInSale, product])
+       .then(([productsInSale, product]) => {   
+          return  res.render('products/productDetail', {
                 title: product.name,
-                product,
                 session: req.session,
+                product,
+                productsInSale,
                 toThousand
             })
         })
+
     },
     
     productCategory:(req, res) =>{

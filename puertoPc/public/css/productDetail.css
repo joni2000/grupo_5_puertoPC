@@ -234,7 +234,7 @@
     -------------------------------
 */
 .productDetails-2{
-    height: 80em;
+    height: 30rem;
     width: 90%;
     border: 1px var(--greyLight) solid;
     border-radius: 1rem;
@@ -242,6 +242,7 @@
     margin-top: .5rem;
     margin-bottom: .5rem;
     padding: .8rem;
+
 }
 
 .details-4 {
@@ -283,8 +284,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: fit-content;
+    height: 20rem;
     margin: 0rem 1rem 1rem 1rem;
+    
 }
 
 .details-5 h1{
@@ -299,6 +301,48 @@
     font-family: var(--fontText);
     font-size: 1.5rem;
     line-height: 2.4rem;
+} /*Carousel implementation in process detail*/
+.productDetailCard{ /*general description and cardDetail*/
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+ 
+}
+.productDetailCardGeneral{
+    overflow-x: scroll;
+    overflow-y: hidden;  
+    white-space: nowrap;
+    width: 90%;
+}
+.productDetailCardBox{
+   display: flex;
+   flex-direction: row;
+
+}
+/*general box row*/
+.productDetailCardBoxGeneral{
+    display: flex;
+    flex-direction: row;
+}
+  /*   card detail product*/
+.cardDetail{
+    width: 25rem;
+    height: 35.5rem;
+    margin: 0.5rem;
+}
+.cardDetailText{
+    width: 25rem;
+    height: 5rem;
+}
+.cardDetailBox{
+    width: 25rem;
+    height: 35.5rem;
+}
+.card-info-text-detail{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25rem;
+    height: 5rem;
 }
 
 /* MEDIA QUERIES */
@@ -319,10 +363,12 @@
     }
 
     #boxProductDetails{
-        height: 110rem;
+        height: 60rem;
+
     }
     .productDetails-2{
-        height: 93rem;
+        height: 70rem;
+       
     }
 
     .details-1{
@@ -506,9 +552,8 @@
     }
     #boxProductDetails{
         position: relative;
-        height: fit-content;
+        height: 80rem;
     }
-
     #boxProductDetails .productDetails-2{
         height: fit-content;
     }
