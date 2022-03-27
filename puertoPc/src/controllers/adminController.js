@@ -238,6 +238,8 @@ var adminController = {
             res.render('admin/admin', {
                 title: "Admin",
                 products,
+                admin: req.session.user,
+                old: req.query
             });
         }).catch(error => console.log(error))
     },
@@ -257,14 +259,16 @@ var adminController = {
         Users.findAll({
             where: {
                 first_name: {
-                    [Op.substring]: req.query.search
+                    [Op.substring]: req.query.keywords
                 }
             }
         })
         .then(users => {
             res.render('admin/adminUsers', {
                 title: 'Usuarios',
-                users
+                users,
+                admin: req.session.user,
+                old: req.query
             })
         }).catch(error => console.log(error))
     }
