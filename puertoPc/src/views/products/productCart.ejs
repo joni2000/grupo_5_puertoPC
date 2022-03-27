@@ -13,42 +13,49 @@
     </head>
     <body class="padding-top-fixed body-product-cart">
         <%- include('../partials/header.ejs') %>
-
+            <div class="container-main">
             <main class="container-cart">
                 <h2 class="section-title">Mi carrito</h2>
-                <div class="card">
-                    <div class="card-body table-responsive">
-                        <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Imagen</th>
-                                <th scope="col">Producto</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Subtotal</th>
-                                <th scope="col">Acciones</th>
-                              </tr>
-                            </thead>
-                            <tbody id="carrito">
-                              <tr>
-                                <th scope="row">cant</th>
-                                <td>Imagen</td>
-                                <td>Producto</td>
-                                <td>Precio</td>
-                                <td>Subtotal</td>
-                                <td>Acciones</td>
-                              </tr>
-                            </tbody>
-                          <tfoot>
-                            <button onclick="emptyCart()" class="btn btn-danger">Vaciar carrito</button>
-                            <button class="btn btn-primary">Finalizar compra</button>
-                          </tfoot>
-        
+                <% if (locals.session.cart.length > 0) { %>
+                  <div class="card">
+                      <div class="card-body table-responsive">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Cantidad</th>
+                                  <th scope="col">Imagen</th>
+                                  <th scope="col">Producto</th>
+                                  <th scope="col">Precio</th>
+                                  <th scope="col">Subtotal</th>
+                                  <th scope="col">Acciones</th>
+                                </tr>
+                              </thead>
+                              <tbody id="carrito">
+                                <tr>
+                                  <th scope="row">cant</th>
+                                  <td>Imagen</td>
+                                  <td>Producto</td>
+                                  <td>Precio</td>
+                                  <td>Subtotal</td>
+                                  <td>Acciones</td>
+                                </tr>
+                              </tbody>
+                            <tfoot>
+  
+                            </tfoot>
+                            
                           </table>
-                    </div>
-                </div>
+                        </div>
+                      </div>
+                <% }else {%>
+                  <h3>El Carrito esta vacio</h3>
+                <% } %>
+                    <div class="button-box button__buy-cart">
+                      <button class="button-buy">Finalizar compra</button>
+                      <button onclick="emptyCart()" class="button-buy">Vaciar carrito</button>
+                  </div>
             </main>
-
+          </div>
             <%- include('../partials/footer.ejs') %>
             <script src="/js/carrito.js"></script>
     </body>
