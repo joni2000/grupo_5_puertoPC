@@ -58,8 +58,8 @@
                     <button class="buy-btn">
                         <h1><a href="/carrito">COMPRAR AHORA</a></h1>
                     </button>
-                    <button class="buy-btn">
-                        <h1><a href="/carrito">AGREGAR AL CARRITO</a></h1>
+                    <button class="buy-btn" onclick="addItem('<%=product.id%>')">
+                        AGREGAR AL CARRITO
                     </button>
                 </section>
                 <div class="iconTabletDetail">
@@ -87,6 +87,7 @@
 
     <%- include('../partials/footer.ejs') %>
     <script src="/js/producpDetail.js"></script>
+    <script src="/js/carrito.js"></script>
 </body>
 
 </html>

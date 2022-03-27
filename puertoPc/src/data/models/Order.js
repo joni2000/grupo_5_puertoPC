@@ -29,4 +29,6 @@ module.exports = (sequelize, dataTypes) => {
             onDelete : 'cascade'
           })
     }
+
+    return Order
 }

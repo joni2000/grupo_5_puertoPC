@@ -12,40 +12,80 @@ const Users = db.User;
 
 var usersController = {
 
-    login: (req, res )=> { 
-        res.render('users/login',{
+    login: (req, res) => {
+        res.render('users/login', {
             title: "Iniciar Sesión",
             session: req.session
         })
 
     },
-            processLogin: (req, res) => {
-                let errors = validationResult(req);
+    processLogin: (req, res) => {
+        let errors = validationResult(req);
 
-                if(errors.isEmpty()){
-                    Users.findOne({
-                        where: {
-                            email: req.body.email
+        if (errors.isEmpty()) {
+            Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+                .then(user => {
+                    req.session.user = {
+                        id: user.id,
+                        firstName: user.first_name,
+                        lastName: user.last_name,
+                        email: user.email,
+                        rol: user.rol
+                    }
+
+                    /* cart */
+                    req.session.cart = [];
+
+                    db.Order.findOne({
+                        where : {
+                            userId : req.session.user.id,
+                            status : 'pending'
+                        },
+                        include : [
+                            {
+                                association : 'carts',
+                                include : [
+                                    {
+                                        association : 'product',
+                                        include : ['image']
+                                    }
+                                ]
+                            }
+                        ]
+                    
+                    }).then(order => {
+                        if(order) {
+                            order.carts.forEach(item => {
+                                let product = {
+                                    id : item.productId,
+                                    name : item.product.name,
+                                    price : item.product.price,
+                                    discount : item.product.discount,
+                                    image : item.product.images[0].file,
+                                    amount : +item.quantity,
+                                    total : +item.product.price * item.quantity,
+                                    orderId : order.id
+                                }
+                                req.session.cart.push(product)
+                            });
                         }
-                    })
-                    .then(user => {
-                        req.session.user = {
-                            id: user.id,
-                            firstName: user.first_name,
-                            lastName: user.last_name,
-                            email: user.email,
-                            rol: user.rol
-                        }
-            
-                       if(req.body.keepsession){
-                           const TIME_IN_MILISECONDS = 60000000
-                           res.cookie("userPuertoPc", req.session.user, {
-                               expires: new Date(Date.now() + TIME_IN_MILISECONDS),
-                               httpOnly: true,
-                               secure: true
-                           })
-                       }else{
-                           
+                        res.redirect('/')
+                    })        
+                    /* end cart */
+
+                    if (req.body.keepsession) {
+                        const TIME_IN_MILISECONDS = 60000000
+                        res.cookie("userPuertoPc", req.session.user, {
+                            expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                            httpOnly: true,
+                            secure: true
+                        })
+                    } else {
+
                         const TIME_IN_MILISECONDS = 60000000
                         res.cookie("userPuertoPc", req.session.user, {
                             expires: new Date(Date.now() + TIME_IN_MILISECONDS),
@@ -53,24 +93,23 @@ var usersController = {
                             secure: true
                         })
                         res.locals.user = req.session.user;
-            
+
                         res.redirect('/')
-                       }
-                       
-            
-                        res.locals.user = req.session.user;
-            
-                        res.redirect('/')
-                    })
-                }else{
-                    res.render('users/login', {
-                        title: "Iniciar Sesión",
-                        errors: errors.mapped(),
-                        session: req.session
-                        
-                    })
-                }
-            },
+                    }
+
+                    res.locals.user = req.session.user;
+
+                    res.redirect('/')
+                })
+        } else {
+            res.render('users/login', {
+                title: "Iniciar Sesión",
+                errors: errors.mapped(),
+                session: req.session
+
+            })
+        }
+    },
 
     register: (req, res) => {
         res.render('users/register', {
@@ -79,57 +118,58 @@ var usersController = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req);
-       
-        if(errors.isEmpty()){
+
+        if (errors.isEmpty()) {
             let { first_name, last_name, email, password, phone } = req.body;
             Users.create({
-                first_name, 
+                first_name,
                 last_name,
                 email,
                 password: bcrypt.hashSync(password, 10),
                 phone,
-                city: "",  
-                country: "", 
+                city: "",
+                country: "",
                 province: "",
                 rol: 'rol_user',
                 image: req.file ? req.file.filename : 'default-image.png',
             })
-            .then(() => {
-                res.redirect('/login')
-            })
-        }else{
+                .then(() => {
+                    res.redirect('/login')
+                })
+        } else {
             res.render('users/register', {
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
             })
         }
-    },       
+    },
     logout: (req, res) => {
-          req.session.destroy();
-          if(req.cookies.userPuertoPc){
-              res.cookie('userPuertoPc', "", { maxAge: -1 })
-          }  
+        req.session.destroy();
+        if (req.cookies.userPuertoPc) {
+            res.cookie('userPuertoPc', "", { maxAge: -1 })
+        }
         res.redirect('/')
     },
-    profileUser: (req, res )=> { 
+    profileUser: (req, res) => {
 
         Users.findByPk(req.params.id)
-        .then((user) =>
-        res.render('users/profileUser', {
-            title: "Perfil de Usuario",
-            session: req.session,
-            user
-        })
-        ).catch(error => res.send(error)
-        )},
+            .then((user) =>
+                res.render('users/profileUser', {
+                    title: "Perfil de Usuario",
+                    session: req.session,
+                    user
+                })
+            ).catch(error => res.send(error)
+            )
+    },
 
     editUser: async (req, res) => {
         let provinces = await fetch("https://apis.datos.gob.ar/georef/api/provincias").then(response => response.json())
         let provincias = provinces.provincias
         Users.findByPk(req.params.id)
             .then(user => {
-                    res.render('users/editUser', {
+                res.render('users/editUser', {
                     title: "Edición de usuario",
                     provincias,
                     user,
@@ -142,51 +182,51 @@ var usersController = {
     updateUser: async (req, res) => {
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
-        const { image, address, city, country, province,} = req.body;
-        
-        Users.update({
+        if (errors.isEmpty()) {
+            const { image, address, city, country, province, } = req.body;
+
+            Users.update({
                 image: req.file ? req.file.filename : 'default-image.png',
                 address,
-                city, 
-                country, 
-                province,  
-        }, {
-            where: {
-                id: req.params.id,
-            }
-        }).then(() => {
-            res.redirect(`/profileUser/${req.params.id}`)
-        }).catch(error => console.log(error))
-        }else{
+                city,
+                country,
+                province,
+            }, {
+                where: {
+                    id: req.params.id,
+                }
+            }).then(() => {
+                res.redirect(`/profileUser/${req.params.id}`)
+            }).catch(error => console.log(error))
+        } else {
             let provinces = await fetch("https://apis.datos.gob.ar/georef/api/provincias").then(response => response.json())
             let provincias = provinces.provincias
             Users.findByPk(req.params.id)
-            .then(user => {
+                .then(user => {
                     res.render('users/editUser', {
-                    errors: errors.mapped(),
-                    title: "Edición de usuario",
-                    provincias,
-                    user,
-                    session: req.session,
-                    old: req.body,
-                });
-            }).catch(error => console.log(error))
+                        errors: errors.mapped(),
+                        title: "Edición de usuario",
+                        provincias,
+                        user,
+                        session: req.session,
+                        old: req.body,
+                    });
+                }).catch(error => console.log(error))
         }
-    
+
     },
 
     admin: (req, res) => {
         Users.update({
             rol: 'rol_admin'
         },
-        {
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(res.redirect('/admin/usuarios'))
-        .catch(error => console.log(error))
+            {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(res.redirect('/admin/usuarios'))
+            .catch(error => console.log(error))
     },
 
     delete: (req, res) => {
@@ -195,10 +235,10 @@ var usersController = {
                 id: req.params.id
             }
         })
-        .then(res.redirect('/admin/users'))
-        .catch(error => console.log(error))
+            .then(res.redirect('/admin/users'))
+            .catch(error => console.log(error))
     }
-    
-}      
+
+}
 
 module.exports = usersController;

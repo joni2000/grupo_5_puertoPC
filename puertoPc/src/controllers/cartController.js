@@ -40,8 +40,8 @@ module.exports = {
 
             let product = await db.Product.findByPk(req.params.id,{
                 include : [
-                    {association : 'images',
-                        attributes : ['file']
+                    {association : 'image',
+                        attributes : ['name']
                     }
                 ]
             });
@@ -53,7 +53,7 @@ module.exports = {
                 name,
                 price,
                 discount,
-                image : product.images[0].file,
+                image : product.image[0].name,
                 amount : 1,
                 total : price
             }
@@ -61,7 +61,7 @@ module.exports = {
             if(req.session.cart.length === 0){
 
                 let order = await db.Order.create({
-                    userId : req.session.userLogin.id,
+                    userId : req.session.user.id,
                     status : 'pending'
                 })
 
@@ -85,7 +85,7 @@ module.exports = {
 
                 let order = await db.Order.findOne({
                     where : {
-                        userId : req.session.userLogin.id,
+                        userId : req.session.user.id,
                         status : 'pending'
                     }
                 })
@@ -231,7 +231,7 @@ module.exports = {
 
             await db.Order.destroy({
                 where : {
-                    userId : req.session.userLogin.id,
+                    userId : req.session.user.id,
                     status : 'pending'
                 }
             })

@@ -41,4 +41,5 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey : 'orderId'
           })
     }
+    return Cart
 }
