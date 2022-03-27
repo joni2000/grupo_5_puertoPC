@@ -40,6 +40,7 @@ app.use('/', indexRouter);
 app.use('/products', productRouter);
 app.use('/admin', adminRouter);
 app.use('/api/products', apiProductsRouter);
+app.use('/api/cart',require('./routes/cart'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
