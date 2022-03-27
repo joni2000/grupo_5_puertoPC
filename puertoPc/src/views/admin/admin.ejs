@@ -19,7 +19,7 @@
             <div class="search-bar-admin">
                 <p>Tienes <%= products.length %> productos</p>
                 <form class="icon-search search-admin" action="/admin/buscar" method="GET">
-                    <input type="text" name="keywords" placeholder="Buscar productos">
+                    <input type="text" name="keywords" placeholder="Buscar productos" value="<%=locals.old && old.keywords %>" autocomplete="none">
                     <button type="submit">
                         <i class="fas fa-search"></i>
                     </button>

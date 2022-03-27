@@ -12,19 +12,14 @@
            <div class="product">
             <div class="productImages">
                 <div class="productImageSelector">
-                    <div class="imgSelector">
-                        <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%> ">
-                    </div>
-                    <div class="imgSelector">
-                        <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%> ">
-                    </div>
-                    <div class="imgSelector">
-                        <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%> ">
-                    </div>
-                    <div class="imgSelector">
-                        <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%> ">
-                    </div>
+                    <% for( let i = 1; i < product.image.length; i++ ) { %>
+                        <div class="imgSelector">
+                            <img src="/images/products/<%-product.image[i].name%>" alt="<%-`imagen del producto ${product.name}`%> ">
+                        </div>
+                    <% } %>
 
+                    <% product.image.forEach(img => { %>
+                    <% }) %>
                 </div>
 
                 <div class="productImagePrincipal">
