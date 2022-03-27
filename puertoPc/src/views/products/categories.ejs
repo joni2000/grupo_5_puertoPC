@@ -13,12 +13,12 @@
      <div class="box-categories-general">
     <div class="boxCategoriesJs">
        <div class="categoryCardList">
-         <span class=" categoryCardListOk"><i class="fal fa-times-circle"></i></span>
+         <span class=" categoryCardListSpan "><i class="fal fa-times-circle"></i></span>
          <h4> Todos los productos </h4>
          </div>
       <% categories.forEach(category => { %> 
-       <div class="categoryCardList" >
-         <span class=" categoryCardListOk"><i class="fal fa-times-circle"></i></span>
+       <div class="categoryCardList" data-id="<%- category.id %>">
+         <span class=" categoryCardListSpan "><i class="fal fa-times-circle"></i></span>
         <h4> <%- category.name %> </h4>
        </div>    
       <% }) %>
@@ -26,7 +26,7 @@
      <div>
       <% categoryProduct.forEach(product => { %>
        <a href="/products/detalles/<%- product.id %>%>" class="card-products-general">
-            <div class="box-products-all">
+            <div class="box-products-all" data-id="<%- product.category_id %>">
                <section class="products-box">
                  <figure class="products-box_image">
        <img src="/images/products/<%- product.image[0].name %>" alt="<%- product.name %>">

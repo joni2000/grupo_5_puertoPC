@@ -13,13 +13,13 @@ module.exports = [
 
     check('email')
     .isEmail()
-    .notEmpty()
     .withMessage('Debes ingresar un email válido'),
 
-    body('email').custom((value) => {
+    body('email')
+       .custom((value) => {
         return db.User.findOne({
             where: {
-                email: value,
+                email: value
             }
         })
         .then((user) => {

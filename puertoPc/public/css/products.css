@@ -160,10 +160,15 @@
   padding-left: 0.2rem;
 }
  /*icon event click javascript*/
-.categoryCardListOk{
+.categoryCardListSpan{
   color: red;
   cursor: pointer;
- /*  display: none; */
+
+}
+.categoryCardListOk{
+  color: rgb(0, 255, 85);
+  cursor: pointer;
+
 }
 
    /* MEDIA QUERIES */

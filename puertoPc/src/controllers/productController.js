@@ -60,16 +60,7 @@ let productController = {
     },
     
     productCategory:(req, res) =>{
-      let categoryProduct =  Products
-        .findAll({
-            include: [{ association: 'image'}],
-                   where: {
-                    category_id: Number(req.params.id)
-                }  
-        })
-        .then(categoryProduct => {
-            res.render('products/categories', {categoryProduct})
-        })
+      
     },
 
     categories: (req, res) => {

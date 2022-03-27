@@ -1,28 +1,27 @@
-const categories = document.querySelectorAll('.generalCategory')
+window.onload = () =>{
 
+const categoriesCard = document.querySelectorAll('.categoryCardList')//class categories general
+const spanCategoriesJs = document.querySelector('.categoryCardListSpan')
+const boxProductJs = document.querySelectorAll('.box-products-all')//box general
 
-/* const categoriesJs = document.querySelector('.boxCategoriesJs')
-const boxProductJs = document.querySelectorAll('.boxProductJs')
-const urlApi = 'http://localhost:3002/api/products/category/'
-const categories = document.querySelectorAll('.generalCategory')
-console.log(boxProductJs)
-categories.forEach(e =>{
-    e.addEventListener('click', function(event){
-      event.preventDefault()
-      cargarProductos(event.target.href)
-     
-    } )
+categoriesCard.forEach(e =>{
+  e.addEventListener('click', function(event){
+    event.preventDefault()
+    console.log(e)
+  }
+  )
+
 })
+/* spanCategoriesJs.forEach(e =>{
+  e.addEventListener('click', function(event){
+    event.preventDefault()
+    console.log(e)
+    spanCategoriesJs.classList.add('categoryCardListOk')
+    spanCategoriesJs.classList.remove('categoryCardListSpan')
+  }
+  )
 
-const cargarProductos = (url) =>{
-    fetch(url)
-    .then(res => res.json())
-    .then(data => {  
-      // const name = document.createElement('p')
-        //  name.innerHTML = data.name
-      // boxProductJs.appendChild(name)
-     //   boxProductJs.
-        console.log(data.products)
-
-    })
-} */
+}) */
+ /*  let validationsErrorsLogin = false; */
+    
+}
