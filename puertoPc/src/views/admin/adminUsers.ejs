@@ -18,8 +18,8 @@
         <div class="container-search">
             <div class="search-bar-admin">
                 <p>Hay <%= users.length %> Usuarios</p>
-                <form class="icon-search search-admin" action="/admin/buscar" method="GET">
-                    <input type="text" name="keywords" placeholder="Buscar usuarios">
+                <form class="icon-search search-admin" action="/admin/buscar/usuario" method="GET">
+                    <input type="text" name="keywords" placeholder="Buscar usuarios" autocomplete="none" value="<%= locals.old && old.keywords %>">
                     <button type="submit">
                         <i class="fas fa-search"></i>
                     </button>
