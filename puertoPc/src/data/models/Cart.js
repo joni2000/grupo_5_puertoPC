@@ -38,7 +38,7 @@ module.exports = (sequelize, dataTypes) => {
     
           Cart.belongsTo(models.Order,{
             as : 'order',
-            foreignKey : 'orderId'
+            foreignKey : 'orderId',
           })
     }
     return Cart
