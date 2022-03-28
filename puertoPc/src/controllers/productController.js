@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 const db = require('../data/models')
 const fetch = require("node-fetch");
 
-var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+let toThousand = n => +n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const Products = db.Product
 const Categories = db.Category
@@ -35,7 +35,8 @@ let productController = {
             res.render('products/productCart', {
                 title:"Carrito",
                 products,
-                session: req.session
+                session: req.session,
+                toThousand
             })
         })
         

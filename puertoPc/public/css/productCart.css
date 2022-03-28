@@ -3,18 +3,9 @@
 }
 
 
-.body-product-cart a {
-    color: black;
-}
-
-.container-main {
-    height: 67.1vh;
-}
-
 /* Container cart */
 .container-cart{
     background-color: white;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     margin-top: 10rem;
     margin-top: 7rem;
     display: flex;  
@@ -24,13 +15,160 @@
     position: relative;
     width: 90%;
     margin: 2rem auto;
-    padding: 2rem;
 }
 
 .container-cart .section-title {
     position: absolute;
     top: .5rem;
     left: 1rem;
+}
+
+#carrito {
+    width: 90%;
+}
+
+.card-cart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: .1rem solid var(--greyLight);
+    width: 100%;
+    border-radius: .8rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.section-title + div{
+    margin-top: 3.5rem;
+}
+
+.section-title{
+    font-size: 2rem;
+    font-family: var(--fontText);
+    margin-left: 2rem;
+    color: var(--grey);
+}
+
+.cart-description-text{
+    font-family: var(--fontText);
+    font-size: 1.4rem;
+    margin: .6rem auto ;
+    text-align: center;
+    width: 19rem;
+}
+
+/* price */
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.total-price span:nth-child(1),
+.container-increment p,
+.price p:nth-child(1) {
+    font-family: var(--fontText);
+    font-size: 1.8rem;
+}
+
+.price p:nth-child(1){
+    color: #444444;
+}
+
+.subtotal {
+    color: #444444;
+}
+
+.price p:nth-child(2),
+.price-bruto {
+    font-size: 2rem;
+    color: var(--green);
+    font-family: var(--fontText);
+}
+
+.container-total {
+    display: flex;
+    width: 85%;
+    justify-content: flex-end;
+}
+
+
+/* increment */
+.container-increment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    font-family: var(--fontText);
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.container-increment div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 3rem;
+    width: 7rem;
+    border: solid 1px var(--darkBlue);
+    border-radius: 0.5rem;
+}
+
+.container-increment div button {
+    border: none;
+    color: var(--darkBlue);
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+.container-increment input:focus {
+    outline: none;
+}
+
+
+/* seccion info */
+.container-info {
+    width: 90%;
+}
+
+
+/* Precio Total */
+.total-price {
+    border: .1rem solid var(--greyLight);
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    gap: .5rem;
+}
+
+.total-price span:nth-child(1){
+    font-size: 2rem;
+}
+/* seccion image  */
+.image-container {
+    width: 25rem;
+    height: 16.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-cart {
+    width: 80%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.image-container-ext {
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+     border-bottom: 1px solid var(--greyLight);
 }
 
 /* button */
@@ -65,11 +203,35 @@
     color: rgb(255, 149, 149);
 }
 
+/* CART EMPTY */
+.container-cart-empty {
+    padding: 5rem;
+}
+
+.container-cart .fa-cart-shopping {
+    font-size: 20rem;
+    color: var(--darkBlue);
+}
+
+.container-cart-empty p {
+    margin-top: 2rem;
+    margin-left: 3rem;
+    font-size: 2rem;
+    color: var(--grey);
+    font-family: var(--fontText);
+    font-weight: bold;
+    text-align: center;
+}
+
     /* MEDIA QUERIES */
 
     /* Tablet */
 /* buttons-finals */
 @media (min-width: 480px) {
+    .container-cart {
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    }
+    
     .button__buy-cart {
         flex-direction: row;
         width: 90%;
@@ -130,16 +292,12 @@
 
 
     .container-increment {
-        flex-grow: 1.5;
+        flex-grow: 1.3;
     }
 
     .price {
         flex-grow: 0.5;
         align-items: center;
-    }
-
-    .price p:nth-child(1) {
-        display: none;
     }
 
     .container-increment,

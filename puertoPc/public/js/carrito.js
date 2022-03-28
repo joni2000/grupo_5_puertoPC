@@ -96,20 +96,34 @@ const cargarTabla = (data) => {
 
     carrito.innerHTML = null;
 
+    let toThousand = n => +n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
     data.forEach(({id,amount,image,name,price,total}) => {
         let item = `
-        <tr>
-        <th scope="row">
-        <button class="btn btn-danger" onclick="removeItem('${id}')" ><i class="fas fa-minus-square"></i></button>
-        ${amount}
-        <button class="btn btn-success" onclick="addItem('${id}')" ><i class="fas fa-plus-square"></i></button>
-        </th>
-        <td><img src="/images/products/${image}" class="w-25" /> </td>
-        <td>${name}</td>
-        <td>${price}</td>
-        <td>${total}</td>
-        <td><button class="btn btn-sm btn-danger" onclick="removeAllItem('${id}')"><i class="fas fa-trash-alt"></i></button></td>
-      </tr>
+        <div class="card-cart">
+            <div class="image-container-ext">
+                <a href="detalles/${id}" class="image-container">
+                    <img class="image-cart" src="/images/products/${image}">
+                </a>
+            </div>
+            <div class="container-info">
+                <div class="cart-description-text">
+                    <h3><a href="detalles/${id}"> ${name}  </a></h3>
+                </div>
+                <div class="container-increment">
+                    <div>
+                        <button class="btn-plus" onclick="removeItem('${id}')" ><i class="fas fa-minus-square"></i></button>
+                        ${amount}
+                        <button class="btn-plus" onclick="addItem('${id}')" ><i class="fas fa-plus-square"></i></button>
+                    </div>
+                </div>
+                <div class="price" >
+                    <p class="subtotal">Subtotal: </p>
+                    <p>$${toThousand(total)}</p>
+                </div>
+            </div>
+            <i onclick="removeAllItem('${id}')" class="fas fa-times"></i>
+        </div>
         `
         carrito.innerHTML += item
     });
