@@ -96,6 +96,8 @@ const cargarTabla = (data) => {
 
     carrito.innerHTML = null;
 
+    let toThousand = n => +n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
     data.forEach(({id,amount,image,name,price,total}) => {
         let item = `
         <div class="card-cart">
@@ -116,8 +118,8 @@ const cargarTabla = (data) => {
                     </div>
                 </div>
                 <div class="price" >
-                    <p>Subtotal: </p>
-                    <p>${total}</p>
+                    <p class="subtotal">Subtotal: </p>
+                    <p>$${toThousand(total)}</p>
                 </div>
             </div>
             <i onclick="removeAllItem('${id}')" class="fas fa-times"></i>
