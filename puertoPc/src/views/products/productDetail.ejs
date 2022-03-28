@@ -1,81 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
-<body class="product-detail-body">
-    <%- include('../partials/header.ejs') %>
-    <main class="main-product-detail padding-top-fixed">
-          <div class="productAdress">
-            <h3 class="enrutador">Puerto Pc></h3>
-          </div>
-           <div class="product">
-            <div class="productImages">
-                <div class="productImageSelector">
-                    <% for( let i = 1; i < product.image.length; i++ ) { %>
-                        <div class="imgSelector">
-                            <img src="/images/products/<%-product.image[i].name%>" alt="<%-`imagen del producto ${product.name}`%> ">
+    <body class="product-detail-body">
+        <%- include('../partials/header.ejs') %>
+            <main class="main-product-detail padding-top-fixed">
+                <div class="productAdress">
+                    <h3 class="enrutador">Puerto Pc></h3>
+                </div>
+                <div class="product">
+                    <div class="productImages">
+                        <div class="productImageSelector">
+                            <% for( let i=1; i < product.image.length; i++ ) { %>
+                                <div class="imgSelector">
+                                    <img src="/images/products/<%-product.image[i].name%>"
+                                        alt="<%-`imagen del producto ${product.name}`%> ">
+                                </div>
+                                <% } %>
+
+                                    <% product.image.forEach(img=> { %>
+                                        <% }) %>
                         </div>
-                    <% } %>
 
-                    <% product.image.forEach(img => { %>
-                    <% }) %>
-                </div>
-
-                <div class="productImagePrincipal">
-                    <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%>">
-                </div>
-            </div>
-              <div class="boxProductDetails">
-              <div class="productDetails">
-                
-         <section class="details-1">
-                    <h1><%= product.name %> </h1>
-                    <div class="details-1-row">
-                        <h2 id="price"> $<%=product.price %></h2>
-                        <h3> <%=product.stock %></h3>
+                        <div class="productImagePrincipal">
+                            <img src="/images/products/<%-product.image[0].name%>"
+                                alt="<%- `imagen del producto ${product.name}`%>">
+                        </div>
                     </div>
-                </section>
+                    <div class="boxProductDetails">
+                        <div class="productDetails">
 
-                <section class="details-2">
-                    <i class="fas fa-credit-card"></i>
-                    <h1><%=product.price%></h1>
-                    <h3><%=product.price%> </h3>
-                </section>
+                            <section class="details-1">
+                                <h1>
+                                    <%= product.name %>
+                                </h1>
+                                <div class="details-1-row">
+                                    <h2 id="price"> $<%=product.price %>
+                                    </h2>
+                                    <h3>
+                                        <%=product.stock %>
+                                    </h3>
+                                </div>
+                            </section>
 
-                <section class="details-2">
-                    <i class="fas fa-truck"></i>
-                    <h1>ENVÍO A TU LOCALIDAD POR $500</h1>
-                </section>
-                <section class="details-2">
-                    <i class="fas fa-user-shield"></i>
-                    <h1><%=product.price%> </h1>
-                </section>
-                <section class="details-3">
-                    <button class="increment-btn">
-                        <h1>- 1 +</h1>
-                    </button>
-                    <button class="buy-btn">
-                        <h1><a href="/carrito">COMPRAR AHORA</a></h1>
-                    </button>
-                    <button class="buy-btn" onclick="addItem('<%=product.id%>')">
-                        AGREGAR AL CARRITO
-                    </button>
-                </section>
-                <div class="iconTabletDetail">
-                    <section class="details-4">
-                        <i class="fas fa-truck"></i>
-                        <h1>ENVÍO A TU LOCALIDAD POR $500</h1>
-                    </section>
-                    <section class="details-4">
-                        <i class="fas fa-user-shield"></i>
-                        <h1><%=product.price%></h1>
-                    </section>
+                            <section class="details-2">
+                                <i class="fas fa-credit-card"></i>
+                                <h1>
+                                    <%=product.price%>
+                                </h1>
+                                <h3>
+                                    <%=product.price%>
+                                </h3>
+                            </section>
+
+                            <section class="details-2">
+                                <i class="fas fa-truck"></i>
+                                <h1>ENVÍO A TU LOCALIDAD POR $500</h1>
+                            </section>
+                            <section class="details-2">
+                                <i class="fas fa-user-shield"></i>
+                                <h1>
+                                    <%=product.price%>
+                                </h1>
+                            </section>
+                            <section class="details-3">
+                                <button class="increment-btn">
+                                    <h1>- 1 +</h1>
+                                </button>
+                                <button class="buy-btn">
+                                    <h1><a href="/carrito">COMPRAR AHORA</a></h1>
+                                </button>
+                                <button class="buy-btn" onclick="addItem('<%=product.id%>')">
+                                    AGREGAR AL CARRITO
+                                </button>
+                            </section>
+                            <div class="iconTabletDetail">
+                                <section class="details-4">
+                                    <i class="fas fa-truck"></i>
+                                    <h1>ENVÍO A TU LOCALIDAD POR $500</h1>
+                                </section>
+                                <section class="details-4">
+                                    <i class="fas fa-user-shield"></i>
+                                    <h1>
+                                        <%=product.price%>
+                                    </h1>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-          </div>
-           </div>
 
+<<<<<<< Updated upstream
             <div class="boxProductDetails" id="boxProductDetails">
             <div class="productDetails-2">
                     <section class="details-5">
@@ -84,10 +100,64 @@
                     </section>
             </div>
     </main>
+=======
+                <div class="boxProductDetails" id="boxProductDetails">
+                    <div class="productDetailCard">
+                        <div class="productDetails-2">
+                            <section class="details-5">
+                                <h1>DESCRIPCIÓN</h1>
+                                <p>
+                                    <%=product.description%>
+                                </p>
+                            </section>
+                        </div>
 
-    <%- include('../partials/footer.ejs') %>
-    <script src="/js/producpDetail.js"></script>
-    <script src="/js/carrito.js"></script>
-</body>
+
+                        <section class="products glider-contain productDetailCardGeneral">
+                            <div class="glider-contain products  productDetailCard">
+                                <div>
+                                    <h2 class="subtitle">Ofertas <a class="link-all" href="">Ver todas</a></h2>
+                                </div>
+                                <div class="productDetailCardBoxGeneral">
+                                    <div class="glider productDetailCardBox">
+                                        <% productsInSale.forEach(productInSale=> { %>
+                                            <div class="slider slider-offer  cardDetail">
+                                                <a href="/products/detalles/<%-productInSale.id %>"
+                                                    class="card cardDetailBox">
+                                                    <div>
+                                                        <img src="/images/products/<%- productInSale.image[0].name %>"
+                                                            alt="imagen de producto">
+                                                    </div>
+                                                    <div class="card-info card-info-text-detail">
+                                                        <h3 class="cardDetailText">
+                                                            <%=productInSale.name %>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="card-description-text">
+                                                        <p>$<%= toThousand(productInSale.price - productInSale.price *
+                                                                productInSale.discount / 100) %>
+                                                        </p>
+                                                        <p><span>$<%= toThousand(productInSale.price) %> </span>
+                                                            <%- productInSale.discount !==0 ?
+                                                                `${productInSale.discount}% OFF` : "" %>
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+            </main>
+>>>>>>> Stashed changes
+
+            <%- include('../partials/footer.ejs') %>
+                <script src="/js/producpDetail.js"></script>
+                <script src="/js/carrito.js"></script>
+    </body>
 
 </html>
