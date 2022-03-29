@@ -81,7 +81,6 @@ header  .top .icon-user {
     font-size: 2.2rem;
     margin: 0.5rem;
     color: white;
-
 }
 
 header .session {
@@ -158,6 +157,50 @@ header .session {
         display: none;
     }
      
+}
+
+.item2 {
+    position: relative;
+}
+
+#categories {
+    color: white;
+}
+
+.nav-cat{
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: absolute;
+    border-radius: 0.3rem;
+    background-color: rgb(36, 36, 36);
+    z-index: 10022;
+    padding: 1rem;
+    opacity: 0.95;
+}
+
+.item2 .close {
+    display: none;
+}
+
+.nav-cat li {
+    display: flex;
+    justify-content: center;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+}
+
+.nav-cat li:hover {
+    background-color: var(--blue);
+}
+
+.item2 .nav-cat li a {
+    width: 90%;
+    font-family: var(--fontText);
+    font-weight: bold;
+    color: white;
+    text-align: left;
 }
 
 /* Tablet */
@@ -265,7 +308,7 @@ header .session {
         color: white;
         display: flex;
         align-items: center;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         margin-left: 0.1rem;
     }
     .header .login-session :hover{
@@ -279,7 +322,7 @@ header .session {
         display: flex;
         align-items: center;
         margin: 0 2rem 0 0.45rem;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     header .top .register:hover{
         text-shadow: 0.1rem 0.1rem 0.2rem rgb(51, 51, 51);
@@ -291,9 +334,18 @@ header .session {
         color: white;
         display: flex;
         align-items: center;
-        margin: 0 2rem 0 0.45rem;
-        font-size: 1.2rem;
+        margin: 0 0.5rem 0 0.45rem;
+        font-size: 1.3rem;
      }
+
+     .gear {
+         order: 7;
+         color: white;
+         font-size: 2rem;
+         margin: 0 2rem 0 0.45rem;
+         align-self: center;
+     }
+
      header .register-session :hover{
         text-shadow: 0.1rem 0.1rem 0.2rem rgb(51, 51, 51);
      }

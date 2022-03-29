@@ -31,7 +31,7 @@
                 <a class="login-session" href="/profileUser/<%- user.id %> ">Mis datos</a>
                 <a class="register-session" href="/logout">| Cerrar sessión</a>
                 <% if (locals.user.rol === 'rol_admin') { %>
-                    <a href="/admin"><i class="fa-solid fa-gear"></i></a>
+                    <a class="gear" href="/admin"><i class="fa-solid fa-gear"></i></a>
                 <% } %>
 
               <% } else { %>
@@ -53,7 +53,28 @@
     <nav class="menu">
         <ul class="item">
             <li class="item1"><a href=""><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-            <li class="item2"><a href="/products/category">Categorías <i class="fas fa-angle-down"></i></a></li>
+            <li class="item2"  id="categories">
+                <p href="/products/category">Categorías <i class="fas fa-angle-down"></i></p>
+
+                <ul class="nav-cat close">
+                    <li><a href="/products/6">Almacenamiento</a></li>
+                    <li><a href="/products/16">Cables</a></li>
+                    <li><a href="/products/15">Camaras Web</a></li>
+                    <li><a href="/products/10">Collers</a></li>
+                    <li><a href="/products/1">Escritorio</a></li>
+                    <li><a href="/products/8">Fuentes</a></li>
+                    <li><a href="/products/9">Gabinetes</a></li>
+                    <li><a href="/products/5">Memorias</a></li>
+                    <li><a href="/products/13">Monitores</a></li>
+                    <li><a href="/products/3">Motherboards</a></li>
+                    <li><a href="/products/2">Notebooks</a></li>
+                    <li><a href="/products/4">Procesadores</a></li>
+                    <li><a href="/products/7">placas de video</a> </li>
+                    <li><a href="/products/14">sillas</a></li>
+                    <li><a href="/products/12">Sonido</a></li>
+                    <li><a href="/products/11">Teclados y mouses</a></li>
+                </ul>
+            </li>
             <li class="item3"><a href="">Ofertas</a></li>
             <li class="item4"><a href="">Armá tu PC</a></li>
             <li class="item5"><a href="">Ayuda <i class="fas fa-angle-down"></i></i></a></li>
