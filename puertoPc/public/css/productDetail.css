@@ -1,4 +1,4 @@
-
+/* body */
 .product-detail-body {
     overflow-x: hidden;
 }
@@ -79,8 +79,8 @@
     justify-content: center;
 }
 .productDetails {
-    height: 70rem;
-    width: 80%;
+    height: fit-content;
+    width: 100%;
     border: 1px var(--greyLight) solid;
     border-radius: 1rem;
     background-color: var(--greyLight);
@@ -107,6 +107,8 @@
 .productDetails .details-1-row {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
     width: 100%;
     margin-left: 2rem;
 }
@@ -114,13 +116,17 @@
 .productDetails .details-1-row #price{
     color: var(--blue);
     font-size: 2.5rem;
-    font-family: var(--fontPrimary);
+    font-family: var(--fontText);
     letter-spacing: .3rem; 
     height: 3.2rem;
     font-weight: bolder;
+    margin-top: 1rem;
 }
 
 .productDetails .details-1-row h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     padding: .5rem;
     height: 3rem;
@@ -136,9 +142,15 @@
     ------------------------------------------
 */
 
+.box-product-description {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 2rem;
+}
+
 .productDetails .details-2{
     width: 100%;
-    height: 10em;
+    height: fit-content;
     border-bottom: 1px black solid;
     display: flex;
     font-family: var(--fontText);
@@ -185,13 +197,13 @@
 */
 
 .productDetails .details-3{
-    height: 25rem;
+    height: fit-content;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin: 2rem 0;
 }
 
 .productDetails .details-3 .increment-btn{
@@ -218,10 +230,12 @@
     letter-spacing: .3rem;;
     border-style: none;
     background-color: var(--darkBlue);
+    width: 100%;
 }
-.productDetails .details-3 .buy-btn:hover{
-    transform: scale(1.1);
-    transition: all .3s ease-in-out;
+
+.productDetails .details-3 .btn-add-det {
+    font-size: 1.6rem;
+    color: white;
 }
 
 .productDetails .details-3 .buy-btn h1 a {
@@ -235,14 +249,13 @@
 */
 .productDetails-2{
     height: 30rem;
-    width: 90%;
+    width: 100%;
     border: 1px var(--greyLight) solid;
     border-radius: 1rem;
     background-color: var(--greyLight);
     margin-top: .5rem;
     margin-bottom: .5rem;
     padding: .8rem;
-
 }
 
 .details-4 {
@@ -284,7 +297,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 20rem;
+    height: fit-content;
     margin: 0rem 1rem 1rem 1rem;
     
 }
@@ -367,7 +380,7 @@
 
     }
     .productDetails-2{
-        height: 70rem;
+        height: fit-content;
        
     }
 
@@ -393,6 +406,10 @@
 /* Segundo Quiebre */
 
 @media (min-width: 480px){ 
+    .main-product-detail {
+        padding-left: 2rem;
+    }
+
     .productImages{
         height: 50rem;
         width: 100%;
@@ -468,9 +485,9 @@
         display: none;
     }
     .productDetails .details-3{
-        height: 17.5rem;
+        height: fit-content;
         width: 100%;;
-        margin-top: 0rem;
+        margin: 2rem 0;
         border-bottom: none;
     }
     
@@ -487,7 +504,20 @@
         padding: .5rem;
         letter-spacing: 0rem;
         color: white;
+        width: fit-content;
     }
+
+    .productDetails .details-3 .btn-add-det {
+        font-size: 2rem;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    .productDetails .details-3 .buy-btn:hover{
+        transform: scale(1.05);
+        transition: all .3s ease-in-out;
+    }
+
     .details-2-tablet{
         display: flex;
         font-family: var(--fontText);
@@ -552,7 +582,8 @@
     }
     #boxProductDetails{
         position: relative;
-        height: 80rem;
+        height: fit-content;
+        width: 97.5%;
     }
     #boxProductDetails .productDetails-2{
         height: fit-content;

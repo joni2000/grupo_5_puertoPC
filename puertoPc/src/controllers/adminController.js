@@ -8,6 +8,8 @@ const Categories = db.Category;
 const ProductImages = db.Image;
 const Users = db.User
 
+let toThousand = n =>   n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 var adminController = {
     admin: (req, res) => {
         Products.findAll({
@@ -17,7 +19,9 @@ var adminController = {
                 res.render('admin/admin', {
                     title: "Admin",
                     products,
-                    admin: req.session.user
+                    admin: req.session.user,
+                    msg: `Hay ${products.length} productos`,
+                    toThousand
                 });
             }).catch(error => console.log(error))
 
@@ -239,7 +243,9 @@ var adminController = {
                 title: "Admin",
                 products,
                 admin: req.session.user,
-                old: req.query
+                old: req.query,
+                msg: `${products.length} coincidencias`,
+                toThousand
             });
         }).catch(error => console.log(error))
     },
@@ -250,7 +256,8 @@ var adminController = {
                 res.render('admin/adminUsers', {
                     title: 'Usuarios',
                     users,
-                    admin: req.session.user
+                    admin: req.session.user,
+                    msg: `Hay ${users.length} usuarios`
                 })
             }).catch(error => console.log(error))
     },
@@ -268,7 +275,8 @@ var adminController = {
                 title: 'Usuarios',
                 users,
                 admin: req.session.user,
-                old: req.query
+                old: req.query,
+                msg: `${users.length} coincidencias`
             })
         }).catch(error => console.log(error))
     }

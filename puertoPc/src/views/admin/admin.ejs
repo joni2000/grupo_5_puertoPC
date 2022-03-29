@@ -17,7 +17,7 @@
       <main class="main-admin margin-top-fixed-admin">
         <div class="container-search">
             <div class="search-bar-admin">
-                <p>Tienes <%= products.length %> productos</p>
+                <p><%= msg %></p>
                 <form class="icon-search search-admin" action="/admin/buscar" method="GET">
                     <input type="text" name="keywords" placeholder="Buscar productos" value="<%=locals.old && old.keywords %>" autocomplete="none">
                     <button type="submit">
@@ -48,7 +48,7 @@
                         <th class="text-left"><%=product.name%></th>
                         <th class="text-left"><%=product.category.name%></th>
                         <th class="text-left"><%=product.stock%></th>
-                        <th class="text-left">$<%=product.price%></th> 
+                        <th class="text-left">$<%=toThousand(product.price)%></th> 
                         <th class="text-left">
                             <a class="btn-edit" href="/admin/editar/<%= product.id %>">
                                 <i class="fa-regular fa-pen-to-square"></i>
