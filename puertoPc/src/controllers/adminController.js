@@ -19,7 +19,7 @@ var adminController = {
                 res.render('admin/admin', {
                     title: "Admin",
                     products,
-                    admin: req.session.user,
+                    admin: 'Jonathan Ibarrola',
                     msg: `Hay ${products.length} productos`,
                     toThousand
                 });
@@ -35,7 +35,7 @@ var adminController = {
                     title: "Crear Producto",
                     categories: categories,
                     old: req.body,
-                    admin: req.session.user
+                    admin: 'Jonathan Ibarrola',
                 })
             }).catch(error => console.log(error))
     },
@@ -89,7 +89,8 @@ var adminController = {
                         categories,
                         errors: errors.mapped(),
                         old: req.body,
-                        session: req.session
+                        session: req.session,
+                        admin: 'Jonathan Ibarrola',
                     })
                 })
         }
@@ -111,7 +112,8 @@ var adminController = {
                     title: "Editar Producto",
                     product,
                     categories: categories,
-                    session: req.session
+                    session: req.session,
+                    admin: 'Jonathan Ibarrola',
                 })
             })
             .catch(error => console.log(error))
@@ -242,10 +244,10 @@ var adminController = {
             res.render('admin/admin', {
                 title: "Admin",
                 products,
-                admin: req.session.user,
                 old: req.query,
                 msg: `${products.length} coincidencias`,
-                toThousand
+                toThousand,
+                admin: 'Jonathan Ibarrola',
             });
         }).catch(error => console.log(error))
     },
@@ -256,8 +258,8 @@ var adminController = {
                 res.render('admin/adminUsers', {
                     title: 'Usuarios',
                     users,
-                    admin: req.session.user,
-                    msg: `Hay ${users.length} usuarios`
+                    msg: `Hay ${users.length} usuarios`,
+                    admin: 'Jonathan Ibarrola',
                 })
             }).catch(error => console.log(error))
     },
@@ -274,9 +276,9 @@ var adminController = {
             res.render('admin/adminUsers', {
                 title: 'Usuarios',
                 users,
-                admin: req.session.user,
                 old: req.query,
-                msg: `${users.length} coincidencias`
+                msg: `${users.length} coincidencias`,
+                admin: 'Jonathan Ibarrola',
             })
         }).catch(error => console.log(error))
     }
