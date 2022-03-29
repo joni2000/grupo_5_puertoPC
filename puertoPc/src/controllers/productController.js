@@ -104,12 +104,12 @@ let productController = {
             },
             include: [{association: 'image'}]
         })
-        .then((result) => {
-            res.render('products/search', {
-                title:"Resultados de búsqueda",
-                result,
-                search: req.query.keywords,
-                session: req.session
+        .then((products) => {
+            res.render('products/products', {
+                title:"Productos",        
+                products,
+                toThousand,
+                session: req.session,
             })
         })
     },
