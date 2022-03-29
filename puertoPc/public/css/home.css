@@ -147,6 +147,7 @@
 }
 
 .button-buy {
+    z-index: 20000;
     border: none;
     font-size: 2rem;
     font-family: var(--fontBebas);

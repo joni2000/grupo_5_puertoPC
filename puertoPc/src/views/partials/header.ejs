@@ -10,7 +10,7 @@
         
             <form action="/products/search" method="GET" class="search-bar">
                 
-                    <input type="search" name="keywords" placeholder="Buscar productos">
+                    <input type="search" name="keywords" placeholder="Buscar productos" value="<%-locals.old && old.keywords%>">
                     <button type="submit"><i class="fas fa-search"></i></button>
                     
                 
