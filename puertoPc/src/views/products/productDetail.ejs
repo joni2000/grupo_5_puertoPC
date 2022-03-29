@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
 
-<body class="product-detail-body">
-    <%- include('../partials/header.ejs') %>
-    <main class="main-product-detail padding-top-fixed">
-          <div class="productAdress">
-            <h3 class="enrutador">Puerto Pc></h3>
-          </div>
-           <div class="product">
-            <div class="productImages">
-                <div class="productImageSelector">
-                    <% for( let i = 1; i < product.image.length; i++ ) { %>
-                        <div class="imgSelector">
-                            <img src="/images/products/<%-product.image[i].name%>" alt="<%-`imagen del producto ${product.name}`%> ">
+    <body class="product-detail-body">
+        <%- include('../partials/header.ejs') %>
+            <main class="main-product-detail padding-top-fixed">
+                <div class="productAdress">
+                    <h3 class="enrutador">Puerto Pc></h3>
+                </div>
+                <div class="product">
+                    <div class="productImages">
+                        <div class="productImageSelector">
+                            <% for( let i=1; i < product.image.length; i++ ) { %>
+                                <div class="imgSelector">
+                                    <img src="/images/products/<%-product.image[i].name%>"
+                                        alt="<%-`imagen del producto ${product.name}`%> ">
+                                </div>
+                                <% } %>
+
+                                    <% product.image.forEach(img=> { %>
+                                        <% }) %>
                         </div>
-                    <% } %>
 
-                    <% product.image.forEach(img => { %>
-                    <% }) %>
-                </div>
-
-                <div class="productImagePrincipal">
-                    <img src="/images/products/<%-product.image[0].name%>" alt="<%- `imagen del producto ${product.name}`%>">
-                </div>
-            </div>
-              <div class="boxProductDetails">
-              <div class="productDetails">
-                
-         <section class="details-1">
-                    <h1><%= product.name %> </h1>
-                    <div class="details-1-row">
-                        <h2 id="price"> $<%=product.price %></h2>
-                        <h3> <%=product.stock %></h3>
+                        <div class="productImagePrincipal">
+                            <img src="/images/products/<%-product.image[0].name%>"
+                                alt="<%- `imagen del producto ${product.name}`%>">
+                        </div>
                     </div>
-                </section>
+                    <div class="boxProductDetails">
+                        <div class="productDetails">
 
-                <section class="details-2">
-                    <i class="fas fa-credit-card"></i>
-                    <h1><%=product.price%></h1>
-                    <h3><%=product.price%> </h3>
-                </section>
+                            <section class="details-1">
+                                <h1>
+                                    <%= product.name %>
+                                </h1>
+                                <div class="details-1-row">
+                                    <h2 id="price"> $<%=product.price %>
+                                    </h2>
+                                    <h3>
+                                        <%=product.stock %>
+                                    </h3>
+                                </div>
+                            </section>
 
-                <section class="details-2">
-                    <i class="fas fa-truck"></i>
-                    <h1>ENVÍO A TU LOCALIDAD POR $500</h1>
-                </section>
-                <section class="details-2">
-                    <i class="fas fa-user-shield"></i>
-                    <h1><%=product.price%> </h1>
-                </section>
-                <section class="details-3">
-                    <button class="increment-btn">
-                        <h1>- 1 +</h1>
-                    </button>
-                    <button class="buy-btn">
-                        <h1><a href="/carrito">COMPRAR AHORA</a></h1>
-                    </button>
-                    <button class="buy-btn" onclick="addItem('<%=product.id%>')">
-                        AGREGAR AL CARRITO
-                    </button>
-                </section>
-                <div class="iconTabletDetail">
-                    <section class="details-4">
-                        <i class="fas fa-truck"></i>
-                        <h1>ENVÍO A TU LOCALIDAD POR $500</h1>
-                    </section>
-                    <section class="details-4">
-                        <i class="fas fa-user-shield"></i>
-                        <h1><%=product.price%></h1>
-                    </section>
+                            <section class="details-2">
+                                <i class="fas fa-credit-card"></i>
+                                <h1>
+                                    <%=product.price%>
+                                </h1>
+                                <h3>
+                                    <%=product.price%>
+                                </h3>
+                            </section>
+
+                            <section class="details-2">
+                                <i class="fas fa-truck"></i>
+                                <h1>ENVÍO A TU LOCALIDAD POR $500</h1>
+                            </section>
+                            <section class="details-2">
+                                <i class="fas fa-user-shield"></i>
+                                <h1>
+                                    <%=product.price%>
+                                </h1>
+                            </section>
+                            <section class="details-3">
+                                <button class="increment-btn">
+                                    <h1>- 1 +</h1>
+                                </button>
+                                <button class="buy-btn">
+                                    <h1><a href="/carrito">COMPRAR AHORA</a></h1>
+                                </button>
+                                <button class="buy-btn" onclick="addItem('<%=product.id%>')">
+                                    AGREGAR AL CARRITO
+                                </button>
+                            </section>
+                            <div class="iconTabletDetail">
+                                <section class="details-4">
+                                    <i class="fas fa-truck"></i>
+                                    <h1>ENVÍO A TU LOCALIDAD POR $500</h1>
+                                </section>
+                                <section class="details-4">
+                                    <i class="fas fa-user-shield"></i>
+                                    <h1>
+                                        <%=product.price%>
+                                    </h1>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-          </div>
-           </div>
 
      <div class="boxProductDetails" id="boxProductDetails">
      <div class="productDetailCard" >       
@@ -120,9 +135,10 @@
 
     </main>
 
-    <%- include('../partials/footer.ejs') %>
-    <script src="/js/producpDetail.js"></script>
-    <script src="/js/carrito.js"></script>
-</body>
+            <%- include('../partials/footer.ejs') %>
+                <script src="/js/producpDetail.js"></script>
+                <script src="/js/carrito.js"></script>
+                <script src="https://kit.fontawesome.com/2f4ad9ec2a.js" crossorigin="anonymous"></script>
+    </body>
 
 </html>

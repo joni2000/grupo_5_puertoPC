@@ -113,6 +113,21 @@ let productController = {
             })
         })
     },
+    category: (req, res) => {
+        Products.findAll({
+            where: {
+                category_id: req.params.id
+            }, include: [{association: 'image'}],
+        })
+        .then(products => {
+            res.render('products/products', {
+                title:"Productos",        
+                products,
+                toThousand,
+                session: req.session
+            })
+        })
+    }
 
 };
 
