@@ -30,7 +30,7 @@
                 </span>
                 <a class="login-session" href="/profileUser/<%- user.id %> ">Mis datos</a>
                 <a class="register-session" href="/logout">| Cerrar sessión</a>
-                <% if (locals.user.rol === 'rol_admin') { %>
+                <% if (locals.user.rol == 'rol_admin') { %>
                     <a class="gear" href="/admin"><i class="fa-solid fa-gear"></i></a>
                 <% } %>
 
