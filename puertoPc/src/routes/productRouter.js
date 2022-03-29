@@ -16,4 +16,6 @@ router.get('/carrito', userCheck, productController.productCart);
 router.get('/', productController.index);
 /* GET - Search products */
 router.get('/search', productController.productSearch)
+
+router.get('/:id', productController.category)
 module.exports = router;
