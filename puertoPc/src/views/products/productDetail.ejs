@@ -65,7 +65,7 @@
                                 <button class="buy-btn">
                                     <h1><a href="/carrito">COMPRAR AHORA</a></h1>
                                 </button>
-                                <button class="buy-btn btn-add-det" onclick="addItem('<%=product.id%>')">
+                                <button class="buy-btn btn-add-det" onclick="addItem('<%=product.id%>'); msjCarrito()">
                                     AGREGAR AL CARRITO
                                 </button>
                             </section>
@@ -98,7 +98,11 @@
             <%- include('../partials/footer.ejs') %>
                 <script src="/js/producpDetail.js"></script>
                 <script src="/js/carrito.js"></script>
+                <script src="/js/cart.js"></script>
+                <script src="/js/header.js"></script>
                 <script src="https://kit.fontawesome.com/2f4ad9ec2a.js" crossorigin="anonymous"></script>
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="/js/sweetAlert.js"></script>
     </body>
 
 </html>

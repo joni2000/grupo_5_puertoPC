@@ -1,3 +1,4 @@
+
 console.log('carrito connected success!');
 
 const $ = (id) => document.getElementById(id);
@@ -15,6 +16,7 @@ const getCarrito = async () => {
         if (result.ok) {
 
             cargarTabla(result.data)
+            obtener()
         }
 
     } catch (error) {
@@ -31,15 +33,17 @@ const addItem = async (id) => {
             method: 'POST'
         })
         const result = await response.json()
-
+        
         if (result.ok) {
             cargarTabla(result.data)
+            obtener()
         }
-
+        
     } catch (error) {
         console.error(error);
     }
 
+    
 }
 
 const removeItem = async (id) => {
@@ -53,6 +57,7 @@ const removeItem = async (id) => {
 
         if (result.ok) {
             cargarTabla(result.data)
+            obtener()
         }
 
     } catch (error) {
@@ -70,6 +75,7 @@ const removeAllItem = async (id) => {
 
         if (result.ok) {
             cargarTabla(result.data)
+            obtener()
         }
     } catch (error) {
         console.error(error)
@@ -86,13 +92,29 @@ const emptyCart = async () => {
 
         if (result.ok) {
             cargarTabla(result.data)
+            obtener()
         }
     } catch (error) {
         console.error(error)
     }
+
 }
 
 const cargarTabla = (data) => {
+
+    (async function() {
+        try {
+            const response = await fetch('/api/cart/show')
+            const result = await response.json()
+    
+            if (result.ok) {
+                obtener()
+            }
+    
+        } catch (error) {
+            console.error(error);
+        }
+    })();
 
     carrito.innerHTML = null;
 

@@ -25,7 +25,7 @@ let controller = {
             productsInSale,
             products,
             toThousand,
-            session: req.session
+            session: req.session,
           })
         })
     })

@@ -2,7 +2,6 @@
     padding-top: 5.3rem;
 }
 
-
 /* Container cart */
 .container-cart{
     background-color: white;
@@ -205,7 +204,7 @@
 
 /* CART EMPTY */
 .container-cart-empty {
-    padding: 5rem;
+    padding: 8.82rem;
 }
 
 .container-cart .fa-cart-shopping {

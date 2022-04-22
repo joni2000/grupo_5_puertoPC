@@ -15,7 +15,7 @@
     <body class="padding-top-fixed body-product-cart">
         <%- include('../partials/header.ejs') %>
             <div class="container-main">
-            <main class="container-cart">
+            <main class="container-cart" id="container-cart">
                 <h2 class="section-title">Mi carrito</h2>
                     <div id="carrito">
 
@@ -24,7 +24,7 @@
                     <% if (locals.session.cart.length > 0) { %>
                       <div class="container-total">
                         <div class="total-price">
-                            <span>Total: </span><span class="price-bruto">$353.055</span>
+                            <span>Total: </span><span class="price-bruto" id="total"></span>
                         </div>
                       </div>
   
@@ -42,6 +42,7 @@
           </div>
             <%- include('../partials/footer.ejs') %>
             <script src="/js/carrito.js"></script>
+            <script src="/js/cart.js"></script>
             <script src="https://kit.fontawesome.com/2f4ad9ec2a.js" crossorigin="anonymous"></script>
     </body>
 

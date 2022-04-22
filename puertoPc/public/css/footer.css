@@ -3,7 +3,7 @@ footer{
   height: 2.37rem;
   background-color: var(--blue);
   color: white;
- 
+  position: absolute;
 } /*MOBILE-GENERAL*/
 .footer-all{
    display: flex;

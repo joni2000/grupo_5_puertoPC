@@ -21,8 +21,10 @@
                             </h3>
                         </div>    
                         <div class="card-description-text">   
-                            <p>$<%= toThousand(product.price - product.price * product.discount / 100) %> </p>
-                            <p><span>$<%= toThousand(product.price) %>  </span> <%- product.discount !== 0 ? `${product.discount}% OFF` : "" %> </p>
+                            <p style="color: #00a650;">$<%= toThousand(product.price - product.price * product.discount / 100) %> </p>
+                            <% if (product.discount > 0) { %>
+                                <p><span>$<%= toThousand(product.price) %>  </span> <%- product.discount !== 0 ? `${product.discount}% OFF` : "" %> </p>
+                            <% } %>
                         </div> 
                     </a>    
                     <% }) %>

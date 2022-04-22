@@ -4,41 +4,8 @@
 <body>
     <%- include('./partials/header') %> 
     <main class="home padding-top-fixed">
-        <section class="carousel-container banner">
-                            
-            <div class="slides fade">
-                <img src="/images/banners/banner.webp" alt="">
-            </div>
-            
-            <div class="slides fade">
-                <img src="/images/banners/banner2.webp" alt="">
-            </div>
-
-            <div class="slides fade">
-                <img src="/images/banners/banner3.webp" alt="">
-            </div>
         
-            
-            <!-- The dots/circles -->
-<!--             <div class="dots">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-            </div> -->
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-down fa-1"></i></a>
-            <a class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-down fa-2"></i></a>
-        </section>
-
-        <section class="products glider-contain">    
-            <section class="slider slider-offer"> 
-                      
-            </section>
-
-
-
+            <%- include('./partials/banners') %> 
 
             <div class="glider-contain products">
                 <h2 class="subtitle">Ofertas <a class="link-all" href="">Ver todas</a></h2>
@@ -109,6 +76,7 @@
     <script src="/js/productsSlider.js"></script>
     <script src="/js/glider.js"></script>
     <script src="/js/banersCarousel.js"></script>
+    <script src="/js/cart.js"></script>
     <script src="https://kit.fontawesome.com/2f4ad9ec2a.js" crossorigin="anonymous"></script>
 </body>
 </html>
